@@ -39,7 +39,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
                     this.Overlay.Renderer != null &&
                     this.Overlay.Renderer.Browser != null)
                 {
-                    this.Overlay.Renderer.Browser.GetMainFrame().ExecuteJavaScript(updateScript, null, 0);
+                    this.Overlay.Renderer.ExecuteScript(updateScript);
                 }
                 else
                 {

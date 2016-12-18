@@ -55,13 +55,14 @@ namespace RainbowMage.OverlayPlugin.Overlays
                     this.Overlay.Renderer != null &&
                     this.Overlay.Renderer.Browser != null)
                 {
-                    this.Overlay.Renderer.Browser.GetMainFrame().ExecuteJavaScript(updateScript, null, 0);
+                    this.Overlay.Renderer.ExecuteScript(updateScript);
                 }
             }
         }
 
         private string CreateEventDispatcherScript()
         {
+            // why?
             return "var ActXiv = " + this.CreateJsonData() + ";\n" +
                    "document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', { detail: ActXiv }));";
         }
@@ -75,7 +76,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
 
             if (!CheckIsActReady())
             {
-                return "";
+                return "{}";
             }
 
 #if DEBUG

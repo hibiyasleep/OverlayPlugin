@@ -168,24 +168,6 @@ namespace RainbowMage.HtmlRenderer
             }
         }
 
-        public void SendActivate()
-        {
-            if (this.LastBrowser != null)
-            {
-                var host = this.LastBrowser.GetHost();
-                host.SendFocusEvent(true);
-            }
-        }
-
-        public void SendDeactivate()
-        {
-            if (this.LastBrowser != null)
-            {
-                var host = this.LastBrowser.GetHost();
-                host.SendFocusEvent(false);
-            }
-        }
-
         private bool IsContinuousClick(int x, int y, CefMouseButtonType button)
         {
             // ダブルクリックとして認識するクリックの間隔よりも大きかった場合は継続的なクリックとみなさない
@@ -232,6 +214,7 @@ namespace RainbowMage.HtmlRenderer
                 this.Browsers = new List<CefBrowser>();
             }
             this.Browsers.Add(browser);
+            browser.GetHost().SendFocusEvent(true);
         }
 
         internal void OnPaint(CefBrowser browser, IntPtr buffer, int width, int height, CefRectangle[] dirtyRects)
@@ -322,6 +305,18 @@ namespace RainbowMage.HtmlRenderer
             {
                 CefRuntime.Shutdown();
             }
+        }
+
+        public void ExecuteScript(string script)
+        {
+            this.Browsers.ForEach((b) =>
+            {
+                foreach (var frameId in b.GetFrameIdentifiers())
+                {
+                    var frame = b.GetFrame(frameId);
+                    frame.ExecuteJavaScript(script, null, 0);
+                }
+            });
         }
     }
 

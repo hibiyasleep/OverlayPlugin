@@ -362,7 +362,7 @@ namespace RainbowMage.OverlayPlugin
                 this.Overlay.Renderer != null &&
                 this.Overlay.Renderer.Browser != null)
             {
-                this.Overlay.Renderer.Browser.GetMainFrame().ExecuteJavaScript(updateScript, null, 0);
+                this.Overlay.Renderer.ExecuteScript(updateScript);
             }
         }
 
@@ -376,11 +376,7 @@ namespace RainbowMage.OverlayPlugin
                 this.Overlay.Renderer != null &&
                 this.Overlay.Renderer.Browser != null)
             {
-                foreach (var frameId in this.Overlay.Renderer.Browser.GetFrameIdentifiers())
-                {
-                    var frame = this.Overlay.Renderer.Browser.GetFrame(frameId);
-                    frame.ExecuteJavaScript(script, null, 0);
-                }
+                this.Overlay.Renderer.ExecuteScript(script);
             }
         }
     }

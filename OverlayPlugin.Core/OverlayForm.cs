@@ -628,21 +628,5 @@ namespace RainbowMage.OverlayPlugin
         {
             return (NativeMethods.GetKeyState((int)key) & 1) == 1;
         }
-
-        private void OverlayForm_Activated(object sender, EventArgs e)
-        {
-            if (this.Renderer != null)
-            {
-                this.Renderer.SendActivate();
-            }
-        }
-
-        private void OverlayForm_Deactivate(object sender, EventArgs e)
-        {
-            if (this.Renderer != null)
-            {
-                this.Renderer.SendDeactivate();
-            }
-        }
     }
 }
