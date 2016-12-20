@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
 [assembly: AssemblyTitle("HtmlRenderer")]
-[assembly: AssemblyDescription("HTML based offscreen rendering library for the OverlayPlugin.")]
+[assembly: AssemblyDescription("HTML based offscreen rendering library for the OverlayPlugin.\nModified by Kuriyama hibiya 2016")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("HtmlRenderer")]
-[assembly: AssemblyCopyright("Copyright © RainbowMage 2014, Kuriyama hibiya 2016")]
+[assembly: AssemblyCopyright("Copyright © RainbowMage 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
