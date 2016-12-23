@@ -127,6 +127,9 @@
   <data name="&gt;&gt;columnHeader3.Name" xml:space="preserve">
     <value>columnHeader3</value>
   </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>580, 274</value>
+  </data>
   <data name="listViewOverlay.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 18</value>
   </data>
@@ -136,11 +139,14 @@
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
+  <data name="&gt;&gt;listViewOverlay.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
   <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
     <value>columnHeader1</value>
   </data>
-  <data name="&gt;&gt;buttonNewOverlay.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;listViewOverlay.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -157,6 +163,9 @@
   <data name="buttonNewOverlay.Text" xml:space="preserve">
     <value>New</value>
   </data>
+  <data name="buttonRemoveOverlay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonRemoveOverlay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -164,8 +173,9 @@
   <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
   </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>580, 274</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="listViewLog.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="tabPageMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -191,12 +201,11 @@
   <data name="&gt;&gt;columnHeader4.Name" xml:space="preserve">
     <value>columnHeader4</value>
   </data>
-  <data name="&gt;&gt;listViewOverlay.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;buttonNewOverlay.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="listViewLog.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
   </data>
   <data name="columnHeader3.Text" xml:space="preserve">
     <value>Message</value>
@@ -210,8 +219,8 @@
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 6</value>
   </data>
-  <data name="contextMenuLogList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 104</value>
+  <data name="&gt;&gt;buttonRemoveOverlay.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="columnHeader5.Width" type="System.Int32, mscorlib">
     <value>144</value>
@@ -240,12 +249,6 @@
   <data name="columnHeader1.Text" xml:space="preserve">
     <value>Time</value>
   </data>
-  <data name="&gt;&gt;buttonRemoveOverlay.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;menuFollowLatestLog.Name" xml:space="preserve">
-    <value>menuFollowLatestLog</value>
-  </data>
   <data name="&gt;&gt;toolStripMenuItem2.Name" xml:space="preserve">
     <value>toolStripMenuItem2</value>
   </data>
@@ -255,14 +258,14 @@
   <data name="&gt;&gt;listViewLog.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="menuClearLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 22</value>
+  </data>
   <data name="menuCopyLogAll.Text" xml:space="preserve">
     <value>Copy all logs</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
     <value>toolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
   </data>
   <data name="buttonNewOverlay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -270,14 +273,17 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ControlPanel</value>
   </data>
+  <data name="menuFollowLatestLog.Text" xml:space="preserve">
+    <value>Follow latest log</value>
+  </data>
   <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;menuCopyLogAll.Name" xml:space="preserve">
     <value>menuCopyLogAll</value>
   </data>
-  <data name="tabPageMain.Text" xml:space="preserve">
-    <value>General</value>
+  <data name="listViewOverlay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
     <value>groupBox2</value>
@@ -288,8 +294,8 @@
   <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="buttonRemoveOverlay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="&gt;&gt;menuFollowLatestLog.Name" xml:space="preserve">
+    <value>menuFollowLatestLog</value>
   </data>
   <data name="&gt;&gt;checkBoxAutoHide.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -303,14 +309,14 @@
   <data name="checkBoxAutoHide.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <data name="contextMenuLogList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 104</value>
+  </data>
   <data name="&gt;&gt;columnHeader1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
     <value>tabPageMain</value>
-  </data>
-  <data name="&gt;&gt;columnHeader2.Name" xml:space="preserve">
-    <value>columnHeader2</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
     <value>splitContainer1</value>
@@ -336,8 +342,8 @@
   <data name="columnHeader3.Width" type="System.Int32, mscorlib">
     <value>451</value>
   </data>
-  <data name="&gt;&gt;tabPageMain.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;columnHeader2.Name" xml:space="preserve">
+    <value>columnHeader2</value>
   </data>
   <data name="listViewOverlay.Size" type="System.Drawing.Size, System.Drawing">
     <value>548, 161</value>
@@ -366,8 +372,8 @@
   <data name="buttonRemoveOverlay.Location" type="System.Drawing.Point, System.Drawing">
     <value>87, 185</value>
   </data>
-  <data name="menuClearLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 22</value>
+  <data name="&gt;&gt;buttonRemoveOverlay.Name" xml:space="preserve">
+    <value>buttonRemoveOverlay</value>
   </data>
   <data name="listViewLog.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -378,14 +384,8 @@
   <data name="buttonNewOverlay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="menuLogCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 22</value>
-  </data>
-  <data name="&gt;&gt;buttonRemoveOverlay.Name" xml:space="preserve">
-    <value>buttonRemoveOverlay</value>
   </data>
   <data name="buttonRemoveOverlay.Text" xml:space="preserve">
     <value>Remove</value>
@@ -411,11 +411,11 @@
   <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPageMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="menuFollowLatestLog.Text" xml:space="preserve">
-    <value>Follow latest log</value>
+  <data name="tabPageMain.Text" xml:space="preserve">
+    <value>General</value>
   </data>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -432,11 +432,11 @@
   <data name="&gt;&gt;buttonNewOverlay.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
+  <data name="&gt;&gt;tabPageMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="menuCopyLogAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 22</value>
   </data>
   <data name="checkBoxAutoHide.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -477,9 +477,6 @@
   <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 12</value>
-  </data>
   <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -495,11 +492,8 @@
   <data name="&gt;&gt;menuClearLog.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="listViewOverlay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;listViewLog.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
   </data>
   <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -531,6 +525,12 @@
   <data name="&gt;&gt;contextMenuLogList.Name" xml:space="preserve">
     <value>contextMenuLogList</value>
   </data>
+  <data name="&gt;&gt;tabPageMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="menuCopyLogAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 22</value>
+  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Add/Remove overlays</value>
   </data>
@@ -546,8 +546,8 @@
   <data name="&gt;&gt;columnHeader3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;listViewOverlay.Parent" xml:space="preserve">
-    <value>groupBox2</value>
+  <data name="&gt;&gt;listViewLog.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -564,11 +564,11 @@
   <data name="buttonNewOverlay.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ja-JP</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ja-JP</value>
   </metadata>
   <metadata name="contextMenuLogList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

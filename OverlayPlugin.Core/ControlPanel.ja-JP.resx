@@ -117,8 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="splitContainer1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonRemoveOverlay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 185</value>
+  </data>
+  <data name="buttonRemoveOverlay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="buttonRemoveOverlay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 23</value>
+  </data>
   <data name="buttonRemoveOverlay.Text" xml:space="preserve">
     <value>削除</value>
+  </data>
+  <data name="buttonNewOverlay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 185</value>
+  </data>
+  <data name="buttonNewOverlay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="buttonNewOverlay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 23</value>
   </data>
   <data name="buttonNewOverlay.Text" xml:space="preserve">
     <value>追加</value>
@@ -129,14 +152,68 @@
   <data name="columnHeader5.Text" xml:space="preserve">
     <value>種類</value>
   </data>
+  <data name="listViewOverlay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 18</value>
+  </data>
+  <data name="listViewOverlay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="listViewOverlay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>637, 161</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 3</value>
+  </data>
+  <data name="groupBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="groupBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>652, 214</value>
+  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>オーバーレイの管理</value>
+  </data>
+  <data name="checkBoxAutoHide.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 223</value>
+  </data>
+  <data name="checkBoxAutoHide.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="checkBoxAutoHide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>652, 16</value>
   </data>
   <data name="checkBoxAutoHide.Text" xml:space="preserve">
     <value>非アクティブのときに自動的にオーバーレイを隠す</value>
   </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 3</value>
+  </data>
+  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>660, 242</value>
+  </data>
+  <data name="tabPageMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="tabPageMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="tabPageMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>668, 248</value>
+  </data>
   <data name="tabPageMain.Text" xml:space="preserve">
     <value>設定</value>
+  </data>
+  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>676, 274</value>
   </data>
   <data name="columnHeader1.Text" xml:space="preserve">
     <value>時間</value>
@@ -147,38 +224,55 @@
   <data name="columnHeader3.Text" xml:space="preserve">
     <value>メッセージ</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="menuCopyLogAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>208, 22</value>
   </data>
   <data name="menuCopyLogAll.Text" xml:space="preserve">
     <value>全てのログをコピー</value>
   </data>
   <data name="menuLogCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>208, 22</value>
   </data>
   <data name="menuLogCopy.Text" xml:space="preserve">
     <value>選択されたログをコピー</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>205, 6</value>
   </data>
   <data name="menuFollowLatestLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>208, 22</value>
   </data>
   <data name="menuFollowLatestLog.Text" xml:space="preserve">
     <value>最新のログを常に表示</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>205, 6</value>
   </data>
   <data name="menuClearLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>208, 22</value>
   </data>
   <data name="menuClearLog.Text" xml:space="preserve">
     <value>ログをクリア</value>
   </data>
   <data name="contextMenuLogList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 104</value>
+    <value>209, 104</value>
+  </data>
+  <data name="listViewLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="listViewLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>676, 132</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>676, 410</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>굴림, 9pt</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>676, 410</value>
   </data>
 </root>
