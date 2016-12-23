@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D83917E-D556-4687-AB28-5BA9499848D4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MiniParseExt</RootNamespace>
+    <AssemblyName>MiniParseExt</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\OverlayPlugin\bin\x64\Debug\addons\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\OverlayPlugin\bin\x86\Debug\addons\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Advanced Combat Tracker">
+      <HintPath>C:\Advanced Combat Tracker\Advanced Combat Tracker.exe</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xilium.CefGlue">
+      <HintPath>..\..\OverlayPlugin\Thirdparty\Xilium.CefGlue\Xilium.CefGlue.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConfigEventArgsExt.cs" />
+    <Compile Include="MiniParseExtOverlay.cs" />
+    <Compile Include="MiniParseExtOverlayConfig.cs" />
+    <Compile Include="MiniParseExtConfigPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MiniParseExtConfigPanel.Designer.cs">
+      <DependentUpon>MiniParseExtConfigPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MiniParseExtOverlayAddon.cs" />
+    <Compile Include="NativeMethods_Copy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MiniParseExtConfigPanel.ja-JP.resx">
+      <DependentUpon>MiniParseExtConfigPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiniParseExtConfigPanel.ko-KR.resx">
+      <DependentUpon>MiniParseExtConfigPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiniParseExtConfigPanel.resx">
+      <DependentUpon>MiniParseExtConfigPanel.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\OverlayPlugin\HtmlRenderer\HtmlRenderer.csproj">
+      <Project>{e2bc6483-b966-4a4a-b4cc-d50a4bd73af3}</Project>
+      <Name>HtmlRenderer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\OverlayPlugin\OverlayPlugin.Common\OverlayPlugin.Common.csproj">
+      <Project>{423fcbfc-dd3b-415f-be29-7a4a46614b79}</Project>
+      <Name>OverlayPlugin.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\OverlayPlugin\OverlayPlugin.Core\OverlayPlugin.Core.csproj">
+      <Project>{dd6d2a9a-4ad4-47b8-a1d0-c8608ea37092}</Project>
+      <Name>OverlayPlugin.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\OverlayPlugin\OverlayPlugin\OverlayPlugin.csproj">
+      <Project>{5d15ad79-050c-4780-986e-0f1138ea1d40}</Project>
+      <Name>OverlayPlugin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
