@@ -97,13 +97,13 @@ namespace RainbowMage.OverlayPlugin.Overlays
                     Directory.CreateDirectory(Environment.CurrentDirectory + "\\scr\\");
                     bmp.Save(Environment.CurrentDirectory + "\\scr\\" + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".png");
 
-                    Overlay.Renderer.ExecuteScript("document.dispatchEvent(new CustomEvent('onScreenShotTaked', { detail:{take: true, fileurl:\""+ (Environment.CurrentDirectory + "\\scr\\").Replace("\\", "\\\\") + "\" }}));");
+                    Overlay.Renderer.ExecuteScript("document.dispatchEvent(new CustomEvent('onScreenShotTaked', { detail:{take: true, fileurl:\""+ Utility.CreateJsonSafeString((Environment.CurrentDirectory + "\\scr\\")) + "\" }}));");
                 }
                 else if (s.StartsWith("Isloaded"))
                 {
                     level = LogLevel.Debug;
 
-                    Overlay.Renderer.ExecuteScript("var srcEnable = true; var endEnable = true; var zoomEnable = true; var version = 1.0;");
+                    Overlay.Renderer.ExecuteScript("var srcEnable = true; var endEnable = true; var zoomEnable = true; var version = '1.1';");
                 }
                 else if (s.StartsWith("Zoom"))
                 {
