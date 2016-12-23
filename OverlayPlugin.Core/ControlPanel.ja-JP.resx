@@ -121,7 +121,70 @@
   <data name="splitContainer1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
   </data>
+  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>676, 274</value>
+  </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>時間</value>
+  </data>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>レベル</value>
+  </data>
+  <data name="columnHeader3.Text" xml:space="preserve">
+    <value>メッセージ</value>
+  </data>
+  <data name="contextMenuLogList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 104</value>
+  </data>
+  <data name="listViewLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="listViewLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>676, 132</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>676, 410</value>
+  </data>
+  <data name="tabPageMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="tabPageMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="tabPageMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>668, 248</value>
+  </data>
+  <data name="tabPageMain.Text" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 3</value>
+  </data>
+  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>660, 242</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 3</value>
+  </data>
+  <data name="groupBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="groupBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>652, 214</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>オーバーレイの管理</value>
+  </data>
   <data name="buttonRemoveOverlay.Location" type="System.Drawing.Point, System.Drawing">
     <value>102, 185</value>
   </data>
@@ -146,12 +209,6 @@
   <data name="buttonNewOverlay.Text" xml:space="preserve">
     <value>追加</value>
   </data>
-  <data name="columnHeader4.Text" xml:space="preserve">
-    <value>名前</value>
-  </data>
-  <data name="columnHeader5.Text" xml:space="preserve">
-    <value>種類</value>
-  </data>
   <data name="listViewOverlay.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 18</value>
   </data>
@@ -161,20 +218,11 @@
   <data name="listViewOverlay.Size" type="System.Drawing.Size, System.Drawing">
     <value>637, 161</value>
   </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 3</value>
+  <data name="columnHeader4.Text" xml:space="preserve">
+    <value>名前</value>
   </data>
-  <data name="groupBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="groupBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>652, 214</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>オーバーレイの管理</value>
+  <data name="columnHeader5.Text" xml:space="preserve">
+    <value>種類</value>
   </data>
   <data name="checkBoxAutoHide.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 223</value>
@@ -187,42 +235,6 @@
   </data>
   <data name="checkBoxAutoHide.Text" xml:space="preserve">
     <value>非アクティブのときに自動的にオーバーレイを隠す</value>
-  </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 3</value>
-  </data>
-  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>660, 242</value>
-  </data>
-  <data name="tabPageMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="tabPageMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="tabPageMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>668, 248</value>
-  </data>
-  <data name="tabPageMain.Text" xml:space="preserve">
-    <value>設定</value>
-  </data>
-  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>676, 274</value>
-  </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value>時間</value>
-  </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>レベル</value>
-  </data>
-  <data name="columnHeader3.Text" xml:space="preserve">
-    <value>メッセージ</value>
   </data>
   <data name="menuCopyLogAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 22</value>
@@ -253,18 +265,6 @@
   </data>
   <data name="menuClearLog.Text" xml:space="preserve">
     <value>ログをクリア</value>
-  </data>
-  <data name="contextMenuLogList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 104</value>
-  </data>
-  <data name="listViewLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="listViewLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>676, 132</value>
-  </data>
-  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>676, 410</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>굴림, 9pt</value>

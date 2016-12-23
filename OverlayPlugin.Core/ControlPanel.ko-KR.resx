@@ -117,8 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonRemoveOverlay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 185</value>
+  </data>
   <data name="buttonRemoveOverlay.Text" xml:space="preserve">
     <value>삭제</value>
+  </data>
+  <data name="buttonNewOverlay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 185</value>
   </data>
   <data name="buttonNewOverlay.Text" xml:space="preserve">
     <value>추가</value>
@@ -129,11 +136,29 @@
   <data name="columnHeader5.Text" xml:space="preserve">
     <value>형식</value>
   </data>
+  <data name="listViewOverlay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>548, 161</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>560, 214</value>
+  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>오버레이 추가/제거</value>
   </data>
+  <data name="checkBoxAutoHide.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 223</value>
+  </data>
   <data name="checkBoxAutoHide.Text" xml:space="preserve">
     <value>비활성화 시 오버레이 자동으로 감추기</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>566, 242</value>
+  </data>
+  <data name="tabPageMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPageMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>572, 248</value>
   </data>
   <data name="tabPageMain.Text" xml:space="preserve">
     <value>일반</value>
@@ -147,38 +172,40 @@
   <data name="columnHeader3.Text" xml:space="preserve">
     <value>메시지</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="menuCopyLogAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>202, 22</value>
   </data>
   <data name="menuCopyLogAll.Text" xml:space="preserve">
     <value>모든 로그 복사</value>
   </data>
   <data name="menuLogCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>202, 22</value>
   </data>
   <data name="menuLogCopy.Text" xml:space="preserve">
     <value>선택된 로그 복사</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>199, 6</value>
   </data>
   <data name="menuFollowLatestLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>202, 22</value>
   </data>
   <data name="menuFollowLatestLog.Text" xml:space="preserve">
     <value>마지막 로그를 따라가기</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>199, 6</value>
   </data>
   <data name="menuClearLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>202, 22</value>
   </data>
   <data name="menuClearLog.Text" xml:space="preserve">
     <value>로그 지우기</value>
   </data>
   <data name="contextMenuLogList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 104</value>
+    <value>203, 104</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>굴림, 9pt</value>
   </data>
 </root>
