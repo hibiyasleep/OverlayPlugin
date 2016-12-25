@@ -10,6 +10,75 @@ namespace RainbowMage.OverlayPlugin.Overlays
         public event EventHandler<SortKeyChangedEventArgs> SortKeyChanged;
         public event EventHandler<SortTypeChangedEventArgs> SortTypeChanged;
         public event EventHandler<ScrPathEventArgs> ScrPathChanged;
+        public event EventHandler<ShowDebugLogEventArgs> ShowDebugLogChanged;
+        public event EventHandler<EnableOnLogLineReadEventArgs> EnableOnLogLineReadChanged;
+        public event EventHandler<EnableBeforeLogLineReadEventArgs> enableBeforeLogLineReadChanged;
+
+        private bool enableBeforeLogLineRead;
+        [XmlElement("EnableOnLogLineRead")]
+        public bool EnableBeforeLogLineRead
+        {
+            get
+            {
+                return enableBeforeLogLineRead;
+            }
+            set
+            {
+                if (enableBeforeLogLineRead != value)
+                {
+                    enableBeforeLogLineRead = value;
+                    if (enableBeforeLogLineReadChanged != null)
+                    {
+                        enableBeforeLogLineReadChanged(this,
+                            new EnableBeforeLogLineReadEventArgs(enableBeforeLogLineRead));
+                    }
+                }
+            }
+        }
+
+        private bool enableOnLogLineRead;
+        [XmlElement("EnableOnLogLineRead")]
+        public bool EnableOnLogLineRead
+        {
+            get
+            {
+                return enableOnLogLineRead;
+            }
+            set
+            {
+                if (enableOnLogLineRead != value)
+                {
+                    enableOnLogLineRead = value;
+                    if (EnableOnLogLineReadChanged != null)
+                    {
+                        EnableOnLogLineReadChanged(this, 
+                            new EnableOnLogLineReadEventArgs(enableOnLogLineRead));
+                    }
+                }
+            }
+        }
+
+        private bool showDebugLog;
+        [XmlElement("ShowDebugLog")]
+        public bool ShowDebugLog
+        {
+            get
+            {
+                return showDebugLog;
+            }
+            set
+            {
+                if (showDebugLog != value)
+                {
+                    showDebugLog = value;
+                    if (ScrPathChanged != null)
+                    {
+                        ShowDebugLogChanged(this, 
+                            new ShowDebugLogEventArgs(showDebugLog));
+                    }
+                }
+            }
+        }
 
         private string scrPath;
         [XmlElement("ScrPath")]
@@ -76,6 +145,10 @@ namespace RainbowMage.OverlayPlugin.Overlays
 
         public MiniParseExtOverlayConfig(string name) : base(name)
         {
+            enableBeforeLogLineRead = false;
+            enableOnLogLineRead = false;
+            showDebugLog = false;
+            scrPath = Environment.CurrentDirectory + "\\scr";
             sortKey = "encdps";
             sortType = MiniParseSortType.NumericDescending;
         }

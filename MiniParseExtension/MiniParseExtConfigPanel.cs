@@ -8,6 +8,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
     {
         private MiniParseExtOverlayConfig config;
         private MiniParseExtOverlay overlay;
+        public MiniParseObject oObject;
 
         static readonly List<KeyValuePair<string, MiniParseSortType>> sortTypeDict = new List<KeyValuePair<string, MiniParseSortType>>()
         {
@@ -44,11 +45,22 @@ namespace RainbowMage.OverlayPlugin.Overlays
             nudMaxFrameRate.Value = config.MaxFrameRate;
             checkEnableGlobalHotkey.Checked = config.GlobalHotkeyEnabled;
             textGlobalHotkey.Enabled = checkEnableGlobalHotkey.Checked;
-            textGlobalHotkey.Text = Utility.GetHotkeyString(config.GlobalHotkeyModifiers, config.GlobalHotkey);
+            textGlobalHotkey.Text = Util.GetHotkeyString(config.GlobalHotkeyModifiers, config.GlobalHotkey);
         }
 
         private void SetupConfigEventHandlers()
         {
+            overlay.Overlay.Renderer.BrowserLoad += (o, e) =>
+            {
+                oObject.OnBrowserLoaded(o, e);
+            };
+            config.ShowDebugLogChanged += (o, e) =>
+            {
+                InvokeIfRequired(() =>
+                {
+
+                });
+            };
             config.ScrPathChanged += (o, e) =>
             {
                 InvokeIfRequired(() =>
@@ -110,14 +122,14 @@ namespace RainbowMage.OverlayPlugin.Overlays
             {
                 InvokeIfRequired(() =>
                 {
-                    textGlobalHotkey.Text = Utility.GetHotkeyString(config.GlobalHotkeyModifiers, e.NewHotkey);
+                    textGlobalHotkey.Text = Util.GetHotkeyString(config.GlobalHotkeyModifiers, e.NewHotkey);
                 });
             };
             config.GlobalHotkeyModifiersChanged += (o, e) =>
             {
                 InvokeIfRequired(() =>
                 {
-                    textGlobalHotkey.Text = Utility.GetHotkeyString(e.NewHotkey, config.GlobalHotkey);
+                    textGlobalHotkey.Text = Util.GetHotkeyString(e.NewHotkey, config.GlobalHotkey);
                 });
             };
             config.LockChanged += (o, e) =>
@@ -216,7 +228,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
         private void textBoxGlobalHotkey_KeyDown(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
-            var key = Utility.RemoveModifiers(e.KeyCode, e.Modifiers);
+            var key = Util.RemoveModifiers(e.KeyCode, e.Modifiers);
             config.GlobalHotkey = key;
             config.GlobalHotkeyModifiers = e.Modifiers;
         }

@@ -4,10 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Drawing;
-using System.IO;
-using System.Diagnostics;
 
 namespace RainbowMage.OverlayPlugin.Overlays
 {
@@ -24,10 +20,6 @@ namespace RainbowMage.OverlayPlugin.Overlays
         public MiniParseExtOverlay(MiniParseExtOverlayConfig config)
             : base(config, config.Name)
         {
-            ActGlobals.oFormActMain.BeforeLogLineRead += (o, e) =>
-            {
-                Overlay.Renderer.ExecuteScript("document.dispatchEvent(new CustomEvent('beforeLogLineRead', { detail: \""+ Utility.CreateJsonSafeString(e.logLine)+ "\" }));");
-            };
         }
 
         public override void Navigate(string url)
@@ -74,78 +66,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
 
         protected override void Log(LogLevel level, string message)
         {
-            if(message.StartsWith("BrowserConsole: "))
-            {
-                string s = message.Replace("BrowserConsole: ", "");
-
-                if (s.StartsWith("EncounterEnd"))
-                {
-                    level = LogLevel.Debug;
-                    ActGlobals.oFormActMain.EndCombat(true);
-
-                    Overlay.Renderer.ExecuteScript("document.dispatchEvent(new CustomEvent('onEncounterEndExecuted', { detail:{take: true}}));");
-                }
-                else if (s.StartsWith("CaptureOverlay"))
-                {
-                    level = LogLevel.Debug;
-                    Bitmap bmp = new Bitmap(Overlay.Size.Width, Overlay.Size.Height);
-                    using (Graphics g = Graphics.FromImage(bmp))
-                    {
-                        g.CopyFromScreen(Overlay.Location.X, Overlay.Location.Y, 0, 0, Overlay.Size, CopyPixelOperation.SourceCopy);
-                    }
-
-                    Directory.CreateDirectory(Environment.CurrentDirectory + "\\scr\\");
-                    bmp.Save(Environment.CurrentDirectory + "\\scr\\" + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".png");
-
-                    Overlay.Renderer.ExecuteScript("document.dispatchEvent(new CustomEvent('onScreenShotTaked', { detail:{take: true, fileurl:\""+ Utility.CreateJsonSafeString((Environment.CurrentDirectory + "\\scr\\")) + "\" }}));");
-                }
-                else if (s.StartsWith("Isloaded"))
-                {
-                    level = LogLevel.Debug;
-
-                    Overlay.Renderer.ExecuteScript("var srcEnable = true; var endEnable = true; var zoomEnable = true; var version = '1.1';");
-                }
-                else if (s.StartsWith("Zoom"))
-                {
-                    level = LogLevel.Debug;
-                    string sv = s.Replace("Zoom", "").Substring(0, 2);
-                    string zoomsize = "75";
-                    switch (sv)
-                    {
-                        case "75":
-                            Overlay.Renderer.Browser.GetHost().SetZoomLevel(-1.25);
-                            zoomsize = "-1.25";
-                            break;
-                        case "80":
-                            Overlay.Renderer.Browser.GetHost().SetZoomLevel(-1.2);
-                            zoomsize = "-1.2";
-                            break;
-                        case "90":
-                            Overlay.Renderer.Browser.GetHost().SetZoomLevel(-1.1);
-                            zoomsize = "-1.1";
-                            break;
-                        case "10":
-                            Overlay.Renderer.Browser.GetHost().SetZoomLevel(0);
-                            zoomsize = "1.0";
-                            break;
-                        case "11":
-                            Overlay.Renderer.Browser.GetHost().SetZoomLevel(1.1);
-                            zoomsize = "1.1";
-                            break;
-                        case "12":
-                            Overlay.Renderer.Browser.GetHost().SetZoomLevel(1.25);
-                            zoomsize = "1.25";
-                            break;
-                        case "15":
-                            Overlay.Renderer.Browser.GetHost().SetZoomLevel(1.5);
-                            zoomsize = "1.5";
-                            break;
-                    }
-
-                    Overlay.Renderer.ExecuteScript("document.dispatchEvent(new CustomEvent('onZoomSizeChanged', { detail:{ take: true, size:\"" + zoomsize + "\" }}));");
-                }
-            }
-
+            if (Config.ShowDebugLog && (level == LogLevel.Debug || level == LogLevel.Trace)) level = LogLevel.Info;
             base.Log(level, message);
         }
 
@@ -195,8 +116,8 @@ namespace RainbowMage.OverlayPlugin.Overlays
                 {
                     builder.Append(",");
                 }
-                var valueString = Utility.CreateJsonSafeString(Utility.ReplaceNaNString(pair.Value, "---"));
-                builder.AppendFormat("\"{0}\":\"{1}\"", Utility.CreateJsonSafeString(pair.Key), valueString);
+                var valueString = Util.CreateJsonSafeString(Util.ReplaceNaNString(pair.Value, "---"));
+                builder.AppendFormat("\"{0}\":\"{1}\"", Util.CreateJsonSafeString(pair.Key), valueString);
             }
             builder.Append("},");
             builder.Append("\"Combatant\": {");
@@ -211,7 +132,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
                 {
                     builder.Append(",");
                 }
-                builder.AppendFormat("\"{0}\": {{", Utility.CreateJsonSafeString(pair.Key.Name));
+                builder.AppendFormat("\"{0}\": {{", Util.CreateJsonSafeString(pair.Key.Name));
                 var isFirst3 = true;
                 foreach (var pair2 in pair.Value)
                 {
@@ -223,8 +144,8 @@ namespace RainbowMage.OverlayPlugin.Overlays
                     {
                         builder.Append(",");
                     }
-                    var valueString = Utility.CreateJsonSafeString(Utility.ReplaceNaNString(pair2.Value, "---"));
-                    builder.AppendFormat("\"{0}\":\"{1}\"", Utility.CreateJsonSafeString(pair2.Key), valueString);
+                    var valueString = Util.CreateJsonSafeString(Util.ReplaceNaNString(pair2.Value, "---"));
+                    builder.AppendFormat("\"{0}\":\"{1}\"", Util.CreateJsonSafeString(pair2.Key), valueString);
                 }
                 builder.Append("}");
             }
