@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace RainbowMage.OverlayPlugin
 {
     /// <summary>
     /// ネイティブ関数を提供します。
     /// </summary>
-    static class NativeMethods
+    public static class NativeMethods
     {
         public struct BlendFunction
         {

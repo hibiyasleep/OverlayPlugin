@@ -1,17 +1,11 @@
 ﻿using Advanced_Combat_Tracker;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using System.Reflection;
 using RainbowMage.HtmlRenderer;
 using System;
-using System.Drawing;
 using System.IO;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Threading;
-using System.Text.RegularExpressions;
 using RainbowMage.OverlayPlugin.Overlays;
 using System.Threading.Tasks;
 

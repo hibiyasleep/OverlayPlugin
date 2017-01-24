@@ -117,162 +117,84 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="splitContainer1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
+  <data name="label6.Text" xml:space="preserve">
+    <value>최대 프레임레이트</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>676, 274</value>
+  <data name="checkMiniParseExtVisible.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 16</value>
   </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value>時間</value>
+  <data name="checkMiniParseExtVisible.Text" xml:space="preserve">
+    <value>오버레이 표시</value>
   </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>レベル</value>
+  <data name="checkMiniParseExtClickthru.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 16</value>
   </data>
-  <data name="columnHeader3.Text" xml:space="preserve">
-    <value>メッセージ</value>
+  <data name="checkMiniParseExtClickthru.Text" xml:space="preserve">
+    <value>클릭 통과</value>
   </data>
-  <data name="contextMenuLogList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 104</value>
+  <data name="buttonMiniParseExtReloadBrowser.Text" xml:space="preserve">
+    <value>오버레이 리로드</value>
   </data>
-  <data name="listViewLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
+  <data name="checkEnableGlobalHotkey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 16</value>
   </data>
-  <data name="listViewLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>676, 132</value>
+  <data name="checkEnableGlobalHotkey.Text" xml:space="preserve">
+    <value>전역 단축키 사용</value>
   </data>
-  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>676, 410</value>
+  <data name="checkLock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 16</value>
   </data>
-  <data name="tabPageMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
+  <data name="checkLock.Text" xml:space="preserve">
+    <value>오버레이 잠금</value>
   </data>
-  <data name="tabPageMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>표시 설정</value>
   </data>
-  <data name="tabPageMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>668, 248</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonMiniParseSelectFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="tabPageMain.Text" xml:space="preserve">
-    <value>設定</value>
+  <data name="buttonMiniParseSelectFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>638, 15</value>
   </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 3</value>
+  <data name="buttonMiniParseSelectFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 1</value>
   </data>
-  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
+  <data name="buttonMiniParseSelectFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 30</value>
   </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>660, 242</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 3</value>
-  </data>
-  <data name="groupBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="groupBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>652, 214</value>
+  <data name="buttonMiniParseSelectFile.Text" xml:space="preserve">
+    <value>열기</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>オーバーレイの管理</value>
+    <value>주소 또는 파일</value>
   </data>
-  <data name="buttonRemoveOverlay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 185</value>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>단축키</value>
   </data>
-  <data name="buttonRemoveOverlay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
+  <data name="developerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 26</value>
   </data>
-  <data name="buttonRemoveOverlay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 23</value>
+  <data name="developerToolStripMenuItem.Text" xml:space="preserve">
+    <value>개발자</value>
   </data>
-  <data name="buttonRemoveOverlay.Text" xml:space="preserve">
-    <value>削除</value>
+  <data name="openDevToolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 22</value>
   </data>
-  <data name="buttonNewOverlay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 185</value>
+  <data name="openDevToolsToolStripMenuItem.Text" xml:space="preserve">
+    <value>개발자 도구 열기</value>
   </data>
-  <data name="buttonNewOverlay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
+  <data name="copyTheUpdateVariableToClipboardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 22</value>
   </data>
-  <data name="buttonNewOverlay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 23</value>
+  <data name="copyTheUpdateVariableToClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>업데이트 되는 변수를 클립보드에 복사</value>
   </data>
-  <data name="buttonNewOverlay.Text" xml:space="preserve">
-    <value>追加</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 12</value>
   </data>
-  <data name="listViewOverlay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 18</value>
-  </data>
-  <data name="listViewOverlay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="listViewOverlay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>637, 161</value>
-  </data>
-  <data name="columnHeader4.Text" xml:space="preserve">
-    <value>名前</value>
-  </data>
-  <data name="columnHeader5.Text" xml:space="preserve">
-    <value>種類</value>
-  </data>
-  <data name="checkBoxAutoHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 223</value>
-  </data>
-  <data name="checkBoxAutoHide.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="checkBoxAutoHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>652, 16</value>
-  </data>
-  <data name="checkBoxAutoHide.Text" xml:space="preserve">
-    <value>非アクティブのときに自動的にオーバーレイを隠す</value>
-  </data>
-  <data name="menuCopyLogAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 22</value>
-  </data>
-  <data name="menuCopyLogAll.Text" xml:space="preserve">
-    <value>全てのログをコピー</value>
-  </data>
-  <data name="menuLogCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 22</value>
-  </data>
-  <data name="menuLogCopy.Text" xml:space="preserve">
-    <value>選択されたログをコピー</value>
-  </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 6</value>
-  </data>
-  <data name="menuFollowLatestLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 22</value>
-  </data>
-  <data name="menuFollowLatestLog.Text" xml:space="preserve">
-    <value>最新のログを常に表示</value>
-  </data>
-  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 6</value>
-  </data>
-  <data name="menuClearLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 22</value>
-  </data>
-  <data name="menuClearLog.Text" xml:space="preserve">
-    <value>ログをクリア</value>
-  </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>굴림, 9pt</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>676, 410</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>정렬</value>
   </data>
 </root>

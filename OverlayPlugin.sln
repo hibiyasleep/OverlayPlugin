@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverlayPlugin.Core", "OverlayPlugin.Core\OverlayPlugin.Core.csproj", "{DD6D2A9A-4AD4-47B8-A1D0-C8608EA37092}"
 EndProject
@@ -24,6 +24,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverlayPlugin.Common", "OverlayPlugin.Common\OverlayPlugin.Common.csproj", "{423FCBFC-DD3B-415F-BE29-7A4A46614B79}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverlayPlugin", "OverlayPlugin\OverlayPlugin.csproj", "{5D15AD79-050C-4780-986E-0F1138EA1D40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniParseExt", "MiniParseExtension\MiniParseExt.csproj", "{2D83917E-D556-4687-AB28-5BA9499848D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,14 @@ Global
 		{5D15AD79-050C-4780-986E-0F1138EA1D40}.Release|x64.Build.0 = Release|x64
 		{5D15AD79-050C-4780-986E-0F1138EA1D40}.Release|x86.ActiveCfg = Release|x86
 		{5D15AD79-050C-4780-986E-0F1138EA1D40}.Release|x86.Build.0 = Release|x86
+		{2D83917E-D556-4687-AB28-5BA9499848D4}.Debug|x64.ActiveCfg = Debug|x64
+		{2D83917E-D556-4687-AB28-5BA9499848D4}.Debug|x64.Build.0 = Debug|x64
+		{2D83917E-D556-4687-AB28-5BA9499848D4}.Debug|x86.ActiveCfg = Debug|x86
+		{2D83917E-D556-4687-AB28-5BA9499848D4}.Debug|x86.Build.0 = Debug|x86
+		{2D83917E-D556-4687-AB28-5BA9499848D4}.Release|x64.ActiveCfg = Release|x64
+		{2D83917E-D556-4687-AB28-5BA9499848D4}.Release|x64.Build.0 = Release|x64
+		{2D83917E-D556-4687-AB28-5BA9499848D4}.Release|x86.ActiveCfg = Release|x86
+		{2D83917E-D556-4687-AB28-5BA9499848D4}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

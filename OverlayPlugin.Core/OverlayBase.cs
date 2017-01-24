@@ -1,22 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Xilium.CefGlue;
 
 namespace RainbowMage.OverlayPlugin
 {
     public abstract class OverlayBase<TConfig> : IOverlay
         where TConfig: OverlayConfigBase
     {
-        private KeyboardHook hook = new KeyboardHook();
-        protected System.Timers.Timer timer;
-        protected System.Timers.Timer xivWindowTimer;
+        public KeyboardHook hook = new KeyboardHook();
+        public System.Timers.Timer timer;
+        public System.Timers.Timer xivWindowTimer;
         Timer tTimer;
         /// <summary>
         /// オーバーレイがログを出力したときに発生します。
@@ -151,13 +145,13 @@ namespace RainbowMage.OverlayPlugin
             }
         }
 
-        private void TTimer_Tick(object sender, EventArgs e)
+        public void TTimer_Tick(object sender, EventArgs e)
         {
             Navigate(Config.Url);
             tTimer.Enabled = false;
         }
 
-        private ModifierKeys GetModifierKey(Keys modifier)
+        public ModifierKeys GetModifierKey(Keys modifier)
         {
             ModifierKeys modifiers = new ModifierKeys();
             if ((modifier & Keys.Shift) == Keys.Shift)
@@ -184,7 +178,7 @@ namespace RainbowMage.OverlayPlugin
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        private bool CheckUrl(string url)
+        public bool CheckUrl(string url)
         {
             try
             {
@@ -332,7 +326,7 @@ namespace RainbowMage.OverlayPlugin
                 this.Overlay.Url = url;
         }
 
-        protected void Log(LogLevel level, string message)
+        protected virtual void Log(LogLevel level, string message)
         {
             if (OnLog != null)
             {
@@ -352,7 +346,7 @@ namespace RainbowMage.OverlayPlugin
             this.Config.Size = this.Overlay.Size;
         }
 
-        private void NotifyOverlayState()
+        public void NotifyOverlayState()
         {
             var updateScript = string.Format(
                 "document.dispatchEvent(new CustomEvent('onOverlayStateUpdate', {{ detail: {{ isLocked: {0} }} }}));",
