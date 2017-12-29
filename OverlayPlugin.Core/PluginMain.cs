@@ -47,6 +47,8 @@ namespace RainbowMage.OverlayPlugin
                 this.tabPage = pluginScreenSpace;
                 this.label = pluginStatusText;
 
+                AddColumn.Add();
+
 #if DEBUG
                 Logger.Log(LogLevel.Warning, "##################################");
                 Logger.Log(LogLevel.Warning, "    THIS IS THE DEBUG BUILD");
