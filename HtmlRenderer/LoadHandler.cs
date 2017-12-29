@@ -16,9 +16,9 @@ namespace RainbowMage.HtmlRenderer
             this.renderer = renderer;
         }
 
-        protected override void OnLoadStart(CefBrowser browser, CefFrame frame)
+        protected override void OnLoadStart(CefBrowser browser, CefFrame frame, CefTransitionType transitionType)
         {
-            base.OnLoadStart(browser, frame);
+            base.OnLoadStart(browser, frame, CefTransitionType.BlockedFlag);
 
             var message = CefProcessMessage.Create("SetOverlayAPI");
             message.Arguments.SetString(0, frame.Name);
