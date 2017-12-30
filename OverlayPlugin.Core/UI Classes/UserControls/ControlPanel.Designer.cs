@@ -52,28 +52,28 @@ namespace RainbowMage.OverlayPlugin
             this.label_ListEmpty = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.overlayTabUI1 = new RainbowMage.OverlayPlugin.OverlayTabUI();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.overlaysTabPage = new System.Windows.Forms.TabPage();
+            this.overlayLogsTabPage = new System.Windows.Forms.TabPage();
+            this.overlayInformationTabPage = new System.Windows.Forms.TabPage();
+            this.overlayPluginInformationGroupBox = new System.Windows.Forms.GroupBox();
+            this.repo_dev_info = new System.Windows.Forms.Label();
+            this.developers = new System.Windows.Forms.Label();
+            this.screenShotHotkeyGroupBox = new System.Windows.Forms.GroupBox();
+            this.screenShotHotkeyWarningLabel = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.screenShotPathGroupbox = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel.SuspendLayout();
             this.contextMenuLogList.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.overlayTabUI1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.overlaysTabPage.SuspendLayout();
+            this.overlayLogsTabPage.SuspendLayout();
+            this.overlayInformationTabPage.SuspendLayout();
+            this.overlayPluginInformationGroupBox.SuspendLayout();
+            this.screenShotHotkeyGroupBox.SuspendLayout();
+            this.screenShotPathGroupbox.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel
@@ -210,44 +210,80 @@ namespace RainbowMage.OverlayPlugin
             // 
             // overlayTabUI1
             // 
-            this.overlayTabUI1.Controls.Add(this.tabPage1);
-            this.overlayTabUI1.Controls.Add(this.tabPage2);
-            this.overlayTabUI1.Controls.Add(this.tabPage3);
+            this.overlayTabUI1.Controls.Add(this.overlaysTabPage);
+            this.overlayTabUI1.Controls.Add(this.overlayLogsTabPage);
+            this.overlayTabUI1.Controls.Add(this.overlayInformationTabPage);
             resources.ApplyResources(this.overlayTabUI1, "overlayTabUI1");
             this.overlayTabUI1.Name = "overlayTabUI1";
             this.overlayTabUI1.SelectedIndex = 0;
             // 
-            // tabPage1
+            // overlaysTabPage
             // 
-            this.tabPage1.Controls.Add(this.tabControl);
-            this.tabPage1.Controls.Add(this.flowLayoutPanel);
-            resources.ApplyResources(this.tabPage1, "tabPage1");
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.overlaysTabPage.Controls.Add(this.tabControl);
+            this.overlaysTabPage.Controls.Add(this.flowLayoutPanel);
+            resources.ApplyResources(this.overlaysTabPage, "overlaysTabPage");
+            this.overlaysTabPage.Name = "overlaysTabPage";
+            this.overlaysTabPage.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // overlayLogsTabPage
             // 
-            this.tabPage2.Controls.Add(this.listViewLog);
-            resources.ApplyResources(this.tabPage2, "tabPage2");
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.overlayLogsTabPage.Controls.Add(this.listViewLog);
+            resources.ApplyResources(this.overlayLogsTabPage, "overlayLogsTabPage");
+            this.overlayLogsTabPage.Name = "overlayLogsTabPage";
+            this.overlayLogsTabPage.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // overlayInformationTabPage
             // 
-            this.tabPage3.Controls.Add(this.groupBox4);
-            this.tabPage3.Controls.Add(this.groupBox3);
-            this.tabPage3.Controls.Add(this.groupBox1);
-            resources.ApplyResources(this.tabPage3, "tabPage3");
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.overlayInformationTabPage.Controls.Add(this.overlayPluginInformationGroupBox);
+            this.overlayInformationTabPage.Controls.Add(this.screenShotHotkeyGroupBox);
+            this.overlayInformationTabPage.Controls.Add(this.screenShotPathGroupbox);
+            resources.ApplyResources(this.overlayInformationTabPage, "overlayInformationTabPage");
+            this.overlayInformationTabPage.Name = "overlayInformationTabPage";
+            this.overlayInformationTabPage.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // overlayPluginInformationGroupBox
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.button1);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
+            this.overlayPluginInformationGroupBox.Controls.Add(this.repo_dev_info);
+            this.overlayPluginInformationGroupBox.Controls.Add(this.developers);
+            resources.ApplyResources(this.overlayPluginInformationGroupBox, "overlayPluginInformationGroupBox");
+            this.overlayPluginInformationGroupBox.Name = "overlayPluginInformationGroupBox";
+            this.overlayPluginInformationGroupBox.TabStop = false;
+            // 
+            // repo_dev_info
+            // 
+            resources.ApplyResources(this.repo_dev_info, "repo_dev_info");
+            this.repo_dev_info.Name = "repo_dev_info";
+            // 
+            // developers
+            // 
+            resources.ApplyResources(this.developers, "developers");
+            this.developers.Name = "developers";
+            // 
+            // screenShotHotkeyGroupBox
+            // 
+            this.screenShotHotkeyGroupBox.Controls.Add(this.screenShotHotkeyWarningLabel);
+            this.screenShotHotkeyGroupBox.Controls.Add(this.textBox2);
+            resources.ApplyResources(this.screenShotHotkeyGroupBox, "screenShotHotkeyGroupBox");
+            this.screenShotHotkeyGroupBox.Name = "screenShotHotkeyGroupBox";
+            this.screenShotHotkeyGroupBox.TabStop = false;
+            // 
+            // screenShotHotkeyWarningLabel
+            // 
+            resources.ApplyResources(this.screenShotHotkeyWarningLabel, "screenShotHotkeyWarningLabel");
+            this.screenShotHotkeyWarningLabel.Name = "screenShotHotkeyWarningLabel";
+            // 
+            // textBox2
+            // 
+            resources.ApplyResources(this.textBox2, "textBox2");
+            this.textBox2.Name = "textBox2";
+            // 
+            // screenShotPathGroupbox
+            // 
+            this.screenShotPathGroupbox.Controls.Add(this.textBox1);
+            this.screenShotPathGroupbox.Controls.Add(this.button1);
+            resources.ApplyResources(this.screenShotPathGroupbox, "screenShotPathGroupbox");
+            this.screenShotPathGroupbox.Name = "screenShotPathGroupbox";
+            this.screenShotPathGroupbox.TabStop = false;
             // 
             // textBox1
             // 
@@ -259,42 +295,6 @@ namespace RainbowMage.OverlayPlugin
             resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.textBox2);
-            resources.ApplyResources(this.groupBox3, "groupBox3");
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.TabStop = false;
-            // 
-            // textBox2
-            // 
-            resources.ApplyResources(this.textBox2, "textBox2");
-            this.textBox2.Name = "textBox2";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Controls.Add(this.label1);
-            resources.ApplyResources(this.groupBox4, "groupBox4");
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.TabStop = false;
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
             // 
             // ControlPanel
             // 
@@ -308,14 +308,14 @@ namespace RainbowMage.OverlayPlugin
             this.contextMenuLogList.ResumeLayout(false);
             this.tabPageMain.ResumeLayout(false);
             this.overlayTabUI1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
+            this.overlaysTabPage.ResumeLayout(false);
+            this.overlayLogsTabPage.ResumeLayout(false);
+            this.overlayInformationTabPage.ResumeLayout(false);
+            this.overlayPluginInformationGroupBox.ResumeLayout(false);
+            this.screenShotHotkeyGroupBox.ResumeLayout(false);
+            this.screenShotHotkeyGroupBox.PerformLayout();
+            this.screenShotPathGroupbox.ResumeLayout(false);
+            this.screenShotPathGroupbox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -341,17 +341,17 @@ namespace RainbowMage.OverlayPlugin
         private FlowLayoutPanel flowLayoutPanel;
         private Label label_ListEmpty;
         private OverlayTabUI overlayTabUI1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private TabPage tabPage3;
-        private GroupBox groupBox1;
+        private TabPage overlaysTabPage;
+        private TabPage overlayLogsTabPage;
+        private TabPage overlayInformationTabPage;
+        private GroupBox screenShotPathGroupbox;
         private TextBox textBox1;
         private Button button1;
-        private GroupBox groupBox3;
+        private GroupBox screenShotHotkeyGroupBox;
         private TextBox textBox2;
-        private GroupBox groupBox4;
-        private Label label2;
-        private Label label1;
-        private Label label3;
+        private GroupBox overlayPluginInformationGroupBox;
+        private Label repo_dev_info;
+        private Label developers;
+        private Label screenShotHotkeyWarningLabel;
     }
 }
