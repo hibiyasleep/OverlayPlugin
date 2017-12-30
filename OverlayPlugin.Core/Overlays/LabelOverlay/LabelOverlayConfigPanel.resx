@@ -735,6 +735,12 @@
   <data name="&gt;&gt;textUrl.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="buttonSelectFile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonSelectFile.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
   <data name="buttonSelectFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -745,7 +751,7 @@
     <value>0, 0, 0, 1</value>
   </data>
   <data name="buttonSelectFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 19</value>
+    <value>43, 17</value>
   </data>
   <data name="buttonSelectFile.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -773,6 +779,9 @@
   </data>
   <data name="tableLayoutPanel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
+  </data>
+  <data name="tableLayoutPanel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 2</value>
   </data>
   <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
     <value>1</value>

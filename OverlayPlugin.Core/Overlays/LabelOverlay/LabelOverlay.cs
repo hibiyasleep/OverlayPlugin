@@ -15,18 +15,25 @@ namespace RainbowMage.OverlayPlugin.Overlays
         {
             timer.Stop();
 
-            config.TextChanged += (o, e) =>
+            try
             {
-                UpdateOverlayText();
-            };
-            config.HTMLModeChanged += (o, e) =>
+                config.TextChanged += (o, e) =>
+                {
+                    UpdateOverlayText();
+                };
+                config.HTMLModeChanged += (o, e) =>
+                {
+                    UpdateOverlayText();
+                };
+                this.Overlay.Renderer.BrowserLoad += (o, e) =>
+                {
+                    UpdateOverlayText();
+                };
+            }
+            catch(Exception ex)
             {
-                UpdateOverlayText();
-            };
-            this.Overlay.Renderer.BrowserLoad += (o, e) =>
-            {
-                UpdateOverlayText();
-            };
+                Log(LogLevel.Error, "Update: {1}", this.Name, ex);
+            }
         }
 
         private void UpdateOverlayText()
