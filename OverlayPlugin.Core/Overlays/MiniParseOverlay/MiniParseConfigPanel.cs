@@ -69,103 +69,103 @@ namespace RainbowMage.OverlayPlugin.Overlays
         {
             this.config.VisibleChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.checkMiniParseVisible.Checked = e.IsVisible;
                 });
             };
+
             this.config.ClickThruChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.checkMiniParseClickthru.Checked = e.IsClickThru;
                 });
             };
+
             this.config.UrlChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.textMiniParseUrl.Text = e.NewUrl;
                 });
             };
+
             this.config.SortKeyChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.textMiniParseSortKey.Text = e.NewSortKey;
                 });
             };
+
             this.config.SortTypeChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.comboMiniParseSortType.SelectedValue = e.NewSortType;
                 });
             };
+
             this.config.MaxFrameRateChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.nudMaxFrameRate.Value = e.NewFrameRate;
                 });
             };
+
             this.config.GlobalHotkeyEnabledChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.checkEnableGlobalHotkey.Checked = e.NewGlobalHotkeyEnabled;
                     this.textGlobalHotkey.Enabled = this.checkEnableGlobalHotkey.Checked;
                 });
             };
+
             this.config.GlobalHotkeyChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.textGlobalHotkey.Text = Util.GetHotkeyString(this.config.GlobalHotkeyModifiers, e.NewHotkey);
                 });
             };
+
             this.config.GlobalHotkeyModifiersChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.textGlobalHotkey.Text = Util.GetHotkeyString(e.NewHotkey, this.config.GlobalHotkey);
                 });
             };
+
             this.config.LockChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.checkLock.Checked = e.IsLocked;
                 });
             };
+
             this.config.GlobalHotkeyTypeChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.comboHotkeyType.SelectedValue = e.NewHotkeyType;
                 });
             };
         }
 
-        private void InvokeIfRequired(Action action)
-        {
-            if (this.InvokeRequired)
-            {
-                this.Invoke(action);
-            }
-            else
-            {
-                action();
-            }
-        }
-
         private void checkWindowVisible_CheckedChanged(object sender, EventArgs e)
         {
+            if (this.config.Url == "") return;
             this.config.IsVisible = checkMiniParseVisible.Checked;
         }
 
         private void checkMouseClickthru_CheckedChanged(object sender, EventArgs e)
         {
+            if (this.config.Url == "") return;
             this.config.IsClickThru = checkMiniParseClickthru.Checked;
         }
 
@@ -252,6 +252,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
 
         private void checkLock_CheckedChanged(object sender, EventArgs e)
         {
+            if (this.config.Url == "") return;
             this.config.IsLocked = this.checkLock.Checked;
         }
     }
