@@ -119,11 +119,13 @@ namespace RainbowMage.OverlayPlugin.Overlays
         
         private void checkBoxVisible_CheckedChanged(object sender, EventArgs e)
         {
+            if (this.config.Url == "") return;
             this.config.IsVisible = this.checkBoxVisible.Checked;
         }
 
         private void checkBoxClickThru_CheckedChanged(object sender, EventArgs e)
         {
+            if (this.config.Url == "") return;
             this.config.IsClickThru = this.checkBoxClickThru.Checked;
         }
 
@@ -193,6 +195,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
 
         private void checkLock_CheckedChanged(object sender, EventArgs e)
         {
+            if (this.config.Url == "") return;
             this.config.IsLocked = this.checkLock.Checked;
         }
     }
