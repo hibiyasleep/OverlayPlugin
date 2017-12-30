@@ -25,6 +25,10 @@ bld/
 [Oo]bj/
 [Bb]uildX86/
 [Bb]uildX64/
+[Rr]eleasex64/
+[Rr]eleasex86/
+[Rr]elease_x86/
+[Rr]elease_x64/
 
 # Roslyn cache directories
 *.ide/

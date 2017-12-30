@@ -32,16 +32,11 @@ namespace RainbowMage.OverlayPlugin
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlPanel));
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tabControl = new RainbowMage.OverlayPlugin.TabControlExt();
-            this.tableLayoutPanel0 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.tabPageMain = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label_ListEmpty = new System.Windows.Forms.Label();
-            this.buttonRemoveOverlay = new System.Windows.Forms.Button();
             this.buttonNewOverlay = new System.Windows.Forms.Button();
+            this.buttonRemoveOverlay = new System.Windows.Forms.Button();
             this.checkBoxAutoHide = new System.Windows.Forms.CheckBox();
+            this.tabControl = new RainbowMage.OverlayPlugin.TabControlExt();
             this.listViewLog = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -53,85 +48,41 @@ namespace RainbowMage.OverlayPlugin
             this.menuFollowLatestLog = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuClearLog = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.tabControl.SuspendLayout();
-            this.tabPageMain.SuspendLayout();
-            this.tableLayoutPanel0.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.tabPageMain = new System.Windows.Forms.TabPage();
+            this.label_ListEmpty = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.overlayTabUI1 = new RainbowMage.OverlayPlugin.OverlayTabUI();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel.SuspendLayout();
             this.contextMenuLogList.SuspendLayout();
+            this.tabPageMain.SuspendLayout();
+            this.overlayTabUI1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
-            // 
-            resources.ApplyResources(this.splitContainer1, "splitContainer1");
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
-            this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel0);
-            // 
-            // splitContainer1.Panel2
-            // 
-            resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
-            this.splitContainer1.Panel2.Controls.Add(this.listViewLog);
-            //
-            // tableLayoutPanel0
-            //
-            resources.ApplyResources(this.tableLayoutPanel0, "tableLayoutPanel0");
-            this.tableLayoutPanel0.Name = "tableLayoutPanel0";
-            this.tableLayoutPanel0.Controls.Add(this.tabControl, 0, 0);
-            this.tableLayoutPanel0.Controls.Add(this.flowLayoutPanel, 0, 1);
-
-            this.tableLayoutPanel0.ColumnCount = 1;
-            this.tableLayoutPanel0.RowCount = 2;
-            this.tableLayoutPanel0.Dock = DockStyle.Fill;
-            this.tableLayoutPanel0.Margin = new Padding(0);
-            //
             // flowLayoutPanel
-            //
-            resources.ApplyResources(this.flowLayoutPanel, "flowLayoutPanel");
-            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            // 
             this.flowLayoutPanel.Controls.Add(this.buttonNewOverlay);
             this.flowLayoutPanel.Controls.Add(this.buttonRemoveOverlay);
             this.flowLayoutPanel.Controls.Add(this.checkBoxAutoHide);
-
-            this.flowLayoutPanel.Dock = DockStyle.Fill;
-            this.flowLayoutPanel.Margin = new Padding(3, 0, 3, 0);
-            // 
-            // tabControl
-            // 
-            resources.ApplyResources(this.tabControl, "tabControl");
-            // should visible only when empty
-            // this.tabControl.Controls.Add(this.tabPageMain);
-            this.tabControl.Multiline = true;
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            // 
-            // tabPageMain
-            // 
-            resources.ApplyResources(this.tabPageMain, "tabPageMain");
-            this.tabPageMain.Controls.Add(this.label_ListEmpty);
-            this.tabPageMain.Name = "OverlayPlugin";
-            this.tabPageMain.UseVisualStyleBackColor = true;
-            //
-            // label_ListEmpty
-            //
-            resources.ApplyResources(this.label_ListEmpty, "label_ListEmpty");
-            this.label_ListEmpty.Name = "label_ListEmpty";
-            this.label_ListEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_ListEmpty.Dock = DockStyle.Fill;
-            // 
-            // buttonRemoveOverlay
-            // 
-            resources.ApplyResources(this.buttonRemoveOverlay, "buttonRemoveOverlay");
-            this.buttonRemoveOverlay.Name = "buttonRemoveOverlay";
-            this.buttonRemoveOverlay.UseVisualStyleBackColor = true;
-            this.buttonRemoveOverlay.Click += new System.EventHandler(this.buttonRemoveOverlay_Click);
+            resources.ApplyResources(this.flowLayoutPanel, "flowLayoutPanel");
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
             // 
             // buttonNewOverlay
             // 
@@ -140,6 +91,13 @@ namespace RainbowMage.OverlayPlugin
             this.buttonNewOverlay.UseVisualStyleBackColor = true;
             this.buttonNewOverlay.Click += new System.EventHandler(this.buttonNewOverlay_Click);
             // 
+            // buttonRemoveOverlay
+            // 
+            resources.ApplyResources(this.buttonRemoveOverlay, "buttonRemoveOverlay");
+            this.buttonRemoveOverlay.Name = "buttonRemoveOverlay";
+            this.buttonRemoveOverlay.UseVisualStyleBackColor = true;
+            this.buttonRemoveOverlay.Click += new System.EventHandler(this.buttonRemoveOverlay_Click);
+            // 
             // checkBoxAutoHide
             // 
             resources.ApplyResources(this.checkBoxAutoHide, "checkBoxAutoHide");
@@ -147,14 +105,23 @@ namespace RainbowMage.OverlayPlugin
             this.checkBoxAutoHide.UseVisualStyleBackColor = true;
             this.checkBoxAutoHide.CheckedChanged += new System.EventHandler(this.checkBoxAutoHide_CheckedChanged);
             // 
+            // tabControl
+            // 
+            resources.ApplyResources(this.tabControl, "tabControl");
+            this.tabControl.Multiline = true;
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            // 
             // listViewLog
             // 
-            resources.ApplyResources(this.listViewLog, "listViewLog");
+            this.listViewLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listViewLog.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
             this.listViewLog.ContextMenuStrip = this.contextMenuLogList;
+            resources.ApplyResources(this.listViewLog, "listViewLog");
             this.listViewLog.FullRowSelect = true;
             this.listViewLog.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewLog.HideSelection = false;
@@ -178,7 +145,6 @@ namespace RainbowMage.OverlayPlugin
             // 
             // contextMenuLogList
             // 
-            resources.ApplyResources(this.contextMenuLogList, "contextMenuLogList");
             this.contextMenuLogList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuCopyLogAll,
             this.menuLogCopy,
@@ -187,66 +153,174 @@ namespace RainbowMage.OverlayPlugin
             this.toolStripMenuItem2,
             this.menuClearLog});
             this.contextMenuLogList.Name = "contextMenuLogList";
+            resources.ApplyResources(this.contextMenuLogList, "contextMenuLogList");
             // 
             // menuCopyLogAll
             // 
-            resources.ApplyResources(this.menuCopyLogAll, "menuCopyLogAll");
             this.menuCopyLogAll.Name = "menuCopyLogAll";
+            resources.ApplyResources(this.menuCopyLogAll, "menuCopyLogAll");
             this.menuCopyLogAll.Click += new System.EventHandler(this.menuCopyLogAll_Click);
             // 
             // menuLogCopy
             // 
-            resources.ApplyResources(this.menuLogCopy, "menuLogCopy");
             this.menuLogCopy.Name = "menuLogCopy";
+            resources.ApplyResources(this.menuLogCopy, "menuLogCopy");
             this.menuLogCopy.Click += new System.EventHandler(this.menuLogCopy_Click);
             // 
             // toolStripMenuItem1
             // 
-            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             // 
             // menuFollowLatestLog
             // 
-            resources.ApplyResources(this.menuFollowLatestLog, "menuFollowLatestLog");
             this.menuFollowLatestLog.CheckOnClick = true;
             this.menuFollowLatestLog.Name = "menuFollowLatestLog";
+            resources.ApplyResources(this.menuFollowLatestLog, "menuFollowLatestLog");
             this.menuFollowLatestLog.Click += new System.EventHandler(this.menuFollowLatestLog_Click);
             // 
             // toolStripMenuItem2
             // 
-            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
             // 
             // menuClearLog
             // 
-            resources.ApplyResources(this.menuClearLog, "menuClearLog");
             this.menuClearLog.Name = "menuClearLog";
+            resources.ApplyResources(this.menuClearLog, "menuClearLog");
             this.menuClearLog.Click += new System.EventHandler(this.menuClearLog_Click);
+            // 
+            // tabPageMain
+            // 
+            this.tabPageMain.Controls.Add(this.label_ListEmpty);
+            resources.ApplyResources(this.tabPageMain, "tabPageMain");
+            this.tabPageMain.Name = "tabPageMain";
+            this.tabPageMain.UseVisualStyleBackColor = true;
+            // 
+            // label_ListEmpty
+            // 
+            resources.ApplyResources(this.label_ListEmpty, "label_ListEmpty");
+            this.label_ListEmpty.Name = "label_ListEmpty";
+            // 
+            // groupBox2
+            // 
+            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.TabStop = false;
+            // 
+            // overlayTabUI1
+            // 
+            this.overlayTabUI1.Controls.Add(this.tabPage1);
+            this.overlayTabUI1.Controls.Add(this.tabPage2);
+            this.overlayTabUI1.Controls.Add(this.tabPage3);
+            resources.ApplyResources(this.overlayTabUI1, "overlayTabUI1");
+            this.overlayTabUI1.Name = "overlayTabUI1";
+            this.overlayTabUI1.SelectedIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.tabControl);
+            this.tabPage1.Controls.Add(this.flowLayoutPanel);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.listViewLog);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox4);
+            this.tabPage3.Controls.Add(this.groupBox3);
+            this.tabPage3.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.button1);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // textBox1
+            // 
+            resources.ApplyResources(this.textBox1, "textBox1");
+            this.textBox1.Name = "textBox1";
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.textBox2);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.TabStop = false;
+            // 
+            // textBox2
+            // 
+            resources.ApplyResources(this.textBox2, "textBox2");
+            this.textBox2.Name = "textBox2";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label2);
+            this.groupBox4.Controls.Add(this.label1);
+            resources.ApplyResources(this.groupBox4, "groupBox4");
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.TabStop = false;
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
             // 
             // ControlPanel
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.overlayTabUI1);
             this.Name = "ControlPanel";
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.tabControl.ResumeLayout(false);
-            this.tabPageMain.ResumeLayout(false);
-            this.tableLayoutPanel0.ResumeLayout(false);
-            this.tableLayoutPanel0.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
+            this.flowLayoutPanel.ResumeLayout(false);
+            this.flowLayoutPanel.PerformLayout();
             this.contextMenuLogList.ResumeLayout(false);
+            this.tabPageMain.ResumeLayout(false);
+            this.overlayTabUI1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ContextMenuStrip contextMenuLogList;
         private System.Windows.Forms.ToolStripMenuItem menuLogCopy;
         private RainbowMage.OverlayPlugin.TabControlExt tabControl;
@@ -264,8 +338,20 @@ namespace RainbowMage.OverlayPlugin
         private System.Windows.Forms.Button buttonRemoveOverlay;
         private System.Windows.Forms.Button buttonNewOverlay;
         private System.Windows.Forms.CheckBox checkBoxAutoHide;
-        private TableLayoutPanel tableLayoutPanel0;
         private FlowLayoutPanel flowLayoutPanel;
         private Label label_ListEmpty;
+        private OverlayTabUI overlayTabUI1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private TabPage tabPage3;
+        private GroupBox groupBox1;
+        private TextBox textBox1;
+        private Button button1;
+        private GroupBox groupBox3;
+        private TextBox textBox2;
+        private GroupBox groupBox4;
+        private Label label2;
+        private Label label1;
+        private Label label3;
     }
 }
