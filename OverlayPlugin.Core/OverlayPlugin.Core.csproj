@@ -56,16 +56,16 @@
   <ItemGroup>
     <Compile Include="ACTColumnAdder.cs" />
     <Compile Include="ConfigEventArgs.cs" />
-    <Compile Include="Overlays\LogParseConfigPanel.cs">
+    <Compile Include="Overlays\LogParseOverlay\LogParseConfigPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Overlays\LogParseConfigPanel.Designer.cs">
+    <Compile Include="Overlays\LogParseOverlay\LogParseConfigPanel.Designer.cs">
       <DependentUpon>LogParseConfigPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Overlays\LogParseLoglineReader.cs" />
-    <Compile Include="Overlays\LogParseOverlay.cs" />
-    <Compile Include="Overlays\LogParseOverlayAddon.cs" />
-    <Compile Include="Overlays\LogParseOverlayConfig.cs" />
+    <Compile Include="Overlays\LogParseOverlay\LogParseLoglineReader.cs" />
+    <Compile Include="Overlays\LogParseOverlay\LogParseOverlay.cs" />
+    <Compile Include="Overlays\LogParseOverlay\LogParseOverlayAddon.cs" />
+    <Compile Include="Overlays\LogParseOverlay\LogParseOverlayConfig.cs" />
     <Compile Include="UI Classes\UserControls\OverlayTabUI.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -83,25 +83,25 @@
     </Compile>
     <Compile Include="DIBitmap.cs" />
     <Compile Include="KeyboardHook.cs" />
-    <Compile Include="Overlays\MiniParseLoglineReader.cs" />
-    <Compile Include="Overlays\LabelOverlay.cs" />
-    <Compile Include="Overlays\LabelOverlayAddon.cs" />
-    <Compile Include="Overlays\LabelOverlayConfig.cs" />
-    <Compile Include="Overlays\LabelOverlayConfigPanel.cs">
+    <Compile Include="Overlays\MiniParseOverlay\MiniParseLoglineReader.cs" />
+    <Compile Include="Overlays\LabelOverlay\LabelOverlay.cs" />
+    <Compile Include="Overlays\LabelOverlay\LabelOverlayAddon.cs" />
+    <Compile Include="Overlays\LabelOverlay\LabelOverlayConfig.cs" />
+    <Compile Include="Overlays\LabelOverlay\LabelOverlayConfigPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Overlays\LabelOverlayConfigPanel.Designer.cs">
+    <Compile Include="Overlays\LabelOverlay\LabelOverlayConfigPanel.Designer.cs">
       <DependentUpon>LabelOverlayConfigPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Overlays\MiniParseConfigPanel.cs">
+    <Compile Include="Overlays\MiniParseOverlay\MiniParseConfigPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Overlays\MiniParseConfigPanel.Designer.cs">
+    <Compile Include="Overlays\MiniParseOverlay\MiniParseConfigPanel.Designer.cs">
       <DependentUpon>MiniParseConfigPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Overlays\MiniParseOverlay.cs" />
-    <Compile Include="Overlays\MiniParseOverlayAddon.cs" />
-    <Compile Include="Overlays\MiniParseOverlayConfig.cs" />
+    <Compile Include="Overlays\MiniParseOverlay\MiniParseOverlay.cs" />
+    <Compile Include="Overlays\MiniParseOverlay\MiniParseOverlayAddon.cs" />
+    <Compile Include="Overlays\MiniParseOverlay\MiniParseOverlayConfig.cs" />
     <Compile Include="UI Classes\Structures\NativeMethods.cs" />
     <Compile Include="UI Classes\NewOverlayDialog.cs">
       <SubType>Form</SubType>
@@ -117,7 +117,7 @@
     <Compile Include="UI Classes\OverlayForm.Designer.cs">
       <DependentUpon>OverlayForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Overlays\SpellTimerOverlayAddon.cs" />
+    <Compile Include="Overlays\SpellTimerOverlay\SpellTimerOverlayAddon.cs" />
     <Compile Include="PluginConfig.cs" />
     <Compile Include="PluginMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -127,13 +127,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Overlays\SerializableTimerFrameEntry.cs" />
-    <Compile Include="Overlays\SpellTimerOverlayConfig.cs" />
-    <Compile Include="Overlays\SpellTimerOverlay.cs" />
+    <Compile Include="Overlays\SpellTimerOverlay\SpellTimerOverlayConfig.cs" />
+    <Compile Include="Overlays\SpellTimerOverlay\SpellTimerOverlay.cs" />
     <Compile Include="Localization.cs" />
-    <Compile Include="Overlays\SpellTimerConfigPanel.cs">
+    <Compile Include="Overlays\SpellTimerOverlay\SpellTimerConfigPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Overlays\SpellTimerConfigPanel.Designer.cs">
+    <Compile Include="Overlays\SpellTimerOverlay\SpellTimerConfigPanel.Designer.cs">
       <DependentUpon>SpellTimerConfigPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
@@ -171,31 +171,31 @@
     <EmbeddedResource Include="UI Classes\NewOverlayDialog.ko-KR.resx">
       <DependentUpon>NewOverlayDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Overlays\LabelOverlayConfigPanel.ja-JP.resx">
+    <EmbeddedResource Include="Overlays\LabelOverlay\LabelOverlayConfigPanel.ja-JP.resx">
       <DependentUpon>LabelOverlayConfigPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Overlays\LabelOverlayConfigPanel.ko-KR.resx">
+    <EmbeddedResource Include="Overlays\LabelOverlay\LabelOverlayConfigPanel.ko-KR.resx">
       <DependentUpon>LabelOverlayConfigPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Overlays\LabelOverlayConfigPanel.resx">
+    <EmbeddedResource Include="Overlays\LabelOverlay\LabelOverlayConfigPanel.resx">
       <DependentUpon>LabelOverlayConfigPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Overlays\LogParseConfigPanel.ja-JP.resx">
+    <EmbeddedResource Include="Overlays\LogParseOverlay\LogParseConfigPanel.ja-JP.resx">
       <DependentUpon>LogParseConfigPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Overlays\LogParseConfigPanel.ko-KR.resx">
+    <EmbeddedResource Include="Overlays\LogParseOverlay\LogParseConfigPanel.ko-KR.resx">
       <DependentUpon>LogParseConfigPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Overlays\LogParseConfigPanel.resx">
+    <EmbeddedResource Include="Overlays\LogParseOverlay\LogParseConfigPanel.resx">
       <DependentUpon>LogParseConfigPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Overlays\MiniParseConfigPanel.ja-JP.resx">
+    <EmbeddedResource Include="Overlays\MiniParseOverlay\MiniParseConfigPanel.ja-JP.resx">
       <DependentUpon>MiniParseConfigPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Overlays\MiniParseConfigPanel.ko-KR.resx">
+    <EmbeddedResource Include="Overlays\MiniParseOverlay\MiniParseConfigPanel.ko-KR.resx">
       <DependentUpon>MiniParseConfigPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Overlays\MiniParseConfigPanel.resx">
+    <EmbeddedResource Include="Overlays\MiniParseOverlay\MiniParseConfigPanel.resx">
       <DependentUpon>MiniParseConfigPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Classes\NewOverlayDialog.resx">
@@ -204,17 +204,17 @@
     <EmbeddedResource Include="UI Classes\OverlayForm.resx">
       <DependentUpon>OverlayForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Overlays\SpellTimerConfigPanel.ko-KR.resx">
+    <EmbeddedResource Include="Overlays\SpellTimerOverlay\SpellTimerConfigPanel.ko-KR.resx">
       <DependentUpon>SpellTimerConfigPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Overlays\SpellTimerConfigPanel.ja-JP.resx">
+    <EmbeddedResource Include="Overlays\SpellTimerOverlay\SpellTimerConfigPanel.ja-JP.resx">
       <DependentUpon>SpellTimerConfigPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Overlays\SpellTimerConfigPanel.resx">
+    <EmbeddedResource Include="Overlays\SpellTimerOverlay\SpellTimerConfigPanel.resx">
       <DependentUpon>SpellTimerConfigPanel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
