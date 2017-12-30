@@ -54,6 +54,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACTColumnAdder.cs" />
     <Compile Include="ConfigEventArgs.cs" />
     <Compile Include="Overlays\LogParseConfigPanel.cs">
       <SubType>UserControl</SubType>
@@ -65,19 +66,19 @@
     <Compile Include="Overlays\LogParseOverlay.cs" />
     <Compile Include="Overlays\LogParseOverlayAddon.cs" />
     <Compile Include="Overlays\LogParseOverlayConfig.cs" />
-    <Compile Include="UserControls\OverlayTabUI.cs">
+    <Compile Include="UI Classes\UserControls\OverlayTabUI.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserControls\Structures\ColorOverlayer.cs" />
-    <Compile Include="UserControls\Structures\GraphicsExt.cs" />
-    <Compile Include="UserControls\Structures\RECT.cs" />
-    <Compile Include="UserControls\TabControlExt.cs">
+    <Compile Include="UI Classes\Structures\ColorOverlayer.cs" />
+    <Compile Include="UI Classes\Structures\GraphicsExt.cs" />
+    <Compile Include="UI Classes\Structures\RECT.cs" />
+    <Compile Include="UI Classes\UserControls\TabControlExt.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ControlPanel.cs">
+    <Compile Include="UI Classes\UserControls\ControlPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ControlPanel.Designer.cs">
+    <Compile Include="UI Classes\UserControls\ControlPanel.Designer.cs">
       <DependentUpon>ControlPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="DIBitmap.cs" />
@@ -101,19 +102,19 @@
     <Compile Include="Overlays\MiniParseOverlay.cs" />
     <Compile Include="Overlays\MiniParseOverlayAddon.cs" />
     <Compile Include="Overlays\MiniParseOverlayConfig.cs" />
-    <Compile Include="NativeMethods.cs" />
-    <Compile Include="NewOverlayDialog.cs">
+    <Compile Include="UI Classes\Structures\NativeMethods.cs" />
+    <Compile Include="UI Classes\NewOverlayDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewOverlayDialog.Designer.cs">
+    <Compile Include="UI Classes\NewOverlayDialog.Designer.cs">
       <DependentUpon>NewOverlayDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="OverlayBase.cs" />
     <Compile Include="OverlayConfigBase.cs" />
-    <Compile Include="OverlayForm.cs">
+    <Compile Include="UI Classes\OverlayForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OverlayForm.Designer.cs">
+    <Compile Include="UI Classes\OverlayForm.Designer.cs">
       <DependentUpon>OverlayForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Overlays\SpellTimerOverlayAddon.cs" />
@@ -155,19 +156,19 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ControlPanel.ja-JP.resx">
+    <EmbeddedResource Include="UI Classes\UserControls\ControlPanel.ja-JP.resx">
       <DependentUpon>ControlPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlPanel.ko-KR.resx">
+    <EmbeddedResource Include="UI Classes\UserControls\ControlPanel.ko-KR.resx">
       <DependentUpon>ControlPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlPanel.resx">
+    <EmbeddedResource Include="UI Classes\UserControls\ControlPanel.resx">
       <DependentUpon>ControlPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewOverlayDialog.ja-JP.resx">
+    <EmbeddedResource Include="UI Classes\NewOverlayDialog.ja-JP.resx">
       <DependentUpon>NewOverlayDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewOverlayDialog.ko-KR.resx">
+    <EmbeddedResource Include="UI Classes\NewOverlayDialog.ko-KR.resx">
       <DependentUpon>NewOverlayDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Overlays\LabelOverlayConfigPanel.ja-JP.resx">
@@ -197,10 +198,10 @@
     <EmbeddedResource Include="Overlays\MiniParseConfigPanel.resx">
       <DependentUpon>MiniParseConfigPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewOverlayDialog.resx">
+    <EmbeddedResource Include="UI Classes\NewOverlayDialog.resx">
       <DependentUpon>NewOverlayDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OverlayForm.resx">
+    <EmbeddedResource Include="UI Classes\OverlayForm.resx">
       <DependentUpon>OverlayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Overlays\SpellTimerConfigPanel.ko-KR.resx">
