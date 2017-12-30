@@ -43,28 +43,28 @@ namespace RainbowMage.OverlayPlugin.Overlays
         {
             this.config.VisibleChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.checkMiniParseVisible.Checked = e.IsVisible;
                 });
             };
             this.config.ClickThruChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.checkMiniParseClickthru.Checked = e.IsClickThru;
                 });
             };
             this.config.UrlChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.textUrl.Text = e.NewUrl;
                 });
             };
             this.config.GlobalHotkeyEnabledChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.checkEnableGlobalHotkey.Checked = e.NewGlobalHotkeyEnabled;
                     this.textGlobalHotkey.Enabled = this.checkEnableGlobalHotkey.Checked;
@@ -72,51 +72,39 @@ namespace RainbowMage.OverlayPlugin.Overlays
             };
             this.config.GlobalHotkeyChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.textGlobalHotkey.Text = Util.GetHotkeyString(this.config.GlobalHotkeyModifiers, e.NewHotkey);
                 });
             };
             this.config.GlobalHotkeyModifiersChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.textGlobalHotkey.Text = Util.GetHotkeyString(e.NewHotkey, this.config.GlobalHotkey);
                 });
             };
             this.config.LockChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.checkLock.Checked = e.IsLocked;
                 });
             };
             this.config.TextChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.textBox.Text = e.Text;
                 });
             };
             this.config.HTMLModeChanged += (o, e) =>
             {
-                this.InvokeIfRequired(() =>
+                Invoke((MethodInvoker)delegate
                 {
                     this.checkHTML.Checked = e.NewState;
                 });
             };
-        }
-
-        private void InvokeIfRequired(Action action)
-        {
-            if (this.InvokeRequired)
-            {
-                this.Invoke(action);
-            }
-            else
-            {
-                action();
-            }
         }
 
         private void checkWindowVisible_CheckedChanged(object sender, EventArgs e)
