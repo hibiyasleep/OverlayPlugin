@@ -207,6 +207,11 @@ namespace RainbowMage.OverlayPlugin
             }
         }
 
+        [XmlElement("ScreenShotSavePath")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [Browsable(false)]
+        public string ScreenShotSavePath { get; set; }
+
         [XmlElement("Version")]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [Browsable(false)]
@@ -309,6 +314,7 @@ namespace RainbowMage.OverlayPlugin
             this.Overlays = new OverlayConfigList();
             this.Overlays.Add(miniparseOverlayConfig);
             this.Overlays.Add(spellTimerOverlayConfig);
+            this.ScreenShotSavePath = PluginMain.ScreenShotPath;
         }
 
         /// <summary>
