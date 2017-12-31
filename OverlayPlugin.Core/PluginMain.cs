@@ -17,7 +17,7 @@ namespace RainbowMage.OverlayPlugin
         Label label;
         ControlPanel controlPanel;
 
-        public static string ScreenShotPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "ScreenShot");
+        internal static string ScreenShotPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "ScreenShot");
         internal PluginConfig Config { get; private set; }
         internal List<IOverlay> Overlays { get; private set; }
         internal List<IOverlayAddon> Addons { get; set; }
@@ -26,8 +26,8 @@ namespace RainbowMage.OverlayPlugin
 
         public PluginMain(string pluginDirectory, Logger logger)
         {
-            this.PluginDirectory = pluginDirectory;
-            this.Logger = logger;
+            PluginDirectory = pluginDirectory;
+            Logger = logger;
         }
 
         /// <summary>
@@ -40,8 +40,8 @@ namespace RainbowMage.OverlayPlugin
             try
             {
                 ACTColumnAdder.Init();
-                this.tabPage = pluginScreenSpace;
-                this.label = pluginStatusText;
+                tabPage = pluginScreenSpace;
+                label = pluginStatusText;
 #if DEBUG
                 Logger.Log(LogLevel.Warning, "##################################");
                 Logger.Log(LogLevel.Warning, "    THIS IS THE DEBUG BUILD");
@@ -53,37 +53,38 @@ namespace RainbowMage.OverlayPlugin
 
                 // プラグイン読み込み
                 LoadAddons();
-
                 // コンフィグ系読み込み
                 LoadConfig();
 
                 // プラグイン間のメッセージ関連
-                RainbowMage.HtmlRenderer.Renderer.BroadcastMessage += (o, e) =>
+                Renderer.BroadcastMessage += (o, e) =>
                 {
                     Task.Run(() =>
                     {
-                        foreach (var overlay in this.Overlays)
+                        foreach (var overlay in Overlays)
                         {
                             overlay.SendMessage(e.Message);
                         }
                     });
                 };
-                RainbowMage.HtmlRenderer.Renderer.SendMessage += (o, e) =>
+
+                Renderer.SendMessage += (o, e) =>
                 {
                     Task.Run(() =>
                     {
-                        var targetOverlay = this.Overlays.FirstOrDefault(x => x.Name == e.Target);
+                        var targetOverlay = Overlays.FirstOrDefault(x => x.Name == e.Target);
                         if (targetOverlay != null)
                         {
                             targetOverlay.SendMessage(e.Message);
                         }
                     });
                 };
-                RainbowMage.HtmlRenderer.Renderer.OverlayMessage += (o, e) =>
+
+                Renderer.OverlayMessage += (o, e) =>
                 {
                     Task.Run(() =>
                     {
-                        var targetOverlay = this.Overlays.FirstOrDefault(x => x.Name == e.Target);
+                        var targetOverlay = Overlays.FirstOrDefault(x => x.Name == e.Target);
                         if (targetOverlay != null) {
                             targetOverlay.OverlayMessage(e.Message);
                         }
@@ -104,12 +105,12 @@ namespace RainbowMage.OverlayPlugin
                 InitializeOverlays();
 
                 // コンフィグUI系初期化
-                this.controlPanel = new ControlPanel(this, this.Config);
-                this.controlPanel.Dock = DockStyle.Fill;
-                this.tabPage.Controls.Add(this.controlPanel);
+                controlPanel = new ControlPanel(this, Config);
+                controlPanel.Dock = DockStyle.Fill;
+                tabPage.Controls.Add(controlPanel);
 
                 Logger.Log(LogLevel.Info, "InitPlugin: Initialized.");
-                this.label.Text = "Initialized.";
+                label.Text = "Initialized.";
             }
             catch (Exception e)
             {
@@ -120,6 +121,11 @@ namespace RainbowMage.OverlayPlugin
             }
         }
 
+        /// <summary>
+        /// Take Screenshot target overlay (API: window.overlayApi.takeScreenShot( window.overlayApi.takeScreenShot))
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RendererTakeScreenShotEvent(object sender, TakeScreenShotEventArgs e)
         {
             Task.Run(() =>
@@ -330,7 +336,7 @@ namespace RainbowMage.OverlayPlugin
         /// <returns></returns>
         private static string GetConfigPath()
         {
-            var path = System.IO.Path.Combine(
+            var path = Path.Combine(
                 ActGlobals.oFormActMain.AppDataFolder.FullName,
                 "Config",
                 "RainbowMage.OverlayPlugin.config.xml");
