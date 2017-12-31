@@ -261,7 +261,7 @@ namespace RainbowMage.OverlayPlugin
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.GetBaseException().ToString());
             }
         }
     }

@@ -2,7 +2,9 @@
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using System.Windows.Forms;
 using Xilium.CefGlue;
@@ -195,8 +197,6 @@ namespace RainbowMage.OverlayPlugin
 
                 NativeMethods.SelectObject(surfaceBuffer.DeviceContext, hOldBitmap);
                 gScreen.ReleaseHdc(hScreenDC);
-
-                bitmap = Image.FromHbitmap(surfaceBuffer.Handle);
             }
         }
         #endregion
@@ -257,12 +257,37 @@ namespace RainbowMage.OverlayPlugin
                     // TODO: DirtyRect に対応
                     surfaceBuffer.SetSurfaceData(e.Buffer, (uint)(e.Width * e.Height * 4));
 
+                    try
+                    {
+                        var rect = new Rectangle(0, 0, e.Width, e.Height);
+                        using (var bmp = new Bitmap(e.Width, e.Height, PixelFormat.Format32bppArgb))
+                        {
+                            var ScreenShot = bmp.LockBits(rect, ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
+                            int totalSize = (e.Width * e.Height * 4);
+
+                            byte[] TemporaryBuffer = null;
+
+                            if ((TemporaryBuffer == null) || (totalSize > TemporaryBuffer.Length))
+                                TemporaryBuffer = new byte[totalSize];
+
+                            IntPtr screenShotPtr = ScreenShot.Scan0;
+
+                            Marshal.Copy(surfaceBuffer.Bits, TemporaryBuffer, 0, totalSize);
+                            Marshal.Copy(TemporaryBuffer, 0, screenShotPtr, totalSize);
+
+                            bmp.UnlockBits(ScreenShot);
+                            bitmap = new Bitmap(bmp);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.GetBaseException().ToString());
+                    }
+
                     UpdateLayeredWindowBitmap();
                 }
-                catch
-                {
-
-                }
+                catch { }
             }
         }
 
@@ -631,7 +656,6 @@ namespace RainbowMage.OverlayPlugin
             if(bitmap == null)
             {
                 bitmap = new Bitmap(Width, Height);
-
             }
 
             return bitmap;

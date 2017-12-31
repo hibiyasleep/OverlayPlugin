@@ -21,11 +21,11 @@ namespace RainbowMage.OverlayPlugin
         /// </summary>
         public IntPtr Bits { get; private set; }
         /// <summary>
-        /// デバイス独立ビットマップのハンドルを取得します。
+        /// Get the handle of the device independent bitmap.
         /// </summary>
         public IntPtr Handle { get; private set; }
         /// <summary>
-        /// デバイスコンテキストを取得します。
+        /// Gets the device context.
         /// </summary>
         public IntPtr DeviceContext { get; private set; }
         /// <summary>
