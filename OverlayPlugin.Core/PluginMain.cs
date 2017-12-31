@@ -57,42 +57,10 @@ namespace RainbowMage.OverlayPlugin
                 LoadConfig();
 
                 // プラグイン間のメッセージ関連
-                Renderer.BroadcastMessage += (o, e) =>
-                {
-                    Task.Run(() =>
-                    {
-                        foreach (var overlay in Overlays)
-                        {
-                            overlay.SendMessage(e.Message);
-                        }
-                    });
-                };
-
-                Renderer.SendMessage += (o, e) =>
-                {
-                    Task.Run(() =>
-                    {
-                        var targetOverlay = Overlays.FirstOrDefault(x => x.Name == e.Target);
-                        if (targetOverlay != null)
-                        {
-                            targetOverlay.SendMessage(e.Message);
-                        }
-                    });
-                };
-
-                Renderer.OverlayMessage += (o, e) =>
-                {
-                    Task.Run(() =>
-                    {
-                        var targetOverlay = Overlays.FirstOrDefault(x => x.Name == e.Target);
-                        if (targetOverlay != null) {
-                            targetOverlay.OverlayMessage(e.Message);
-                        }
-                    });
-                };
-
+                Renderer.BroadcastMessage += BroadcaseMessageEvent;
+                Renderer.SendMessage += SendMessageEvent;
+                Renderer.OverlayMessage += OverlayMessageEvent;
                 Renderer.TakeScreenShotHandler += RendererTakeScreenShotEvent;
-
                 Renderer.RendererFeatureRequest += RendererFeatureRequestEvent;
                 
                 // ACT 終了時に CEF をシャットダウン（ゾンビ化防止）
@@ -119,6 +87,41 @@ namespace RainbowMage.OverlayPlugin
 
                 throw;
             }
+        }
+
+        private void BroadcaseMessageEvent(object sender, BroadcastMessageEventArgs e)
+        {
+            Task.Run(() =>
+            {
+                foreach (var overlay in Overlays)
+                {
+                    overlay.SendMessage(e.Message);
+                }
+            });
+        }
+
+        private void SendMessageEvent(object sender, SendMessageEventArgs e)
+        {
+            Task.Run(() =>
+            {
+                var targetOverlay = Overlays.FirstOrDefault(x => x.Name == e.Target);
+                if (targetOverlay != null)
+                {
+                    targetOverlay.SendMessage(e.Message);
+                }
+            });
+        }
+
+        private void OverlayMessageEvent(object sender, SendMessageEventArgs e)
+        {
+            Task.Run(() =>
+            {
+                var targetOverlay = Overlays.FirstOrDefault(x => x.Name == e.Target);
+                if (targetOverlay != null)
+                {
+                    targetOverlay.OverlayMessage(e.Message);
+                }
+            });
         }
 
         /// <summary>
