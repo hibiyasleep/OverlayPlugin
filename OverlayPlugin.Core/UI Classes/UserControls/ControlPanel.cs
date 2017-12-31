@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace RainbowMage.OverlayPlugin
 {
@@ -253,6 +254,15 @@ namespace RainbowMage.OverlayPlugin
 
             if (pluginMain.Overlays.Count < 1) return;
             IOverlay selectedOverlay = pluginMain.Overlays[selTab];
+
+            try
+            {
+                selectedOverlay.TakeScreenShot(Path.GetDirectoryName(Application.ExecutablePath));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

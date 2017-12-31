@@ -382,5 +382,10 @@ namespace RainbowMage.OverlayPlugin
         public virtual void OverlayMessage(string message)
         {
         }
+
+        public void TakeScreenShot(string path)
+        {
+            Overlay.GetLaststBitmap().Save(Path.Combine(path, DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss_FFFF") + ".png"), System.Drawing.Imaging.ImageFormat.Png);
+        }
     }
 }
