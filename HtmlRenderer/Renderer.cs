@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xilium.CefGlue;
 
 namespace RainbowMage.HtmlRenderer
@@ -297,22 +294,30 @@ namespace RainbowMage.HtmlRenderer
             this.EndRender();
         }
 
-        public Bitmap GetCurrentFrame()
-        {
-            var bmp = new Bitmap(100, 100);
-            return bmp;
-        }
-
         static bool initialized = false;
 
         public static void Initialize()
         {
+            Initialize("");
+        }
+
+        public static void Initialize(string MainApplicationPath)
+        {
             if (!initialized)
             {
                 CefRuntime.Load();
+                var Cache = "Cache";
+                var Userdata = "UserData";
+
+                if(MainApplicationPath != "")
+                {
+                    Cache = System.IO.Path.Combine(MainApplicationPath, "Cache");
+                    Userdata = System.IO.Path.Combine(MainApplicationPath, "UserData");
+                }
 
                 var cefMainArgs = new CefMainArgs(new string[0]);
                 var cefApp = new App();
+
                 if (CefRuntime.ExecuteProcess(cefMainArgs, cefApp, IntPtr.Zero) != -1)
                 {
                     Console.Error.WriteLine("Couldn't execute secondary process.");
@@ -322,7 +327,8 @@ namespace RainbowMage.HtmlRenderer
                 {
                     RemoteDebuggingPort = 9901,
                     Locale = System.Globalization.CultureInfo.CurrentCulture.Name,
-                    CachePath = "cache", // ToDo - GetACTPath->ACT\Cache
+                    CachePath = Cache,
+                    UserDataPath = Userdata,
                     SingleProcess = true,
                     MultiThreadedMessageLoop = true,
                     LogSeverity = CefLogSeverity.Disable
