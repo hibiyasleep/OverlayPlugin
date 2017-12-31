@@ -357,9 +357,7 @@ namespace RainbowMage.OverlayPlugin
                 "document.dispatchEvent(new CustomEvent('onOverlayStateUpdate', {{ detail: {{ isLocked: {0} }} }}));",
                 this.Config.IsLocked ? "true" : "false");
 
-            if (this.Overlay != null &&
-                this.Overlay.Renderer != null &&
-                this.Overlay.Renderer.Browser != null)
+            if (BrowserVerifiedCheck())
             {
                 this.Overlay.Renderer.ExecuteScript(updateScript);
             }
@@ -371,16 +369,20 @@ namespace RainbowMage.OverlayPlugin
                 "document.dispatchEvent(new CustomEvent('onBroadcastMessageReceive', {{ detail: {{ message: \"{0}\" }} }}));",
                 Util.CreateJsonSafeString(message));
 
-            if (this.Overlay != null &&
-                this.Overlay.Renderer != null &&
-                this.Overlay.Renderer.Browser != null)
+            if (BrowserVerifiedCheck())
             {
                 this.Overlay.Renderer.ExecuteScript(script);
             }
         }
 
+        private bool BrowserVerifiedCheck()
+        {
+            return Overlay != null && Overlay.Renderer != null && Overlay.Renderer.Browser != null;
+        }
+
         public virtual void OverlayMessage(string message)
         {
+
         }
 
         public void TakeScreenShot(string path)
