@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,12 +45,14 @@ namespace RainbowMage.HtmlRenderer
             }
         }
 
-        public string OverlayVersion {
+        public string OverlayVersion
+        {
             get { return overlayVersion; }
         }
 
-        public string OverlayName {
-          get { return overlayName; }
+        public string OverlayName
+        {
+            get { return overlayName; }
         }
 
         private Client Client { get; set; }
@@ -252,69 +255,52 @@ namespace RainbowMage.HtmlRenderer
 
         internal void OnPaint(CefBrowser browser, IntPtr buffer, int width, int height, CefRectangle[] dirtyRects)
         {
-            if (Render != null)
-            {
-                Render(this, new RenderEventArgs(buffer, width, height, dirtyRects));
-            }
+            Render?.Invoke(this, new RenderEventArgs(buffer, width, height, dirtyRects));
         }
 
         internal void OnError(CefErrorCode errorCode, string errorText, string failedUrl)
         {
-            if (BrowserError != null)
-            {
-                BrowserError(this, new BrowserErrorEventArgs(errorCode, errorText, failedUrl));
-            }
+            BrowserError?.Invoke(this, new BrowserErrorEventArgs(errorCode, errorText, failedUrl));
         }
 
         internal void OnLoad(CefBrowser browser, CefFrame frame, int httpStatusCode)
         {
-            if (BrowserLoad != null)
-            {
-                BrowserLoad(this, new BrowserLoadEventArgs(httpStatusCode, frame.Url));
-            }
+            BrowserLoad?.Invoke(this, new BrowserLoadEventArgs(httpStatusCode, frame.Url));
         }
 
         internal void OnConsoleLog(CefBrowser browser, string message, string source, int line)
         {
-            if (BrowserConsoleLog != null)
-            {
-                BrowserConsoleLog(this, new BrowserConsoleLogEventArgs(message, source, line));
-            }
+            BrowserConsoleLog?.Invoke(this, new BrowserConsoleLogEventArgs(message, source, line));
         }
 
         internal static void OnBroadcastMessage(object sender, BroadcastMessageEventArgs e)
         {
-            if (BroadcastMessage != null)
-            {
-                BroadcastMessage(sender, e);
-            }
+            BroadcastMessage?.Invoke(sender, e);
         }
 
         internal static void OnSendMessage(object sender, SendMessageEventArgs e)
         {
-            if (SendMessage != null)
-            {
-                SendMessage(sender, e);
-            }
+            SendMessage?.Invoke(sender, e);
         }
 
         internal static void OnOverlayMessage(object sender, SendMessageEventArgs e) {
-            if (OverlayMessage != null) {
-                OverlayMessage(sender, e);
-            }
+            OverlayMessage?.Invoke(sender, e);
         }
 
         internal static void OnRendererFeatureRequest(object sender, RendererFeatureRequestEventArgs e)
         {
-            if (RendererFeatureRequest != null)
-            {
-                RendererFeatureRequest(sender, e);
-            }
+            RendererFeatureRequest?.Invoke(sender, e);
         }
 
         public void Dispose()
         {
             this.EndRender();
+        }
+
+        public Bitmap GetCurrentFrame()
+        {
+            var bmp = new Bitmap(100, 100);
+            return bmp;
         }
 
         static bool initialized = false;
@@ -334,15 +320,15 @@ namespace RainbowMage.HtmlRenderer
 
                 var cefSettings = new CefSettings
                 {
+                    RemoteDebuggingPort = 9901,
                     Locale = System.Globalization.CultureInfo.CurrentCulture.Name,
-                    CachePath = "cache",
+                    CachePath = "cache", // ToDo - GetACTPath->ACT\Cache
                     SingleProcess = true,
                     MultiThreadedMessageLoop = true,
                     LogSeverity = CefLogSeverity.Disable
                 };
 
                 CefRuntime.Initialize(cefMainArgs, cefSettings, cefApp, IntPtr.Zero);
-
                 initialized = true;
             }
         }

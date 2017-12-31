@@ -19,7 +19,6 @@ namespace RainbowMage.HtmlRenderer
         protected override bool OnConsoleMessage(CefBrowser browser, string message, string source, int line)
         {
             this.renderer.OnConsoleLog(browser, message, source, line);
-
             return base.OnConsoleMessage(browser, message, source, line);
         }
     }
