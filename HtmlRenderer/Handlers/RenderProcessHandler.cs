@@ -21,10 +21,19 @@ namespace RainbowMage.HtmlRenderer
             {
                 Renderer.OnOverlayMessage(o, e);
             };
-            this.builtinFunctionHandler.EndEncounter += (o, e) =>
-            {
-                Renderer.OnRendererFeatureRequest(o, new RendererFeatureRequestEventArgs("EndEncounter"));
-            };
+
+            this.builtinFunctionHandler.EndEncounter += EndEncounterEvent;
+            this.builtinFunctionHandler.TakeScreenShot += TakeScreenShotEvent;
+        }
+
+        private void EndEncounterEvent(object sender, EndEncounterEventArgs e)
+        {
+            Renderer.OnRendererFeatureRequest(sender, new RendererFeatureRequestEventArgs("EndEncounter"));
+        }
+
+        private void TakeScreenShotEvent(object sender, TakeScreenShotEventArgs e)
+        {
+            Renderer.OnTakeScreenShot(sender, e);
         }
 
         protected override bool OnProcessMessageReceived(CefBrowser browser, CefProcessId sourceProcess, CefProcessMessage message)
@@ -42,6 +51,10 @@ namespace RainbowMage.HtmlRenderer
                 {
                     var apiObject = CefV8Value.CreateObject(null);
 
+                    var takeScreenShotFunction = CefV8Value.CreateFunction(
+                         BuiltinFunctionHandler.TakeScreenShotFunctionName,
+                         builtinFunctionHandler);
+
                     var broadcastMessageFunction = CefV8Value.CreateFunction(
                         BuiltinFunctionHandler.BroadcastMessageFunctionName,
                         builtinFunctionHandler); 
@@ -57,6 +70,11 @@ namespace RainbowMage.HtmlRenderer
 
                     apiObject.SetValue("version", CefV8Value.CreateString(overlayVersion), CefV8PropertyAttribute.ReadOnly);
                     apiObject.SetValue("overlayName", CefV8Value.CreateString(overlayName), CefV8PropertyAttribute.ReadOnly);
+
+                    apiObject.SetValue(
+                        BuiltinFunctionHandler.TakeScreenShotFunctionName,
+                        takeScreenShotFunction,
+                        CefV8PropertyAttribute.ReadOnly);
 
                     apiObject.SetValue(
                         BuiltinFunctionHandler.BroadcastMessageFunctionName,

@@ -235,7 +235,7 @@
     <value>tabControl</value>
   </data>
   <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
-    <value>RainbowMage.OverlayPlugin.TabControlExt, OverlayPlugin.Core, Version=0.3.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>RainbowMage.OverlayPlugin.TabControlExt, OverlayPlugin.Core, Version=0.3.4.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
     <value>overlaysTabPage</value>
@@ -505,7 +505,7 @@
     <value>10, 37</value>
   </data>
   <data name="repo_dev_info.Size" type="System.Drawing.Size, System.Drawing">
-    <value>635, 240</value>
+    <value>635, 261</value>
   </data>
   <data name="repo_dev_info.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -556,13 +556,13 @@
     <value>Fill</value>
   </data>
   <data name="overlayPluginInformationGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 127</value>
+    <value>2, 106</value>
   </data>
   <data name="overlayPluginInformationGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 4, 10, 10</value>
   </data>
   <data name="overlayPluginInformationGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>655, 287</value>
+    <value>655, 308</value>
   </data>
   <data name="overlayPluginInformationGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -582,56 +582,32 @@
   <data name="&gt;&gt;overlayPluginInformationGroupBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="screenShotHotkeyWarningLabel.AutoSize" type="System.Boolean, mscorlib">
+  <data name="justLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="screenShotHotkeyWarningLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 49</value>
+  <data name="justLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 23</value>
   </data>
-  <data name="screenShotHotkeyWarningLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 15</value>
+  <data name="justLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>334, 15</value>
   </data>
-  <data name="screenShotHotkeyWarningLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="justLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="screenShotHotkeyWarningLabel.Text" xml:space="preserve">
-    <value>ScreenShot Hotkey Setting Required Restart Plugin</value>
+  <data name="justLabel.Text" xml:space="preserve">
+    <value>Ctrl + PrintScreen Pressed Take Selected Overlay Tab Captured</value>
   </data>
-  <data name="&gt;&gt;screenShotHotkeyWarningLabel.Name" xml:space="preserve">
-    <value>screenShotHotkeyWarningLabel</value>
+  <data name="&gt;&gt;justLabel.Name" xml:space="preserve">
+    <value>justLabel</value>
   </data>
-  <data name="&gt;&gt;screenShotHotkeyWarningLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;justLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;screenShotHotkeyWarningLabel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;justLabel.Parent" xml:space="preserve">
     <value>screenShotHotkeyGroupBox</value>
   </data>
-  <data name="&gt;&gt;screenShotHotkeyWarningLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;justLabel.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="textBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 20</value>
-  </data>
-  <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>635, 23</value>
-  </data>
-  <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
-    <value>textBox2</value>
-  </data>
-  <data name="&gt;&gt;textBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox2.Parent" xml:space="preserve">
-    <value>screenShotHotkeyGroupBox</value>
-  </data>
-  <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="screenShotHotkeyGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -643,7 +619,7 @@
     <value>10, 4, 10, 10</value>
   </data>
   <data name="screenShotHotkeyGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>655, 74</value>
+    <value>655, 53</value>
   </data>
   <data name="screenShotHotkeyGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -663,28 +639,28 @@
   <data name="&gt;&gt;screenShotHotkeyGroupBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="textBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="screenShotPath.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="screenShotPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 20</value>
   </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="screenShotPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>596, 23</value>
   </data>
-  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="screenShotPath.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
-    <value>textBox1</value>
+  <data name="&gt;&gt;screenShotPath.Name" xml:space="preserve">
+    <value>screenShotPath</value>
   </data>
-  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;screenShotPath.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;screenShotPath.Parent" xml:space="preserve">
     <value>screenShotPathGroupbox</value>
   </data>
-  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;screenShotPath.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="screenShotPathSelectButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -793,7 +769,7 @@
     <value>overlayTabUI1</value>
   </data>
   <data name="&gt;&gt;overlayTabUI1.Type" xml:space="preserve">
-    <value>RainbowMage.OverlayPlugin.OverlayTabUI, OverlayPlugin.Core, Version=0.3.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>RainbowMage.OverlayPlugin.OverlayTabUI, OverlayPlugin.Core, Version=0.3.4.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;overlayTabUI1.Parent" xml:space="preserve">
     <value>$this</value>

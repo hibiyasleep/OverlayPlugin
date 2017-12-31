@@ -17,6 +17,7 @@ namespace RainbowMage.OverlayPlugin
         Label label;
         ControlPanel controlPanel;
 
+        public static string ScreenShotPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "ScreenShot");
         internal PluginConfig Config { get; private set; }
         internal List<IOverlay> Overlays { get; private set; }
         internal List<IOverlayAddon> Addons { get; set; }
@@ -38,9 +39,9 @@ namespace RainbowMage.OverlayPlugin
         {
             try
             {
+                ACTColumnAdder.Init();
                 this.tabPage = pluginScreenSpace;
                 this.label = pluginStatusText;
-
 #if DEBUG
                 Logger.Log(LogLevel.Warning, "##################################");
                 Logger.Log(LogLevel.Warning, "    THIS IS THE DEBUG BUILD");
@@ -88,18 +89,11 @@ namespace RainbowMage.OverlayPlugin
                         }
                     });
                 };
-                RainbowMage.HtmlRenderer.Renderer.RendererFeatureRequest += (o, e) =>
-                {
-                    Task.Run(() =>
-                    {
-                        if (e.Request == "EndEncounter")
-                        {
-                            ActGlobals.oFormActMain.EndCombat(true);
-                        }
-                    });
-                };
 
+                Renderer.TakeScreenShotHandler += RendererTakeScreenShotEvent;
 
+                Renderer.RendererFeatureRequest += RendererFeatureRequestEvent;
+                
                 // ACT 終了時に CEF をシャットダウン（ゾンビ化防止）
                 Application.ApplicationExit += (o, e) =>
                 {
@@ -124,6 +118,32 @@ namespace RainbowMage.OverlayPlugin
 
                 throw;
             }
+        }
+
+        private void RendererTakeScreenShotEvent(object sender, TakeScreenShotEventArgs e)
+        {
+            Task.Run(() =>
+            {
+                foreach(var i in Overlays)
+                {
+                    if(i.Name == e.Message)
+                    {
+                        i.TakeScreenShot(ScreenShotPath);
+                        break;
+                    }
+                }
+            });
+        }
+
+        private void RendererFeatureRequestEvent(object sender, RendererFeatureRequestEventArgs e)
+        {
+            Task.Run(() =>
+            {
+                if (e.Request == "EndEncounter")
+                {
+                    ActGlobals.oFormActMain.EndCombat(true);
+                }
+            });
         }
 
         /// <summary>
