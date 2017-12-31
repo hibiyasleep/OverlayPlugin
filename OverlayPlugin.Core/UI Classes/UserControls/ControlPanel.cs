@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Threading;
+using System.IO;
 
 namespace RainbowMage.OverlayPlugin
 {
@@ -258,15 +259,6 @@ namespace RainbowMage.OverlayPlugin
 
             if (pluginMain.Overlays.Count < 1) return;
             IOverlay selectedOverlay = pluginMain.Overlays[selTab];
-
-            try
-            {
-                selectedOverlay.TakeScreenShot();
-            }
-            catch
-            {
-
-            }
         }
     }
 }
