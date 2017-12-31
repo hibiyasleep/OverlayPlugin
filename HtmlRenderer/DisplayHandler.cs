@@ -1,4 +1,9 @@
-﻿using Xilium.CefGlue;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Xilium.CefGlue;
 
 namespace RainbowMage.HtmlRenderer
 {
@@ -14,6 +19,7 @@ namespace RainbowMage.HtmlRenderer
         protected override bool OnConsoleMessage(CefBrowser browser, string message, string source, int line)
         {
             this.renderer.OnConsoleLog(browser, message, source, line);
+
             return base.OnConsoleMessage(browser, message, source, line);
         }
     }

@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
@@ -218,7 +222,7 @@ namespace RainbowMage.OverlayPlugin
             }
             set
             {
-                if (this.globalHotkeyType != value)
+                if(this.globalHotkeyType != value)
                 {
                     this.globalHotkeyType = value;
                     if (GlobalHotkeyTypeChanged != null)
@@ -228,7 +232,7 @@ namespace RainbowMage.OverlayPlugin
                 }
             }
         }
-
+        
         private bool isLocked;
         /// <summary>
         /// オーバーレイがマウスの入力を透過するかどうかを取得または設定します。
