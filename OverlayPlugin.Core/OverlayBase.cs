@@ -385,7 +385,7 @@ namespace RainbowMage.OverlayPlugin
 
         public void TakeScreenShot(string path)
         {
-            Overlay.LatestBitmap?.Save(Path.Combine(path, DateTime.Now.ToString("'ScreenShot_'yyyy-MM-dd-HH-mm-ss-fff'.png'")), System.Drawing.Imaging.ImageFormat.Png);
+            Overlay.LatestBitmap?.Save(Path.Combine(path, string.Format("{0}{1}{2}", "ScreenShot_", DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss-fff"), ".png")), System.Drawing.Imaging.ImageFormat.Png);
         }
     }
 }
