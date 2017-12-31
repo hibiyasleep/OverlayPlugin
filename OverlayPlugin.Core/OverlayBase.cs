@@ -1,13 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Xilium.CefGlue;
 
 namespace RainbowMage.OverlayPlugin
 {
     public abstract class OverlayBase<TConfig> : IOverlay
-        where TConfig : OverlayConfigBase
+        where TConfig: OverlayConfigBase
     {
         private KeyboardHook hook = new KeyboardHook();
         protected System.Timers.Timer timer;
@@ -329,7 +334,7 @@ namespace RainbowMage.OverlayPlugin
 
         public virtual void Navigate(string url)
         {
-            this.Overlay.Url = url;
+                this.Overlay.Url = url;
         }
 
         protected void Log(LogLevel level, string message)
