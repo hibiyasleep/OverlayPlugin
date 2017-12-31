@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+
 namespace RainbowMage.OverlayPlugin
 {
     public sealed class KeyboardHook : IDisposable

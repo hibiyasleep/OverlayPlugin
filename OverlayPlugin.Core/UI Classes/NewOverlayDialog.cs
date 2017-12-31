@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RainbowMage.OverlayPlugin
@@ -26,16 +19,14 @@ namespace RainbowMage.OverlayPlugin
             InitializeComponent();
 
             this.pluginMain = pluginMain;
-
-            // Default validator
+            
             this.NameValidator = (name) => { return name != null; };
 
             foreach (var addon in pluginMain.Addons)
             {
                 comboBox1.Items.Add(addon);
             }
-
-            //comboBox1.ValueMember = "OverlayType";
+            
             comboBox1.DisplayMember = "Name";
             comboBox1.SelectedIndex = 0;
         }
@@ -47,7 +38,7 @@ namespace RainbowMage.OverlayPlugin
                 if (comboBox1.SelectedItem == null)
                 {
                     MessageBox.Show("Please select overlay type.");
-                    this.DialogResult = System.Windows.Forms.DialogResult.None;
+                    this.DialogResult = DialogResult.None;
                 }
                 else
                 {
@@ -57,7 +48,7 @@ namespace RainbowMage.OverlayPlugin
             }
             else
             {
-                this.DialogResult = System.Windows.Forms.DialogResult.None;
+                this.DialogResult = DialogResult.None;
             }
         }
 
