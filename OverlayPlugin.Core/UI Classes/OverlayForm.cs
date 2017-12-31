@@ -1,6 +1,5 @@
 ﻿using RainbowMage.HtmlRenderer;
 using System;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -12,7 +11,6 @@ namespace RainbowMage.OverlayPlugin
 {
     public partial class OverlayForm : Form
     {
-        private Bitmap LaststFrame;
         private DIBitmap surfaceBuffer;
         private object surfaceBufferLocker = new object();
         private int maxFrameRate;
@@ -37,7 +35,7 @@ namespace RainbowMage.OverlayPlugin
 
         private bool isClickThru;
         public bool IsClickThru
-        { 
+        {
             get
             {
                 return this.isClickThru;
@@ -56,10 +54,10 @@ namespace RainbowMage.OverlayPlugin
 
         public bool Locked { get; set; }
 
-        public OverlayForm(string overlayVersion,string overlayName, string url, int maxFrameRate = 30)
+        public OverlayForm(string overlayVersion, string overlayName, string url, int maxFrameRate = 30)
         {
             InitializeComponent();
-            Renderer.Initialize(System.IO.Path.GetDirectoryName(Application.ExecutablePath));
+            Renderer.Initialize();
 
             this.maxFrameRate = maxFrameRate;
             this.Renderer = new Renderer(overlayVersion, overlayName);
@@ -78,14 +76,14 @@ namespace RainbowMage.OverlayPlugin
         }
 
         #region Layered window related stuffs
-        protected override CreateParams CreateParams
+        protected override System.Windows.Forms.CreateParams CreateParams
         {
             get
             {
-                const int WS_EX_TOPMOST = 0x8;
-                const int WS_EX_LAYERED = 0x80000;
+                const int WS_EX_TOPMOST = 0x00000008;
+                const int WS_EX_LAYERED = 0x00080000;
                 const int CP_NOCLOSE_BUTTON = 0x200;
-                const int WS_EX_NOACTIVATE = 0x8000000;
+                const int WS_EX_NOACTIVATE = 0x08000000;
 
                 var cp = base.CreateParams;
                 cp.ExStyle = cp.ExStyle | WS_EX_TOPMOST | WS_EX_LAYERED | WS_EX_NOACTIVATE;
@@ -116,7 +114,7 @@ namespace RainbowMage.OverlayPlugin
                     return;
                 }
             }
-            
+
             if (m.Msg == NativeMethods.WM_KEYDOWN ||
                 m.Msg == NativeMethods.WM_KEYUP ||
                 m.Msg == NativeMethods.WM_CHAR ||
@@ -126,11 +124,6 @@ namespace RainbowMage.OverlayPlugin
             {
                 OnKeyEvent(ref m);
             }
-        }
-
-        public Bitmap GetCurrentFrame()
-        {
-            return LaststFrame;
         }
 
         private void UpdateLayeredWindowBitmap()
@@ -170,10 +163,17 @@ namespace RainbowMage.OverlayPlugin
                 {
                     if (!this.terminated)
                     {
-                        Invoke((MethodInvoker)delegate
+                        if (this.InvokeRequired)
+                        {
+                            this.Invoke(new Action(() =>
+                            {
+                                handle = this.Handle;
+                            }));
+                        }
+                        else
                         {
                             handle = this.Handle;
-                        });
+                        }
 
                         NativeMethods.UpdateLayeredWindow(
                             handle,
@@ -194,8 +194,6 @@ namespace RainbowMage.OverlayPlugin
 
                 NativeMethods.SelectObject(surfaceBuffer.DeviceContext, hOldBitmap);
                 gScreen.ReleaseHdc(hScreenDC);
-
-                LaststFrame = Image.FromHbitmap(hScreenDC);
             }
         }
         #endregion
@@ -255,11 +253,12 @@ namespace RainbowMage.OverlayPlugin
 
                     // TODO: DirtyRect に対応
                     surfaceBuffer.SetSurfaceData(e.Buffer, (uint)(e.Width * e.Height * 4));
+
                     UpdateLayeredWindowBitmap();
                 }
                 catch
                 {
-                    
+
                 }
             }
         }
@@ -378,17 +377,17 @@ namespace RainbowMage.OverlayPlugin
 
         private CefMouseButtonType GetMouseButtonType(MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-                return CefMouseButtonType.Left;
+                return Xilium.CefGlue.CefMouseButtonType.Left;
             }
-            else if (e.Button == MouseButtons.Middle)
+            else if (e.Button == System.Windows.Forms.MouseButtons.Middle)
             {
-                return CefMouseButtonType.Middle;
+                return Xilium.CefGlue.CefMouseButtonType.Middle;
             }
-            else if (e.Button == MouseButtons.Right)
+            else if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
-                return CefMouseButtonType.Right;
+                return Xilium.CefGlue.CefMouseButtonType.Right;
             }
             else
             {
@@ -491,7 +490,7 @@ namespace RainbowMage.OverlayPlugin
                         return xivProc.MainWindowHandle;
                     }
                 }
-                catch (Win32Exception) { }
+                catch (System.ComponentModel.Win32Exception) { }
 
                 return IntPtr.Zero;
             }
