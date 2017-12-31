@@ -1,16 +1,10 @@
 ﻿using RainbowMage.HtmlRenderer;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Linq;
 using System.Security.Permissions;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Xilium.CefGlue;
 
@@ -83,14 +77,14 @@ namespace RainbowMage.OverlayPlugin
         }
 
         #region Layered window related stuffs
-        protected override System.Windows.Forms.CreateParams CreateParams
+        protected override CreateParams CreateParams
         {
             get
             {
-                const int WS_EX_TOPMOST = 0x00000008;
-                const int WS_EX_LAYERED = 0x00080000;
+                const int WS_EX_TOPMOST = 0x8;
+                const int WS_EX_LAYERED = 0x80000;
                 const int CP_NOCLOSE_BUTTON = 0x200;
-                const int WS_EX_NOACTIVATE = 0x08000000;
+                const int WS_EX_NOACTIVATE = 0x8000000;
 
                 var cp = base.CreateParams;
                 cp.ExStyle = cp.ExStyle | WS_EX_TOPMOST | WS_EX_LAYERED | WS_EX_NOACTIVATE;
@@ -133,6 +127,11 @@ namespace RainbowMage.OverlayPlugin
             }
         }
 
+        public void GetCurrentFrame()
+        {
+
+        }
+
         private void UpdateLayeredWindowBitmap()
         {
             if (surfaceBuffer.IsDisposed || this.terminated) { return; }
@@ -170,17 +169,10 @@ namespace RainbowMage.OverlayPlugin
                 {
                     if (!this.terminated)
                     {
-                        if (this.InvokeRequired)
-                        {
-                            this.Invoke(new Action(() =>
-                            {
-                                handle = this.Handle;
-                            }));
-                        }
-                        else
+                        Invoke((MethodInvoker)delegate
                         {
                             handle = this.Handle;
-                        }
+                        });
 
                         NativeMethods.UpdateLayeredWindow(
                             handle,
@@ -260,7 +252,6 @@ namespace RainbowMage.OverlayPlugin
 
                     // TODO: DirtyRect に対応
                     surfaceBuffer.SetSurfaceData(e.Buffer, (uint)(e.Width * e.Height * 4));
-
                     UpdateLayeredWindowBitmap();
                 }
                 catch
@@ -384,17 +375,17 @@ namespace RainbowMage.OverlayPlugin
 
         private CefMouseButtonType GetMouseButtonType(MouseEventArgs e)
         {
-            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            if (e.Button == MouseButtons.Left)
             {
-                return Xilium.CefGlue.CefMouseButtonType.Left;
+                return CefMouseButtonType.Left;
             }
-            else if (e.Button == System.Windows.Forms.MouseButtons.Middle)
+            else if (e.Button == MouseButtons.Middle)
             {
-                return Xilium.CefGlue.CefMouseButtonType.Middle;
+                return CefMouseButtonType.Middle;
             }
-            else if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            else if (e.Button == MouseButtons.Right)
             {
-                return Xilium.CefGlue.CefMouseButtonType.Right;
+                return CefMouseButtonType.Right;
             }
             else
             {
@@ -497,7 +488,7 @@ namespace RainbowMage.OverlayPlugin
                         return xivProc.MainWindowHandle;
                     }
                 }
-                catch (System.ComponentModel.Win32Exception) { }
+                catch (Win32Exception) { }
 
                 return IntPtr.Zero;
             }

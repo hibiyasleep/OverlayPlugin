@@ -117,78 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;buttonNewOverlay.Name" xml:space="preserve">
-    <value>buttonNewOverlay</value>
-  </data>
-  <data name="&gt;&gt;buttonNewOverlay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonNewOverlay.Parent" xml:space="preserve">
-    <value>flowLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;buttonNewOverlay.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;buttonRemoveOverlay.Name" xml:space="preserve">
-    <value>buttonRemoveOverlay</value>
-  </data>
-  <data name="&gt;&gt;buttonRemoveOverlay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonRemoveOverlay.Parent" xml:space="preserve">
-    <value>flowLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;buttonRemoveOverlay.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAutoHide.Name" xml:space="preserve">
-    <value>checkBoxAutoHide</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAutoHide.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAutoHide.Parent" xml:space="preserve">
-    <value>flowLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAutoHide.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="flowLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="flowLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 0</value>
-  </data>
-  <data name="flowLayoutPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
-  </data>
-  <data name="flowLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>655, 36</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="flowLayoutPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel.Name" xml:space="preserve">
-    <value>flowLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel.Parent" xml:space="preserve">
-    <value>overlaysTabPage</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="buttonNewOverlay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
   <data name="buttonNewOverlay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="buttonNewOverlay.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 4</value>
   </data>
@@ -198,6 +134,7 @@
   <data name="buttonNewOverlay.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 29</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonNewOverlay.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -282,6 +219,33 @@
   <data name="&gt;&gt;checkBoxAutoHide.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="flowLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="flowLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 0</value>
+  </data>
+  <data name="flowLayoutPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="flowLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>655, 36</value>
+  </data>
+  <data name="flowLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel.Name" xml:space="preserve">
+    <value>flowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel.Parent" xml:space="preserve">
+    <value>overlaysTabPage</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="tabControl.Alignment" type="System.Windows.Forms.TabAlignment, System.Windows.Forms">
     <value>Left</value>
   </data>
@@ -330,6 +294,36 @@
   <metadata name="contextMenuLogList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="menuCopyLogAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 22</value>
+  </data>
+  <data name="menuCopyLogAll.Text" xml:space="preserve">
+    <value>Copy all logs</value>
+  </data>
+  <data name="menuLogCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 22</value>
+  </data>
+  <data name="menuLogCopy.Text" xml:space="preserve">
+    <value>Copy selected logs</value>
+  </data>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 6</value>
+  </data>
+  <data name="menuFollowLatestLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 22</value>
+  </data>
+  <data name="menuFollowLatestLog.Text" xml:space="preserve">
+    <value>Follow latest log</value>
+  </data>
+  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 6</value>
+  </data>
+  <data name="menuClearLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 22</value>
+  </data>
+  <data name="menuClearLog.Text" xml:space="preserve">
+    <value>Clear logs</value>
+  </data>
   <data name="contextMenuLogList.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 104</value>
   </data>
@@ -366,35 +360,17 @@
   <data name="&gt;&gt;listViewLog.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="menuCopyLogAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
+  <data name="label_ListEmpty.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
-  <data name="menuCopyLogAll.Text" xml:space="preserve">
-    <value>Copy all logs</value>
+  <data name="label_ListEmpty.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
   </data>
-  <data name="menuLogCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
+  <data name="label_ListEmpty.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="menuLogCopy.Text" xml:space="preserve">
-    <value>Copy selected logs</value>
-  </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 6</value>
-  </data>
-  <data name="menuFollowLatestLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
-  </data>
-  <data name="menuFollowLatestLog.Text" xml:space="preserve">
-    <value>Follow latest log</value>
-  </data>
-  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 6</value>
-  </data>
-  <data name="menuClearLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
-  </data>
-  <data name="menuClearLog.Text" xml:space="preserve">
-    <value>Clear logs</value>
+  <data name="label_ListEmpty.Text" xml:space="preserve">
+    <value>Click [Add] button to configure overlays.</value>
   </data>
   <data name="&gt;&gt;label_ListEmpty.Name" xml:space="preserve">
     <value>label_ListEmpty</value>
@@ -428,30 +404,6 @@
   </data>
   <data name="&gt;&gt;tabPageMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label_ListEmpty.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="label_ListEmpty.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="label_ListEmpty.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label_ListEmpty.Text" xml:space="preserve">
-    <value>Click [Add] button to configure overlays.</value>
-  </data>
-  <data name="&gt;&gt;label_ListEmpty.Name" xml:space="preserve">
-    <value>label_ListEmpty</value>
-  </data>
-  <data name="&gt;&gt;label_ListEmpty.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label_ListEmpty.Parent" xml:space="preserve">
-    <value>tabPageMain</value>
-  </data>
-  <data name="&gt;&gt;label_ListEmpty.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="groupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -612,6 +564,21 @@
   <data name="&gt;&gt;overlayPluginInformationGroupBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="screenShotHotkeyWarningLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="screenShotHotkeyWarningLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 49</value>
+  </data>
+  <data name="screenShotHotkeyWarningLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 15</value>
+  </data>
+  <data name="screenShotHotkeyWarningLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="screenShotHotkeyWarningLabel.Text" xml:space="preserve">
+    <value>ScreenShot Hotkey Setting Required Restart Plugin</value>
+  </data>
   <data name="&gt;&gt;screenShotHotkeyWarningLabel.Name" xml:space="preserve">
     <value>screenShotHotkeyWarningLabel</value>
   </data>
@@ -622,6 +589,18 @@
     <value>screenShotHotkeyGroupBox</value>
   </data>
   <data name="&gt;&gt;screenShotHotkeyWarningLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="textBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 20</value>
+  </data>
+  <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>635, 23</value>
+  </data>
+  <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
@@ -666,6 +645,18 @@
   <data name="&gt;&gt;screenShotHotkeyGroupBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="textBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 20</value>
+  </data>
+  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>596, 23</value>
+  </data>
+  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
     <value>textBox1</value>
   </data>
@@ -677,6 +668,21 @@
   </data>
   <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="button1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>606, 20</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 23</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>…</value>
   </data>
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>
@@ -775,108 +781,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;overlayTabUI1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="screenShotHotkeyWarningLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="screenShotHotkeyWarningLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 50</value>
-  </data>
-  <data name="screenShotHotkeyWarningLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 15</value>
-  </data>
-  <data name="screenShotHotkeyWarningLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="screenShotHotkeyWarningLabel.Text" xml:space="preserve">
-    <value>ScreenShot Hotkey Setting Required Restart Plugin</value>
-  </data>
-  <data name="&gt;&gt;screenShotHotkeyWarningLabel.Name" xml:space="preserve">
-    <value>screenShotHotkeyWarningLabel</value>
-  </data>
-  <data name="&gt;&gt;screenShotHotkeyWarningLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;screenShotHotkeyWarningLabel.Parent" xml:space="preserve">
-    <value>screenShotHotkeyGroupBox</value>
-  </data>
-  <data name="&gt;&gt;screenShotHotkeyWarningLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="textBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 20</value>
-  </data>
-  <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>635, 23</value>
-  </data>
-  <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
-    <value>textBox2</value>
-  </data>
-  <data name="&gt;&gt;textBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox2.Parent" xml:space="preserve">
-    <value>screenShotHotkeyGroupBox</value>
-  </data>
-  <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="textBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 20</value>
-  </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>596, 23</value>
-  </data>
-  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
-    <value>textBox1</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
-    <value>screenShotPathGroupbox</value>
-  </data>
-  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="button1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>606, 20</value>
-  </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 23</value>
-  </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>…</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>screenShotPathGroupbox</value>
-  </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
