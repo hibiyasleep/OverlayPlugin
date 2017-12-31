@@ -13,6 +13,7 @@ namespace RainbowMage.OverlayPlugin
 {
     public partial class OverlayForm : Form
     {
+        private object bitmapSync = new object();
         private Bitmap bitmap;
         private DIBitmap surfaceBuffer;
         private object surfaceBufferLocker = new object();
@@ -236,6 +237,7 @@ namespace RainbowMage.OverlayPlugin
 
         #endregion
 
+        private byte[] bitmapBuffer;
         void renderer_Render(object sender, RenderEventArgs e)
         {
             if (!this.terminated)
@@ -256,33 +258,46 @@ namespace RainbowMage.OverlayPlugin
 
                     // TODO: DirtyRect に対応
                     surfaceBuffer.SetSurfaceData(e.Buffer, (uint)(e.Width * e.Height * 4));
-
-                    try
+                    
+                    lock (bitmapSync)
                     {
-                        var rect = new Rectangle(0, 0, e.Width, e.Height);
-                        using (var bmp = new Bitmap(e.Width, e.Height, PixelFormat.Format32bppArgb))
+                        try
                         {
-                            var ScreenShot = bmp.LockBits(rect, ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
-                            int totalSize = (e.Width * e.Height * 4);
+                            var rect = new Rectangle(0, 0, e.Width, e.Height);
 
-                            byte[] TemporaryBuffer = null;
+                            if (this.bitmap == null || this.bitmap.Size != rect.Size)
+                            {
+                                this.bitmap?.Dispose();
+                                this.bitmap = new Bitmap(e.Width, e.Height, PixelFormat.Format32bppArgb);
+                            }
 
-                            if ((TemporaryBuffer == null) || (totalSize > TemporaryBuffer.Length))
-                                TemporaryBuffer = new byte[totalSize];
+                            BitmapData screenShot = null;
+                            try
+                            {
+                                screenShot = this.bitmap.LockBits(rect, ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
 
-                            IntPtr screenShotPtr = ScreenShot.Scan0;
+                                int totalSize = (e.Width * e.Height * 4);
 
-                            Marshal.Copy(surfaceBuffer.Bits, TemporaryBuffer, 0, totalSize);
-                            Marshal.Copy(TemporaryBuffer, 0, screenShotPtr, totalSize);
+                                if (this.bitmapBuffer == null || this.bitmapBuffer.Length < totalSize)
+                                    this.bitmapBuffer = new byte[totalSize];
 
-                            bmp.UnlockBits(ScreenShot);
-                            bitmap = new Bitmap(bmp);
+                                IntPtr screenShotPtr = screenShot.Scan0;
+
+                                Marshal.Copy(surfaceBuffer.Bits, this.bitmapBuffer, 0, totalSize);
+                                Marshal.Copy(this.bitmapBuffer, 0, screenShotPtr, totalSize);
+
+                            }
+                            finally
+                            {
+                                if (screenShot != null)
+                                    this.bitmap.UnlockBits(screenShot);
+                            }
+
                         }
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.GetBaseException().ToString());
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.GetBaseException().ToString());
+                        }
                     }
 
                     UpdateLayeredWindowBitmap();
@@ -349,6 +364,8 @@ namespace RainbowMage.OverlayPlugin
             {
                 components.Dispose();
             }
+
+            this.bitmap?.Dispose();
             base.Dispose(disposing);
         }
 
@@ -651,14 +668,6 @@ namespace RainbowMage.OverlayPlugin
             return (NativeMethods.GetKeyState((int)key) & 1) == 1;
         }
 
-        public Image GetLaststBitmap()
-        {
-            if(bitmap == null)
-            {
-                bitmap = new Bitmap(Width, Height);
-            }
-
-            return bitmap;
-        }
+        public Image LatestBitmap => this.bitmap;
     }
 }
