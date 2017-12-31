@@ -58,5 +58,11 @@ namespace RainbowMage.OverlayPlugin
         /// </summary>
         /// <param name="message">A string message created by the plugin javascript.</param>
         void OverlayMessage(string message);
+
+        /// <summary>
+        /// Take Overlay Renderer PNG Image (Offscreen?)
+        /// </summary>
+        /// <param name="path"></param>
+        void TakeScreenShot(string path);
     }
 }

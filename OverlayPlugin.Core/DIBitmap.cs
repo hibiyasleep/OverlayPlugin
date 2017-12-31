@@ -17,7 +17,7 @@ namespace RainbowMage.OverlayPlugin
         /// </summary>
         public int Height { get; private set; }
         /// <summary>
-        /// ビットマップデータのアドレスを取得します。
+        /// Get the address of the bitmap data.
         /// </summary>
         public IntPtr Bits { get; private set; }
         /// <summary>

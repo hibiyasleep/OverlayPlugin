@@ -11,6 +11,7 @@ namespace RainbowMage.OverlayPlugin
 {
     public partial class OverlayForm : Form
     {
+        private Bitmap bitmap;
         private DIBitmap surfaceBuffer;
         private object surfaceBufferLocker = new object();
         private int maxFrameRate;
@@ -194,6 +195,8 @@ namespace RainbowMage.OverlayPlugin
 
                 NativeMethods.SelectObject(surfaceBuffer.DeviceContext, hOldBitmap);
                 gScreen.ReleaseHdc(hScreenDC);
+
+                bitmap = Image.FromHbitmap(surfaceBuffer.Handle);
             }
         }
         #endregion
@@ -621,6 +624,17 @@ namespace RainbowMage.OverlayPlugin
         private bool IsKeyToggled(Keys key)
         {
             return (NativeMethods.GetKeyState((int)key) & 1) == 1;
+        }
+
+        public Image GetLaststBitmap()
+        {
+            if(bitmap == null)
+            {
+                bitmap = new Bitmap(Width, Height);
+
+            }
+
+            return bitmap;
         }
     }
 }
