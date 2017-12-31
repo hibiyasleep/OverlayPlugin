@@ -52,6 +52,11 @@ namespace RainbowMage.OverlayPlugin
             InitializeConfigHandlers();
         }
 
+        public void TakeScreenShot()
+        {
+            Overlay.GetCurrentFrame().Save(Name + ".png", System.Drawing.Imaging.ImageFormat.Png);
+        }
+
         /// <summary>
         /// オーバーレイの更新を開始します。
         /// </summary>

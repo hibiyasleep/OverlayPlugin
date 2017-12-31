@@ -32,7 +32,6 @@ namespace RainbowMage.OverlayPlugin
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlPanel));
-            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonNewOverlay = new System.Windows.Forms.Button();
             this.buttonRemoveOverlay = new System.Windows.Forms.Button();
             this.checkBoxAutoHide = new System.Windows.Forms.CheckBox();
@@ -63,8 +62,9 @@ namespace RainbowMage.OverlayPlugin
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.screenShotPathGroupbox = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel.SuspendLayout();
+            this.screenShotPathSelectButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.takeScreenShotBtn = new System.Windows.Forms.Button();
             this.contextMenuLogList.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.overlayTabUI1.SuspendLayout();
@@ -74,15 +74,8 @@ namespace RainbowMage.OverlayPlugin
             this.overlayPluginInformationGroupBox.SuspendLayout();
             this.screenShotHotkeyGroupBox.SuspendLayout();
             this.screenShotPathGroupbox.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // flowLayoutPanel
-            // 
-            this.flowLayoutPanel.Controls.Add(this.buttonNewOverlay);
-            this.flowLayoutPanel.Controls.Add(this.buttonRemoveOverlay);
-            this.flowLayoutPanel.Controls.Add(this.checkBoxAutoHide);
-            resources.ApplyResources(this.flowLayoutPanel, "flowLayoutPanel");
-            this.flowLayoutPanel.Name = "flowLayoutPanel";
             // 
             // buttonNewOverlay
             // 
@@ -220,7 +213,7 @@ namespace RainbowMage.OverlayPlugin
             // overlaysTabPage
             // 
             this.overlaysTabPage.Controls.Add(this.tabControl);
-            this.overlaysTabPage.Controls.Add(this.flowLayoutPanel);
+            this.overlaysTabPage.Controls.Add(this.panel1);
             resources.ApplyResources(this.overlaysTabPage, "overlaysTabPage");
             this.overlaysTabPage.Name = "overlaysTabPage";
             this.overlaysTabPage.UseVisualStyleBackColor = true;
@@ -280,7 +273,7 @@ namespace RainbowMage.OverlayPlugin
             // screenShotPathGroupbox
             // 
             this.screenShotPathGroupbox.Controls.Add(this.textBox1);
-            this.screenShotPathGroupbox.Controls.Add(this.button1);
+            this.screenShotPathGroupbox.Controls.Add(this.screenShotPathSelectButton);
             resources.ApplyResources(this.screenShotPathGroupbox, "screenShotPathGroupbox");
             this.screenShotPathGroupbox.Name = "screenShotPathGroupbox";
             this.screenShotPathGroupbox.TabStop = false;
@@ -290,11 +283,28 @@ namespace RainbowMage.OverlayPlugin
             resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
             // 
-            // button1
+            // screenShotPathSelectButton
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.screenShotPathSelectButton, "screenShotPathSelectButton");
+            this.screenShotPathSelectButton.Name = "screenShotPathSelectButton";
+            this.screenShotPathSelectButton.UseVisualStyleBackColor = true;
+            this.screenShotPathSelectButton.Click += new System.EventHandler(this.screenShotPathSelectButton_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.takeScreenShotBtn);
+            this.panel1.Controls.Add(this.checkBoxAutoHide);
+            this.panel1.Controls.Add(this.buttonNewOverlay);
+            this.panel1.Controls.Add(this.buttonRemoveOverlay);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // takeScreenShotBtn
+            // 
+            resources.ApplyResources(this.takeScreenShotBtn, "takeScreenShotBtn");
+            this.takeScreenShotBtn.Name = "takeScreenShotBtn";
+            this.takeScreenShotBtn.UseVisualStyleBackColor = true;
+            this.takeScreenShotBtn.Click += new System.EventHandler(this.takeScreenShotBtn_Click);
             // 
             // ControlPanel
             // 
@@ -303,8 +313,6 @@ namespace RainbowMage.OverlayPlugin
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.overlayTabUI1);
             this.Name = "ControlPanel";
-            this.flowLayoutPanel.ResumeLayout(false);
-            this.flowLayoutPanel.PerformLayout();
             this.contextMenuLogList.ResumeLayout(false);
             this.tabPageMain.ResumeLayout(false);
             this.overlayTabUI1.ResumeLayout(false);
@@ -316,6 +324,8 @@ namespace RainbowMage.OverlayPlugin
             this.screenShotHotkeyGroupBox.PerformLayout();
             this.screenShotPathGroupbox.ResumeLayout(false);
             this.screenShotPathGroupbox.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -338,7 +348,6 @@ namespace RainbowMage.OverlayPlugin
         private System.Windows.Forms.Button buttonRemoveOverlay;
         private System.Windows.Forms.Button buttonNewOverlay;
         private System.Windows.Forms.CheckBox checkBoxAutoHide;
-        private FlowLayoutPanel flowLayoutPanel;
         private Label label_ListEmpty;
         private OverlayTabUI overlayTabUI1;
         private TabPage overlaysTabPage;
@@ -346,12 +355,14 @@ namespace RainbowMage.OverlayPlugin
         private TabPage overlayInformationTabPage;
         private GroupBox screenShotPathGroupbox;
         private TextBox textBox1;
-        private Button button1;
+        private Button screenShotPathSelectButton;
         private GroupBox screenShotHotkeyGroupBox;
         private TextBox textBox2;
         private GroupBox overlayPluginInformationGroupBox;
         private Label repo_dev_info;
         private Label developers;
         private Label screenShotHotkeyWarningLabel;
+        private Panel panel1;
+        private Button takeScreenShotBtn;
     }
 }

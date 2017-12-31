@@ -245,5 +245,28 @@ namespace RainbowMage.OverlayPlugin
         {
             config.HideOverlaysWhenNotActive = checkBoxAutoHide.Checked;
         }
+
+        private void screenShotPathSelectButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void takeScreenShotBtn_Click(object sender, EventArgs e)
+        {
+            if (tabControl.SelectedIndex < 0) return;
+            var selTab = tabControl.SelectedIndex;
+
+            if (pluginMain.Overlays.Count < 1) return;
+            IOverlay selectedOverlay = pluginMain.Overlays[selTab];
+
+            try
+            {
+                selectedOverlay.TakeScreenShot();
+            }
+            catch
+            {
+
+            }
+        }
     }
 }
