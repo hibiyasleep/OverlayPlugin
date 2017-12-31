@@ -12,6 +12,7 @@ namespace RainbowMage.OverlayPlugin
 {
     public partial class OverlayForm : Form
     {
+        private Bitmap LaststFrame;
         private DIBitmap surfaceBuffer;
         private object surfaceBufferLocker = new object();
         private int maxFrameRate;
@@ -127,9 +128,9 @@ namespace RainbowMage.OverlayPlugin
             }
         }
 
-        public void GetCurrentFrame()
+        public Bitmap GetCurrentFrame()
         {
-
+            return LaststFrame;
         }
 
         private void UpdateLayeredWindowBitmap()
@@ -193,6 +194,8 @@ namespace RainbowMage.OverlayPlugin
 
                 NativeMethods.SelectObject(surfaceBuffer.DeviceContext, hOldBitmap);
                 gScreen.ReleaseHdc(hScreenDC);
+
+                LaststFrame = Image.FromHbitmap(hScreenDC);
             }
         }
         #endregion
