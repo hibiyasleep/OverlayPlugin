@@ -128,7 +128,7 @@ namespace RainbowMage.OverlayPlugin
                 {
                     if(i.Name == e.Message)
                     {
-                        i.TakeScreenShot(ScreenShotPath);
+                        i.TakeScreenShot(Config.ScreenShotSavePath);
                         break;
                     }
                 }
@@ -283,6 +283,10 @@ namespace RainbowMage.OverlayPlugin
             try
             {
                 Config = PluginConfig.LoadXml(this.PluginDirectory, GetConfigPath());
+                if(Config.ScreenShotSavePath == "" || Config.ScreenShotSavePath == null)
+                {
+                    Config.ScreenShotSavePath = ScreenShotPath;
+                }
             }
             catch (Exception e)
             {
@@ -291,7 +295,13 @@ namespace RainbowMage.OverlayPlugin
                 Logger.Log(LogLevel.Info, "LoadConfig: Creating new configuration.");
                 Config = new PluginConfig();
                 Config.SetDefaultOverlayConfigs(this.PluginDirectory);
+                if (Config.ScreenShotSavePath == "" || Config.ScreenShotSavePath == null)
+                {
+                    Config.ScreenShotSavePath = ScreenShotPath;
+                }
             }
+
+            Directory.CreateDirectory(Config.ScreenShotSavePath);
         }
 
         /// <summary>
