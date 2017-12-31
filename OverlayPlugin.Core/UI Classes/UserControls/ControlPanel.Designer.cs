@@ -59,11 +59,10 @@ namespace RainbowMage.OverlayPlugin
             this.overlayPluginInformationGroupBox = new System.Windows.Forms.GroupBox();
             this.repo_dev_info = new System.Windows.Forms.Label();
             this.developers = new System.Windows.Forms.Label();
-            this.screenShotHotkeyGroupBox = new System.Windows.Forms.GroupBox();
-            this.justLabel = new System.Windows.Forms.Label();
             this.screenShotPathGroupbox = new System.Windows.Forms.GroupBox();
             this.screenShotPathSelectButton = new System.Windows.Forms.Button();
             this.screenShotPath = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.contextMenuLogList.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.overlayTabUI1.SuspendLayout();
@@ -72,7 +71,6 @@ namespace RainbowMage.OverlayPlugin
             this.overlayLogsTabPage.SuspendLayout();
             this.overlayInformationTabPage.SuspendLayout();
             this.overlayPluginInformationGroupBox.SuspendLayout();
-            this.screenShotHotkeyGroupBox.SuspendLayout();
             this.screenShotPathGroupbox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -243,7 +241,6 @@ namespace RainbowMage.OverlayPlugin
             // overlayInformationTabPage
             // 
             this.overlayInformationTabPage.Controls.Add(this.overlayPluginInformationGroupBox);
-            this.overlayInformationTabPage.Controls.Add(this.screenShotHotkeyGroupBox);
             this.overlayInformationTabPage.Controls.Add(this.screenShotPathGroupbox);
             resources.ApplyResources(this.overlayInformationTabPage, "overlayInformationTabPage");
             this.overlayInformationTabPage.Name = "overlayInformationTabPage";
@@ -251,6 +248,7 @@ namespace RainbowMage.OverlayPlugin
             // 
             // overlayPluginInformationGroupBox
             // 
+            this.overlayPluginInformationGroupBox.Controls.Add(this.label1);
             this.overlayPluginInformationGroupBox.Controls.Add(this.repo_dev_info);
             this.overlayPluginInformationGroupBox.Controls.Add(this.developers);
             resources.ApplyResources(this.overlayPluginInformationGroupBox, "overlayPluginInformationGroupBox");
@@ -266,18 +264,6 @@ namespace RainbowMage.OverlayPlugin
             // 
             resources.ApplyResources(this.developers, "developers");
             this.developers.Name = "developers";
-            // 
-            // screenShotHotkeyGroupBox
-            // 
-            this.screenShotHotkeyGroupBox.Controls.Add(this.justLabel);
-            resources.ApplyResources(this.screenShotHotkeyGroupBox, "screenShotHotkeyGroupBox");
-            this.screenShotHotkeyGroupBox.Name = "screenShotHotkeyGroupBox";
-            this.screenShotHotkeyGroupBox.TabStop = false;
-            // 
-            // justLabel
-            // 
-            resources.ApplyResources(this.justLabel, "justLabel");
-            this.justLabel.Name = "justLabel";
             // 
             // screenShotPathGroupbox
             // 
@@ -299,6 +285,11 @@ namespace RainbowMage.OverlayPlugin
             resources.ApplyResources(this.screenShotPath, "screenShotPath");
             this.screenShotPath.Name = "screenShotPath";
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
             // ControlPanel
             // 
             resources.ApplyResources(this, "$this");
@@ -315,8 +306,6 @@ namespace RainbowMage.OverlayPlugin
             this.overlayLogsTabPage.ResumeLayout(false);
             this.overlayInformationTabPage.ResumeLayout(false);
             this.overlayPluginInformationGroupBox.ResumeLayout(false);
-            this.screenShotHotkeyGroupBox.ResumeLayout(false);
-            this.screenShotHotkeyGroupBox.PerformLayout();
             this.screenShotPathGroupbox.ResumeLayout(false);
             this.screenShotPathGroupbox.PerformLayout();
             this.ResumeLayout(false);
@@ -348,13 +337,12 @@ namespace RainbowMage.OverlayPlugin
         private TabPage overlayInformationTabPage;
         private GroupBox screenShotPathGroupbox;
         private Button screenShotPathSelectButton;
-        private GroupBox screenShotHotkeyGroupBox;
         private GroupBox overlayPluginInformationGroupBox;
         private Label repo_dev_info;
         private Label developers;
         private Panel panel1;
         private Button takeScreenShotBtn;
-        private Label justLabel;
         private TextBox screenShotPath;
+        private Label label1;
     }
 }
