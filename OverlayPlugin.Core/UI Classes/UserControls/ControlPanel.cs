@@ -36,6 +36,11 @@ namespace RainbowMage.OverlayPlugin
             };
 
             InitializeOverlayConfigTabs();
+
+            if (screenShotPath.Text == "")
+            {
+                screenShotPath.Text = PluginMain.ScreenShotPath;
+            }
         }
 
         private void InitializeOverlayConfigTabs()
@@ -244,7 +249,11 @@ namespace RainbowMage.OverlayPlugin
 
         private void screenShotPathSelectButton_Click(object sender, EventArgs e)
         {
-
+            var ofd = new FolderBrowserDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                screenShotPath.Text = ofd.SelectedPath;
+            }
         }
 
         private void takeScreenShotBtn_Click(object sender, EventArgs e)
@@ -257,7 +266,7 @@ namespace RainbowMage.OverlayPlugin
 
             try
             {
-                selectedOverlay.TakeScreenShot(Path.GetDirectoryName(Application.ExecutablePath));
+                selectedOverlay.TakeScreenShot(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "ScreenShot"));
             }
             catch (Exception ex)
             {

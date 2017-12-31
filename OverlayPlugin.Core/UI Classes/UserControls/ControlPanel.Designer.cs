@@ -53,18 +53,17 @@ namespace RainbowMage.OverlayPlugin
             this.overlayTabUI1 = new RainbowMage.OverlayPlugin.OverlayTabUI();
             this.overlaysTabPage = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.takeScreenShotBtn = new System.Windows.Forms.Button();
             this.overlayLogsTabPage = new System.Windows.Forms.TabPage();
             this.overlayInformationTabPage = new System.Windows.Forms.TabPage();
             this.overlayPluginInformationGroupBox = new System.Windows.Forms.GroupBox();
             this.repo_dev_info = new System.Windows.Forms.Label();
             this.developers = new System.Windows.Forms.Label();
             this.screenShotHotkeyGroupBox = new System.Windows.Forms.GroupBox();
-            this.screenShotHotkeyWarningLabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.justLabel = new System.Windows.Forms.Label();
             this.screenShotPathGroupbox = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.screenShotPathSelectButton = new System.Windows.Forms.Button();
-            this.takeScreenShotBtn = new System.Windows.Forms.Button();
+            this.screenShotPath = new System.Windows.Forms.TextBox();
             this.contextMenuLogList.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.overlayTabUI1.SuspendLayout();
@@ -227,6 +226,13 @@ namespace RainbowMage.OverlayPlugin
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
+            // takeScreenShotBtn
+            // 
+            resources.ApplyResources(this.takeScreenShotBtn, "takeScreenShotBtn");
+            this.takeScreenShotBtn.Name = "takeScreenShotBtn";
+            this.takeScreenShotBtn.UseVisualStyleBackColor = true;
+            this.takeScreenShotBtn.Click += new System.EventHandler(this.takeScreenShotBtn_Click);
+            // 
             // overlayLogsTabPage
             // 
             this.overlayLogsTabPage.Controls.Add(this.listViewLog);
@@ -263,34 +269,23 @@ namespace RainbowMage.OverlayPlugin
             // 
             // screenShotHotkeyGroupBox
             // 
-            this.screenShotHotkeyGroupBox.Controls.Add(this.screenShotHotkeyWarningLabel);
-            this.screenShotHotkeyGroupBox.Controls.Add(this.textBox2);
+            this.screenShotHotkeyGroupBox.Controls.Add(this.justLabel);
             resources.ApplyResources(this.screenShotHotkeyGroupBox, "screenShotHotkeyGroupBox");
             this.screenShotHotkeyGroupBox.Name = "screenShotHotkeyGroupBox";
             this.screenShotHotkeyGroupBox.TabStop = false;
             // 
-            // screenShotHotkeyWarningLabel
+            // justLabel
             // 
-            resources.ApplyResources(this.screenShotHotkeyWarningLabel, "screenShotHotkeyWarningLabel");
-            this.screenShotHotkeyWarningLabel.Name = "screenShotHotkeyWarningLabel";
-            // 
-            // textBox2
-            // 
-            resources.ApplyResources(this.textBox2, "textBox2");
-            this.textBox2.Name = "textBox2";
+            resources.ApplyResources(this.justLabel, "justLabel");
+            this.justLabel.Name = "justLabel";
             // 
             // screenShotPathGroupbox
             // 
-            this.screenShotPathGroupbox.Controls.Add(this.textBox1);
+            this.screenShotPathGroupbox.Controls.Add(this.screenShotPath);
             this.screenShotPathGroupbox.Controls.Add(this.screenShotPathSelectButton);
             resources.ApplyResources(this.screenShotPathGroupbox, "screenShotPathGroupbox");
             this.screenShotPathGroupbox.Name = "screenShotPathGroupbox";
             this.screenShotPathGroupbox.TabStop = false;
-            // 
-            // textBox1
-            // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
             // 
             // screenShotPathSelectButton
             // 
@@ -299,12 +294,10 @@ namespace RainbowMage.OverlayPlugin
             this.screenShotPathSelectButton.UseVisualStyleBackColor = true;
             this.screenShotPathSelectButton.Click += new System.EventHandler(this.screenShotPathSelectButton_Click);
             // 
-            // takeScreenShotBtn
+            // screenShotPath
             // 
-            resources.ApplyResources(this.takeScreenShotBtn, "takeScreenShotBtn");
-            this.takeScreenShotBtn.Name = "takeScreenShotBtn";
-            this.takeScreenShotBtn.UseVisualStyleBackColor = true;
-            this.takeScreenShotBtn.Click += new System.EventHandler(this.takeScreenShotBtn_Click);
+            resources.ApplyResources(this.screenShotPath, "screenShotPath");
+            this.screenShotPath.Name = "screenShotPath";
             // 
             // ControlPanel
             // 
@@ -354,15 +347,14 @@ namespace RainbowMage.OverlayPlugin
         private TabPage overlayLogsTabPage;
         private TabPage overlayInformationTabPage;
         private GroupBox screenShotPathGroupbox;
-        private TextBox textBox1;
         private Button screenShotPathSelectButton;
         private GroupBox screenShotHotkeyGroupBox;
-        private TextBox textBox2;
         private GroupBox overlayPluginInformationGroupBox;
         private Label repo_dev_info;
         private Label developers;
-        private Label screenShotHotkeyWarningLabel;
         private Panel panel1;
         private Button takeScreenShotBtn;
+        private Label justLabel;
+        private TextBox screenShotPath;
     }
 }
