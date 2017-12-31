@@ -1,58 +1,59 @@
 # OverlayPlugin
 
-ACT に柔軟にカスタマイズ可能なミニパースやスペルタイマーのオーバーレイを追加します。
+Plugin to show customizable mini parse and timeline overlay for Advanced Combat Tracker.
 
-## 動作環境
+## Download
 
-* .NET Framework 4.5 以上がインストールされているシステム
+You can download release and pre-release archives from [release page](https://github.com/RainbowMage/OverlayPlugin/releases).
 
-## ダウンロード
+## System requirements
 
-[リリースページ](https://github.com/RainbowMage/OverlayPlugin/releases)でビルド済みのバイナリを配布しています。
+* .NET Framework 4.5
 
-ダウンロード後、ファイルを展開する前にダウンロードした ZIP ファイルを右クリックしてプロパティを開き、「ブロックを解除」ボタンを押してブロックを解除することを強く推奨します。
+## How to build
 
-## ビルド方法
+* Install .NET Framework 4.5.1 or later.
+* Install [Microsoft Build Tools 2013](http://www.microsoft.com/ja-jp/download/details.aspx?id=40760). (This is not required if you installed Visual Studio 2013 already.)
+* Checkout source codes with git, or download source code as ZIP and extract.
+* Copy the Advanced Combat Tracker executable file (`Advanced Combat Tracker.exe`) into `Thirdparty\ACT` folder.
+* Execute `build.bat`.
 
-手順:
+Once finished, the plugin file `OverlayPlugin.dll` will appear in the `Build` folder.
 
-* .NET Framework 4.5.1 をインストールします
-* Microsoft Build Tools 2013 (http://www.microsoft.com/ja-jp/download/details.aspx?id=40760) をインストールします（Visual Studio 2013 がインストールされている場合は不要）
-* ソースコード一式をチェックアウト、または ZIP ファイルでダウンロードして解凍します
-* Thirdparty フォルダの中にある ACT フォルダに、ACT の実行ファイル（Advanced Combat Tracker.exe）をコピーします
-* build.bat を実行します
+## How to use
 
-うまくいけば、BuildX86 および BuildX64 フォルダの中にプラグインが生成されます。
+To use this plugin, add the `OverlayPlugin.dll` in ACT's plugin tab. It can not be moved around alone, as the files around it are important.
 
-## 使用方法
+When you first install, a window will appear saying "No data to show" or your DPS numbers. It can be moved by dragging a non-transparent part, and resized by dragging the bottom right corner (it's a little hard to see).
 
-OverlayPlugin.dll をプラグインとして ACT に追加します。
+In the Plugins tab of ACT in the `OveralyPlugin.dll` tab, you can change the settings like the formatting file (URL), or if clickthrough is enabled.
 
-追加すると、`No data to show` と表示されたオーバーレイか、 もしくはプレイヤーの DPS が表示されたオーバーレイが表示されます。
-オーバーレイの非透過部分をドラッグすると移動させることができ、右下のハンドルをドラッグするとオーバーレイのサイズの変更ができます。
+Example HTML files are in `Build\resources`
 
-ACT のプラグインタブにある「OverlayPlugin.dll」タブで、オーバーレイの追加や削除、表示の切り替え、マウスクリックの透過、表示するファイルの設定などが行えます。
+## Troubleshooting
 
-## トラブルシューティング
+If the window does not appear, please check the message log at the bottom of the window of the `OverlayPlugin.dll` tab of the `Plugins` tab.
 
-オーバーレイウィンドウなどが表示されない場合は、`Plugins` タブにある `OverlayPlugin.dll` タブ内の下部にあるログのメッセージをよく確認した上で [トラブルシューティング](https://github.com/RainbowMage/OverlayPlugin/wiki/%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0)をお読みください。
+### `Error: AssemblyResolve: => System.NotSupportedException`
 
-## カスタマイズ
+If you use standard Windows ZIP-ing, after downloading the archive from the Internet, it may be flagged as an untrusted file.
 
-プラグインが配置されているフォルダにある resources フォルダの中の、`miniparse.html` および `spelltimer.html` を編集することでカスタマイズができます。 
+If this happens, it's not possible to read the executable or DLLs that have this flag, and the above error will occur. To check whether the file has blocked or not and unblock it, please refer to:  http://blogs.msdn.com/b/delay/p/unblockingdownloadedfile.aspx.
 
-詳しい編集方法に関しては [Wiki](https://github.com/RainbowMage/OverlayPlugin/wiki/) をご覧ください。JavaScript と HTML に関する基礎的な知識があれば編集できると思います。
+In Windows Explorer, for each of the DLL files, right-click and select `Properties` then click the `Unblock` button at the bottom.
 
-## アドオン
+This can also happen if you are using this on a networked drive. Please copy to a local drive instead.
 
-本プラグインはアドオンをサポートしております。対応するアドオンをプラグインディレクトリ直下の `addon` ディレクトリに配置すると自動的に読み込まれます。
+### `Error: AssemblyResolve: => System.IO.FileNotFoundException`
 
-仕様に関しては `AddonExample` プロジェクトをご確認ください。
+A required DLL is missing in the folder that `OverlayPlugin.dll` is in.
 
-## ライセンス
+Please copy all of the files when moving location.
 
-MIT ライセンスです。詳細は LICENSE.txt を参照してください。
+### The parser won't sit in front of the game window anymore.
 
-## Other Languages:
+It's probably Windows's fault. Toggle the visibility off and on again and it will fix itself.
 
-* [English (EN)](../master/README-en.md)
+## License
+
+MIT license. See LICENSE.txt for details.
