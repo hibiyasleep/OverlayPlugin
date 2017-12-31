@@ -27,11 +27,12 @@ namespace RainbowMage.OverlayPlugin
         internal List<IOverlay> Overlays { get; private set; }
         internal List<IOverlayAddon> Addons { get; set; }
         internal Logger Logger { get; set; }
-        internal string PluginDirectory { get; private set; }
+
+        public static string PluginDirectory { get; private set; }
 
         public PluginMain(string pluginDirectory, Logger logger)
         {
-            this.PluginDirectory = pluginDirectory;
+            PluginDirectory = pluginDirectory;
             this.Logger = logger;
         }
 
@@ -53,7 +54,7 @@ namespace RainbowMage.OverlayPlugin
                 Logger.Log(LogLevel.Warning, "##################################");
 #endif
 
-                Logger.Log(LogLevel.Info, "InitPlugin: PluginDirectory = {0}", this.PluginDirectory);
+                Logger.Log(LogLevel.Info, "InitPlugin: PluginDirectory = {0}", PluginDirectory);
 
 
                 // プラグイン読み込み
@@ -63,7 +64,7 @@ namespace RainbowMage.OverlayPlugin
                 LoadConfig();
 
                 // プラグイン間のメッセージ関連
-                RainbowMage.HtmlRenderer.Renderer.BroadcastMessage += (o, e) =>
+                Renderer.BroadcastMessage += (o, e) =>
                 {
                     Task.Run(() =>
                     {
@@ -73,7 +74,7 @@ namespace RainbowMage.OverlayPlugin
                         }
                     });
                 };
-                RainbowMage.HtmlRenderer.Renderer.SendMessage += (o, e) =>
+                Renderer.SendMessage += (o, e) =>
                 {
                     Task.Run(() =>
                     {
@@ -84,7 +85,7 @@ namespace RainbowMage.OverlayPlugin
                         }
                     });
                 };
-                RainbowMage.HtmlRenderer.Renderer.OverlayMessage += (o, e) =>
+                Renderer.OverlayMessage += (o, e) =>
                 {
                     Task.Run(() =>
                     {
@@ -94,7 +95,7 @@ namespace RainbowMage.OverlayPlugin
                         }
                     });
                 };
-                RainbowMage.HtmlRenderer.Renderer.RendererFeatureRequest += (o, e) =>
+                Renderer.RendererFeatureRequest += (o, e) =>
                 {
                     Task.Run(() =>
                     {
@@ -268,7 +269,7 @@ namespace RainbowMage.OverlayPlugin
         {
             try
             {
-                Config = PluginConfig.LoadXml(this.PluginDirectory, GetConfigPath());
+                Config = PluginConfig.LoadXml(PluginDirectory, GetConfigPath());
             }
             catch (Exception e)
             {
@@ -276,7 +277,7 @@ namespace RainbowMage.OverlayPlugin
                 Logger.Log(LogLevel.Warning, "LoadConfig: {0}", e);
                 Logger.Log(LogLevel.Info, "LoadConfig: Creating new configuration.");
                 Config = new PluginConfig();
-                Config.SetDefaultOverlayConfigs(this.PluginDirectory);
+                Config.SetDefaultOverlayConfigs(PluginDirectory);
             }
         }
 

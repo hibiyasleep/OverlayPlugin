@@ -58,7 +58,7 @@ namespace RainbowMage.OverlayPlugin
         public OverlayForm(string overlayVersion,string overlayName, string url, int maxFrameRate = 30)
         {
             InitializeComponent();
-            Renderer.Initialize();
+            Renderer.Initialize(System.IO.Path.GetDirectoryName(Application.ExecutablePath));
 
             this.maxFrameRate = maxFrameRate;
             this.Renderer = new Renderer(overlayVersion, overlayName);

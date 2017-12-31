@@ -3,11 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RainbowMage.OverlayPlugin
@@ -49,14 +45,14 @@ namespace RainbowMage.OverlayPlugin
             asmResolver.Dispose();
         }
 
-        private string GetPluginDirectory()
+        public string GetPluginDirectory()
         {
             // ACT のプラグインリストからパスを取得する
             // Assembly.CodeBase からはパスを取得できない
             var plugin = ActGlobals.oFormActMain.ActPlugins.Where(x => x.pluginObj == this).FirstOrDefault();
             if (plugin != null)
             {
-                return System.IO.Path.GetDirectoryName(plugin.pluginFile.FullName);
+                return Path.GetDirectoryName(plugin.pluginFile.FullName);
             }
             else
             {
