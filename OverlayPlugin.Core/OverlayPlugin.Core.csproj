@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ACTColumnAdder.cs" />
+    <Compile Include="AutoHide.cs" />
     <Compile Include="ConfigEventArgs.cs" />
     <Compile Include="Overlays\LogParseOverlay\LogParseConfigPanel.cs">
       <SubType>UserControl</SubType>
