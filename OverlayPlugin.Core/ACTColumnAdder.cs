@@ -9,6 +9,33 @@ namespace RainbowMage.OverlayPlugin
     {
         public static void Init()
         {
+            try
+            {
+                /* 
+                 * Part of ACT.SpecialSpellTimer: 
+                 * https://github.com/anoyetta/ACT.SpecialSpellTimer/blob/master/ACT.SpecialSpellTimer/LogBuffer.cs 
+                 * Copyright (c) 2014 anoyetta; 
+                 * Licensed under BSD-3-Clause license.
+                 */
+                FieldInfo ACTField = ActGlobals.oFormActMain.GetType()
+                    .GetField("BeforeLogLineRead", (BindingFlags)(4 | 8 | 16 | 32 | 1024));
+                object logdelegate = ACTField.GetValue(ActGlobals.oFormActMain);
+
+                if (logdelegate != null)
+                {
+                    Delegate[] r = ((Delegate)logdelegate).GetInvocationList();
+                    foreach (var i in r)
+                        ActGlobals.oFormActMain.BeforeLogLineRead -= (LogLineEventDelegate)i;
+                    ActGlobals.oFormActMain.BeforeLogLineRead += ParseData;
+                    foreach (var i in r)
+                        ActGlobals.oFormActMain.BeforeLogLineRead += (LogLineEventDelegate)i;
+                }
+            }
+            catch
+            {
+
+            }
+
             /* 
              * Part of ACTColumnAdder: 
              * https://github.com/laiglinne-ff/ACTColumnAdder/blob/master/ACTColumnAdder/Class1.cs
@@ -188,7 +215,39 @@ namespace RainbowMage.OverlayPlugin
                     )
                 );
             }
+
+            if (!EncounterData.ExportVariables.ContainsKey("CurrentRealUserName"))
+            {
+                EncounterData.ExportVariables.Add("CurrentRealUserName",
+                new EncounterData.TextExportFormatter("CurrentRealUserName", "Current Real Username", "Current Username Not Fixed < YOU >", (Data, Extra, Format) => { return getCurrentPlayerName(); }));
+            }
+
+            if (!EncounterData.ExportVariables.ContainsKey("CurrentZoneRaw"))
+            {
+                EncounterData.ExportVariables.Add("CurrentZoneRaw",
+                new EncounterData.TextExportFormatter("CurrentZoneRaw", "Current Zone ID", "Current Zone Real ID", (Data, Extra, Format) => { return getCurrentZone().ToString("X"); }));
+            }
+
             ActGlobals.oFormActMain.ValidateLists();
+        }
+
+        public static void ParseData(bool isImport, LogLineEventArgs e)
+        {
+            string[] data = e.logLine.Split('|');
+            if (data.Length < 2 || data == null) return;
+            switch ((MessageType)Convert.ToInt32(data[0]))
+            {
+                case MessageType.ChangePrimaryPlayer:
+                    if (data.Length < 4) return;
+
+                    currentPlayerName = data[3];
+                    break;
+                case MessageType.ChangeZone:
+                    if (data.Length < 3) return;
+
+                    currentZone = Convert.ToInt32(data[2], 16);
+                    break;
+            }
         }
 
         public static string currentPlayerName = "YOU";

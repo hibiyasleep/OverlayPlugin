@@ -8,7 +8,6 @@ using System;
 using System.IO;
 using RainbowMage.OverlayPlugin.Overlays;
 using System.Threading.Tasks;
-using System.Threading;
 
 namespace RainbowMage.OverlayPlugin
 {
