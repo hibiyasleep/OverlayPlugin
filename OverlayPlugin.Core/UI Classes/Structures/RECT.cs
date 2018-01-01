@@ -23,7 +23,14 @@ namespace RainbowMage.OverlayPlugin
             this.bottom = bottom;
         }
 
-        public Rectangle Rect { get { return new Rectangle(this.left, this.top, this.right - this.left, this.bottom - this.top); } }
+        public static explicit operator Rectangle(RECT value)
+        {
+            return new Rectangle(value.left, value.top, value.right - value.left, value.bottom - value.top);
+        }
+        public static explicit operator RECT(Rectangle value)
+        {
+            return new RECT(value.Left, value.Top, value.Right, value.Bottom);
+        }
 
         public static RECT FromXYWH(int x, int y, int width, int height)
         {
@@ -31,14 +38,6 @@ namespace RainbowMage.OverlayPlugin
                             y,
                             x + width,
                             y + height);
-        }
-
-        public static RECT FromRectangle(Rectangle rect)
-        {
-            return new RECT(rect.Left,
-                             rect.Top,
-                             rect.Right,
-                             rect.Bottom);
         }
     }
 }
