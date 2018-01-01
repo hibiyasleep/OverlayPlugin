@@ -8,10 +8,13 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using System.Windows.Forms;
 =======
 using System.Threading;
 >>>>>>> Remove Error Cause
+=======
+>>>>>>> Revert "Remove Error Cause"
 
 namespace RainbowMage.OverlayPlugin
 {
