@@ -173,8 +173,20 @@ namespace RainbowMage.OverlayPlugin
         [XmlElement("FollowLatestLog")]
         public bool FollowLatestLog { get; set; }
 
+        private bool m_hideOverlaysWhenNotActive;
         [XmlElement("HideOverlaysWhenNotActive")]
-        public bool HideOverlaysWhenNotActive { get; set; }
+        public bool HideOverlaysWhenNotActive
+        {
+            get
+            {
+                return this.m_hideOverlaysWhenNotActive;
+            }
+            set
+            {
+                this.m_hideOverlaysWhenNotActive = value;
+                AutoHide.Enabled = value;
+            }
+        }
 
         /// <summary>
         /// 設定ファイルを生成したプラグインのバージョンを取得または設定します。
