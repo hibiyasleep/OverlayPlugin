@@ -2,7 +2,6 @@
 using System;
 using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Linq;
 using System.Security.Permissions;
 using System.Windows.Forms;
@@ -12,8 +11,6 @@ namespace RainbowMage.OverlayPlugin
 {
     public partial class OverlayForm : Form
     {
-        private object bitmapSync = new object();
-        private Bitmap bitmap;
         private DIBitmap surfaceBuffer;
         private object surfaceBufferLocker = new object();
         private int maxFrameRate;
@@ -24,6 +21,8 @@ namespace RainbowMage.OverlayPlugin
         private bool controlKeyPressed = false;
 
         public Renderer Renderer { get; private set; }
+
+        internal DIBitmap SurfaceBuffer { get { return this.surfaceBuffer; } }
 
         private string url;
         public string Url
@@ -256,39 +255,6 @@ namespace RainbowMage.OverlayPlugin
 
                     // TODO: DirtyRect に対応
                     surfaceBuffer.SetSurfaceData(e.Buffer, (uint)(e.Width * e.Height * 4));
-                    
-                    lock (bitmapSync)
-                    {
-                        try
-                        {
-                            var rect = new Rectangle(0, 0, e.Width, e.Height);
-
-                            if (this.bitmap == null || this.bitmap.Size != rect.Size)
-                            {
-                                this.bitmap?.Dispose();
-                                this.bitmap = new Bitmap(e.Width, e.Height, PixelFormat.Format32bppArgb);
-                            }
-
-                            BitmapData screenShot = null;
-                            try
-                            {
-                                screenShot = this.bitmap.LockBits(rect, ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
-                                
-                                NativeMethods.CopyMemory(screenShot.Scan0, surfaceBuffer.Bits, (uint)surfaceBuffer.BitsCount);
-
-                            }
-                            finally
-                            {
-                                if (screenShot != null)
-                                    this.bitmap.UnlockBits(screenShot);
-                            }
-
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.GetBaseException().ToString());
-                        }
-                    }
 
                     UpdateLayeredWindowBitmap();
                 }
@@ -354,8 +320,7 @@ namespace RainbowMage.OverlayPlugin
             {
                 components.Dispose();
             }
-
-            this.bitmap?.Dispose();
+            
             base.Dispose(disposing);
         }
 
@@ -657,7 +622,5 @@ namespace RainbowMage.OverlayPlugin
         {
             return (NativeMethods.GetKeyState((int)key) & 1) == 1;
         }
-
-        public Image LatestBitmap => this.bitmap;
     }
 }

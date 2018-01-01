@@ -37,9 +37,13 @@ namespace RainbowMage.OverlayPlugin
 
             InitializeOverlayConfigTabs();
 
-            screenShotPath.Text = config.ScreenShotSavePath;
+            screenShotPath.Text                    = config.ScreenShotSavePath;
+            screenShotBackgroundPath.Text          = config.ScreenShotBackgroundPath;
+            screenShotBackgroundMode.SelectedIndex = config.ScreenShotBackgroundMode;
+            screenShotAutoClipping.Checked         = config.ScreenShotAutoClipping;
+            screenShotMargin.Value                 = config.ScreenShotMargin;
 
-            if (screenShotPath.Text == "")
+            if (string.IsNullOrWhiteSpace(screenShotPath.Text))
             {
                 screenShotPath.Text = PluginMain.ScreenShotPath;
             }
@@ -249,14 +253,50 @@ namespace RainbowMage.OverlayPlugin
             config.HideOverlaysWhenNotActive = checkBoxAutoHide.Checked;
         }
 
+        private void screenShotBackgroundPath_TextChanged(object sender, EventArgs e)
+        {
+            config.ScreenShotSavePath = screenShotPath.Text;
+        }
+
         private void screenShotPathSelectButton_Click(object sender, EventArgs e)
         {
-            var ofd = new FolderBrowserDialog();
-            if (ofd.ShowDialog() == DialogResult.OK)
+            this.fbdScreenShotPath.SelectedPath = this.screenShotPath.Text;
+            
+            if (this.fbdScreenShotPath.ShowDialog() == DialogResult.OK)
             {
-                screenShotPath.Text = ofd.SelectedPath;
-                config.ScreenShotSavePath = ofd.SelectedPath;
+                screenShotPath.Text = this.fbdScreenShotPath.SelectedPath;
             }
+        }
+
+        private void screenShotPath_TextChanged(object sender, EventArgs e)
+        {
+            config.ScreenShotBackgroundPath = screenShotBackgroundPath.Text;
+        }
+
+        private void screenShotBackgroundPathSelect_Click(object sender, EventArgs e)
+        {
+            this.ofdImage.FileName = this.screenShotBackgroundPath.Text;
+
+            if (this.ofdImage.ShowDialog() == DialogResult.OK)
+            {
+                screenShotBackgroundPath.Text = this.ofdImage.FileName;
+                config.ScreenShotBackgroundPath = this.ofdImage.FileName;
+            }
+        }
+
+        private void screenShotBackgroundFillType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            config.ScreenShotBackgroundMode = screenShotBackgroundMode.SelectedIndex;
+        }
+
+        private void screenShotAutoClipping_CheckedChanged(object sender, EventArgs e)
+        {
+            config.ScreenShotAutoClipping = screenShotAutoClipping.Checked;
+        }
+
+        private void screenShotMargin_ValueChanged(object sender, EventArgs e)
+        {
+            config.ScreenShotMargin = (int)screenShotMargin.Value;
         }
 
         private void takeScreenShotBtn_Click(object sender, EventArgs e)
@@ -269,7 +309,15 @@ namespace RainbowMage.OverlayPlugin
 
             try
             {
-                selectedOverlay.TakeScreenShot(config.ScreenShotSavePath);
+                selectedOverlay.TakeScreenShot(
+                    new ScreenshotConfig
+                    {
+                        SavePath            = config.ScreenShotSavePath,
+                        AutoClipping        = config.ScreenShotAutoClipping,
+                        BackgroundImagePath = config.ScreenShotBackgroundPath,
+                        BackgroundMode      = (ScreenshotBackgroundMode)config.ScreenShotBackgroundMode,
+                        Margin              = config.ScreenShotMargin,
+                    });
             }
             catch (Exception ex)
             {

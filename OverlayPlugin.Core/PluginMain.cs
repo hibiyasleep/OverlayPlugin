@@ -135,9 +135,17 @@ namespace RainbowMage.OverlayPlugin
             {
                 foreach(var i in Overlays)
                 {
-                    if(i.Name == e.Message)
+                    if (i.Name == e.Message)
                     {
-                        i.TakeScreenShot(Config.ScreenShotSavePath);
+                        i.TakeScreenShot(
+                            new ScreenshotConfig
+                            {
+                                SavePath            = Config.ScreenShotSavePath,
+                                AutoClipping        = Config.ScreenShotAutoClipping,
+                                BackgroundImagePath = Config.ScreenShotBackgroundPath,
+                                BackgroundMode      = (ScreenshotBackgroundMode)Config.ScreenShotBackgroundMode,
+                                Margin              = Config.ScreenShotMargin,
+                            });
                         break;
                     }
                 }
