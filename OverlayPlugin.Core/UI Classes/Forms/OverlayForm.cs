@@ -2,9 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using System.Windows.Forms;
 using Xilium.CefGlue;
@@ -13,8 +11,6 @@ namespace RainbowMage.OverlayPlugin
 {
     public partial class OverlayForm : Form
     {
-        private object bitmapSync = new object();
-        private Bitmap bitmap;
         private DIBitmap surfaceBuffer;
         private object surfaceBufferLocker = new object();
         private int maxFrameRate;
@@ -25,6 +21,8 @@ namespace RainbowMage.OverlayPlugin
         private bool controlKeyPressed = false;
 
         public Renderer Renderer { get; private set; }
+
+        internal DIBitmap SurfaceBuffer { get { return this.surfaceBuffer; } }
 
         private string url;
         public string Url
@@ -236,8 +234,7 @@ namespace RainbowMage.OverlayPlugin
         }
 
         #endregion
-
-        private byte[] bitmapBuffer;
+        
         void renderer_Render(object sender, RenderEventArgs e)
         {
             if (!this.terminated)
@@ -258,47 +255,6 @@ namespace RainbowMage.OverlayPlugin
 
                     // TODO: DirtyRect に対応
                     surfaceBuffer.SetSurfaceData(e.Buffer, (uint)(e.Width * e.Height * 4));
-                    
-                    lock (bitmapSync)
-                    {
-                        try
-                        {
-                            var rect = new Rectangle(0, 0, e.Width, e.Height);
-
-                            if (this.bitmap == null || this.bitmap.Size != rect.Size)
-                            {
-                                this.bitmap?.Dispose();
-                                this.bitmap = new Bitmap(e.Width, e.Height, PixelFormat.Format32bppArgb);
-                            }
-
-                            BitmapData screenShot = null;
-                            try
-                            {
-                                screenShot = this.bitmap.LockBits(rect, ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
-
-                                int totalSize = (e.Width * e.Height * 4);
-
-                                if (this.bitmapBuffer == null || this.bitmapBuffer.Length < totalSize)
-                                    this.bitmapBuffer = new byte[totalSize];
-
-                                IntPtr screenShotPtr = screenShot.Scan0;
-
-                                Marshal.Copy(surfaceBuffer.Bits, this.bitmapBuffer, 0, totalSize);
-                                Marshal.Copy(this.bitmapBuffer, 0, screenShotPtr, totalSize);
-
-                            }
-                            finally
-                            {
-                                if (screenShot != null)
-                                    this.bitmap.UnlockBits(screenShot);
-                            }
-
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.GetBaseException().ToString());
-                        }
-                    }
 
                     UpdateLayeredWindowBitmap();
                 }
@@ -364,8 +320,7 @@ namespace RainbowMage.OverlayPlugin
             {
                 components.Dispose();
             }
-
-            this.bitmap?.Dispose();
+            
             base.Dispose(disposing);
         }
 
@@ -667,7 +622,5 @@ namespace RainbowMage.OverlayPlugin
         {
             return (NativeMethods.GetKeyState((int)key) & 1) == 1;
         }
-
-        public Image LatestBitmap => this.bitmap;
     }
 }

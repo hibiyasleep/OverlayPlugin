@@ -1,38 +1,38 @@
 ﻿using Advanced_Combat_Tracker;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 
 namespace RainbowMage.OverlayPlugin.Overlays
 {
-    [DataContract]
+    [JsonObject]
     class SerializableTimerFrameEntry
     {
-        [DataMember(Name = "name")]
+        [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
-        [DataMember(Name = "key")]
+        [JsonProperty(PropertyName = "key")]
         public string Key { get; set; }
-        [DataMember(Name = "color")]
+        [JsonProperty(PropertyName = "color")]
         public int Color { get; set; }
-        [DataMember(Name = "startCount")]
+        [JsonProperty(PropertyName = "startCount")]
         public int StartCount { get; set; }
-        [DataMember(Name = "warningCount")]
+        [JsonProperty(PropertyName = "warningCount")]
         public int WarningCount { get; set; }
-        [DataMember(Name = "expireCount")]
+        [JsonProperty(PropertyName = "expireCount")]
         public int ExpireCount { get; set; }
-        [DataMember(Name = "tooltip")]
+        [JsonProperty(PropertyName = "tooltip")]
         public string Tooltip { get; set; }
-        [DataMember(Name = "absoluteTiming")]
+        [JsonProperty(PropertyName = "absoluteTiming")]
         public bool AbsoluteTiming { get; set; }
-        [DataMember(Name = "onlyMasterTicks")]
+        [JsonProperty(PropertyName = "onlyMasterTicks")]
         public bool OnlyMasterTicks { get; set; }
-        [DataMember(Name = "oneOnly")]
+        [JsonProperty(PropertyName = "oneOnly")]
         public bool OneOnly { get; set; }
-        //[DataMember(Name = "masterExists")]
+        //[JsonProperty(PropertyName = "masterExists")]
         //public bool MasterExists { get; set; }
-        //[DataMember(Name = "activeInList")]
+        //[JsonProperty(PropertyName = "activeInList")]
         //public bool ActiveInList { get; set; }
-        [DataMember(Name = "spellTimers")]
+        [JsonProperty(PropertyName = "spellTimers")]
         public IList<SerializableSpellTimerEntry> SpellTimers { get; set; }
 
         public TimerFrame Original { get; private set; }
@@ -63,13 +63,13 @@ namespace RainbowMage.OverlayPlugin.Overlays
         }
     }
 
-    [DataContract]
+    [JsonObject]
     class SerializableSpellTimerEntry
     {
         public DateTime StartTime { get; set; }
         private static readonly DateTime EpochTime = new DateTime(1970, 1, 1);
 
-        [DataMember(Name = "startTime")]
+        [JsonProperty(PropertyName = "startTime")]
         public long StartTimeLong 
         { 
             get

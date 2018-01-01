@@ -10,7 +10,6 @@ namespace RainbowMage.OverlayPlugin
     {
         private KeyboardHook hook = new KeyboardHook();
         protected System.Timers.Timer timer;
-        protected System.Timers.Timer xivWindowTimer;
         /// <summary>
         /// オーバーレイがログを出力したときに発生します。
         /// </summary>
@@ -52,7 +51,7 @@ namespace RainbowMage.OverlayPlugin
         public void Start()
         {
             timer.Start();
-            xivWindowTimer.Start();
+            AutoHide.AddOverlay(this.Config, this.Overlay);
         }
 
         /// <summary>
@@ -61,7 +60,7 @@ namespace RainbowMage.OverlayPlugin
         public void Stop()
         {
             timer.Stop();
-            xivWindowTimer.Stop();
+            AutoHide.RemoveOverlay(this.Config);
         }
 
         /// <summary>
@@ -92,6 +91,9 @@ namespace RainbowMage.OverlayPlugin
                                 break;
                             case GlobalHotkeyType.ToggleLock:
                                 hook.KeyPressed += (o, e) => this.Config.IsLocked = !this.Config.IsLocked;
+                                break;
+                            case GlobalHotkeyType.ScreenShot:
+                                hook.KeyPressed += (o, e) => this.TakeScreenShot();
                                 break;
                             default:
                                 hook.KeyPressed += (o, e) => this.Config.IsVisible = !this.Config.IsVisible;
@@ -232,41 +234,6 @@ namespace RainbowMage.OverlayPlugin
                     Log(LogLevel.Error, "Update: {0}", ex.ToString());
                 }
             };
-
-            xivWindowTimer = new System.Timers.Timer();
-            xivWindowTimer.Interval = 1000;
-            xivWindowTimer.Elapsed += (o, e) =>
-            {
-                try
-                {
-                    if (Config.IsVisible && PluginConfig.HideOverlaysWhenNotActive)
-                    {
-                        uint pid;
-                        var hWndFg = NativeMethods.GetForegroundWindow();
-                        if (hWndFg == IntPtr.Zero)
-                        {
-                            return;
-                        }
-                        NativeMethods.GetWindowThreadProcessId(hWndFg, out pid);
-                        var exePath = Process.GetProcessById((int)pid).MainModule.FileName;
-
-                        if (Path.GetFileName(exePath.ToString()) == "ffxiv.exe" ||
-                            Path.GetFileName(exePath.ToString()) == "ffxiv_dx11.exe" ||
-                            exePath.ToString() == Process.GetCurrentProcess().MainModule.FileName)
-                        {
-                            this.Overlay.Visible = true;
-                        }
-                        else
-                        {
-                            this.Overlay.Visible = false;
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Log(LogLevel.Error, "XivWindowWatcher: {0}", ex.ToString());
-                }
-            };
         }
 
         /// <summary>
@@ -306,10 +273,6 @@ namespace RainbowMage.OverlayPlugin
                 {
                     this.timer.Stop();
                 }
-                if (this.xivWindowTimer != null)
-                {
-                    this.xivWindowTimer.Stop();
-                }
                 if (this.Overlay != null)
                 {
                     this.Overlay.Close();
@@ -319,6 +282,7 @@ namespace RainbowMage.OverlayPlugin
                 {
                     this.hook.Dispose();
                 }
+                AutoHide.RemoveOverlay(this.Config);
             }
             catch (Exception ex)
             {
@@ -385,9 +349,20 @@ namespace RainbowMage.OverlayPlugin
 
         }
 
-        public void TakeScreenShot(string path)
+        public void TakeScreenShot()
         {
-            Overlay.LatestBitmap?.Save(Path.Combine(path, DateTime.Now.ToString("'ScreenShot_'yyyy-MM-dd-HH-mm-ss-fff'.png'")), System.Drawing.Imaging.ImageFormat.Png);
+            TakeScreenShot(new ScreenshotConfig
+            {
+                SavePath            = PluginConfig.ScreenShotSavePath,
+                AutoClipping        = PluginConfig.ScreenShotAutoClipping,
+                BackgroundImagePath = PluginConfig.ScreenShotBackgroundPath,
+                BackgroundMode      = (ScreenshotBackgroundMode)PluginConfig.ScreenShotBackgroundMode,
+                Margin              = PluginConfig.ScreenShotMargin,
+            });
+        }
+        public void TakeScreenShot(ScreenshotConfig config)
+        {
+            ScreenShot.SaveScreenShot(this.Overlay.SurfaceBuffer, config);
         }
     }
 }

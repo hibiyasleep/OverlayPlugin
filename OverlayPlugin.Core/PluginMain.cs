@@ -1,13 +1,13 @@
 ﻿using Advanced_Combat_Tracker;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
-using System.Reflection;
 using RainbowMage.HtmlRenderer;
-using System;
-using System.IO;
 using RainbowMage.OverlayPlugin.Overlays;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace RainbowMage.OverlayPlugin
 {
@@ -135,9 +135,17 @@ namespace RainbowMage.OverlayPlugin
             {
                 foreach(var i in Overlays)
                 {
-                    if(i.Name == e.Message)
+                    if (i.Name == e.Message)
                     {
-                        i.TakeScreenShot(Config.ScreenShotSavePath);
+                        i.TakeScreenShot(
+                            new ScreenshotConfig
+                            {
+                                SavePath            = Config.ScreenShotSavePath,
+                                AutoClipping        = Config.ScreenShotAutoClipping,
+                                BackgroundImagePath = Config.ScreenShotBackgroundPath,
+                                BackgroundMode      = (ScreenshotBackgroundMode)Config.ScreenShotBackgroundMode,
+                                Margin              = Config.ScreenShotMargin,
+                            });
                         break;
                     }
                 }

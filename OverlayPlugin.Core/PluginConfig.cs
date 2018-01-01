@@ -173,8 +173,20 @@ namespace RainbowMage.OverlayPlugin
         [XmlElement("FollowLatestLog")]
         public bool FollowLatestLog { get; set; }
 
+        private bool m_hideOverlaysWhenNotActive;
         [XmlElement("HideOverlaysWhenNotActive")]
-        public bool HideOverlaysWhenNotActive { get; set; }
+        public bool HideOverlaysWhenNotActive
+        {
+            get
+            {
+                return this.m_hideOverlaysWhenNotActive;
+            }
+            set
+            {
+                this.m_hideOverlaysWhenNotActive = value;
+                AutoHide.Enabled = value;
+            }
+        }
 
         /// <summary>
         /// 設定ファイルを生成したプラグインのバージョンを取得または設定します。
@@ -211,6 +223,26 @@ namespace RainbowMage.OverlayPlugin
         [EditorBrowsable(EditorBrowsableState.Never)]
         [Browsable(false)]
         public string ScreenShotSavePath { get; set; }
+
+        [XmlElement("ScreenShotBackgroundPath")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [Browsable(false)]
+        public string ScreenShotBackgroundPath { get; set; }
+
+        [XmlElement("ScreenShotBackgroundFillType")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [Browsable(false)]
+        public int ScreenShotBackgroundMode { get; set; }
+
+        [XmlElement("ScreenShotAutoClipping")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [Browsable(false)]
+        public bool ScreenShotAutoClipping { get; set; }
+
+        [XmlElement("ScreenShotMargin")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [Browsable(false)]
+        public int ScreenShotMargin { get; set; }
 
         [XmlElement("Version")]
         [EditorBrowsable(EditorBrowsableState.Never)]
