@@ -7,7 +7,11 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+<<<<<<< HEAD
 using System.Windows.Forms;
+=======
+using System.Threading;
+>>>>>>> Remove Error Cause
 
 namespace RainbowMage.OverlayPlugin
 {
