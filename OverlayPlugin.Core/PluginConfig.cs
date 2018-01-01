@@ -224,6 +224,26 @@ namespace RainbowMage.OverlayPlugin
         [Browsable(false)]
         public string ScreenShotSavePath { get; set; }
 
+        [XmlElement("ScreenShotBackgroundPath")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [Browsable(false)]
+        public string ScreenShotBackgroundPath { get; set; }
+
+        [XmlElement("ScreenShotBackgroundFillType")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [Browsable(false)]
+        public int ScreenShotBackgroundMode { get; set; }
+
+        [XmlElement("ScreenShotAutoClipping")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [Browsable(false)]
+        public bool ScreenShotAutoClipping { get; set; }
+
+        [XmlElement("ScreenShotMargin")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [Browsable(false)]
+        public int ScreenShotMargin { get; set; }
+
         [XmlElement("Version")]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [Browsable(false)]
