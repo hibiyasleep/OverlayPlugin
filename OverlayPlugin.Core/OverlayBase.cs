@@ -92,6 +92,9 @@ namespace RainbowMage.OverlayPlugin
                             case GlobalHotkeyType.ToggleLock:
                                 hook.KeyPressed += (o, e) => this.Config.IsLocked = !this.Config.IsLocked;
                                 break;
+                            case GlobalHotkeyType.ScreenShot:
+                                hook.KeyPressed += (o, e) => this.TakeScreenShot();
+                                break;
                             default:
                                 hook.KeyPressed += (o, e) => this.Config.IsVisible = !this.Config.IsVisible;
                                 break;
@@ -346,6 +349,17 @@ namespace RainbowMage.OverlayPlugin
 
         }
 
+        public void TakeScreenShot()
+        {
+            TakeScreenShot(new ScreenshotConfig
+            {
+                SavePath            = PluginConfig.ScreenShotSavePath,
+                AutoClipping        = PluginConfig.ScreenShotAutoClipping,
+                BackgroundImagePath = PluginConfig.ScreenShotBackgroundPath,
+                BackgroundMode      = (ScreenshotBackgroundMode)PluginConfig.ScreenShotBackgroundMode,
+                Margin              = PluginConfig.ScreenShotMargin,
+            });
+        }
         public void TakeScreenShot(ScreenshotConfig config)
         {
             ScreenShot.SaveScreenShot(this.Overlay.SurfaceBuffer, config);

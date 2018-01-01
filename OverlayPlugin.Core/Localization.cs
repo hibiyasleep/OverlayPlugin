@@ -16,7 +16,8 @@ namespace RainbowMage.OverlayPlugin
         SortNumberDescending,
         ToggleVisible,
         ToggleClickthru,
-        ToggleLock
+        ToggleLock,
+        ScreenShot
     }
 
     public static class Localization
@@ -68,6 +69,9 @@ namespace RainbowMage.OverlayPlugin
             dict[TextItem.ToggleLock, ""] = "Toggle lock";
             dict[TextItem.ToggleLock, "ja"] = "移動/リサイズ制限の切り替え";
             dict[TextItem.ToggleLock, "ko"] = "Toggle lock";
+            dict[TextItem.ScreenShot, ""] = "ScreenShot";
+            dict[TextItem.ScreenShot, "ja"] = "ScreenShot";
+            dict[TextItem.ScreenShot, "ko"] = "ScreenShot";
         }
 
         public static string GetText(TextItem item)
