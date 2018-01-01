@@ -244,6 +244,7 @@
             // comboHotkeyType
             // 
             resources.ApplyResources(this.comboHotkeyType, "comboHotkeyType");
+            this.comboHotkeyType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboHotkeyType.FormattingEnabled = true;
             this.comboHotkeyType.Name = "comboHotkeyType";
             // 
