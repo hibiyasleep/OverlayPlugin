@@ -1,20 +1,15 @@
 ﻿using Advanced_Combat_Tracker;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Runtime.Serialization.Json;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace RainbowMage.OverlayPlugin.Overlays
 {
     public class SpellTimerOverlay : OverlayBase<SpellTimerOverlayConfig>
     {
-        static DataContractJsonSerializer jsonSerializer =
-            new DataContractJsonSerializer(typeof(List<SerializableTimerFrameEntry>));
-
         IList<SerializableTimerFrameEntry> activatedTimers;
 
         public SpellTimerOverlay(SpellTimerOverlayConfig config)
@@ -112,31 +107,22 @@ namespace RainbowMage.OverlayPlugin.Overlays
 
         internal string CreateJsonData()
         {
+            string result;
             lock (this.activatedTimers)
             {
                 RemoveExpiredEntries();
+                result = JsonConvert.SerializeObject(this.activatedTimers);
             }
 
-            using (var ms = new MemoryStream())
+            if (!string.IsNullOrWhiteSpace(result))
             {
-                lock (this.activatedTimers)
-                {
-                    RemoveExpiredEntries();
-                    jsonSerializer.WriteObject(ms, activatedTimers);
-                }
-
-                var result = Encoding.UTF8.GetString(ms.ToArray());
-
-                if (!string.IsNullOrWhiteSpace(result))
-                {
-                    return string.Format(
-                        "{{ timerFrames: {0} }}",
-                        result);
-                }
-                else
-                {
-                    return "";
-                }
+                return string.Format(
+                    "{{ timerFrames: {0} }}",
+                    result);
+            }
+            else
+            {
+                return "";
             }
         }
 
