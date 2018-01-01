@@ -56,7 +56,7 @@ namespace RainbowMage.OverlayPlugin
                 {
                     hookProc = NativeMethods.SetWinEventHook(
                         NativeMethods.EVENT_SYSTEM_FOREGROUND,
-                        NativeMethods.EVENT_SYSTEM_FOREGROUND,
+                        NativeMethods.EVENT_SYSTEM_MINIMIZEEND,
                         IntPtr.Zero,
                         winProc,
                         0,
@@ -74,6 +74,11 @@ namespace RainbowMage.OverlayPlugin
         private static bool visibled = false;
         private static void WinEventProc(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime)
         {
+            if (eventType != NativeMethods.EVENT_SYSTEM_FOREGROUND &&
+                eventType != NativeMethods.EVENT_SYSTEM_MINIMIZEEND &&
+                eventType != NativeMethods.EVENT_SYSTEM_MINIMIZESTART)
+                return;
+
             bool newVisible = false;
 
             var foregroundHwnd = NativeMethods.GetForegroundWindow();
@@ -147,6 +152,8 @@ namespace RainbowMage.OverlayPlugin
             public static extern IntPtr GetForegroundWindow();
 
             public const int EVENT_SYSTEM_FOREGROUND = 0x3;
+            public const int EVENT_SYSTEM_MINIMIZESTART = 0x16;
+            public const int EVENT_SYSTEM_MINIMIZEEND = 0x17;
             public const int WINEVENT_OUTOFCONTEXT = 0x0;
         }
     }
