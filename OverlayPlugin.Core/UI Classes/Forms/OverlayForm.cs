@@ -236,8 +236,7 @@ namespace RainbowMage.OverlayPlugin
         }
 
         #endregion
-
-        private byte[] bitmapBuffer;
+        
         void renderer_Render(object sender, RenderEventArgs e)
         {
             if (!this.terminated)
@@ -275,16 +274,8 @@ namespace RainbowMage.OverlayPlugin
                             try
                             {
                                 screenShot = this.bitmap.LockBits(rect, ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
-
-                                int totalSize = (e.Width * e.Height * 4);
-
-                                if (this.bitmapBuffer == null || this.bitmapBuffer.Length < totalSize)
-                                    this.bitmapBuffer = new byte[totalSize];
-
-                                IntPtr screenShotPtr = screenShot.Scan0;
-
-                                Marshal.Copy(surfaceBuffer.Bits, this.bitmapBuffer, 0, totalSize);
-                                Marshal.Copy(this.bitmapBuffer, 0, screenShotPtr, totalSize);
+                                
+                                NativeMethods.CopyMemory(screenShot.Scan0, surfaceBuffer.Bits, (uint)surfaceBuffer.BitsCount);
 
                             }
                             finally

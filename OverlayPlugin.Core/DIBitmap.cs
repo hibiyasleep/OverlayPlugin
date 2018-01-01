@@ -20,6 +20,7 @@ namespace RainbowMage.OverlayPlugin
         /// Get the address of the bitmap data.
         /// </summary>
         public IntPtr Bits { get; private set; }
+        public uint BitsCount { get; private set; }
         /// <summary>
         /// Get the handle of the device independent bitmap.
         /// </summary>
@@ -74,6 +75,7 @@ namespace RainbowMage.OverlayPlugin
         public void SetSurfaceData(IntPtr srcSurfaceData, uint count)
         {
             NativeMethods.CopyMemory(this.Bits, srcSurfaceData, count);
+            this.BitsCount = count;
         }
 
         public void Dispose()
