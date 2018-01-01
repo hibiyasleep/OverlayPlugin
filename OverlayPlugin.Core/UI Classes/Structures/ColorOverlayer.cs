@@ -10,31 +10,11 @@ namespace RainbowMage.OverlayPlugin
         private static string Logs_base64 = "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTZEaa/1AAAAn0lEQVQ4T62UQRKDMAhFs3DpYXpTD+sBKD/F+gfoNJIsXgYe+YwLtYnIUlI5Qypn+BytbcqhnArEE5BBduOFEHypwsELryd7oX8CMpY9e28Sh5Z3PUrIe1GB81FYnfUZfKfXXlTgfBRW/+ozeB5EBc5HYXXWezDnO732ogLnL7H8xV7+6e0QyszPYf8u/IcFO37mSaVndBlIpWd0mYi0N742X8j2SxeGAAAAAElFTkSuQmCC";
         private static string Information_base64 = "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTZEaa/1AAAAgElEQVQ4T+2VQQrAIAwE/f+r/FmrlEkWsSRWjxWmLElmry3t1cZ1iN41XezwhPb65zP0WBiGS/yFPtyBHgvDMIQikJ0fkDNQBLLzA3IGikB2fkDOQBHIbn6wCj0WhqGBECGOi2QFIUIcF8kKQoQ4LpIVhAhx1sQ36NFwipO/gFJvQLKcg+cDWMMAAAAASUVORK5CYII=";
 
-        private static Image OverlaysImage;
-        private static Image LogsImage;
-        private static Image InformationImage;
+        private readonly static Bitmap OverlaysImage;
+        private readonly static Bitmap LogsImage;
+        private readonly static Bitmap InformationImage;
 
-        private static Bitmap colorOverlayer(Image image, Color color)
-        {
-            Init();
-            Bitmap img = new Bitmap(image.Width, image.Height);
-            using (Bitmap bmp = (Bitmap)image)
-            {
-                for (var x = 0; x < image.Width; x++)
-                {
-                    for (var y = 0; y < image.Height; y++)
-                    {
-                        var alpha = bmp.GetPixel(x, y).A;
-                        img.SetPixel(x, y, Color.FromArgb(alpha, color));
-                    }
-                }
-                bmp.Dispose();
-            }
-
-            return img;
-        }
-
-        public static void Init()
+        static ColorOverlayer()
         {
             var queue = new byte[][] { Convert.FromBase64String(Overlays_base64), Convert.FromBase64String(Logs_base64), Convert.FromBase64String(Information_base64) };
             var idx = 0;
@@ -46,18 +26,34 @@ namespace RainbowMage.OverlayPlugin
                     switch (idx++)
                     {
                         case 0:
-                            OverlaysImage = Image.FromStream(ms);
+                            OverlaysImage = (Bitmap)Bitmap.FromStream(ms);
                             break;
                         case 1:
-                            LogsImage = Image.FromStream(ms);
+                            LogsImage = (Bitmap)Bitmap.FromStream(ms);
                             break;
                         case 2:
-                            InformationImage = Image.FromStream(ms);
+                            InformationImage = (Bitmap)Bitmap.FromStream(ms);
                             break;
                     }
                     ms.Dispose();
                 }
             }
+        }
+
+        private static Bitmap colorOverlayer(Bitmap image, Color color)
+        {
+            Bitmap img = new Bitmap(image.Width, image.Height);
+
+            for (var x = 0; x < image.Width; x++)
+            {
+                for (var y = 0; y < image.Height; y++)
+                {
+                    var alpha = image.GetPixel(x, y).A;
+                    img.SetPixel(x, y, Color.FromArgb(alpha, color));
+                }
+            }
+
+            return img;
         }
 
         public static Image OverlaysIcon(Color color)

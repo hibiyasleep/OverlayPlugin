@@ -34,8 +34,7 @@ namespace RainbowMage.OverlayPlugin
             SetStyle((ControlStyles)(0x02 | 0x06 | 0x2000 | 0x20000), true);
             DoubleBuffered = true;
             Alignment = TabAlignment.Top;
-
-            ColorOverlayer.Init();
+            
             var gray = Color.FromArgb(36, 41, 46);
             var black = Color.FromArgb(182, 184, 187);
 
