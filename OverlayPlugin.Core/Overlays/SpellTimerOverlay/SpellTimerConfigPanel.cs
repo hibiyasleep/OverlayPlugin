@@ -19,7 +19,8 @@ namespace RainbowMage.OverlayPlugin.Overlays
         {
             new KeyValuePair<string, GlobalHotkeyType>(Localization.GetText(TextItem.ToggleVisible), GlobalHotkeyType.ToggleVisible),
             new KeyValuePair<string, GlobalHotkeyType>(Localization.GetText(TextItem.ToggleClickthru), GlobalHotkeyType.ToggleClickthru),
-            new KeyValuePair<string, GlobalHotkeyType>(Localization.GetText(TextItem.ToggleLock), GlobalHotkeyType.ToggleLock)
+            new KeyValuePair<string, GlobalHotkeyType>(Localization.GetText(TextItem.ToggleLock), GlobalHotkeyType.ToggleLock),
+            new KeyValuePair<string, GlobalHotkeyType>(Localization.GetText(TextItem.ScreenShot), GlobalHotkeyType.ScreenShot)
         };
 
         public SpellTimerConfigPanel(SpellTimerOverlay overlay)

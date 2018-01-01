@@ -276,6 +276,7 @@ namespace RainbowMage.OverlayPlugin
     {
         ToggleVisible,
         ToggleClickthru,
-        ToggleLock
+        ToggleLock,
+        ScreenShot
     }
 }
