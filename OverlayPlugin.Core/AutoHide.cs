@@ -77,7 +77,7 @@ namespace RainbowMage.OverlayPlugin
             bool newVisible = false;
 
             var foregroundHwnd = NativeMethods.GetForegroundWindow();
-            if (NativeMethods.GetWindowThreadProcessId(foregroundHwnd, out uint pid) != 0)
+            if (NativeMethods.GetWindowThreadProcessId(foregroundHwnd, out uint pid) == 0)
                 return;
 
             if (pid == actPid)
@@ -101,6 +101,7 @@ namespace RainbowMage.OverlayPlugin
                         {
                         }
                     });
+
                 visibled = newVisible;
             }
         }
