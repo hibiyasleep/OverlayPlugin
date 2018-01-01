@@ -13,6 +13,28 @@ namespace RainbowMage.OverlayPlugin
         public static void Init()
         {
             /* 
+             * Part of ACT.SpecialSpellTimer: 
+             * https://github.com/anoyetta/ACT.SpecialSpellTimer/blob/master/ACT.SpecialSpellTimer/LogBuffer.cs 
+             * Copyright (c) 2014 anoyetta; 
+             * Licensed under BSD-3-Clause license.
+             */
+            FieldInfo ACTField = ActGlobals.oFormActMain.GetType()
+                .GetField("BeforeLogLineRead", (BindingFlags)(4 | 8 | 16 | 32 | 1024));
+            object logdelegate = ACTField.GetValue(ActGlobals.oFormActMain);
+
+            if (logdelegate != null)
+            {
+                Delegate[] r = ((Delegate)logdelegate).GetInvocationList();
+                foreach (var i in r)
+                    ActGlobals.oFormActMain.BeforeLogLineRead -= (LogLineEventDelegate)i;
+
+                ActGlobals.oFormActMain.BeforeLogLineRead += ParseData;
+
+                foreach (var i in r)
+                    ActGlobals.oFormActMain.BeforeLogLineRead += (LogLineEventDelegate)i;
+            }
+
+            /* 
              * Part of ACTColumnAdder: 
              * https://github.com/laiglinne-ff/ACTColumnAdder/blob/master/ACTColumnAdder/Class1.cs
              * Copyright (c) 2017 Laighlinne; 
