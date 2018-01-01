@@ -202,8 +202,8 @@ namespace RainbowMage.OverlayPlugin
             if (this.tabControl.SelectedTab.Equals(this.tabPageMain))
                 return;
 
-            if (tabControl.SelectedTab == null) // ???
-                tabControl.SelectedTab = tabControl.TabPages[0];
+            if (tabControl.SelectedTab == null)
+                return;
             
             string selectedOverlayName = tabControl.SelectedTab.Name;
             int selectedOverlayIndex = tabControl.TabPages.IndexOf(tabControl.SelectedTab);
