@@ -60,7 +60,7 @@ namespace RainbowMage.OverlayPlugin
                 primaryUser = logInfo.logLine;
 
                 primaryUser = primaryUser.Replace("02:Changed primary player to ", "").Replace(".", "");
-                primaryUser = primaryUser.Substring(primaryUser.IndexOf("]") + 1);
+                primaryUser = primaryUser.Substring(primaryUser.IndexOf("]") + 2);
             }
         }
 
