@@ -43,6 +43,8 @@ namespace RainbowMage.OverlayPlugin
             InitializeOverlay();
             InitializeTimer();
             InitializeConfigHandlers();
+
+            Update();
         }
 
         /// <summary>
@@ -293,6 +295,14 @@ namespace RainbowMage.OverlayPlugin
         public virtual void Navigate(string url)
         {
                 this.Overlay.Url = url;
+
+            try
+            {
+                this.Update();
+            }
+            catch
+            {
+            }
         }
 
         protected void Log(LogLevel level, string message)
