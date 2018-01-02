@@ -54,10 +54,14 @@ namespace RainbowMage.OverlayPlugin
 
         private void BeforeLogLineRead(bool isImport, LogLineEventArgs logInfo)
         {
-            if (logInfo.logLine.IndexOf("02:Changed primary player to ") > -1)
+            if (logInfo.logLine.IndexOf("02:Changed primary player to") > -1)
             {
-                primaryUser = logInfo.logLine.Replace("02:Changed primary player to ", "");
-                primaryUser = primaryUser.Substring(0, primaryUser.Length - 1);
+                primaryUser = logInfo.logLine.Replace("02:Changed primary player to", "");
+                try
+                {
+                    primaryUser = primaryUser.Split(' ')[1].Replace(".", "");
+                }
+                catch { }
             }
         }
 
