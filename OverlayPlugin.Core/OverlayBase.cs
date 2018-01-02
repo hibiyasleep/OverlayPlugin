@@ -43,6 +43,8 @@ namespace RainbowMage.OverlayPlugin
             InitializeOverlay();
             InitializeTimer();
             InitializeConfigHandlers();
+
+            Update();
         }
 
         /// <summary>
@@ -261,6 +263,10 @@ namespace RainbowMage.OverlayPlugin
         /// オーバーレイを更新します。
         /// </summary>
         protected abstract void Update();
+        protected virtual void FastUpdate()
+        {
+
+        }
 
         /// <summary>
         /// オーバーレイのインスタンスを破棄します。
@@ -293,6 +299,14 @@ namespace RainbowMage.OverlayPlugin
         public virtual void Navigate(string url)
         {
                 this.Overlay.Url = url;
+
+            try
+            {
+                this.FastUpdate();
+            }
+            catch
+            {
+            }
         }
 
         protected void Log(LogLevel level, string message)
