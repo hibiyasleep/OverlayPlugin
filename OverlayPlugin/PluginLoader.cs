@@ -3,10 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
 
 namespace RainbowMage.OverlayPlugin
 {
@@ -27,9 +25,9 @@ namespace RainbowMage.OverlayPlugin
             directories.Add(Path.Combine(pluginDirectory, "addon"));
             asmResolver = new AssemblyResolver(directories);
 
-            Initialize(pluginScreenSpace, pluginStatusText);
-
             ActGlobals.oFormActMain.BeforeLogLineRead += BeforeLogLineRead;
+
+            Initialize(pluginScreenSpace, pluginStatusText);
             AddExportVariable();
         }
 
@@ -47,21 +45,9 @@ namespace RainbowMage.OverlayPlugin
 
         public void DeInitPlugin()
         {
+            ActGlobals.oFormActMain.BeforeLogLineRead -= BeforeLogLineRead;
             pluginMain.DeInitPlugin();
             asmResolver.Dispose();
-
-            ActGlobals.oFormActMain.BeforeLogLineRead -= BeforeLogLineRead;
-        }
-
-        private void BeforeLogLineRead(bool isImport, LogLineEventArgs logInfo)
-        {
-            if(logInfo.logLine.IndexOf("02:Changed") > -1)
-            {
-                primaryUser = logInfo.logLine;
-
-                primaryUser = primaryUser.Replace("02:Changed primary player to ", "").Replace(".", "");
-                primaryUser = primaryUser.Substring(primaryUser.IndexOf("]") + 2);
-            }
         }
 
         public string GetPluginDirectory()
@@ -79,11 +65,22 @@ namespace RainbowMage.OverlayPlugin
             }
         }
 
-        public string getPrimaryUserName()
+        /// <summary>
+        /// Get Primary User
+        /// </summary>
+        /// <param name="isImport"></param>
+        /// <param name="logInfo"></param>
+        private void BeforeLogLineRead(bool isImport, LogLineEventArgs logInfo)
         {
-            return primaryUser;
-        }
+            if (logInfo.logLine.IndexOf("02:Changed") > -1)
+            {
+                primaryUser = logInfo.logLine;
 
+                primaryUser = primaryUser.Replace("02:Changed primary player to ", "").Replace(".", "");
+                primaryUser = primaryUser.Substring(primaryUser.IndexOf("]") + 2);
+            }
+        }
+        
         public void AddExportVariable()
         {
             if (!EncounterData.ExportVariables.ContainsKey("PrimaryUser"))
@@ -91,6 +88,11 @@ namespace RainbowMage.OverlayPlugin
                 EncounterData.ExportVariables.Add("PrimaryUser",
                 new EncounterData.TextExportFormatter("PrimaryUser", "Primary Current Username", "Using ACT Current Charname 'YOU' almost get Current Username from User Input, but this Force Attach Current Username.", (Data, Extra, Format) => { return getPrimaryUserName(); }));
             }
+        }
+
+        public string getPrimaryUserName()
+        {
+            return primaryUser;
         }
     }
 }
