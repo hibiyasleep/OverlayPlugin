@@ -6,7 +6,7 @@ namespace RainbowMage.OverlayPlugin
 {
     public class TabControlExt : TabControl
     {
-        StringFormat CenterStringFormat = new StringFormat()
+        static readonly StringFormat CenterStringFormat = new StringFormat()
         {
             LineAlignment = StringAlignment.Center,
             Alignment = StringAlignment.Center,
@@ -85,6 +85,8 @@ namespace RainbowMage.OverlayPlugin
             ItemSize = new Size(46, 140);
             SizeMode = TabSizeMode.Fixed;
             BackColor = Color.Transparent;
+
+            this.Font = base.Font;
         }
     }
 }
