@@ -346,7 +346,7 @@ namespace RainbowMage.OverlayPlugin
             this.Overlays = new OverlayConfigList();
             this.Overlays.Add(miniparseOverlayConfig);
             this.Overlays.Add(spellTimerOverlayConfig);
-            this.ScreenShotSavePath = PluginMain.ScreenShotPath;
+            this.ScreenShotSavePath = PluginMain.DefaultScreenShotPath;
         }
 
         /// <summary>

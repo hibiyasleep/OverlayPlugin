@@ -17,7 +17,7 @@ namespace RainbowMage.OverlayPlugin
         Label label;
         ControlPanel controlPanel;
 
-        internal static string ScreenShotPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "ScreenShot");
+        internal static readonly string DefaultScreenShotPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "ScreenShot");
         internal PluginConfig Config { get; private set; }
         internal List<IOverlay> Overlays { get; private set; }
         internal List<IOverlayAddon> Addons { get; set; }
@@ -302,7 +302,7 @@ namespace RainbowMage.OverlayPlugin
                 Config = PluginConfig.LoadXml(this.PluginDirectory, GetConfigPath());
                 if(Config.ScreenShotSavePath == "" || Config.ScreenShotSavePath == null)
                 {
-                    Config.ScreenShotSavePath = ScreenShotPath;
+                    Config.ScreenShotSavePath = DefaultScreenShotPath;
                 }
             }
             catch (Exception e)
@@ -314,7 +314,7 @@ namespace RainbowMage.OverlayPlugin
                 Config.SetDefaultOverlayConfigs(this.PluginDirectory);
                 if (Config.ScreenShotSavePath == "" || Config.ScreenShotSavePath == null)
                 {
-                    Config.ScreenShotSavePath = ScreenShotPath;
+                    Config.ScreenShotSavePath = DefaultScreenShotPath;
                 }
             }
 
