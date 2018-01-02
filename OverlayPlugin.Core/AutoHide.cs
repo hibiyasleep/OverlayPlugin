@@ -74,6 +74,9 @@ namespace RainbowMage.OverlayPlugin
         private static bool visibled = false;
         private static void WinEventProc(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime)
         {
+            if (!enabled)
+                return;
+
             if (eventType != NativeMethods.EVENT_SYSTEM_FOREGROUND &&
                 eventType != NativeMethods.EVENT_SYSTEM_MINIMIZEEND &&
                 eventType != NativeMethods.EVENT_SYSTEM_MINIMIZESTART)
