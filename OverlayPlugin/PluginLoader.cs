@@ -28,7 +28,8 @@ namespace RainbowMage.OverlayPlugin
 
             Initialize(pluginScreenSpace, pluginStatusText);
 
-            ActGlobals.oFormActMain.BeforeLogLineRead += BeforeLogRead;
+            ActGlobals.oFormActMain.BeforeLogLineRead += BeforeLogLineRead;
+            AddExportVariable();
         }
 
         // AssemblyResolver でカスタムリゾルバを追加する前に PluginMain が解決されることを防ぐために、
@@ -48,17 +49,16 @@ namespace RainbowMage.OverlayPlugin
             pluginMain.DeInitPlugin();
             asmResolver.Dispose();
 
-            ActGlobals.oFormActMain.BeforeLogLineRead -= BeforeLogRead;
+            ActGlobals.oFormActMain.BeforeLogLineRead -= BeforeLogLineRead;
         }
 
-        private void BeforeLogRead(bool isImport, LogLineEventArgs logInfo)
+        private void BeforeLogLineRead(bool isImport, LogLineEventArgs logInfo)
         {
-            AddExportVariable();
-
-            System.Text.RegularExpressions.Regex rgx = new System.Text.RegularExpressions.Regex(@"^02:Changed primary player to (.*?).$", System.Text.RegularExpressions.RegexOptions.Compiled);
-
-            if (rgx.Match(logInfo.logLine).Groups[1].Value != "")
-                primaryUser = rgx.Match(logInfo.logLine).Groups[1].Value;
+            if (logInfo.logLine.IndexOf("02:Changed primary player to ") > -1)
+            {
+                primaryUser = logInfo.logLine.Replace("02:Changed primary player to ", "");
+                primaryUser = primaryUser.Substring(0, primaryUser.Length - 1);
+            }
         }
 
         public string GetPluginDirectory()
