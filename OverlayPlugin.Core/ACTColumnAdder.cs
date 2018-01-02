@@ -217,13 +217,13 @@ namespace RainbowMage.OverlayPlugin
             if (!EncounterData.ExportVariables.ContainsKey("CurrentRealUserName"))
             {
                 EncounterData.ExportVariables.Add("CurrentRealUserName",
-                new EncounterData.TextExportFormatter("CurrentRealUserName", "Current Real Username", "Current Username Not Fixed < YOU >", (Data, Extra, Format) => { return getCurrentPlayerName(); }));
+                new EncounterData.TextExportFormatter("CurrentRealUserName", "Current Real Username", "Current Username Not Fixed < YOU >", (Data, Extra, Format) => { return CurrentPlayerName; }));
             }
 
             if (!EncounterData.ExportVariables.ContainsKey("CurrentZoneRaw"))
             {
                 EncounterData.ExportVariables.Add("CurrentZoneRaw",
-                new EncounterData.TextExportFormatter("CurrentZoneRaw", "Current Zone ID", "Current Zone Real ID", (Data, Extra, Format) => { return getCurrentZone().ToString("X"); }));
+                new EncounterData.TextExportFormatter("CurrentZoneRaw", "Current Zone ID", "Current Zone Real ID", (Data, Extra, Format) => { return CurrentZone.ToString("X"); }));
             }
 
             ActGlobals.oFormActMain.ValidateLists();
@@ -248,17 +248,11 @@ namespace RainbowMage.OverlayPlugin
             }
         }
 
-        public static string currentPlayerName = "YOU";
-        public static string getCurrentPlayerName()
-        {
-            return currentPlayerName;
-        }
+        private static string currentPlayerName = "YOU";
+        public static string CurrentPlayerName => currentPlayerName;
 
-        public static int currentZone = 0;
-        public static int getCurrentZone()
-        {
-            return currentZone;
-        }
+        private static int currentZone = 0;
+        public static int CurrentZone => currentZone;
 
         public enum MessageType
         {
