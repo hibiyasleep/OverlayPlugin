@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
@@ -14,6 +15,7 @@ namespace RainbowMage.OverlayPlugin
         Logger logger;
         AssemblyResolver asmResolver;
         string pluginDirectory;
+        string primaryUser = "YOU";
 
         public void InitPlugin(TabPage pluginScreenSpace, Label pluginStatusText)
         {
@@ -25,6 +27,8 @@ namespace RainbowMage.OverlayPlugin
             asmResolver = new AssemblyResolver(directories);
 
             Initialize(pluginScreenSpace, pluginStatusText);
+
+            ActGlobals.oFormActMain.BeforeLogLineRead += BeforeLogRead;
         }
 
         // AssemblyResolver でカスタムリゾルバを追加する前に PluginMain が解決されることを防ぐために、
@@ -43,6 +47,18 @@ namespace RainbowMage.OverlayPlugin
         {
             pluginMain.DeInitPlugin();
             asmResolver.Dispose();
+
+            ActGlobals.oFormActMain.BeforeLogLineRead -= BeforeLogRead;
+        }
+
+        private void BeforeLogRead(bool isImport, LogLineEventArgs logInfo)
+        {
+            AddExportVariable();
+
+            System.Text.RegularExpressions.Regex rgx = new System.Text.RegularExpressions.Regex(@"^02:Changed primary player to (.*?).$", System.Text.RegularExpressions.RegexOptions.Compiled);
+
+            if (rgx.Match(logInfo.logLine).Groups[1].Value != "")
+                primaryUser = rgx.Match(logInfo.logLine).Groups[1].Value;
         }
 
         public string GetPluginDirectory()
@@ -57,6 +73,20 @@ namespace RainbowMage.OverlayPlugin
             else
             {
                 throw new Exception();
+            }
+        }
+
+        public string getPrimaryUserName()
+        {
+            return primaryUser;
+        }
+
+        public void AddExportVariable()
+        {
+            if (!EncounterData.ExportVariables.ContainsKey("PrimaryUser"))
+            {
+                EncounterData.ExportVariables.Add("PrimaryUser",
+                new EncounterData.TextExportFormatter("PrimaryUser", "Primary Current Username", "Using ACT Current Charname 'YOU' almost get Current Username from User Input, but this Force Attach Current Username.", (Data, Extra, Format) => { return getPrimaryUserName(); }));
             }
         }
     }
