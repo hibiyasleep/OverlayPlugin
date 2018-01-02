@@ -45,7 +45,7 @@ namespace RainbowMage.OverlayPlugin
 
             if (string.IsNullOrWhiteSpace(screenShotPath.Text))
             {
-                screenShotPath.Text = PluginMain.ScreenShotPath;
+                screenShotPath.Text = PluginMain.DefaultScreenShotPath;
             }
         }
 
