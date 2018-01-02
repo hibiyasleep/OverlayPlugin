@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace RainbowMage.OverlayPlugin
 {
@@ -54,14 +55,12 @@ namespace RainbowMage.OverlayPlugin
 
         private void BeforeLogLineRead(bool isImport, LogLineEventArgs logInfo)
         {
-            if (logInfo.logLine.IndexOf("02:Changed primary player to") > -1)
+            if(logInfo.logLine.IndexOf("02:Changed") > -1)
             {
-                primaryUser = logInfo.logLine.Replace("02:Changed primary player to", "");
-                try
-                {
-                    primaryUser = primaryUser.Split(' ')[1].Replace(".", "");
-                }
-                catch { }
+                primaryUser = logInfo.logLine;
+
+                primaryUser = primaryUser.Replace("02:Changed primary player to ", "").Replace(".", "");
+                primaryUser = primaryUser.Substring(primaryUser.IndexOf("]") + 1);
             }
         }
 
