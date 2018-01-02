@@ -353,7 +353,7 @@ namespace RainbowMage.OverlayPlugin
             // 
             resources.ApplyResources(this.screenShotPath, "screenShotPath");
             this.screenShotPath.Name = "screenShotPath";
-            this.screenShotPath.TextChanged += new System.EventHandler(this.screenShotPath_TextChanged);
+            this.screenShotPath.Leave += new System.EventHandler(this.screenShotPath_Leave);
             // 
             // screenShotPathSelectButton
             // 
@@ -373,7 +373,7 @@ namespace RainbowMage.OverlayPlugin
             // 
             resources.ApplyResources(this.screenShotBackgroundPath, "screenShotBackgroundPath");
             this.screenShotBackgroundPath.Name = "screenShotBackgroundPath";
-            this.screenShotBackgroundPath.TextChanged += new System.EventHandler(this.screenShotBackgroundPath_TextChanged);
+            this.screenShotBackgroundPath.Leave += new System.EventHandler(this.screenShotBackgroundPath_Leave);
             // 
             // screenShotBackgroundPathSelect
             // 
