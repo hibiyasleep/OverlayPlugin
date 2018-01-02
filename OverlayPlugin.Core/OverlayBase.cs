@@ -263,6 +263,10 @@ namespace RainbowMage.OverlayPlugin
         /// オーバーレイを更新します。
         /// </summary>
         protected abstract void Update();
+        protected virtual void FastUpdate()
+        {
+
+        }
 
         /// <summary>
         /// オーバーレイのインスタンスを破棄します。
@@ -298,7 +302,7 @@ namespace RainbowMage.OverlayPlugin
 
             try
             {
-                this.Update();
+                this.FastUpdate();
             }
             catch
             {

@@ -74,6 +74,16 @@ namespace RainbowMage.OverlayPlugin.Overlays
 
         protected override void Update()
         {
+            this.Update(false);
+        }
+
+        protected override void FastUpdate()
+        {
+            this.Update(true);
+        }
+
+        private void Update(bool fastUpdate)
+        {
             if (CheckIsActReady())
             {
                 // 最終更新時刻に変化がないなら更新を行わない
@@ -88,7 +98,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
                 this.prevEndDateTime = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.EndTime;
                 this.prevEncounterActive = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.Active;
 
-                var updateScript = CreateEventDispatcherScript();
+                var updateScript = fastUpdate && this.m_latestJson != null ? this.m_latestJson : CreateEventDispatcherScript(); 
 
                 if (this.Overlay != null &&
                     this.Overlay.Renderer != null &&
@@ -99,9 +109,10 @@ namespace RainbowMage.OverlayPlugin.Overlays
             }
         }
 
+        private string m_latestJson;
         private string CreateEventDispatcherScript()
         {
-            return "document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', { detail: " + this.CreateJsonData() + " }));";
+            return this.m_latestJson = "document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', { detail: " + this.CreateJsonData() + " }));";
         }
 
         internal string CreateJsonData()
