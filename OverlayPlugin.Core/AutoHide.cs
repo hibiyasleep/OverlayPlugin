@@ -93,10 +93,16 @@ namespace RainbowMage.OverlayPlugin
             else
             {
                 var sb = new StringBuilder(256);
-                if (NativeMethods.GetClassName(foregroundHwnd, sb, sb.MaxCapacity) == 0)
-                    return;
+                if (NativeMethods.GetClassName(foregroundHwnd, sb, sb.MaxCapacity) > 0)
+                    newVisible = sb.ToString() == "FFXIVGAME";
+                else
+                {
+                    if (NativeMethods.GetWindowText(foregroundHwnd, sb, sb.MaxCapacity) == 0)
+                        return;
 
-                newVisible = sb.ToString() == "FFXIVGAME";
+                    newVisible = sb.ToString() == "FINAL FANTASY XIV";
+                }
+
             }
             
             if (visibled != newVisible)
@@ -149,6 +155,12 @@ namespace RainbowMage.OverlayPlugin
 
             [DllImport("user32.dll", EntryPoint = "GetClassNameW", CharSet = CharSet.Unicode, SetLastError = true)]
             public static extern int GetClassName(
+                IntPtr hWnd,
+                StringBuilder lpClassName,
+                int nMaxCount);
+
+            [DllImport("user32.dll", EntryPoint = "GetWindowTextW", CharSet = CharSet.Unicode, SetLastError = true)]
+            public static extern int GetWindowText(
                 IntPtr hWnd,
                 StringBuilder lpClassName,
                 int nMaxCount);
