@@ -15,12 +15,21 @@ namespace RainbowMage.OverlayPlugin
         private System.ComponentModel.IContainer components = null;
         private const int TCM_FIRST = 0x1300;
         private const uint TCM_ADJUSTRECT = (TCM_FIRST + 40);
-        private Brush LightGray = new SolidBrush(Color.FromArgb(225, 228, 232));
-        private Brush LightCloud = new SolidBrush(Color.FromArgb(250, 251, 252));
-        private Brush LodestoneTabFocusColor = new SolidBrush(Color.FromArgb(71, 105, 179));
-        private Brush TopLiner = new SolidBrush(Color.FromArgb(227, 98, 9));
-        private Image[] grayImages;
-        private Image[] blackImages;
+        private static readonly Brush LightGray = new SolidBrush(Color.FromArgb(225, 228, 232));
+        private static readonly Brush LightCloud = new SolidBrush(Color.FromArgb(250, 251, 252));
+        private static readonly Brush LodestoneTabFocusColor = new SolidBrush(Color.FromArgb(71, 105, 179));
+        private static readonly Brush TopLiner = new SolidBrush(Color.FromArgb(227, 98, 9));
+        private static readonly Image[] grayImages;
+        private static readonly Image[] blackImages;
+
+        static OverlayTabUI()
+        {
+            var gray = Color.FromArgb(36, 41, 46);
+            var black = Color.FromArgb(182, 184, 187);
+
+            grayImages = new Image[] { ColorOverlayer.InformationIcon(gray), ColorOverlayer.LogsIcon(gray), ColorOverlayer.OverlaysIcon(gray) };
+            blackImages = new Image[] { ColorOverlayer.InformationIcon(black), ColorOverlayer.LogsIcon(black), ColorOverlayer.OverlaysIcon(black) };
+        }
 
         public OverlayTabUI()
         {
@@ -34,12 +43,6 @@ namespace RainbowMage.OverlayPlugin
             SetStyle((ControlStyles)(0x02 | 0x06 | 0x2000 | 0x20000), true);
             DoubleBuffered = true;
             Alignment = TabAlignment.Top;
-            
-            var gray = Color.FromArgb(36, 41, 46);
-            var black = Color.FromArgb(182, 184, 187);
-
-            grayImages = new Image[] { ColorOverlayer.InformationIcon(gray), ColorOverlayer.LogsIcon(gray), ColorOverlayer.OverlaysIcon(gray) };
-            blackImages = new Image[] { ColorOverlayer.InformationIcon(black), ColorOverlayer.LogsIcon(black), ColorOverlayer.OverlaysIcon(black) };
         }
 
         private void InitializeComponent()
@@ -47,10 +50,18 @@ namespace RainbowMage.OverlayPlugin
             components = new System.ComponentModel.Container();
         }
 
+        static readonly Pen LightGrayPen = new Pen(Color.FromArgb(225, 228, 232), 1f);
+        static readonly SolidBrush BlackBrush = new SolidBrush(Color.FromArgb(36, 41, 46));
+        static readonly SolidBrush GrayBrush = new SolidBrush(Color.FromArgb(88, 96, 105));
+        static readonly Font OnPaintFont = new Font("Microsoft NeoGothic", 13.75f, FontStyle.Regular, GraphicsUnit.Pixel);
+        static readonly StringFormat strFormat = new StringFormat((StringFormatFlags)(0x1000 | 0x4000))
+        {
+            Alignment = StringAlignment.Far
+        };
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            Pen LightGrayPen = new Pen(LightGray, 1f);
 
             e.Graphics.Clear(Color.FromArgb(255, 255, 255));
             var rect = new Rectangle(0, ItemSize.Height - 2, Width, 1);
@@ -74,25 +85,18 @@ namespace RainbowMage.OverlayPlugin
 
                 e.Graphics.SmoothingMode = SmoothingMode.Default;
 
-                var black = new SolidBrush(Color.FromArgb(36, 41, 46));
-                var gray = new SolidBrush(Color.FromArgb(88, 96, 105));
-
-                var selectedBrush = gray;
+                var selectedBrush = GrayBrush;
                 var img = blackImages[i];
                 if (i == SelectedIndex)
                 {
                     img = grayImages[i];
-                    selectedBrush = black;
+                    selectedBrush = BlackBrush;
                 }
 
                 e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
 
-                Font f = new Font("Microsoft NeoGothic", 13.75f, FontStyle.Regular, GraphicsUnit.Pixel);
-                var strFormat = new StringFormat((StringFormatFlags)(0x1000 | 0x4000));
-                strFormat.Alignment = StringAlignment.Far;
-
                 e.Graphics.DrawImage(img, new Point(TR.Left + 10, 11));
-                e.Graphics.DrawString(TabPages[i].Text, f, selectedBrush, new Rectangle(TR.Left + 30, TR.Top + 9, TR.Width - 45, 20), strFormat);
+                e.Graphics.DrawString(TabPages[i].Text, OnPaintFont, selectedBrush, new Rectangle(TR.Left + 30, TR.Top + 9, TR.Width - 45, 20), strFormat);
             }
         }
 
