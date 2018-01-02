@@ -39,6 +39,7 @@ namespace RainbowMage.OverlayPlugin
             {
                 bitmap?.Dispose();
                 MessageBox.Show(ex.ToString());
+                return;
             }
 
             using (bitmap)

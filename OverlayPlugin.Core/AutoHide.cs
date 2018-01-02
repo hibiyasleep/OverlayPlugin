@@ -74,6 +74,9 @@ namespace RainbowMage.OverlayPlugin
         private static bool visibled = false;
         private static void WinEventProc(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime)
         {
+            if (!enabled)
+                return;
+
             if (eventType != NativeMethods.EVENT_SYSTEM_FOREGROUND &&
                 eventType != NativeMethods.EVENT_SYSTEM_MINIMIZEEND &&
                 eventType != NativeMethods.EVENT_SYSTEM_MINIMIZESTART)
@@ -82,6 +85,9 @@ namespace RainbowMage.OverlayPlugin
             bool newVisible = false;
 
             var foregroundHwnd = NativeMethods.GetForegroundWindow();
+            if (!NativeMethods.IsWindow(foregroundHwnd))
+                return;
+
             if (NativeMethods.GetWindowThreadProcessId(foregroundHwnd, out uint pid) == 0)
                 return;
 
@@ -92,6 +98,14 @@ namespace RainbowMage.OverlayPlugin
                 var sb = new StringBuilder(256);
                 if (NativeMethods.GetClassName(foregroundHwnd, sb, sb.MaxCapacity) > 0)
                     newVisible = sb.ToString() == "FFXIVGAME";
+                else
+                {
+                    if (NativeMethods.GetWindowText(foregroundHwnd, sb, sb.MaxCapacity) == 0)
+                        return;
+
+                    newVisible = sb.ToString() == "FINAL FANTASY XIV";
+                }
+
             }
             
             if (visibled != newVisible)
@@ -122,7 +136,7 @@ namespace RainbowMage.OverlayPlugin
                 uint dwEventThread,
                 uint dwmsEventTime);
 
-            [DllImport("user32.dll", SetLastError = true)]
+            [DllImport("user32.dll")]
             public static extern uint GetWindowThreadProcessId(
                 IntPtr hWnd,
                 out uint lpdwProcessId);
@@ -142,8 +156,19 @@ namespace RainbowMage.OverlayPlugin
             public static extern bool UnhookWinEvent(
                 IntPtr hWinEventHook);
 
-            [DllImport("user32.dll",  CharSet = CharSet.Auto)]
+            [DllImport("user32.dll")]
+            [return: MarshalAs(UnmanagedType.Bool)]
+            public static extern bool IsWindow(
+                IntPtr hWnd);
+
+            [DllImport("user32.dll", EntryPoint = "GetClassNameW", CharSet = CharSet.Unicode, SetLastError = true)]
             public static extern int GetClassName(
+                IntPtr hWnd,
+                StringBuilder lpClassName,
+                int nMaxCount);
+
+            [DllImport("user32.dll", EntryPoint = "GetWindowTextW", CharSet = CharSet.Unicode, SetLastError = true)]
+            public static extern int GetWindowText(
                 IntPtr hWnd,
                 StringBuilder lpClassName,
                 int nMaxCount);

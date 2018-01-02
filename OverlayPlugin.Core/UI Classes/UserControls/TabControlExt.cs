@@ -6,6 +6,29 @@ namespace RainbowMage.OverlayPlugin
 {
     public class TabControlExt : TabControl
     {
+        static readonly StringFormat CenterStringFormat = new StringFormat()
+        {
+            LineAlignment = StringAlignment.Center,
+            Alignment = StringAlignment.Center,
+        };
+
+        private Font fontFSmall;
+        private Font fontBold;
+        public override Font Font
+        {
+            get => base.Font;
+            set
+            {
+                base.Font = value;
+
+                this.fontFSmall?.Dispose();
+                this.fontFSmall = new Font(value.FontFamily, (float)(value.Size * 0.85));
+
+                this.fontBold?.Dispose();
+                this.fontBold = new Font(value, FontStyle.Bold);
+            }
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -16,31 +39,27 @@ namespace RainbowMage.OverlayPlugin
 
             foreach (TabPage tp in TabPages)
             {
-                Color fore = Color.Black;
-                Font fontF = Font;
-                Font fontFSmall = new Font(Font.FontFamily, (float)(Font.Size * 0.85));
+                Brush fore = Brushes.Black;
+                Font fontF = this.Font;
                 Rectangle tabrect = GetTabRect(inc);
                 Rectangle rect = new Rectangle(tabrect.X + 4, tabrect.Y + 4, tabrect.Width - 8, tabrect.Height - 2);
                 Rectangle textrect1 = new Rectangle(tabrect.X + 4, tabrect.Y + 4, tabrect.Width - 8, tabrect.Height - 20);
                 Rectangle textrect2 = new Rectangle(tabrect.X + 4, tabrect.Y + 20, tabrect.Width - 8, tabrect.Height - 20);
 
-                StringFormat sf = new StringFormat();
-                sf.LineAlignment = StringAlignment.Center;
-                sf.Alignment = StringAlignment.Center;
 
                 if (inc == SelectedIndex)
                 {
-                    e.Graphics.FillRectangle(new SolidBrush(SystemColors.Highlight), rect);
-                    fore = SystemColors.HighlightText;
-                    fontF = new Font(Font, FontStyle.Bold);
+                    e.Graphics.FillRectangle(SystemBrushes.Highlight, rect);
+                    fore = SystemBrushes.HighlightText;
+                    fontF = this.fontBold;
                 }
                 else
                 {
                     e.Graphics.FillRectangle(Brushes.White, rect);
                 }
 
-                e.Graphics.DrawString(tp.Name, fontF, new SolidBrush(fore), textrect1, sf);
-                e.Graphics.DrawString(tp.Text, fontFSmall, new SolidBrush(fore), textrect2, sf);
+                e.Graphics.DrawString(tp.Name, fontF, fore, textrect1, CenterStringFormat);
+                e.Graphics.DrawString(tp.Text, fontFSmall, fore, textrect2, CenterStringFormat);
                 inc++;
             }
         }
@@ -66,6 +85,8 @@ namespace RainbowMage.OverlayPlugin
             ItemSize = new Size(46, 140);
             SizeMode = TabSizeMode.Fixed;
             BackColor = Color.Transparent;
+
+            this.Font = base.Font;
         }
     }
 }

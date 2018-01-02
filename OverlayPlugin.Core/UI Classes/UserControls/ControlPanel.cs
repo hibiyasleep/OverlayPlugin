@@ -45,7 +45,7 @@ namespace RainbowMage.OverlayPlugin
 
             if (string.IsNullOrWhiteSpace(screenShotPath.Text))
             {
-                screenShotPath.Text = PluginMain.ScreenShotPath;
+                screenShotPath.Text = PluginMain.DefaultScreenShotPath;
             }
         }
 
@@ -253,7 +253,7 @@ namespace RainbowMage.OverlayPlugin
             config.HideOverlaysWhenNotActive = checkBoxAutoHide.Checked;
         }
 
-        private void screenShotBackgroundPath_TextChanged(object sender, EventArgs e)
+        private void screenShotPath_Leave(object sender, EventArgs e)
         {
             config.ScreenShotSavePath = screenShotPath.Text;
         }
@@ -265,10 +265,11 @@ namespace RainbowMage.OverlayPlugin
             if (this.fbdScreenShotPath.ShowDialog() == DialogResult.OK)
             {
                 screenShotPath.Text = this.fbdScreenShotPath.SelectedPath;
+                config.ScreenShotSavePath = this.fbdScreenShotPath.SelectedPath;
             }
         }
 
-        private void screenShotPath_TextChanged(object sender, EventArgs e)
+        private void screenShotBackgroundPath_Leave(object sender, EventArgs e)
         {
             config.ScreenShotBackgroundPath = screenShotBackgroundPath.Text;
         }

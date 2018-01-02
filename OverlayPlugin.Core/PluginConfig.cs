@@ -229,7 +229,7 @@ namespace RainbowMage.OverlayPlugin
         [Browsable(false)]
         public string ScreenShotBackgroundPath { get; set; }
 
-        [XmlElement("ScreenShotBackgroundFillType")]
+        [XmlElement("ScreenShotBackgroundMode")]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [Browsable(false)]
         public int ScreenShotBackgroundMode { get; set; }
@@ -346,7 +346,7 @@ namespace RainbowMage.OverlayPlugin
             this.Overlays = new OverlayConfigList();
             this.Overlays.Add(miniparseOverlayConfig);
             this.Overlays.Add(spellTimerOverlayConfig);
-            this.ScreenShotSavePath = PluginMain.ScreenShotPath;
+            this.ScreenShotSavePath = PluginMain.DefaultScreenShotPath;
         }
 
         /// <summary>

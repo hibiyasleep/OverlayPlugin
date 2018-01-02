@@ -62,16 +62,16 @@ namespace RainbowMage.OverlayPlugin
 
             dict[TextItem.ToggleVisible, ""] = "Toggle visible/hide";
             dict[TextItem.ToggleVisible, "ja"] = "表示/非表示の切り替え";
-            dict[TextItem.ToggleVisible, "ko"] = "표시 / 숨기기 토글";
+            dict[TextItem.ToggleVisible, "ko"] = "표시 / 숨기기";
             dict[TextItem.ToggleClickthru, ""] = "Toggle clickthru";
             dict[TextItem.ToggleClickthru, "ja"] = "クリック透過の切り替え";
-            dict[TextItem.ToggleClickthru, "ko"] = "Toggle clickthru";
+            dict[TextItem.ToggleClickthru, "ko"] = "마우스 통과 끄기 / 켜기";
             dict[TextItem.ToggleLock, ""] = "Toggle lock";
             dict[TextItem.ToggleLock, "ja"] = "移動/リサイズ制限の切り替え";
-            dict[TextItem.ToggleLock, "ko"] = "Toggle lock";
+            dict[TextItem.ToggleLock, "ko"] = "위치 잠구기 끄기 / 켜기";
             dict[TextItem.ScreenShot, ""] = "ScreenShot";
             dict[TextItem.ScreenShot, "ja"] = "ScreenShot";
-            dict[TextItem.ScreenShot, "ko"] = "ScreenShot";
+            dict[TextItem.ScreenShot, "ko"] = "오버레이 스크린샷 촬영";
         }
 
         public static string GetText(TextItem item)
