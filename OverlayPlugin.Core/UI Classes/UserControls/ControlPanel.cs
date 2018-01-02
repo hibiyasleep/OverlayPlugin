@@ -325,5 +325,31 @@ namespace RainbowMage.OverlayPlugin
                 MessageBox.Show(ex.GetBaseException().ToString());
             }
         }
+
+        const string HideUserNameScript =
+            "var items = document.getElementsByClassName('userNameArea');" +
+            "for(var i = 0; i < items.length; ++i)" +
+            "{" +
+            "	if (items[i].innerText != 'YOU')" +
+            "		items[i].innerText = '';" +
+            "};" +
+            "return 0;";
+        private void hideUsernameButton_Click(object sender, EventArgs e)
+        {
+            if (tabControl.SelectedIndex < 0) return;
+            var selTab = tabControl.SelectedIndex;
+
+            if (pluginMain.Overlays.Count < 1) return;
+            IOverlay selectedOverlay = pluginMain.Overlays[selTab];
+
+            try
+            {
+                var overlay = (OverlayForm)selectedOverlay.GetType().GetProperty("Overlay", typeof(OverlayForm)).GetValue(selectedOverlay);
+                overlay.Renderer.ExecuteScript(HideUserNameScript);
+            }
+            catch
+            {
+            }
+        }
     }
 }
