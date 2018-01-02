@@ -85,6 +85,9 @@ namespace RainbowMage.OverlayPlugin
             bool newVisible = false;
 
             var foregroundHwnd = NativeMethods.GetForegroundWindow();
+            if (!NativeMethods.IsWindow(foregroundHwnd))
+                return;
+
             if (NativeMethods.GetWindowThreadProcessId(foregroundHwnd, out uint pid) == 0)
                 return;
 
@@ -152,6 +155,11 @@ namespace RainbowMage.OverlayPlugin
             [return: MarshalAs(UnmanagedType.Bool)]
             public static extern bool UnhookWinEvent(
                 IntPtr hWinEventHook);
+
+            [DllImport("user32.dll")]
+            [return: MarshalAs(UnmanagedType.Bool)]
+            public static extern bool IsWindow(
+                IntPtr hWnd);
 
             [DllImport("user32.dll", EntryPoint = "GetClassNameW", CharSet = CharSet.Unicode, SetLastError = true)]
             public static extern int GetClassName(
