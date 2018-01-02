@@ -93,8 +93,10 @@ namespace RainbowMage.OverlayPlugin
             else
             {
                 var sb = new StringBuilder(256);
-                if (NativeMethods.GetClassName(foregroundHwnd, sb, sb.MaxCapacity) > 0)
-                    newVisible = sb.ToString() == "FFXIVGAME";
+                if (NativeMethods.GetClassName(foregroundHwnd, sb, sb.MaxCapacity) == 0)
+                    return;
+
+                newVisible = sb.ToString() == "FFXIVGAME";
             }
             
             if (visibled != newVisible)
@@ -125,7 +127,7 @@ namespace RainbowMage.OverlayPlugin
                 uint dwEventThread,
                 uint dwmsEventTime);
 
-            [DllImport("user32.dll", SetLastError = true)]
+            [DllImport("user32.dll")]
             public static extern uint GetWindowThreadProcessId(
                 IntPtr hWnd,
                 out uint lpdwProcessId);
@@ -145,7 +147,7 @@ namespace RainbowMage.OverlayPlugin
             public static extern bool UnhookWinEvent(
                 IntPtr hWinEventHook);
 
-            [DllImport("user32.dll",  CharSet = CharSet.Auto)]
+            [DllImport("user32.dll", EntryPoint = "GetClassNameW", CharSet = CharSet.Unicode, SetLastError = true)]
             public static extern int GetClassName(
                 IntPtr hWnd,
                 StringBuilder lpClassName,
