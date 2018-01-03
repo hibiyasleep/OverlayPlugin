@@ -332,8 +332,7 @@ namespace RainbowMage.OverlayPlugin
             "{" +
             "	if (items[i].innerText != 'YOU')" +
             "		items[i].innerText = '';" +
-            "};" +
-            "return 0;";
+            "};";
         private void hideUsernameButton_Click(object sender, EventArgs e)
         {
             if (tabControl.SelectedIndex < 0) return;
