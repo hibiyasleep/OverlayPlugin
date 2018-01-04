@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MiniParseConfigPanel));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.nudUpdateInterval = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
             this.checkEnablePlayerName = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -61,6 +63,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.comboHotkeyType = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudUpdateInterval)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -70,8 +73,10 @@
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.checkEnablePlayerName, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.nudUpdateInterval, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label12, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.checkEnablePlayerName, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.textMiniParseSortKey, 1, 4);
@@ -81,20 +86,51 @@
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.checkMiniParseVisible, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.checkMiniParseClickthru, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 12);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 13);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.comboMiniParseSortType, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.nudMaxFrameRate, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label13, 1, 11);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.checkEnableGlobalHotkey, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.textGlobalHotkey, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.label13, 1, 12);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.checkEnableGlobalHotkey, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.textGlobalHotkey, 1, 10);
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.checkLock, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.comboHotkeyType, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.comboHotkeyType, 1, 11);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // nudUpdateInterval
+            // 
+            resources.ApplyResources(this.nudUpdateInterval, "nudUpdateInterval");
+            this.nudUpdateInterval.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudUpdateInterval.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.nudUpdateInterval.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudUpdateInterval.Name = "nudUpdateInterval";
+            this.nudUpdateInterval.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudUpdateInterval.ValueChanged += new System.EventHandler(this.nudUpdateInterval_ValueChanged);
+            // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.Name = "label12";
             // 
             // checkEnablePlayerName
             // 
@@ -306,6 +342,7 @@
             this.Name = "MiniParseConfigPanel";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudUpdateInterval)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -348,5 +385,7 @@
         private System.Windows.Forms.ComboBox comboHotkeyType;
         private System.Windows.Forms.CheckBox checkEnablePlayerName;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NumericUpDown nudUpdateInterval;
+        private System.Windows.Forms.Label label12;
     }
 }

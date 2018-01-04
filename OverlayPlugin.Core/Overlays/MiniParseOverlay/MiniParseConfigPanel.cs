@@ -59,6 +59,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
             this.comboHotkeyType.SelectedValue = config.GlobalHotkeyType;
             this.comboHotkeyType.SelectedIndexChanged += ComboHotkeyMode_SelectedIndexChanged;
             this.checkEnablePlayerName.Checked = config.HidePlayerName;
+            this.nudUpdateInterval.Value = config.OverlayUpdateInterval;
         }
 
         private void SetupConfigEventHandlers()
@@ -157,6 +158,15 @@ namespace RainbowMage.OverlayPlugin.Overlays
                 Invoke((MethodInvoker)delegate
                 {
                     this.checkEnablePlayerName.Checked = e.HidePlayerName;
+                });
+            };
+
+            this.config.OverlayUpdateIntervalChanged += (o, e) =>
+            {
+                Invoke((MethodInvoker)delegate
+                {
+                    this.nudUpdateInterval.Value = (int)e.Interval;
+                    this.overlay.UpdateTimer.Interval = e.Interval;
                 });
             };
         }
@@ -263,6 +273,11 @@ namespace RainbowMage.OverlayPlugin.Overlays
         private void checkEnablePlayerName_CheckedChanged(object sender, EventArgs e)
         {
             this.config.HidePlayerName = this.checkEnablePlayerName.Checked;
+        }
+
+        private void nudUpdateInterval_ValueChanged(object sender, EventArgs e)
+        {
+            this.config.OverlayUpdateInterval = (int)this.nudUpdateInterval.Value;
         }
     }
 }

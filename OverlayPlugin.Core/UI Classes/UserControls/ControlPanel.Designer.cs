@@ -278,8 +278,8 @@ namespace RainbowMage.OverlayPlugin
             // 
             // screenShotPathGroupbox
             // 
-            this.screenShotPathGroupbox.Controls.Add(this.screenShotTable);
             resources.ApplyResources(this.screenShotPathGroupbox, "screenShotPathGroupbox");
+            this.screenShotPathGroupbox.Controls.Add(this.screenShotTable);
             this.screenShotPathGroupbox.Name = "screenShotPathGroupbox";
             this.screenShotPathGroupbox.TabStop = false;
             // 
@@ -442,7 +442,9 @@ namespace RainbowMage.OverlayPlugin
             this.panel1.PerformLayout();
             this.overlayLogsTabPage.ResumeLayout(false);
             this.overlaySettingsTabPage.ResumeLayout(false);
+            this.overlaySettingsTabPage.PerformLayout();
             this.screenShotPathGroupbox.ResumeLayout(false);
+            this.screenShotPathGroupbox.PerformLayout();
             this.screenShotTable.ResumeLayout(false);
             this.screenShotPathPanel.ResumeLayout(false);
             this.screenShotPathPanel.PerformLayout();
