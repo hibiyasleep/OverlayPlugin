@@ -83,6 +83,7 @@ namespace RainbowMage.OverlayPlugin
                 return;
 
             bool newVisible = false;
+            bool isGameWindow = false;
 
             var foregroundHwnd = NativeMethods.GetForegroundWindow();
             if (!NativeMethods.IsWindow(foregroundHwnd))
@@ -106,6 +107,7 @@ namespace RainbowMage.OverlayPlugin
                     newVisible = sb.ToString() == "FINAL FANTASY XIV";
                 }
 
+                isGameWindow = true;
             }
             
             if (visibled != newVisible)
@@ -114,7 +116,13 @@ namespace RainbowMage.OverlayPlugin
                     overlay.ForEach(e => {
                         try
                         {
-                            e.Item2.Visible = e.Item1.IsVisible && newVisible;
+                            if (e.Item2.Visible = (e.Item1.IsVisible && newVisible))
+                            {
+                                if (isGameWindow && !IsOverlaysGameWindow(e.Item2.Handle, foregroundHwnd))
+                                {
+                                    EnsureTopMost(e.Item2.Handle);
+                                }
+                            }
                         }
                         catch
                         {
@@ -123,6 +131,32 @@ namespace RainbowMage.OverlayPlugin
 
                 visibled = newVisible;
             }
+        }
+
+        private static bool IsOverlaysGameWindow(IntPtr overlayHandle, IntPtr xivHandle)
+        {
+            var handle = overlayHandle;
+
+            while (handle != IntPtr.Zero)
+            {
+                // Overlayウィンドウよりも前面側にFF14のウィンドウがあった
+                if (handle == xivHandle)
+                    return false;
+
+                handle = NativeMethods.GetWindow(handle, NativeMethods.GW_HWNDPREV);
+            }
+
+            // 前面側にOverlayが存在する、もしくはFF14が起動していない
+            return true;
+        }
+
+        private static void EnsureTopMost(IntPtr hWnd)
+        {
+            NativeMethods.SetWindowPos(
+                hWnd,
+                (IntPtr)NativeMethods.HWND_TOPMOST,
+                0, 0, 0, 0,
+                NativeMethods.SWP_NOSIZE | NativeMethods.SWP_NOMOVE | NativeMethods.SWP_NOACTIVATE);
         }
 
         private static class NativeMethods
@@ -174,12 +208,35 @@ namespace RainbowMage.OverlayPlugin
                 int nMaxCount);
 
             [DllImport("user32.dll")]
+            public static extern bool SetWindowPos(
+                IntPtr hWnd,
+                IntPtr hWndInsertAfter,
+                int X,
+                int Y,
+                int cx,
+                int cy,
+                uint uFlags);
+
+            [DllImport("user32.dll")]
+            public static extern IntPtr GetWindow(
+                IntPtr hWnd,
+                uint uCmd);
+
+            [DllImport("user32.dll")]
             public static extern IntPtr GetForegroundWindow();
 
             public const int EVENT_SYSTEM_FOREGROUND = 0x3;
             public const int EVENT_SYSTEM_MINIMIZESTART = 0x16;
             public const int EVENT_SYSTEM_MINIMIZEEND = 0x17;
             public const int WINEVENT_OUTOFCONTEXT = 0x0;
+            
+            public const int HWND_TOPMOST = -1;
+
+            public const uint SWP_NOSIZE = 0x0001;
+            public const uint SWP_NOMOVE = 0x0002;
+            public const uint SWP_NOACTIVATE = 0x0010;
+
+            public const uint GW_HWNDPREV = 0x0003;
         }
     }
 }
