@@ -150,7 +150,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
                                         owner = oldName;
 
                                     if (owner != "YOU" && owner != ACTColumnAdder.CurrentPlayerName)
-                                        owner = this.tempPlayerNameDictionary.Count.ToString("X");
+                                        owner = "P" + this.tempPlayerNameDictionary.Count.ToString("X");
 
                                     if (name == null)
                                         name = owner;
