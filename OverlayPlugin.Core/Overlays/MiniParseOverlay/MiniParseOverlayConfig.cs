@@ -8,6 +8,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
     {
         public event EventHandler<SortKeyChangedEventArgs> SortKeyChanged;
         public event EventHandler<SortTypeChangedEventArgs> SortTypeChanged;
+        public event EventHandler<HidePlayerNameChangedEventArgs> HidePlayerNameChanged;
 
         private string sortKey;
         [XmlElement("SortKey")]
@@ -46,6 +47,27 @@ namespace RainbowMage.OverlayPlugin.Overlays
                     if (SortTypeChanged != null)
                     {
                         SortTypeChanged(this, new SortTypeChangedEventArgs(this.sortType));
+                    }
+                }
+            }
+        }
+
+        private bool hidePlayerName;
+        [XmlElement("HidePlayerName")]
+        public bool HidePlayerName
+        {
+            get
+            {
+                return this.hidePlayerName;
+            }
+            set
+            {
+                if (this.hidePlayerName != value)
+                {
+                    this.hidePlayerName = value;
+                    if (HidePlayerNameChanged != null)
+                    {
+                        HidePlayerNameChanged(this, new HidePlayerNameChangedEventArgs(value));
                     }
                 }
             }
