@@ -14,7 +14,6 @@ namespace RainbowMage.OverlayPlugin
         private DIBitmap surfaceBuffer;
         private object surfaceBufferLocker = new object();
         private int maxFrameRate;
-        private System.Threading.Timer zorderCorrector;
         private bool terminated = false;
         private bool shiftKeyPressed = false;
         private bool altKeyPressed = false;
@@ -275,17 +274,6 @@ namespace RainbowMage.OverlayPlugin
             this.IsLoaded = true;
 
             UpdateMouseClickThru();
-
-            zorderCorrector = new System.Threading.Timer((state) =>
-            {
-                if (this.Visible)
-                {
-                    if (!this.IsOverlaysGameWindow())
-                    {
-                        this.EnsureTopMost();
-                    }
-                }
-            }, null, 0, 1000);
         }
 
         private void OverlayForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -300,11 +288,6 @@ namespace RainbowMage.OverlayPlugin
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (zorderCorrector != null)
-            {
-                zorderCorrector.Dispose();
-            }
-
             if (this.Renderer != null)
             {
                 this.Renderer.Dispose();
@@ -426,35 +409,6 @@ namespace RainbowMage.OverlayPlugin
             }
 
             return flags;
-        }
-
-        private bool IsOverlaysGameWindow()
-        {
-            var xivHandle = GetGameWindowHandle();
-            var handle = this.Handle;
-
-            while (handle != IntPtr.Zero)
-            {
-                // Overlayウィンドウよりも前面側にFF14のウィンドウがあった
-                if (handle == xivHandle)
-                {
-                    return false;
-                }
-
-                handle = NativeMethods.GetWindow(handle, NativeMethods.GW_HWNDPREV);
-            }
-
-            // 前面側にOverlayが存在する、もしくはFF14が起動していない
-            return true;
-        }
-
-        private void EnsureTopMost()
-        {
-            NativeMethods.SetWindowPos(
-                this.Handle,
-                NativeMethods.HWND_TOPMOST,
-                0, 0, 0, 0,
-                NativeMethods.SWP_NOSIZE | NativeMethods.SWP_NOMOVE | NativeMethods.SWP_NOACTIVATE);
         }
 
         private static object xivProcLocker = new object();
