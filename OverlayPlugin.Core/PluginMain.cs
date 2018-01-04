@@ -39,7 +39,6 @@ namespace RainbowMage.OverlayPlugin
         {
             try
             {
-                ACTColumnAdder.Init();
                 tabPage = pluginScreenSpace;
                 label = pluginStatusText;
 #if DEBUG
