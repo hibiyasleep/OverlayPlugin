@@ -347,10 +347,18 @@ namespace RainbowMage.OverlayPlugin
         /// <returns></returns>
         private static string GetConfigPath()
         {
+#if DEBUG
+            var path = Path.Combine(
+                ActGlobals.oFormActMain.AppDataFolder.FullName,
+                "Config",
+                "RainbowMage.OverlayPlugin.config.debug.xml");
+#else
             var path = Path.Combine(
                 ActGlobals.oFormActMain.AppDataFolder.FullName,
                 "Config",
                 "RainbowMage.OverlayPlugin.config.xml");
+#endif
+
 
             return path;
         }
