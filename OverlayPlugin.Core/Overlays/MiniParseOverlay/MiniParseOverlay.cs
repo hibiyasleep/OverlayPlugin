@@ -17,7 +17,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
 
         private static string updateStringCache = "";
         private static DateTime updateStringCacheLastUpdate;
-        private static readonly TimeSpan updateStringCacheExpireInterval = new TimeSpan(0, 0, 0, 0, 500); // 250 msec
+        private static readonly TimeSpan updateStringCacheExpireInterval = new TimeSpan(0, 0, 0, 0, 250); // 250 msec
 
         public MiniParseOverlay(MiniParseOverlayConfig config)
             : base(config, config.Name)
@@ -128,8 +128,6 @@ namespace RainbowMage.OverlayPlugin.Overlays
                                     else
                                         owner = oldName;
 
-                                    Log(LogLevel.Warning, "name : {0} / owner : {1}", name, owner);
-
                                     if (owner != "YOU" && owner != ACTColumnAdder.CurrentPlayerName)
                                         owner = this.tempPlayerNameDictionary.Count.ToString("X");
 
@@ -137,8 +135,6 @@ namespace RainbowMage.OverlayPlugin.Overlays
                                         name = owner;
                                     else
                                         name = string.Format("{0} ({1})", name, owner);
-
-                                    Log(LogLevel.Warning, "name : " + name);
 
                                     this.tempPlayerNameDictionary.Add(oldName, name);
                                 }
