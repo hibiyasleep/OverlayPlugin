@@ -74,9 +74,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
             }
         }
 
-        
-
-        private int overlayUpdateInterval;
+        private int overlayUpdateInterval = 1000;
         [XmlElement("OverlayUpdateInterval")]
         public int OverlayUpdateInterval
         {
