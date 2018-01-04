@@ -17,7 +17,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
 
         private static string updateStringCache = "";
         private static DateTime updateStringCacheLastUpdate;
-        private static readonly TimeSpan updateStringCacheExpireInterval = new TimeSpan(0, 0, 0, 0, 250); // 250 msec
+        private static readonly TimeSpan updateStringCacheExpireInterval = new TimeSpan(0, 0, 0, 0, 500); // 500 msec
 
         public MiniParseOverlay(MiniParseOverlayConfig config)
             : base(config, config.Name)
@@ -177,7 +177,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
                     value.Add(k, Util.ReplaceNaNString(v, "---"));
                 }
 
-                    obj["Combatant"][pair.Key.Name] = value;
+                obj["Combatant"][combatantName] = value;
             }
 
             obj["isActive"] = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.Active ? "true" : "false";
