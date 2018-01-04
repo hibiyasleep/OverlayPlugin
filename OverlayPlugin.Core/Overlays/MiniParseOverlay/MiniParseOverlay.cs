@@ -43,7 +43,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
         private readonly object updateSync = new object();
         protected override void Update()
         {
-            if (Monitor.TryEnter(updateSync, 0))
+            if (!Monitor.TryEnter(updateSync, 0))
                 return;
 
             try
