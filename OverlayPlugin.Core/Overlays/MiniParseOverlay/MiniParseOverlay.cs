@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace RainbowMage.OverlayPlugin.Overlays
@@ -16,12 +17,13 @@ namespace RainbowMage.OverlayPlugin.Overlays
 
         private static string updateStringCache = "";
         private static DateTime updateStringCacheLastUpdate;
-        private static readonly TimeSpan updateStringCacheExpireInterval = new TimeSpan(0, 0, 0, 0, 500); // 500 msec
+        private static readonly TimeSpan updateStringCacheExpireInterval = new TimeSpan(0, 0, 0, 0, 500); // 250 msec
 
         public MiniParseOverlay(MiniParseOverlayConfig config)
             : base(config, config.Name)
         {
             ActGlobals.oFormActMain.BeforeLogLineRead += LogLineReader;
+            ActGlobals.oFormActMain.OnCombatStart += this.OFormActMain_OnCombatStart; ;
         }
 
         public override void Navigate(string url)
@@ -33,16 +35,6 @@ namespace RainbowMage.OverlayPlugin.Overlays
         }
 
         protected override void Update()
-        {
-            this.Update(false);
-        }
-
-        protected override void FastUpdate()
-        {
-            this.Update(true);
-        }
-
-        private void Update(bool fastUpdate)
         {
             if (CheckIsActReady())
             {
@@ -58,7 +50,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
                 this.prevEndDateTime = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.EndTime;
                 this.prevEncounterActive = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.Active;
 
-                var updateScript = fastUpdate && this.m_latestJson != null ? this.m_latestJson : CreateEventDispatcherScript();
+                var updateScript = CreateEventDispatcherScript();
 
                 if (this.Overlay != null &&
                     this.Overlay.Renderer != null &&
@@ -68,11 +60,18 @@ namespace RainbowMage.OverlayPlugin.Overlays
                 }
             }
         }
-
-        private string m_latestJson;
+        
         private string CreateEventDispatcherScript()
         {
-            return this.m_latestJson = "document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', { detail: " + this.CreateJsonData() + " }));";
+            return "document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', { detail: " + this.CreateJsonData() + " }));";
+        }
+
+        private readonly Dictionary<string, string> tempPlayerNameDictionary = new Dictionary<string, string>();
+
+        private void OFormActMain_OnCombatStart(bool isImport, CombatToggleEventArgs encounterInfo)
+        {
+            lock (this.tempPlayerNameDictionary)
+                this.tempPlayerNameDictionary.Clear();
         }
 
         internal string CreateJsonData()
@@ -92,9 +91,13 @@ namespace RainbowMage.OverlayPlugin.Overlays
             stopwatch.Start();
 #endif
 
+
             var allies = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.GetAllies();
             Dictionary<string, string> encounter = null;
             List<KeyValuePair<CombatantData, Dictionary<string, string>>> combatant = null;
+
+            var hidePlayerName = Config.HidePlayerName;
+            Log(LogLevel.Warning, hidePlayerName.ToString());
 
             var encounterTask = Task.Run(() =>
                 {
@@ -103,6 +106,46 @@ namespace RainbowMage.OverlayPlugin.Overlays
             var combatantTask = Task.Run(() =>
                 {
                     combatant = GetCombatantList(allies);
+                    
+                    if (hidePlayerName)
+                    {
+                        lock (this.tempPlayerNameDictionary)
+                        {
+                            for (int i = 0; i < combatant.Count; ++i)
+                            {
+                                var oldName = combatant[i].Key.Name;
+                                if (!this.tempPlayerNameDictionary.ContainsKey(oldName))
+                                {
+                                    string name = null;
+                                    string owner;
+
+                                    var mv = Regex.Match(oldName, @"^(.+)\((.+)\)");
+                                    if (mv.Success)
+                                    {
+                                        name = mv.Groups[1].Value;
+                                        owner = mv.Groups[2].Value;
+                                    }
+                                    else
+                                        owner = oldName;
+
+                                    Log(LogLevel.Warning, "name : {0} / owner : {1}", name, owner);
+
+                                    if (owner != "YOU" && owner != ACTColumnAdder.CurrentPlayerName)
+                                        owner = this.tempPlayerNameDictionary.Count.ToString("X");
+
+                                    if (name == null)
+                                        name = owner;
+                                    else
+                                        name = string.Format("{0} ({1})", name, owner);
+
+                                    Log(LogLevel.Warning, "name : " + name);
+
+                                    this.tempPlayerNameDictionary.Add(oldName, name);
+                                }
+                            }
+                        }
+                    }
+
                     SortCombatantList(combatant);
                 });
             Task.WaitAll(encounterTask, combatantTask);
@@ -114,13 +157,31 @@ namespace RainbowMage.OverlayPlugin.Overlays
             
             foreach (var pair in combatant)
             {
+                var combatantName = pair.Key.Name;
+                if (hidePlayerName)
+                    combatantName = this.tempPlayerNameDictionary[pair.Key.Name];
+
                 JObject value = new JObject();
                 foreach (var pair2 in pair.Value)
                 {
-                    value.Add(pair2.Key, Util.ReplaceNaNString(pair2.Value, "---"));
+                    var k = pair2.Key;
+                    var v = pair2.Value;
+
+                    if (hidePlayerName)
+                    {
+                        if (k.StartsWith("name", StringComparison.CurrentCultureIgnoreCase))
+                        {
+                            v = combatantName;
+
+                            if (int.TryParse(k.Substring(4), out int len))
+                                v = v.Substring(0, Math.Min(v.Length, len));
+                        }
+                    }
+
+                    value.Add(k, Util.ReplaceNaNString(v, "---"));
                 }
 
-                obj["Combatant"][pair.Key.Name] = value;
+                    obj["Combatant"][pair.Key.Name] = value;
             }
 
             obj["isActive"] = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.Active ? "true" : "false";

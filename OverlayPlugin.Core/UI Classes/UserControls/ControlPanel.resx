@@ -279,33 +279,6 @@
   <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="hideUsernameButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="hideUsernameButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>415, 4</value>
-  </data>
-  <data name="hideUsernameButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 29</value>
-  </data>
-  <data name="hideUsernameButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="hideUsernameButton.Text" xml:space="preserve">
-    <value>Hide Username</value>
-  </data>
-  <data name="&gt;&gt;hideUsernameButton.Name" xml:space="preserve">
-    <value>hideUsernameButton</value>
-  </data>
-  <data name="&gt;&gt;hideUsernameButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hideUsernameButton.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;hideUsernameButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="takeScreenShotBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -334,7 +307,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;takeScreenShotBtn.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="checkBoxAutoHide.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -367,7 +340,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;checkBoxAutoHide.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="buttonNewOverlay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -397,7 +370,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;buttonNewOverlay.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="buttonRemoveOverlay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -427,7 +400,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;buttonRemoveOverlay.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>

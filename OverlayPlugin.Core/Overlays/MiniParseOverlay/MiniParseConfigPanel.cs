@@ -58,6 +58,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
             this.comboHotkeyType.DataSource = hotkeyTypeDict;
             this.comboHotkeyType.SelectedValue = config.GlobalHotkeyType;
             this.comboHotkeyType.SelectedIndexChanged += ComboHotkeyMode_SelectedIndexChanged;
+            this.checkEnablePlayerName.Checked = config.HidePlayerName;
         }
 
         private void SetupConfigEventHandlers()
@@ -148,6 +149,14 @@ namespace RainbowMage.OverlayPlugin.Overlays
                 Invoke((MethodInvoker)delegate
                 {
                     this.comboHotkeyType.SelectedValue = e.NewHotkeyType;
+                });
+            };
+
+            this.config.HidePlayerNameChanged += (o, e) =>
+            {
+                Invoke((MethodInvoker)delegate
+                {
+                    this.checkEnablePlayerName.Checked = e.HidePlayerName;
                 });
             };
         }
@@ -249,6 +258,11 @@ namespace RainbowMage.OverlayPlugin.Overlays
         {
             if (this.config.Url == "") return;
             this.config.IsLocked = this.checkLock.Checked;
+        }
+
+        private void checkEnablePlayerName_CheckedChanged(object sender, EventArgs e)
+        {
+            this.config.HidePlayerName = this.checkEnablePlayerName.Checked;
         }
     }
 }

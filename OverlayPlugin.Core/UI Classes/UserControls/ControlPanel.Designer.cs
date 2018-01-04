@@ -48,7 +48,6 @@ namespace RainbowMage.OverlayPlugin
             this.overlaysTabPage = new System.Windows.Forms.TabPage();
             this.tabControl = new RainbowMage.OverlayPlugin.TabControlExt();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.hideUsernameButton = new System.Windows.Forms.Button();
             this.takeScreenShotBtn = new System.Windows.Forms.Button();
             this.checkBoxAutoHide = new System.Windows.Forms.CheckBox();
             this.buttonNewOverlay = new System.Windows.Forms.Button();
@@ -191,20 +190,12 @@ namespace RainbowMage.OverlayPlugin
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.hideUsernameButton);
             this.panel1.Controls.Add(this.takeScreenShotBtn);
             this.panel1.Controls.Add(this.checkBoxAutoHide);
             this.panel1.Controls.Add(this.buttonNewOverlay);
             this.panel1.Controls.Add(this.buttonRemoveOverlay);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            // 
-            // hideUsernameButton
-            // 
-            resources.ApplyResources(this.hideUsernameButton, "hideUsernameButton");
-            this.hideUsernameButton.Name = "hideUsernameButton";
-            this.hideUsernameButton.UseVisualStyleBackColor = true;
-            this.hideUsernameButton.Click += new System.EventHandler(this.hideUsernameButton_Click);
             // 
             // takeScreenShotBtn
             // 
@@ -504,6 +495,5 @@ namespace RainbowMage.OverlayPlugin
         private OpenFileDialog ofdImage;
         private Label repo_dev_info_special;
         private Label special_thanks;
-        private Button hideUsernameButton;
     }
 }
