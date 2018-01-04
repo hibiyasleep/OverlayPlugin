@@ -4,6 +4,7 @@ using System.Windows.Forms;
 
 namespace RainbowMage.OverlayPlugin
 {
+    [System.ComponentModel.DesignerCategory("CODE")]
     public class TabControlExt : TabControl
     {
         static readonly StringFormat CenterStringFormat = new StringFormat()
