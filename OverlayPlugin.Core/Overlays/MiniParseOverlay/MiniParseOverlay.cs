@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace RainbowMage.OverlayPlugin.Overlays
@@ -34,7 +35,23 @@ namespace RainbowMage.OverlayPlugin.Overlays
             this.prevEndDateTime = DateTime.MinValue;
         }
 
+        private readonly object updateSync = new object();
         protected override void Update()
+        {
+            if (Monitor.TryEnter(updateSync, 0))
+                return;
+
+            try
+            {
+                UpdateWorker();
+            }
+            finally
+            {
+                Monitor.Exit(updateSync);
+            }
+        }
+
+        private void UpdateWorker()
         {
             if (CheckIsActReady())
             {
