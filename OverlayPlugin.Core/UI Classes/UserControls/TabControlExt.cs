@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 
 namespace RainbowMage.OverlayPlugin
 {
+    [System.ComponentModel.DesignerCategory("CODE")]
     public class TabControlExt : TabControl
     {
         static readonly StringFormat CenterStringFormat = new StringFormat()
@@ -45,8 +47,7 @@ namespace RainbowMage.OverlayPlugin
                 Rectangle rect = new Rectangle(tabrect.X + 4, tabrect.Y + 4, tabrect.Width - 8, tabrect.Height - 2);
                 Rectangle textrect1 = new Rectangle(tabrect.X + 4, tabrect.Y + 4, tabrect.Width - 8, tabrect.Height - 20);
                 Rectangle textrect2 = new Rectangle(tabrect.X + 4, tabrect.Y + 20, tabrect.Width - 8, tabrect.Height - 20);
-
-
+                
                 if (inc == SelectedIndex)
                 {
                     e.Graphics.FillRectangle(SystemBrushes.Highlight, rect);

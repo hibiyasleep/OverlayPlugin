@@ -39,30 +39,25 @@ namespace RainbowMage.OverlayPlugin
             this.menuFollowLatestLog = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuClearLog = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPageMain = new System.Windows.Forms.TabPage();
+            this.tabPageMain = new RainbowMage.OverlayPlugin.OverlayPageUI();
             this.label_ListEmpty = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.fbdScreenShotPath = new System.Windows.Forms.FolderBrowserDialog();
             this.ofdImage = new System.Windows.Forms.OpenFileDialog();
             this.overlayTabUI1 = new RainbowMage.OverlayPlugin.OverlayTabUI();
-            this.overlaysTabPage = new System.Windows.Forms.TabPage();
+            this.overlaysTabPage = new RainbowMage.OverlayPlugin.OverlayPageUI();
             this.tabControl = new RainbowMage.OverlayPlugin.TabControlExt();
             this.panel1 = new System.Windows.Forms.Panel();
             this.takeScreenShotBtn = new System.Windows.Forms.Button();
             this.checkBoxAutoHide = new System.Windows.Forms.CheckBox();
             this.buttonNewOverlay = new System.Windows.Forms.Button();
             this.buttonRemoveOverlay = new System.Windows.Forms.Button();
-            this.overlayLogsTabPage = new System.Windows.Forms.TabPage();
+            this.overlayLogsTabPage = new RainbowMage.OverlayPlugin.OverlayPageUI();
             this.listViewLog = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.overlayInformationTabPage = new System.Windows.Forms.TabPage();
-            this.overlayPluginInformationGroupBox = new System.Windows.Forms.GroupBox();
-            this.repo_dev_info_special = new System.Windows.Forms.Label();
-            this.special_thanks = new System.Windows.Forms.Label();
-            this.repo_dev_info = new System.Windows.Forms.Label();
-            this.developers = new System.Windows.Forms.Label();
+            this.overlaySettingsTabPage = new RainbowMage.OverlayPlugin.OverlayPageUI();
             this.screenShotPathGroupbox = new System.Windows.Forms.GroupBox();
             this.screenShotTable = new System.Windows.Forms.TableLayoutPanel();
             this.screenShotMarginlabel = new System.Windows.Forms.Label();
@@ -79,19 +74,26 @@ namespace RainbowMage.OverlayPlugin
             this.screenShotBackgroundMode = new System.Windows.Forms.ComboBox();
             this.screenShotMargin = new System.Windows.Forms.NumericUpDown();
             this.screenShotPathLabel = new System.Windows.Forms.Label();
+            this.overlayInformationTabPage = new RainbowMage.OverlayPlugin.OverlayPageUI();
+            this.overlayPluginInformationGroupBox = new System.Windows.Forms.GroupBox();
+            this.repo_dev_info_special = new System.Windows.Forms.Label();
+            this.special_thanks = new System.Windows.Forms.Label();
+            this.repo_dev_info = new System.Windows.Forms.Label();
+            this.developers = new System.Windows.Forms.Label();
             this.contextMenuLogList.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.overlayTabUI1.SuspendLayout();
             this.overlaysTabPage.SuspendLayout();
             this.panel1.SuspendLayout();
             this.overlayLogsTabPage.SuspendLayout();
-            this.overlayInformationTabPage.SuspendLayout();
-            this.overlayPluginInformationGroupBox.SuspendLayout();
+            this.overlaySettingsTabPage.SuspendLayout();
             this.screenShotPathGroupbox.SuspendLayout();
             this.screenShotTable.SuspendLayout();
             this.screenShotPathPanel.SuspendLayout();
             this.screenShotBackgroundPathPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.screenShotMargin)).BeginInit();
+            this.overlayInformationTabPage.SuspendLayout();
+            this.overlayPluginInformationGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuLogList
@@ -146,6 +148,7 @@ namespace RainbowMage.OverlayPlugin
             this.tabPageMain.Controls.Add(this.label_ListEmpty);
             resources.ApplyResources(this.tabPageMain, "tabPageMain");
             this.tabPageMain.Name = "tabPageMain";
+            this.tabPageMain.TabImage = null;
             this.tabPageMain.UseVisualStyleBackColor = true;
             // 
             // label_ListEmpty
@@ -167,6 +170,7 @@ namespace RainbowMage.OverlayPlugin
             // 
             this.overlayTabUI1.Controls.Add(this.overlaysTabPage);
             this.overlayTabUI1.Controls.Add(this.overlayLogsTabPage);
+            this.overlayTabUI1.Controls.Add(this.overlaySettingsTabPage);
             this.overlayTabUI1.Controls.Add(this.overlayInformationTabPage);
             resources.ApplyResources(this.overlayTabUI1, "overlayTabUI1");
             this.overlayTabUI1.Name = "overlayTabUI1";
@@ -178,6 +182,7 @@ namespace RainbowMage.OverlayPlugin
             this.overlaysTabPage.Controls.Add(this.panel1);
             resources.ApplyResources(this.overlaysTabPage, "overlaysTabPage");
             this.overlaysTabPage.Name = "overlaysTabPage";
+            this.overlaysTabPage.TabImage = ((System.Drawing.Image)(resources.GetObject("overlaysTabPage.TabImage")));
             this.overlaysTabPage.UseVisualStyleBackColor = true;
             // 
             // tabControl
@@ -230,6 +235,7 @@ namespace RainbowMage.OverlayPlugin
             this.overlayLogsTabPage.Controls.Add(this.listViewLog);
             resources.ApplyResources(this.overlayLogsTabPage, "overlayLogsTabPage");
             this.overlayLogsTabPage.Name = "overlayLogsTabPage";
+            this.overlayLogsTabPage.TabImage = ((System.Drawing.Image)(resources.GetObject("overlayLogsTabPage.TabImage")));
             this.overlayLogsTabPage.UseVisualStyleBackColor = true;
             // 
             // listViewLog
@@ -262,48 +268,18 @@ namespace RainbowMage.OverlayPlugin
             // 
             resources.ApplyResources(this.columnHeader3, "columnHeader3");
             // 
-            // overlayInformationTabPage
+            // overlaySettingsTabPage
             // 
-            this.overlayInformationTabPage.Controls.Add(this.overlayPluginInformationGroupBox);
-            this.overlayInformationTabPage.Controls.Add(this.screenShotPathGroupbox);
-            resources.ApplyResources(this.overlayInformationTabPage, "overlayInformationTabPage");
-            this.overlayInformationTabPage.Name = "overlayInformationTabPage";
-            this.overlayInformationTabPage.UseVisualStyleBackColor = true;
-            // 
-            // overlayPluginInformationGroupBox
-            // 
-            this.overlayPluginInformationGroupBox.Controls.Add(this.repo_dev_info_special);
-            this.overlayPluginInformationGroupBox.Controls.Add(this.special_thanks);
-            this.overlayPluginInformationGroupBox.Controls.Add(this.repo_dev_info);
-            this.overlayPluginInformationGroupBox.Controls.Add(this.developers);
-            resources.ApplyResources(this.overlayPluginInformationGroupBox, "overlayPluginInformationGroupBox");
-            this.overlayPluginInformationGroupBox.Name = "overlayPluginInformationGroupBox";
-            this.overlayPluginInformationGroupBox.TabStop = false;
-            // 
-            // repo_dev_info_special
-            // 
-            resources.ApplyResources(this.repo_dev_info_special, "repo_dev_info_special");
-            this.repo_dev_info_special.Name = "repo_dev_info_special";
-            // 
-            // special_thanks
-            // 
-            resources.ApplyResources(this.special_thanks, "special_thanks");
-            this.special_thanks.Name = "special_thanks";
-            // 
-            // repo_dev_info
-            // 
-            resources.ApplyResources(this.repo_dev_info, "repo_dev_info");
-            this.repo_dev_info.Name = "repo_dev_info";
-            // 
-            // developers
-            // 
-            resources.ApplyResources(this.developers, "developers");
-            this.developers.Name = "developers";
+            this.overlaySettingsTabPage.Controls.Add(this.screenShotPathGroupbox);
+            resources.ApplyResources(this.overlaySettingsTabPage, "overlaySettingsTabPage");
+            this.overlaySettingsTabPage.Name = "overlaySettingsTabPage";
+            this.overlaySettingsTabPage.TabImage = null;
+            this.overlaySettingsTabPage.UseVisualStyleBackColor = true;
             // 
             // screenShotPathGroupbox
             // 
-            this.screenShotPathGroupbox.Controls.Add(this.screenShotTable);
             resources.ApplyResources(this.screenShotPathGroupbox, "screenShotPathGroupbox");
+            this.screenShotPathGroupbox.Controls.Add(this.screenShotTable);
             this.screenShotPathGroupbox.Name = "screenShotPathGroupbox";
             this.screenShotPathGroupbox.TabStop = false;
             // 
@@ -353,14 +329,12 @@ namespace RainbowMage.OverlayPlugin
             // 
             resources.ApplyResources(this.screenShotPath, "screenShotPath");
             this.screenShotPath.Name = "screenShotPath";
-            this.screenShotPath.Leave += new System.EventHandler(this.screenShotPath_Leave);
             // 
             // screenShotPathSelectButton
             // 
             resources.ApplyResources(this.screenShotPathSelectButton, "screenShotPathSelectButton");
             this.screenShotPathSelectButton.Name = "screenShotPathSelectButton";
             this.screenShotPathSelectButton.UseVisualStyleBackColor = true;
-            this.screenShotPathSelectButton.Click += new System.EventHandler(this.screenShotPathSelectButton_Click);
             // 
             // screenShotBackgroundPathPanel
             // 
@@ -373,21 +347,18 @@ namespace RainbowMage.OverlayPlugin
             // 
             resources.ApplyResources(this.screenShotBackgroundPath, "screenShotBackgroundPath");
             this.screenShotBackgroundPath.Name = "screenShotBackgroundPath";
-            this.screenShotBackgroundPath.Leave += new System.EventHandler(this.screenShotBackgroundPath_Leave);
             // 
             // screenShotBackgroundPathSelect
             // 
             resources.ApplyResources(this.screenShotBackgroundPathSelect, "screenShotBackgroundPathSelect");
             this.screenShotBackgroundPathSelect.Name = "screenShotBackgroundPathSelect";
             this.screenShotBackgroundPathSelect.UseVisualStyleBackColor = true;
-            this.screenShotBackgroundPathSelect.Click += new System.EventHandler(this.screenShotBackgroundPathSelect_Click);
             // 
             // screenShotAutoClipping
             // 
             resources.ApplyResources(this.screenShotAutoClipping, "screenShotAutoClipping");
             this.screenShotAutoClipping.Name = "screenShotAutoClipping";
             this.screenShotAutoClipping.UseVisualStyleBackColor = true;
-            this.screenShotAutoClipping.CheckedChanged += new System.EventHandler(this.screenShotAutoClipping_CheckedChanged);
             // 
             // screenShotBackgroundMode
             // 
@@ -402,7 +373,6 @@ namespace RainbowMage.OverlayPlugin
             resources.GetString("screenShotBackgroundMode.Items4"),
             resources.GetString("screenShotBackgroundMode.Items5")});
             this.screenShotBackgroundMode.Name = "screenShotBackgroundMode";
-            this.screenShotBackgroundMode.SelectedIndexChanged += new System.EventHandler(this.screenShotBackgroundFillType_SelectedIndexChanged);
             // 
             // screenShotMargin
             // 
@@ -413,12 +383,49 @@ namespace RainbowMage.OverlayPlugin
             0,
             0});
             this.screenShotMargin.Name = "screenShotMargin";
-            this.screenShotMargin.ValueChanged += new System.EventHandler(this.screenShotMargin_ValueChanged);
             // 
             // screenShotPathLabel
             // 
             resources.ApplyResources(this.screenShotPathLabel, "screenShotPathLabel");
             this.screenShotPathLabel.Name = "screenShotPathLabel";
+            // 
+            // overlayInformationTabPage
+            // 
+            this.overlayInformationTabPage.Controls.Add(this.overlayPluginInformationGroupBox);
+            resources.ApplyResources(this.overlayInformationTabPage, "overlayInformationTabPage");
+            this.overlayInformationTabPage.Name = "overlayInformationTabPage";
+            this.overlayInformationTabPage.TabImage = ((System.Drawing.Image)(resources.GetObject("overlayInformationTabPage.TabImage")));
+            this.overlayInformationTabPage.UseVisualStyleBackColor = true;
+            // 
+            // overlayPluginInformationGroupBox
+            // 
+            this.overlayPluginInformationGroupBox.Controls.Add(this.repo_dev_info_special);
+            this.overlayPluginInformationGroupBox.Controls.Add(this.special_thanks);
+            this.overlayPluginInformationGroupBox.Controls.Add(this.repo_dev_info);
+            this.overlayPluginInformationGroupBox.Controls.Add(this.developers);
+            resources.ApplyResources(this.overlayPluginInformationGroupBox, "overlayPluginInformationGroupBox");
+            this.overlayPluginInformationGroupBox.Name = "overlayPluginInformationGroupBox";
+            this.overlayPluginInformationGroupBox.TabStop = false;
+            // 
+            // repo_dev_info_special
+            // 
+            resources.ApplyResources(this.repo_dev_info_special, "repo_dev_info_special");
+            this.repo_dev_info_special.Name = "repo_dev_info_special";
+            // 
+            // special_thanks
+            // 
+            resources.ApplyResources(this.special_thanks, "special_thanks");
+            this.special_thanks.Name = "special_thanks";
+            // 
+            // repo_dev_info
+            // 
+            resources.ApplyResources(this.repo_dev_info, "repo_dev_info");
+            this.repo_dev_info.Name = "repo_dev_info";
+            // 
+            // developers
+            // 
+            resources.ApplyResources(this.developers, "developers");
+            this.developers.Name = "developers";
             // 
             // ControlPanel
             // 
@@ -434,15 +441,18 @@ namespace RainbowMage.OverlayPlugin
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.overlayLogsTabPage.ResumeLayout(false);
-            this.overlayInformationTabPage.ResumeLayout(false);
-            this.overlayPluginInformationGroupBox.ResumeLayout(false);
+            this.overlaySettingsTabPage.ResumeLayout(false);
+            this.overlaySettingsTabPage.PerformLayout();
             this.screenShotPathGroupbox.ResumeLayout(false);
+            this.screenShotPathGroupbox.PerformLayout();
             this.screenShotTable.ResumeLayout(false);
             this.screenShotPathPanel.ResumeLayout(false);
             this.screenShotPathPanel.PerformLayout();
             this.screenShotBackgroundPathPanel.ResumeLayout(false);
             this.screenShotBackgroundPathPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.screenShotMargin)).EndInit();
+            this.overlayInformationTabPage.ResumeLayout(false);
+            this.overlayPluginInformationGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -460,40 +470,41 @@ namespace RainbowMage.OverlayPlugin
         private System.Windows.Forms.ToolStripMenuItem menuCopyLogAll;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem menuClearLog;
-        private System.Windows.Forms.TabPage tabPageMain;
+        private OverlayPageUI tabPageMain;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button buttonRemoveOverlay;
         private System.Windows.Forms.Button buttonNewOverlay;
         private System.Windows.Forms.CheckBox checkBoxAutoHide;
         private Label label_ListEmpty;
         private OverlayTabUI overlayTabUI1;
-        private TabPage overlaysTabPage;
-        private TabPage overlayLogsTabPage;
-        private TabPage overlayInformationTabPage;
-        private GroupBox screenShotPathGroupbox;
-        private Button screenShotPathSelectButton;
-        private GroupBox overlayPluginInformationGroupBox;
-        private Label repo_dev_info;
-        private Label developers;
+        private OverlayPageUI overlaysTabPage;
+        private OverlayPageUI overlayLogsTabPage;
+        private OverlayPageUI overlayInformationTabPage;
         private Panel panel1;
         private Button takeScreenShotBtn;
-        private TextBox screenShotPath;
+        private FolderBrowserDialog fbdScreenShotPath;
+        private OpenFileDialog ofdImage;
+        private OverlayPageUI overlaySettingsTabPage;
+        private GroupBox screenShotPathGroupbox;
         private TableLayoutPanel screenShotTable;
-        private Panel screenShotPathPanel;
-        private Panel screenShotBackgroundPathPanel;
-        private Button screenShotBackgroundPathSelect;
-        private TextBox screenShotBackgroundPath;
-        private CheckBox screenShotAutoClipping;
-        private ComboBox screenShotBackgroundMode;
-        private NumericUpDown screenShotMargin;
-        private Label screenShotPathLabel;
         private Label screenShotMarginlabel;
         private Label screenShotAutoClippingLabel;
         private Label screenShotBackgroundModeLabel;
         private Label screenShotBackgroundPathLabel;
-        private FolderBrowserDialog fbdScreenShotPath;
-        private OpenFileDialog ofdImage;
+        private Panel screenShotPathPanel;
+        private TextBox screenShotPath;
+        private Button screenShotPathSelectButton;
+        private Panel screenShotBackgroundPathPanel;
+        private TextBox screenShotBackgroundPath;
+        private Button screenShotBackgroundPathSelect;
+        private CheckBox screenShotAutoClipping;
+        private ComboBox screenShotBackgroundMode;
+        private NumericUpDown screenShotMargin;
+        private Label screenShotPathLabel;
+        private GroupBox overlayPluginInformationGroupBox;
         private Label repo_dev_info_special;
         private Label special_thanks;
+        private Label repo_dev_info;
+        private Label developers;
     }
 }

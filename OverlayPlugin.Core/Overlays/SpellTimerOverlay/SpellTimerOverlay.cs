@@ -50,19 +50,9 @@ namespace RainbowMage.OverlayPlugin.Overlays
 
         protected override void Update()
         {
-            this.Update(false);
-        }
-
-        protected override void FastUpdate()
-        {
-            this.Update(true);
-        }
-
-        private void Update(bool fastUpdate)
-        {
             try
             {
-                var updateScript = fastUpdate && this.m_latestJson != null ? this.m_latestJson : CreateEventDispatcherScript();
+                var updateScript = CreateEventDispatcherScript();
 
                 if (this.Overlay != null &&
                     this.Overlay.Renderer != null &&
@@ -136,10 +126,9 @@ namespace RainbowMage.OverlayPlugin.Overlays
             }
         }
         
-        private string m_latestJson;
         private string CreateEventDispatcherScript()
         {
-            return this.m_latestJson =  "var ActXiv = " + this.CreateJsonData() + ";\n" +
+            return "var ActXiv = " + this.CreateJsonData() + ";\n" +
                    "document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', ActXiv));";
         }
     }

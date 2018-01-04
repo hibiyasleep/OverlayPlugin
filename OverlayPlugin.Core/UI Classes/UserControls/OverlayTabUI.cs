@@ -1,10 +1,12 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace RainbowMage.OverlayPlugin
 {
+    [System.ComponentModel.DesignerCategory("CODE")]
     public class OverlayTabUI : TabControl
     {
         /*
@@ -19,17 +21,6 @@ namespace RainbowMage.OverlayPlugin
         private static readonly Brush LightCloud = new SolidBrush(Color.FromArgb(250, 251, 252));
         private static readonly Brush LodestoneTabFocusColor = new SolidBrush(Color.FromArgb(71, 105, 179));
         private static readonly Brush TopLiner = new SolidBrush(Color.FromArgb(227, 98, 9));
-        private static readonly Image[] grayImages;
-        private static readonly Image[] blackImages;
-
-        static OverlayTabUI()
-        {
-            var gray = Color.FromArgb(36, 41, 46);
-            var black = Color.FromArgb(182, 184, 187);
-
-            grayImages = new Image[] { ColorOverlayer.InformationIcon(gray), ColorOverlayer.LogsIcon(gray), ColorOverlayer.OverlaysIcon(gray) };
-            blackImages = new Image[] { ColorOverlayer.InformationIcon(black), ColorOverlayer.LogsIcon(black), ColorOverlayer.OverlaysIcon(black) };
-        }
 
         public OverlayTabUI()
         {
@@ -84,18 +75,24 @@ namespace RainbowMage.OverlayPlugin
                 }
 
                 e.Graphics.SmoothingMode = SmoothingMode.Default;
-
+                
+                Image img = null;
                 var selectedBrush = GrayBrush;
-                var img = blackImages[i];
-                if (i == SelectedIndex)
+
+                if (TabPages[i] is OverlayPageUI tce)
                 {
-                    img = grayImages[i];
-                    selectedBrush = BlackBrush;
+                    img = tce.BlackImage;
+                    if (i == SelectedIndex)
+                    {
+                        img = tce.GrayImage;
+                        selectedBrush = BlackBrush;
+                    }
                 }
+                
+                if (img != null)
+                    e.Graphics.DrawImage(img, new Point(TR.Left + 10, 11));
 
                 e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
-
-                e.Graphics.DrawImage(img, new Point(TR.Left + 10, 11));
                 e.Graphics.DrawString(TabPages[i].Text, OnPaintFont, selectedBrush, new Rectangle(TR.Left + 30, TR.Top + 9, TR.Width - 45, 20), strFormat);
             }
         }
@@ -122,6 +119,45 @@ namespace RainbowMage.OverlayPlugin
                 components.Dispose();
             }
             base.Dispose(disposing);
+        }
+    }
+
+    public class OverlayPageUI : TabPage
+    {
+        private Image m_image;
+        public Image TabImage
+        {
+            get
+            {
+                return m_image;
+            }
+            set
+            {
+                if (m_image != value)
+                {
+                    GrayImage?.Dispose();
+                    BlackImage?.Dispose();
+
+                    m_image = value;
+
+                    GrayImage = MixImage(value, Color.FromArgb(36, 41, 46));
+                    BlackImage = MixImage(value, Color.FromArgb(182, 184, 187));
+                }
+            }
+        }
+        public Image GrayImage { get; private set; }
+        public Image BlackImage { get; private set; }
+
+        private static Image MixImage(Image image, Color color)
+        {
+            var bmp = image as Bitmap;
+            var img = new Bitmap(image.Width, image.Height, PixelFormat.Format32bppArgb);
+
+            for (var x = 0; x < image.Width; x++)
+                for (var y = 0; y < image.Height; y++)
+                    img.SetPixel(x, y, Color.FromArgb(bmp.GetPixel(x, y).A, color));
+
+            return img;
         }
     }
 }

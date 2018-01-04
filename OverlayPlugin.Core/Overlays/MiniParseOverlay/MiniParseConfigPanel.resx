@@ -121,22 +121,148 @@
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="nudUpdateInterval.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="nudUpdateInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>212, 155</value>
+  </data>
+  <data name="nudUpdateInterval.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>1, 1, 1, 1</value>
+  </data>
+  <data name="nudUpdateInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>492, 21</value>
+  </data>
+  <data name="nudUpdateInterval.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;nudUpdateInterval.Name" xml:space="preserve">
+    <value>nudUpdateInterval</value>
+  </data>
+  <data name="&gt;&gt;nudUpdateInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudUpdateInterval.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;nudUpdateInterval.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label12.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 154</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 20</value>
+  </data>
+  <data name="label12.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Refresh interval</value>
+  </data>
+  <data name="label12.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
+  </data>
+  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkEnablePlayerName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="checkEnablePlayerName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkEnablePlayerName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 177</value>
+  </data>
+  <data name="checkEnablePlayerName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>488, 16</value>
+  </data>
+  <data name="checkEnablePlayerName.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;checkEnablePlayerName.Name" xml:space="preserve">
+    <value>checkEnablePlayerName</value>
+  </data>
+  <data name="&gt;&gt;checkEnablePlayerName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkEnablePlayerName.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;checkEnablePlayerName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label11.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 174</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 22</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Hide player name</value>
+  </data>
+  <data name="label11.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 132</value>
+    <value>3, 131</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 22</value>
+    <value>205, 23</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -157,7 +283,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -172,7 +298,7 @@
     <value>3, 110</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 22</value>
+    <value>205, 21</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -193,7 +319,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="textMiniParseSortKey.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -220,7 +346,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;textMiniParseSortKey.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -256,7 +382,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -292,7 +418,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -328,7 +454,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -364,7 +490,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="checkMiniParseVisible.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -394,7 +520,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;checkMiniParseVisible.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="checkMiniParseClickthru.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -424,7 +550,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;checkMiniParseClickthru.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>12</value>
   </data>
   <data name="tableLayoutPanel3.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
@@ -568,7 +694,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>13</value>
   </data>
   <data name="tableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -667,7 +793,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>14</value>
   </data>
   <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="textMiniParseUrl" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonMiniParseSelectFile" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,Absolute,50" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
@@ -697,13 +823,13 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;comboMiniParseSortType.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>15</value>
   </data>
   <data name="nudMaxFrameRate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="nudMaxFrameRate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 133</value>
+    <value>212, 132</value>
   </data>
   <data name="nudMaxFrameRate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
@@ -724,7 +850,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;nudMaxFrameRate.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>16</value>
   </data>
   <data name="label13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -736,10 +862,10 @@
     <value>NoControl</value>
   </data>
   <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 218</value>
+    <value>214, 260</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>488, 83</value>
+    <value>488, 41</value>
   </data>
   <data name="label13.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -757,7 +883,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>17</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -769,7 +895,7 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 154</value>
+    <value>3, 196</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 22</value>
@@ -793,7 +919,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>18</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -805,7 +931,7 @@
     <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 176</value>
+    <value>3, 218</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 22</value>
@@ -829,13 +955,13 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>19</value>
   </data>
   <data name="checkEnableGlobalHotkey.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="checkEnableGlobalHotkey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 157</value>
+    <value>214, 199</value>
   </data>
   <data name="checkEnableGlobalHotkey.Size" type="System.Drawing.Size, System.Drawing">
     <value>488, 16</value>
@@ -853,13 +979,13 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;checkEnableGlobalHotkey.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>20</value>
   </data>
   <data name="textGlobalHotkey.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="textGlobalHotkey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 177</value>
+    <value>212, 219</value>
   </data>
   <data name="textGlobalHotkey.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
@@ -880,7 +1006,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;textGlobalHotkey.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>21</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -916,7 +1042,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>22</value>
   </data>
   <data name="checkLock.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -946,7 +1072,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;checkLock.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>23</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -955,7 +1081,7 @@
     <value>Fill</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 198</value>
+    <value>3, 240</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 20</value>
@@ -979,13 +1105,13 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>24</value>
   </data>
   <data name="comboHotkeyType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="comboHotkeyType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 199</value>
+    <value>212, 241</value>
   </data>
   <data name="comboHotkeyType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
@@ -1006,7 +1132,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;comboHotkeyType.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>25</value>
   </data>
   <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1015,7 +1141,7 @@
     <value>0, 0</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>705, 358</value>
@@ -1036,7 +1162,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label6" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="textMiniParseSortKey" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkMiniParseVisible" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="checkMiniParseClickthru" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="panel1" Row="11" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="tableLayoutPanel2" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="comboMiniParseSortType" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="nudMaxFrameRate" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label13" Row="10" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label7" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkEnableGlobalHotkey" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textGlobalHotkey" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label9" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkLock" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label10" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboHotkeyType" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,211,Percent,100" /&gt;&lt;Rows Styles="Absolute,22,Absolute,22,Absolute,22,Absolute,22,Absolute,22,Absolute,22,Absolute,22,Absolute,22,Absolute,22,Absolute,20,Percent,100,Absolute,57" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="nudUpdateInterval" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkEnablePlayerName" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label11" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label6" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="textMiniParseSortKey" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkMiniParseVisible" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="checkMiniParseClickthru" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="panel1" Row="13" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="tableLayoutPanel2" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="comboMiniParseSortType" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="nudMaxFrameRate" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label13" Row="12" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label7" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkEnableGlobalHotkey" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textGlobalHotkey" Row="10" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label9" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkLock" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label10" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboHotkeyType" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,211,Percent,100" /&gt;&lt;Rows Styles="Absolute,22,Absolute,22,Absolute,22,Absolute,22,Absolute,22,Absolute,21,Absolute,23,Absolute,20,Absolute,22,Absolute,22,Absolute,22,Absolute,20,Percent,100,Absolute,57,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

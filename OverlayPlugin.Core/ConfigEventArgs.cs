@@ -101,4 +101,22 @@ namespace RainbowMage.OverlayPlugin
             this.IsLocked = isLocked;
         }
     }
+
+    public class HidePlayerNameChangedEventArgs : EventArgs
+    {
+        public bool HidePlayerName { get; private set; }
+        public HidePlayerNameChangedEventArgs(bool hidePlayerName)
+        {
+            this.HidePlayerName = hidePlayerName;
+        }
+    }
+
+    public class UpdateIntervalChangedEventArgs : EventArgs
+    {
+        public int Interval { get; private set; }
+        public UpdateIntervalChangedEventArgs(int interval)
+        {
+            this.Interval = interval;
+        }
+    }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
@@ -10,6 +9,9 @@ namespace RainbowMage.OverlayPlugin
     {
         private KeyboardHook hook = new KeyboardHook();
         protected System.Timers.Timer timer;
+
+        public System.Timers.Timer UpdateTimer { get { return timer; } }
+
         /// <summary>
         /// オーバーレイがログを出力したときに発生します。
         /// </summary>
@@ -263,10 +265,6 @@ namespace RainbowMage.OverlayPlugin
         /// オーバーレイを更新します。
         /// </summary>
         protected abstract void Update();
-        protected virtual void FastUpdate()
-        {
-
-        }
 
         /// <summary>
         /// オーバーレイのインスタンスを破棄します。
@@ -302,7 +300,7 @@ namespace RainbowMage.OverlayPlugin
 
             try
             {
-                this.FastUpdate();
+                this.Update();
             }
             catch
             {
