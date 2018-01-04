@@ -97,7 +97,6 @@ namespace RainbowMage.OverlayPlugin.Overlays
             List<KeyValuePair<CombatantData, Dictionary<string, string>>> combatant = null;
 
             var hidePlayerName = Config.HidePlayerName;
-            Log(LogLevel.Warning, hidePlayerName.ToString());
 
             var encounterTask = Task.Run(() =>
                 {
