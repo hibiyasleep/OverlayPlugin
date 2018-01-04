@@ -79,9 +79,5 @@ namespace RainbowMage.OverlayPlugin.Overlays
         {
             
         }
-        protected override void FastUpdate()
-        {
-
-        }
     }
 }

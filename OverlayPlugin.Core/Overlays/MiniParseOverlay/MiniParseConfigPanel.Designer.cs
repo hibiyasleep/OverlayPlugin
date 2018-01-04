@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MiniParseConfigPanel));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.checkEnablePlayerName = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textMiniParseSortKey = new System.Windows.Forms.TextBox();
@@ -68,6 +70,8 @@
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.checkEnablePlayerName, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.textMiniParseSortKey, 1, 4);
@@ -77,20 +81,32 @@
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.checkMiniParseVisible, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.checkMiniParseClickthru, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 12);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.comboMiniParseSortType, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.nudMaxFrameRate, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label13, 1, 10);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.checkEnableGlobalHotkey, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.textGlobalHotkey, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.label13, 1, 11);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.checkEnableGlobalHotkey, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.textGlobalHotkey, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.checkLock, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.comboHotkeyType, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.comboHotkeyType, 1, 10);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // checkEnablePlayerName
+            // 
+            resources.ApplyResources(this.checkEnablePlayerName, "checkEnablePlayerName");
+            this.checkEnablePlayerName.Name = "checkEnablePlayerName";
+            this.checkEnablePlayerName.UseVisualStyleBackColor = true;
+            this.checkEnablePlayerName.CheckedChanged += new System.EventHandler(this.checkEnablePlayerName_CheckedChanged);
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
             // 
             // label6
             // 
@@ -330,5 +346,7 @@
         private System.Windows.Forms.CheckBox checkLock;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboHotkeyType;
+        private System.Windows.Forms.CheckBox checkEnablePlayerName;
+        private System.Windows.Forms.Label label11;
     }
 }
