@@ -118,9 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="contextMenuLogList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>259, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="contextMenuLogList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 104</value>
+  </data>
+  <data name="&gt;&gt;contextMenuLogList.Name" xml:space="preserve">
+    <value>contextMenuLogList</value>
+  </data>
+  <data name="&gt;&gt;contextMenuLogList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="menuCopyLogAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 22</value>
   </data>
@@ -151,16 +160,41 @@
   <data name="menuClearLog.Text" xml:space="preserve">
     <value>Clear logs</value>
   </data>
-  <data name="contextMenuLogList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 104</value>
+  <data name="&gt;&gt;label_ListEmpty.Name" xml:space="preserve">
+    <value>label_ListEmpty</value>
   </data>
-  <data name="&gt;&gt;contextMenuLogList.Name" xml:space="preserve">
-    <value>contextMenuLogList</value>
+  <data name="&gt;&gt;label_ListEmpty.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;contextMenuLogList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label_ListEmpty.Parent" xml:space="preserve">
+    <value>tabPageMain</value>
+  </data>
+  <data name="&gt;&gt;label_ListEmpty.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPageMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabPageMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPageMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>572, 248</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabPageMain.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabPageMain.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="&gt;&gt;tabPageMain.Name" xml:space="preserve">
+    <value>tabPageMain</value>
+  </data>
+  <data name="&gt;&gt;tabPageMain.Type" xml:space="preserve">
+    <value>RainbowMage.OverlayPlugin.OverlayPageUI, OverlayPlugin.Core, Version=0.3.4.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
   <data name="label_ListEmpty.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -173,7 +207,6 @@
   <data name="label_ListEmpty.Size" type="System.Drawing.Size, System.Drawing">
     <value>566, 242</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label_ListEmpty.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -191,27 +224,6 @@
   </data>
   <data name="&gt;&gt;label_ListEmpty.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="tabPageMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPageMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPageMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>572, 248</value>
-  </data>
-  <data name="tabPageMain.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tabPageMain.Text" xml:space="preserve">
-    <value>General</value>
-  </data>
-  <data name="&gt;&gt;tabPageMain.Name" xml:space="preserve">
-    <value>tabPageMain</value>
-  </data>
-  <data name="&gt;&gt;tabPageMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="groupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -235,37 +247,13 @@
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="fbdScreenShotPath.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>181, 17</value>
+    <value>423, 17</value>
   </metadata>
   <metadata name="ofdImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>339, 17</value>
+    <value>581, 17</value>
   </metadata>
   <data name="ofdImage.Filter" xml:space="preserve">
     <value>*.png;*.jpg;*.jpeg|*.png;*.jpg;*.jpeg</value>
-  </data>
-  <data name="tabControl.Alignment" type="System.Windows.Forms.TabAlignment, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tabControl.Font" type="System.Drawing.Font, System.Drawing">
-    <value>굴림, 9pt</value>
-  </data>
-  <data name="tabControl.ItemSize" type="System.Drawing.Size, System.Drawing">
-    <value>46, 140</value>
-  </data>
-  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 37</value>
-  </data>
-  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
-  </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>655, 377</value>
-  </data>
-  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
     <value>tabControl</value>
@@ -278,141 +266,6 @@
   </data>
   <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="takeScreenShotBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="takeScreenShotBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="takeScreenShotBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>525, 4</value>
-  </data>
-  <data name="takeScreenShotBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 29</value>
-  </data>
-  <data name="takeScreenShotBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="takeScreenShotBtn.Text" xml:space="preserve">
-    <value>Take ScreenShot</value>
-  </data>
-  <data name="&gt;&gt;takeScreenShotBtn.Name" xml:space="preserve">
-    <value>takeScreenShotBtn</value>
-  </data>
-  <data name="&gt;&gt;takeScreenShotBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;takeScreenShotBtn.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;takeScreenShotBtn.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="checkBoxAutoHide.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxAutoHide.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxAutoHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>189, 10</value>
-  </data>
-  <data name="checkBoxAutoHide.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
-  </data>
-  <data name="checkBoxAutoHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 19</value>
-  </data>
-  <data name="checkBoxAutoHide.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="checkBoxAutoHide.Text" xml:space="preserve">
-    <value>Automatically hide overlays</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAutoHide.Name" xml:space="preserve">
-    <value>checkBoxAutoHide</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAutoHide.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAutoHide.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;checkBoxAutoHide.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="buttonNewOverlay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonNewOverlay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 4</value>
-  </data>
-  <data name="buttonNewOverlay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
-  </data>
-  <data name="buttonNewOverlay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 29</value>
-  </data>
-  <data name="buttonNewOverlay.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="buttonNewOverlay.Text" xml:space="preserve">
-    <value>New</value>
-  </data>
-  <data name="&gt;&gt;buttonNewOverlay.Name" xml:space="preserve">
-    <value>buttonNewOverlay</value>
-  </data>
-  <data name="&gt;&gt;buttonNewOverlay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonNewOverlay.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;buttonNewOverlay.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="buttonRemoveOverlay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonRemoveOverlay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 4</value>
-  </data>
-  <data name="buttonRemoveOverlay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
-  </data>
-  <data name="buttonRemoveOverlay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 29</value>
-  </data>
-  <data name="buttonRemoveOverlay.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="buttonRemoveOverlay.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
-  <data name="&gt;&gt;buttonRemoveOverlay.Name" xml:space="preserve">
-    <value>buttonRemoveOverlay</value>
-  </data>
-  <data name="&gt;&gt;buttonRemoveOverlay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonRemoveOverlay.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;buttonRemoveOverlay.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 0</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>655, 37</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
   </data>
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
@@ -435,6 +288,15 @@
   <data name="overlaysTabPage.Size" type="System.Drawing.Size, System.Drawing">
     <value>659, 415</value>
   </data>
+  <data name="overlaysTabPage.TabImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xNkRpr/UAAACASURBVDhP7ZVB
+        CsAgDAT9/6v8WauUSRaxJFaPFaYsSWavLe3VxnWI3jVd7PCE9vrnM/RYGIZL/IU+3IEeC8MwhCKQnR+Q
+        M1AEsvMDcgaKQHZ+QM5AEchufrAKPRaGoYEQIY6LZAUhQhwXyQpChDgukhWECHHWxDfo0XCKk7+AUm9A
+        spyD5wNYwwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="overlaysTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -445,39 +307,12 @@
     <value>overlaysTabPage</value>
   </data>
   <data name="&gt;&gt;overlaysTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>RainbowMage.OverlayPlugin.OverlayPageUI, OverlayPlugin.Core, Version=0.3.4.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;overlaysTabPage.Parent" xml:space="preserve">
     <value>overlayTabUI1</value>
   </data>
   <data name="&gt;&gt;overlaysTabPage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value>Time</value>
-  </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>Level</value>
-  </data>
-  <data name="columnHeader3.Text" xml:space="preserve">
-    <value>Message</value>
-  </data>
-  <data name="columnHeader3.Width" type="System.Int32, mscorlib">
-    <value>451</value>
-  </data>
-  <data name="listViewLog.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="listViewLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 0</value>
-  </data>
-  <data name="listViewLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
-  </data>
-  <data name="listViewLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>655, 414</value>
-  </data>
-  <data name="listViewLog.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;listViewLog.Name" xml:space="preserve">
@@ -501,6 +336,15 @@
   <data name="overlayLogsTabPage.Size" type="System.Drawing.Size, System.Drawing">
     <value>659, 415</value>
   </data>
+  <data name="overlayLogsTabPage.TabImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xNkRpr/UAAACfSURBVDhPrZRB
+        EoMwCEWzcOlhelMP6wEoP8X6B+g0kixeBh75jAu1ichSUjlDKmf4HK1tyqGcCsQTkEF244UQfKnCwQuv
+        J3uhfwIylj17bxKHlnc9Ssh7UYHzUVid9Rl8p9deVOB8FFb/6jN4HkQFzkdhddZ7MOc7vfaiAucvsfzF
+        Xv7p7RDKzM9h/y78hwU7fuZJpWd0GUilZ3SZiLQ3vjZfyPZLF4YAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="overlayLogsTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -511,163 +355,13 @@
     <value>overlayLogsTabPage</value>
   </data>
   <data name="&gt;&gt;overlayLogsTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>RainbowMage.OverlayPlugin.OverlayPageUI, OverlayPlugin.Core, Version=0.3.4.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;overlayLogsTabPage.Parent" xml:space="preserve">
     <value>overlayTabUI1</value>
   </data>
   <data name="&gt;&gt;overlayLogsTabPage.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="repo_dev_info_special.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="repo_dev_info_special.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="repo_dev_info_special.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 92</value>
-  </data>
-  <data name="repo_dev_info_special.Size" type="System.Drawing.Size, System.Drawing">
-    <value>635, 38</value>
-  </data>
-  <data name="repo_dev_info_special.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="repo_dev_info_special.Text" xml:space="preserve">
-    <value>RyuaNerin</value>
-  </data>
-  <data name="&gt;&gt;repo_dev_info_special.Name" xml:space="preserve">
-    <value>repo_dev_info_special</value>
-  </data>
-  <data name="&gt;&gt;repo_dev_info_special.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;repo_dev_info_special.Parent" xml:space="preserve">
-    <value>overlayPluginInformationGroupBox</value>
-  </data>
-  <data name="&gt;&gt;repo_dev_info_special.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="special_thanks.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="special_thanks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="special_thanks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 75</value>
-  </data>
-  <data name="special_thanks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>635, 17</value>
-  </data>
-  <data name="special_thanks.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="special_thanks.Text" xml:space="preserve">
-    <value>Special Thanks To:</value>
-  </data>
-  <data name="&gt;&gt;special_thanks.Name" xml:space="preserve">
-    <value>special_thanks</value>
-  </data>
-  <data name="&gt;&gt;special_thanks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;special_thanks.Parent" xml:space="preserve">
-    <value>overlayPluginInformationGroupBox</value>
-  </data>
-  <data name="&gt;&gt;special_thanks.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="repo_dev_info.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="repo_dev_info.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="repo_dev_info.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 37</value>
-  </data>
-  <data name="repo_dev_info.Size" type="System.Drawing.Size, System.Drawing">
-    <value>635, 38</value>
-  </data>
-  <data name="repo_dev_info.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="repo_dev_info.Text" xml:space="preserve">
-    <value>RainbowMage, hibiyasleep, Laighlinne</value>
-  </data>
-  <data name="&gt;&gt;repo_dev_info.Name" xml:space="preserve">
-    <value>repo_dev_info</value>
-  </data>
-  <data name="&gt;&gt;repo_dev_info.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;repo_dev_info.Parent" xml:space="preserve">
-    <value>overlayPluginInformationGroupBox</value>
-  </data>
-  <data name="&gt;&gt;repo_dev_info.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="developers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="developers.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="developers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 20</value>
-  </data>
-  <data name="developers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>635, 17</value>
-  </data>
-  <data name="developers.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="developers.Text" xml:space="preserve">
-    <value>Developers:</value>
-  </data>
-  <data name="&gt;&gt;developers.Name" xml:space="preserve">
-    <value>developers</value>
-  </data>
-  <data name="&gt;&gt;developers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;developers.Parent" xml:space="preserve">
-    <value>overlayPluginInformationGroupBox</value>
-  </data>
-  <data name="&gt;&gt;developers.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="overlayPluginInformationGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="overlayPluginInformationGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 160</value>
-  </data>
-  <data name="overlayPluginInformationGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 4, 10, 10</value>
-  </data>
-  <data name="overlayPluginInformationGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>655, 254</value>
-  </data>
-  <data name="overlayPluginInformationGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="overlayPluginInformationGroupBox.Text" xml:space="preserve">
-    <value>OverlayPlugin Information</value>
-  </data>
-  <data name="&gt;&gt;overlayPluginInformationGroupBox.Name" xml:space="preserve">
-    <value>overlayPluginInformationGroupBox</value>
-  </data>
-  <data name="&gt;&gt;overlayPluginInformationGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;overlayPluginInformationGroupBox.Parent" xml:space="preserve">
-    <value>overlayInformationTabPage</value>
-  </data>
-  <data name="&gt;&gt;overlayPluginInformationGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="screenShotTable.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -814,7 +508,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="screenShotPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>484, 23</value>
+    <value>482, 23</value>
   </data>
   <data name="screenShotPath.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -838,7 +532,7 @@
     <value>NoControl</value>
   </data>
   <data name="screenShotPathSelectButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>484, 0</value>
+    <value>482, 0</value>
   </data>
   <data name="screenShotPathSelectButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 1</value>
@@ -874,7 +568,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="screenShotPathPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>533, 25</value>
+    <value>531, 25</value>
   </data>
   <data name="screenShotPathPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -901,7 +595,7 @@
     <value>0, 1, 0, 0</value>
   </data>
   <data name="screenShotBackgroundPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>484, 23</value>
+    <value>482, 23</value>
   </data>
   <data name="screenShotBackgroundPath.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -925,7 +619,7 @@
     <value>NoControl</value>
   </data>
   <data name="screenShotBackgroundPathSelect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>484, 0</value>
+    <value>482, 0</value>
   </data>
   <data name="screenShotBackgroundPathSelect.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 25</value>
@@ -958,7 +652,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="screenShotBackgroundPathPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>533, 25</value>
+    <value>531, 25</value>
   </data>
   <data name="screenShotBackgroundPathPanel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -988,7 +682,7 @@
     <value>0, 1, 0, 0</value>
   </data>
   <data name="screenShotAutoClipping.Size" type="System.Drawing.Size, System.Drawing">
-    <value>533, 24</value>
+    <value>531, 24</value>
   </data>
   <data name="screenShotAutoClipping.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1033,7 +727,7 @@
     <value>0, 1, 0, 0</value>
   </data>
   <data name="screenShotBackgroundMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>533, 23</value>
+    <value>531, 23</value>
   </data>
   <data name="screenShotBackgroundMode.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1123,7 +817,7 @@
     <value>6</value>
   </data>
   <data name="screenShotTable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>635, 130</value>
+    <value>633, 130</value>
   </data>
   <data name="screenShotTable.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1147,16 +841,16 @@
     <value>Top</value>
   </data>
   <data name="screenShotPathGroupbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 0</value>
+    <value>3, 3</value>
   </data>
   <data name="screenShotPathGroupbox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 4, 10, 10</value>
   </data>
   <data name="screenShotPathGroupbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>655, 160</value>
+    <value>653, 160</value>
   </data>
   <data name="screenShotPathGroupbox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="screenShotPathGroupbox.Text" xml:space="preserve">
     <value>ScreenShot</value>
@@ -1168,10 +862,49 @@
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;screenShotPathGroupbox.Parent" xml:space="preserve">
-    <value>overlayInformationTabPage</value>
+    <value>overlaySettingsTabPage</value>
   </data>
   <data name="&gt;&gt;screenShotPathGroupbox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
+  </data>
+  <data name="overlaySettingsTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, 39</value>
+  </data>
+  <data name="overlaySettingsTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="overlaySettingsTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>659, 415</value>
+  </data>
+  <data name="overlaySettingsTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="overlaySettingsTabPage.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="&gt;&gt;overlaySettingsTabPage.Name" xml:space="preserve">
+    <value>overlaySettingsTabPage</value>
+  </data>
+  <data name="&gt;&gt;overlaySettingsTabPage.Type" xml:space="preserve">
+    <value>RainbowMage.OverlayPlugin.OverlayPageUI, OverlayPlugin.Core, Version=0.3.4.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;overlaySettingsTabPage.Parent" xml:space="preserve">
+    <value>overlayTabUI1</value>
+  </data>
+  <data name="&gt;&gt;overlaySettingsTabPage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;overlayPluginInformationGroupBox.Name" xml:space="preserve">
+    <value>overlayPluginInformationGroupBox</value>
+  </data>
+  <data name="&gt;&gt;overlayPluginInformationGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;overlayPluginInformationGroupBox.Parent" xml:space="preserve">
+    <value>overlayInformationTabPage</value>
+  </data>
+  <data name="&gt;&gt;overlayPluginInformationGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="overlayInformationTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, 39</value>
@@ -1181,6 +914,18 @@
   </data>
   <data name="overlayInformationTabPage.Size" type="System.Drawing.Size, System.Drawing">
     <value>659, 415</value>
+  </data>
+  <data name="overlayInformationTabPage.TabImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xNkRpr/UAAAE5SURBVDhPrZQx
+        TgMxEEWNBH0OkCJdcogUEcoB0nAVLpAiBeIECOUQOUBKjkBBB2VERUG5+c/MGC/reCVkS0+a+TMe2Tvj
+        DV3XNaUogtZaPIk38WW8mrYu7YGhEMJE7AVODXImg/09J4Sl+BA4nGgnNmJqYKMRI4fcZa9GVoyTebGj
+        mGWxW7HI/JkgB4c96aR5Qb/m0bUs9ime/2jX4kXg7JNuQRqAwVXSyVJSCHNxU9AX4lvgrKJmATqHscs3
+        OFr34u5C7EFgbKNvIqOBscmTHa138XghRqMwDtE30bs2zZMdrVpBuo9xir6JzQs2v/JYU2oFGXSMXlPG
+        xqZYkFzhn+t3bCxYG+xBQS0G219Lf7Atofb0rtw2f/zpWWK7n0MSfk7a5veVo7USW3EQJwMbLTagRFH8
+        P104A3CtC1ZCZNpjAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="overlayInformationTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1192,13 +937,13 @@
     <value>overlayInformationTabPage</value>
   </data>
   <data name="&gt;&gt;overlayInformationTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>RainbowMage.OverlayPlugin.OverlayPageUI, OverlayPlugin.Core, Version=0.3.4.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;overlayInformationTabPage.Parent" xml:space="preserve">
     <value>overlayTabUI1</value>
   </data>
   <data name="&gt;&gt;overlayInformationTabPage.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="overlayTabUI1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1229,6 +974,474 @@
   </data>
   <data name="&gt;&gt;overlayTabUI1.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="tabControl.Alignment" type="System.Windows.Forms.TabAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabControl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>굴림, 9pt</value>
+  </data>
+  <data name="tabControl.ItemSize" type="System.Drawing.Size, System.Drawing">
+    <value>46, 140</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 37</value>
+  </data>
+  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>655, 377</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>RainbowMage.OverlayPlugin.TabControlExt, OverlayPlugin.Core, Version=0.3.4.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>overlaysTabPage</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;takeScreenShotBtn.Name" xml:space="preserve">
+    <value>takeScreenShotBtn</value>
+  </data>
+  <data name="&gt;&gt;takeScreenShotBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;takeScreenShotBtn.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;takeScreenShotBtn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoHide.Name" xml:space="preserve">
+    <value>checkBoxAutoHide</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoHide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoHide.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoHide.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;buttonNewOverlay.Name" xml:space="preserve">
+    <value>buttonNewOverlay</value>
+  </data>
+  <data name="&gt;&gt;buttonNewOverlay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonNewOverlay.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;buttonNewOverlay.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;buttonRemoveOverlay.Name" xml:space="preserve">
+    <value>buttonRemoveOverlay</value>
+  </data>
+  <data name="&gt;&gt;buttonRemoveOverlay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonRemoveOverlay.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;buttonRemoveOverlay.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 0</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>655, 37</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>overlaysTabPage</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="takeScreenShotBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="takeScreenShotBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="takeScreenShotBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>525, 4</value>
+  </data>
+  <data name="takeScreenShotBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 29</value>
+  </data>
+  <data name="takeScreenShotBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="takeScreenShotBtn.Text" xml:space="preserve">
+    <value>Take ScreenShot</value>
+  </data>
+  <data name="&gt;&gt;takeScreenShotBtn.Name" xml:space="preserve">
+    <value>takeScreenShotBtn</value>
+  </data>
+  <data name="&gt;&gt;takeScreenShotBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;takeScreenShotBtn.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;takeScreenShotBtn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="checkBoxAutoHide.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxAutoHide.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxAutoHide.Location" type="System.Drawing.Point, System.Drawing">
+    <value>189, 10</value>
+  </data>
+  <data name="checkBoxAutoHide.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="checkBoxAutoHide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 19</value>
+  </data>
+  <data name="checkBoxAutoHide.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="checkBoxAutoHide.Text" xml:space="preserve">
+    <value>Automatically hide overlays</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoHide.Name" xml:space="preserve">
+    <value>checkBoxAutoHide</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoHide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoHide.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoHide.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonNewOverlay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonNewOverlay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 4</value>
+  </data>
+  <data name="buttonNewOverlay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="buttonNewOverlay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 29</value>
+  </data>
+  <data name="buttonNewOverlay.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonNewOverlay.Text" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="&gt;&gt;buttonNewOverlay.Name" xml:space="preserve">
+    <value>buttonNewOverlay</value>
+  </data>
+  <data name="&gt;&gt;buttonNewOverlay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonNewOverlay.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;buttonNewOverlay.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonRemoveOverlay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonRemoveOverlay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 4</value>
+  </data>
+  <data name="buttonRemoveOverlay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="buttonRemoveOverlay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 29</value>
+  </data>
+  <data name="buttonRemoveOverlay.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonRemoveOverlay.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="&gt;&gt;buttonRemoveOverlay.Name" xml:space="preserve">
+    <value>buttonRemoveOverlay</value>
+  </data>
+  <data name="&gt;&gt;buttonRemoveOverlay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonRemoveOverlay.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;buttonRemoveOverlay.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="columnHeader3.Text" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="columnHeader3.Width" type="System.Int32, mscorlib">
+    <value>451</value>
+  </data>
+  <data name="listViewLog.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="listViewLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 0</value>
+  </data>
+  <data name="listViewLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="listViewLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>655, 414</value>
+  </data>
+  <data name="listViewLog.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;listViewLog.Name" xml:space="preserve">
+    <value>listViewLog</value>
+  </data>
+  <data name="&gt;&gt;listViewLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listViewLog.Parent" xml:space="preserve">
+    <value>overlayLogsTabPage</value>
+  </data>
+  <data name="&gt;&gt;listViewLog.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;repo_dev_info_special.Name" xml:space="preserve">
+    <value>repo_dev_info_special</value>
+  </data>
+  <data name="&gt;&gt;repo_dev_info_special.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;repo_dev_info_special.Parent" xml:space="preserve">
+    <value>overlayPluginInformationGroupBox</value>
+  </data>
+  <data name="&gt;&gt;repo_dev_info_special.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;special_thanks.Name" xml:space="preserve">
+    <value>special_thanks</value>
+  </data>
+  <data name="&gt;&gt;special_thanks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;special_thanks.Parent" xml:space="preserve">
+    <value>overlayPluginInformationGroupBox</value>
+  </data>
+  <data name="&gt;&gt;special_thanks.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;repo_dev_info.Name" xml:space="preserve">
+    <value>repo_dev_info</value>
+  </data>
+  <data name="&gt;&gt;repo_dev_info.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;repo_dev_info.Parent" xml:space="preserve">
+    <value>overlayPluginInformationGroupBox</value>
+  </data>
+  <data name="&gt;&gt;repo_dev_info.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;developers.Name" xml:space="preserve">
+    <value>developers</value>
+  </data>
+  <data name="&gt;&gt;developers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;developers.Parent" xml:space="preserve">
+    <value>overlayPluginInformationGroupBox</value>
+  </data>
+  <data name="&gt;&gt;developers.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="overlayPluginInformationGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="overlayPluginInformationGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 0</value>
+  </data>
+  <data name="overlayPluginInformationGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 4, 10, 10</value>
+  </data>
+  <data name="overlayPluginInformationGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>655, 414</value>
+  </data>
+  <data name="overlayPluginInformationGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="overlayPluginInformationGroupBox.Text" xml:space="preserve">
+    <value>OverlayPlugin Information</value>
+  </data>
+  <data name="&gt;&gt;overlayPluginInformationGroupBox.Name" xml:space="preserve">
+    <value>overlayPluginInformationGroupBox</value>
+  </data>
+  <data name="&gt;&gt;overlayPluginInformationGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;overlayPluginInformationGroupBox.Parent" xml:space="preserve">
+    <value>overlayInformationTabPage</value>
+  </data>
+  <data name="&gt;&gt;overlayPluginInformationGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="repo_dev_info_special.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="repo_dev_info_special.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="repo_dev_info_special.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 92</value>
+  </data>
+  <data name="repo_dev_info_special.Size" type="System.Drawing.Size, System.Drawing">
+    <value>635, 38</value>
+  </data>
+  <data name="repo_dev_info_special.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="repo_dev_info_special.Text" xml:space="preserve">
+    <value>RyuaNerin</value>
+  </data>
+  <data name="&gt;&gt;repo_dev_info_special.Name" xml:space="preserve">
+    <value>repo_dev_info_special</value>
+  </data>
+  <data name="&gt;&gt;repo_dev_info_special.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;repo_dev_info_special.Parent" xml:space="preserve">
+    <value>overlayPluginInformationGroupBox</value>
+  </data>
+  <data name="&gt;&gt;repo_dev_info_special.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="special_thanks.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="special_thanks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="special_thanks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 75</value>
+  </data>
+  <data name="special_thanks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>635, 17</value>
+  </data>
+  <data name="special_thanks.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="special_thanks.Text" xml:space="preserve">
+    <value>Special Thanks To:</value>
+  </data>
+  <data name="&gt;&gt;special_thanks.Name" xml:space="preserve">
+    <value>special_thanks</value>
+  </data>
+  <data name="&gt;&gt;special_thanks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;special_thanks.Parent" xml:space="preserve">
+    <value>overlayPluginInformationGroupBox</value>
+  </data>
+  <data name="&gt;&gt;special_thanks.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="repo_dev_info.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="repo_dev_info.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="repo_dev_info.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 37</value>
+  </data>
+  <data name="repo_dev_info.Size" type="System.Drawing.Size, System.Drawing">
+    <value>635, 38</value>
+  </data>
+  <data name="repo_dev_info.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="repo_dev_info.Text" xml:space="preserve">
+    <value>RainbowMage, hibiyasleep, Laighlinne</value>
+  </data>
+  <data name="&gt;&gt;repo_dev_info.Name" xml:space="preserve">
+    <value>repo_dev_info</value>
+  </data>
+  <data name="&gt;&gt;repo_dev_info.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;repo_dev_info.Parent" xml:space="preserve">
+    <value>overlayPluginInformationGroupBox</value>
+  </data>
+  <data name="&gt;&gt;repo_dev_info.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="developers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="developers.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="developers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 20</value>
+  </data>
+  <data name="developers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>635, 17</value>
+  </data>
+  <data name="developers.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="developers.Text" xml:space="preserve">
+    <value>Developers:</value>
+  </data>
+  <data name="&gt;&gt;developers.Name" xml:space="preserve">
+    <value>developers</value>
+  </data>
+  <data name="&gt;&gt;developers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;developers.Parent" xml:space="preserve">
+    <value>overlayPluginInformationGroupBox</value>
+  </data>
+  <data name="&gt;&gt;developers.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

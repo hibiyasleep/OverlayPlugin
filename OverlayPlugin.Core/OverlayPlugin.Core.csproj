@@ -68,15 +68,10 @@
     <Compile Include="Overlays\LogParseOverlay\LogParseOverlayAddon.cs" />
     <Compile Include="Overlays\LogParseOverlay\LogParseOverlayConfig.cs" />
     <Compile Include="ScreenShot.cs" />
-    <Compile Include="UI Classes\UserControls\OverlayTabUI.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UI Classes\Structures\ColorOverlayer.cs" />
+    <Compile Include="UI Classes\UserControls\OverlayTabUI.cs" />
     <Compile Include="UI Classes\Structures\GraphicsExt.cs" />
     <Compile Include="UI Classes\Structures\RECT.cs" />
-    <Compile Include="UI Classes\UserControls\TabControlExt.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="UI Classes\UserControls\TabControlExt.cs" />
     <Compile Include="UI Classes\UserControls\ControlPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
