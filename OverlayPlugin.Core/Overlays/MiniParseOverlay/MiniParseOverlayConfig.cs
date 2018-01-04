@@ -9,6 +9,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
         public event EventHandler<SortKeyChangedEventArgs> SortKeyChanged;
         public event EventHandler<SortTypeChangedEventArgs> SortTypeChanged;
         public event EventHandler<HidePlayerNameChangedEventArgs> HidePlayerNameChanged;
+        public event EventHandler<UpdateIntervalChangedEventArgs> OverlayUpdateIntervalChanged;
 
         private string sortKey;
         [XmlElement("SortKey")]
@@ -68,6 +69,29 @@ namespace RainbowMage.OverlayPlugin.Overlays
                     if (HidePlayerNameChanged != null)
                     {
                         HidePlayerNameChanged(this, new HidePlayerNameChangedEventArgs(value));
+                    }
+                }
+            }
+        }
+
+        
+
+        private int overlayUpdateInterval;
+        [XmlElement("OverlayUpdateInterval")]
+        public int OverlayUpdateInterval
+        {
+            get
+            {
+                return this.overlayUpdateInterval;
+            }
+            set
+            {
+                if (this.overlayUpdateInterval != value)
+                {
+                    this.overlayUpdateInterval = value;
+                    if (HidePlayerNameChanged != null)
+                    {
+                        OverlayUpdateIntervalChanged(this, new UpdateIntervalChangedEventArgs(value));
                     }
                 }
             }

@@ -110,4 +110,13 @@ namespace RainbowMage.OverlayPlugin
             this.HidePlayerName = hidePlayerName;
         }
     }
+
+    public class UpdateIntervalChangedEventArgs : EventArgs
+    {
+        public int Interval { get; private set; }
+        public UpdateIntervalChangedEventArgs(int interval)
+        {
+            this.Interval = interval;
+        }
+    }
 }
