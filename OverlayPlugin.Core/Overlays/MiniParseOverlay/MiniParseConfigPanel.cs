@@ -167,6 +167,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
                 {
                     this.nudUpdateInterval.Value = (int)e.Interval;
                     this.overlay.UpdateTimer.Interval = e.Interval;
+                    this.overlay.UpdateStringCacheExpireInterval = TimeSpan.FromMilliseconds(e.Interval / 2);
                 });
             };
         }

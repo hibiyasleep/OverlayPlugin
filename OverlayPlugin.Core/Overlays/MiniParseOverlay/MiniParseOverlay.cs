@@ -16,9 +16,14 @@ namespace RainbowMage.OverlayPlugin.Overlays
         private DateTime prevEndDateTime { get; set; }
         private bool prevEncounterActive { get; set; }
 
-        private static string updateStringCache = "";
-        private static DateTime updateStringCacheLastUpdate;
-        private static readonly TimeSpan updateStringCacheExpireInterval = new TimeSpan(0, 0, 0, 0, 500); // 500 msec
+        private string updateStringCache = "";
+        private DateTime updateStringCacheLastUpdate;
+        private TimeSpan updateStringCacheExpireInterval = new TimeSpan(0, 0, 0, 0, 500); // 500 msec
+        public TimeSpan UpdateStringCacheExpireInterval
+        {
+            get { return updateStringCacheExpireInterval; }
+            set { updateStringCacheExpireInterval = value; }
+        }
 
         public MiniParseOverlay(MiniParseOverlayConfig config)
             : base(config, config.Name)
