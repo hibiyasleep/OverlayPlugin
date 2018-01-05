@@ -10,11 +10,11 @@ namespace RainbowMage.OverlayPlugin
 {
     public class PluginLoader : IActPluginV1
     {
+        public static string primaryUser = "YOU";
         PluginMain pluginMain;
         Logger logger;
         AssemblyResolver asmResolver;
         string pluginDirectory;
-        string primaryUser = "YOU";
 
         public void InitPlugin(TabPage pluginScreenSpace, Label pluginStatusText)
         {
@@ -41,6 +41,7 @@ namespace RainbowMage.OverlayPlugin
             asmResolver.AssemblyLoaded += (o, e) => logger.Log(LogLevel.Debug, "AssemblyResolver: Loaded: {0}", e.LoadedAssembly.FullName);
             pluginMain = new PluginMain(pluginDirectory, logger);
             pluginMain.InitPlugin(pluginScreenSpace, pluginStatusText);
+            PluginMain.CurrentPlayerName = "YOU";
         }
 
         public void DeInitPlugin()
@@ -75,9 +76,8 @@ namespace RainbowMage.OverlayPlugin
             if (logInfo.logLine.IndexOf("02:Changed") > -1)
             {
                 primaryUser = logInfo.logLine;
-
                 primaryUser = primaryUser.Replace("02:Changed primary player to ", "").Replace(".", "");
-                primaryUser = primaryUser.Substring(primaryUser.IndexOf("]") + 2);
+                PluginMain.CurrentPlayerName = primaryUser = primaryUser.Substring(primaryUser.IndexOf("]") + 2);
             }
         }
         
