@@ -23,6 +23,8 @@ namespace RainbowMage.OverlayPlugin
         internal List<IOverlayAddon> Addons { get; set; }
         internal Logger Logger { get; set; }
         internal string PluginDirectory { get; private set; }
+        
+        public static string CurrentPlayerName { get; set; }
 
         public PluginMain(string pluginDirectory, Logger logger)
         {
