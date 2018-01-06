@@ -38,7 +38,7 @@ namespace RainbowMage.HtmlRenderer
             get
             {
                 allBrowsersSemaphore.Wait();
-                CefBrowser b = this.allBrowsers.FirstOrDefault();
+                var b = this.allBrowsers.FirstOrDefault();
                 allBrowsersSemaphore.Release();
                 return b;
             }
@@ -217,13 +217,13 @@ namespace RainbowMage.HtmlRenderer
             }
         }
 
-        public void showDevTools(bool firstwindow = true)
+        public void ShowDevTools(bool firstwindow = true)
         {
             this.allBrowsersSemaphore.Wait();
             if (this.allBrowsers.Count > 0)
             {
-                CefBrowser b = firstwindow ? this.allBrowsers.First() : this.allBrowsers.Last();
-                CefWindowInfo wi = CefWindowInfo.Create();
+                var b = firstwindow ? this.allBrowsers.First() : this.allBrowsers.Last();
+                var wi = CefWindowInfo.Create();
                 wi.SetAsPopup(b.GetHost().GetWindowHandle(), "DevTools");
                 b.GetHost().ShowDevTools(wi, this.Client, new CefBrowserSettings(), new CefPoint());
             }
@@ -243,7 +243,7 @@ namespace RainbowMage.HtmlRenderer
         internal void OnBeforeClose(CefBrowser browser)
         {
           this.allBrowsersSemaphore.Wait();
-          int index = this.allBrowsers.FindIndex((b) => b.Identifier == browser.Identifier);
+          var index = this.allBrowsers.FindIndex((b) => b.Identifier == browser.Identifier);
           if (index > 0) {
             // The first browser window is only removed from the list on the main thread.
             System.Diagnostics.Debug.Assert(index > 0);
@@ -328,7 +328,7 @@ namespace RainbowMage.HtmlRenderer
                 {
                     try
                     {
-                        System.IO.DirectoryInfo di = new System.IO.DirectoryInfo("cache");
+                        var di = new System.IO.DirectoryInfo("cache");
                         di.MoveTo(Cache);
                     }
                     catch

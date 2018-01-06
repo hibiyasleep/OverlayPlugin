@@ -38,7 +38,7 @@ namespace RainbowMage.OverlayPlugin
             catch (Exception ex)
             {
                 bitmap?.Dispose();
-                MessageBox.Show(ex.ToString());
+                PluginMain.Logger.Log(LogLevel.Error, "OverlayPlugin Can't Take ScreenShot: {0}", ex.ToString());
                 return;
             }
 

@@ -164,7 +164,7 @@ namespace RainbowMage.OverlayPlugin
 
         private ModifierKeys GetModifierKey(Keys modifier)
         {
-            ModifierKeys modifiers = new ModifierKeys();
+            var modifiers = new ModifierKeys();
             if ((modifier & Keys.Shift) == Keys.Shift)
             {
                 modifiers |= ModifierKeys.Shift;
@@ -296,23 +296,18 @@ namespace RainbowMage.OverlayPlugin
 
         public virtual void Navigate(string url)
         {
-                this.Overlay.Url = url;
-
+            this.Overlay.Url = url;
             try
             {
                 this.Update();
             }
             catch
-            {
-            }
+            { }
         }
 
         protected void Log(LogLevel level, string message)
         {
-            if (OnLog != null)
-            {
-                OnLog(this, new LogEventArgs(level, string.Format("{0}: {1}", this.Name, message)));
-            }
+            OnLog?.Invoke(this, new LogEventArgs(level, string.Format("{0}: {1}", this.Name, message)));
         }
 
         protected void Log(LogLevel level, string format, params object[] args)
