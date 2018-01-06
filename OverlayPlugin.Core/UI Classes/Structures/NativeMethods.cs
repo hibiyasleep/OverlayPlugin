@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RainbowMage.OverlayPlugin
 {
-    public static class NativeMethods
+    internal static class NativeMethods
     {
         public delegate void WinEventDelegate(
             IntPtr hWinEventHook,
@@ -53,7 +53,7 @@ namespace RainbowMage.OverlayPlugin
             int nMaxCount);
 
         [DllImport("user32.dll")]
-        internal static extern bool SetWindowPos(
+        public static extern bool SetWindowPos(
             IntPtr hWnd,
             IntPtr hWndInsertAfter,
             int X,
@@ -63,7 +63,7 @@ namespace RainbowMage.OverlayPlugin
             uint uFlags);
 
         [DllImport("user32.dll")]
-        internal static extern IntPtr GetWindow(
+        public static extern IntPtr GetWindow(
             IntPtr hWnd,
             uint uCmd);
 
