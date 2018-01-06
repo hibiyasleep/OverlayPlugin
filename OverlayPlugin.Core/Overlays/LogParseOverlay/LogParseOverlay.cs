@@ -88,7 +88,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
                 this.prevEndDateTime = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.EndTime;
                 this.prevEncounterActive = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.Active;
 
-                var updateScript = CreateEventDispatcherScript(); 
+                var updateScript = CreateEventDispatcherScript();
 
                 if (this.Overlay != null &&
                     this.Overlay.Renderer != null &&

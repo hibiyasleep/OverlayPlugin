@@ -29,7 +29,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
             : base(config, config.Name)
         {
             ActGlobals.oFormActMain.BeforeLogLineRead += LogLineReader;
-            ActGlobals.oFormActMain.OnCombatStart += this.OFormActMain_OnCombatStart; ;
+            ActGlobals.oFormActMain.OnCombatStart += this.OFormActMain_OnCombatStart;
         }
 
         public override void Navigate(string url)

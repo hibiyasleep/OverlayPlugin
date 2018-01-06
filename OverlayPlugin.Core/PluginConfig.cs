@@ -331,21 +331,29 @@ namespace RainbowMage.OverlayPlugin
         /// <param name="pluginDirectory"></param>
         public void SetDefaultOverlayConfigs(string pluginDirectory)
         {
-            var miniparseOverlayConfig = new MiniParseOverlayConfig(DefaultMiniParseOverlayName);
-            miniparseOverlayConfig.Position = new Point(20, 20);
-            miniparseOverlayConfig.Size = new Size(500, 300);
-            miniparseOverlayConfig.Url = new Uri(Path.Combine(pluginDirectory, "resources", "miniparse.html")).ToString(); 
+            var KagerouDefaultOverlay = new MiniParseOverlayConfig("Kagerou Overlay");
+            KagerouDefaultOverlay.Position = new Point(20, 20);
+            KagerouDefaultOverlay.Size = new Size(480, 300);
+            KagerouDefaultOverlay.Url = new Uri("http://kagerou.hibiya.moe/overlay/").ToString();
 
+            var CatsEyeDefaultOverlay = new MiniParseOverlayConfig("Cat's Eye Overlay");
+            CatsEyeDefaultOverlay.Position = new Point(20, 20);
+            CatsEyeDefaultOverlay.Size = new Size(480, 300);
+            CatsEyeDefaultOverlay.Url = new Uri("http://ffxiv.work/chrysoberyl/Demo/stable.html").ToString();
+
+            /*
             var spellTimerOverlayConfig = new SpellTimerOverlayConfig(DefaultSpellTimerOverlayName);
             spellTimerOverlayConfig.Position = new Point(20, 520);
             spellTimerOverlayConfig.Size = new Size(200, 300);
             spellTimerOverlayConfig.IsVisible = true;
             spellTimerOverlayConfig.MaxFrameRate = 5;
             spellTimerOverlayConfig.Url = new Uri(Path.Combine(pluginDirectory, "resources", "spelltimer.html")).ToString(); 
+            */
 
             this.Overlays = new OverlayConfigList();
-            this.Overlays.Add(miniparseOverlayConfig);
-            this.Overlays.Add(spellTimerOverlayConfig);
+            this.Overlays.Add(KagerouDefaultOverlay);
+            this.Overlays.Add(CatsEyeDefaultOverlay);
+            //this.Overlays.Add(spellTimerOverlayConfig);
             this.ScreenShotSavePath = PluginMain.DefaultScreenShotPath;
         }
 
