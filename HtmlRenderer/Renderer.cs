@@ -313,6 +313,7 @@ namespace RainbowMage.HtmlRenderer
             if (!initialized)
             {
                 CefRuntime.Load();
+
                 var Cache = "Cache";
                 var Userdata = "UserData";
 
@@ -320,6 +321,20 @@ namespace RainbowMage.HtmlRenderer
                 {
                     Cache = System.IO.Path.Combine(MainApplicationPath, "Cache");
                     Userdata = System.IO.Path.Combine(MainApplicationPath, "UserData");
+                }
+
+                // for under 0.3.4.0 users
+                if (System.IO.Directory.Exists("cache"))
+                {
+                    try
+                    {
+                        System.IO.DirectoryInfo di = new System.IO.DirectoryInfo("cache");
+                        di.MoveTo(Cache);
+                    }
+                    catch
+                    {
+                        Cache = "cache";
+                    }
                 }
 
                 var cefMainArgs = new CefMainArgs(new string[0]);

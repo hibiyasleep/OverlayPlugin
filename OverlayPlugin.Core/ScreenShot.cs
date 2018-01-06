@@ -10,7 +10,7 @@ namespace RainbowMage.OverlayPlugin
 {
     internal static class ScreenShot
     {
-        public static void SaveScreenShot(DIBitmap buffer, ScreenshotConfig config)
+        public static void SaveScreenShot(DIBitmap buffer, ScreenShotConfig config)
         {
             Bitmap bitmap = null;
 
@@ -71,40 +71,40 @@ namespace RainbowMage.OverlayPlugin
             }
         }
 
-        private static void DrawBackground(Bitmap ss, string path, ScreenshotBackgroundMode mode)
+        private static void DrawBackground(Bitmap ss, string path, ScreenShotBackgroundMode mode)
         {
-            if (mode == ScreenshotBackgroundMode.Hide)
+            if (mode == ScreenShotBackgroundMode.Hide)
                 return;
 
-            using (var bg = Bitmap.FromFile(path))
+            using (var bg = Image.FromFile(path))
             {
                 using (var g = Graphics.FromImage(ss))
                 {
-                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    g.SmoothingMode = SmoothingMode.AntiAlias;
 
                     switch (mode)
                     {
-                        case ScreenshotBackgroundMode.Normal:
+                        case ScreenShotBackgroundMode.Normal:
                             g.DrawImageUnscaled(bg, 0, 0);
                             return;
 
-                        case ScreenshotBackgroundMode.Center:
+                        case ScreenShotBackgroundMode.Center:
                             g.DrawImageUnscaled(bg, (ss.Width - bg.Width) / 2 , (ss.Height - bg.Height) / 2);
                             return;
 
-                        case ScreenshotBackgroundMode.Fill:
+                        case ScreenShotBackgroundMode.Fill:
                             g.DrawImage(bg,
                                 new Rectangle(Point.Empty, ss.Size),
                                 new Rectangle(Point.Empty, bg.Size),
                                 GraphicsUnit.Pixel);
                             return;
 
-                        case ScreenshotBackgroundMode.Uniform:
-                        case ScreenshotBackgroundMode.UniformToFill:
+                        case ScreenShotBackgroundMode.Uniform:
+                        case ScreenShotBackgroundMode.UniformToFill:
                             {
                                 var scaleX = (double)ss.Width  / bg.Width;
                                 var scaleY = (double)ss.Height / bg.Height;
-                                var scale = mode == ScreenshotBackgroundMode.Uniform ?
+                                var scale = mode == ScreenShotBackgroundMode.Uniform ?
                                             Math.Min(scaleX, scaleY) :
                                             Math.Max(scaleX, scaleY);
                                 
