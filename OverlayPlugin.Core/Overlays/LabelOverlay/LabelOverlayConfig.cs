@@ -19,10 +19,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
                 if (this.text != value)
                 {
                     this.text = value;
-                    if (TextChanged != null)
-                    {
-                        TextChanged(this, new TextChangedEventArgs(this.text));
-                    }
+                    TextChanged?.Invoke(this, new TextChangedEventArgs(this.text));
                 }
             }
         }
@@ -40,10 +37,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
                 if (this.htmlModeEnabled != value)
                 {
                     this.htmlModeEnabled = value;
-                    if (HTMLModeChanged != null)
-                    {
-                        HTMLModeChanged(this, new StateChangedEventArgs<bool>(this.htmlModeEnabled));
-                    }
+                    HTMLModeChanged?.Invoke(this, new StateChangedEventArgs<bool>(this.htmlModeEnabled));
                 }
             }
         }

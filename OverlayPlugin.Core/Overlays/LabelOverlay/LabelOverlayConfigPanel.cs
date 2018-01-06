@@ -102,19 +102,19 @@ namespace RainbowMage.OverlayPlugin.Overlays
 
         private void checkWindowVisible_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.config.Url == "" || this.config.Text == "") return;
+            if (this.config.Url == "" && this.config.Text == "") return;
             this.config.IsVisible = checkMiniParseVisible.Checked;
         }
 
         private void checkMouseClickthru_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.config.Url == "" || this.config.Text == "") return;
+            if (this.config.Url == "" && this.config.Text == "") return;
             this.config.IsClickThru = checkMiniParseClickthru.Checked;
         }
 
         private void textUrl_TextChanged(object sender, EventArgs e)
         {
-            //this.config.Url = textMiniParseUrl.Text;
+
         }
 
         private void buttonReloadBrowser_Click(object sender, EventArgs e)

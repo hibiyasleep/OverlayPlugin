@@ -24,10 +24,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
                 if (this.sortKey != value)
                 {
                     this.sortKey = value;
-                    if (SortKeyChanged != null)
-                    {
-                        SortKeyChanged(this, new SortKeyChangedEventArgs(this.sortKey));
-                    }
+                    SortKeyChanged?.Invoke(this, new SortKeyChangedEventArgs(this.sortKey));
                 }
             }
         }
@@ -45,10 +42,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
                 if (this.sortType != value)
                 {
                     this.sortType = value;
-                    if (SortTypeChanged != null)
-                    {
-                        SortTypeChanged(this, new SortTypeChangedEventArgs(this.sortType));
-                    }
+                    SortTypeChanged?.Invoke(this, new SortTypeChangedEventArgs(this.sortType));
                 }
             }
         }
@@ -66,10 +60,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
                 if (this.hidePlayerName != value)
                 {
                     this.hidePlayerName = value;
-                    if (HidePlayerNameChanged != null)
-                    {
-                        HidePlayerNameChanged(this, new HidePlayerNameChangedEventArgs(value));
-                    }
+                    HidePlayerNameChanged?.Invoke(this, new HidePlayerNameChangedEventArgs(value));
                 }
             }
         }
@@ -111,14 +102,5 @@ namespace RainbowMage.OverlayPlugin.Overlays
         {
             get { return typeof(MiniParseOverlay); }
         }
-    }
-
-    public enum MiniParseSortType
-    {
-        None,
-        StringAscending,
-        StringDescending,
-        NumericAscending,
-        NumericDescending
     }
 }

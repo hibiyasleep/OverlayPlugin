@@ -17,18 +17,9 @@ namespace RainbowMage.OverlayPlugin.Overlays
 
             try
             {
-                config.TextChanged += (o, e) =>
-                {
-                    UpdateOverlayText();
-                };
-                config.HTMLModeChanged += (o, e) =>
-                {
-                    UpdateOverlayText();
-                };
-                this.Overlay.Renderer.BrowserLoad += (o, e) =>
-                {
-                    UpdateOverlayText();
-                };
+                config.TextChanged += UpdateOverlayText;
+                config.HTMLModeChanged += UpdateOverlayText;
+                this.Overlay.Renderer.BrowserLoad += UpdateOverlayText;
             }
             catch(Exception ex)
             {
@@ -36,7 +27,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
             }
         }
 
-        private void UpdateOverlayText()
+        private void UpdateOverlayText(object o, EventArgs e)
         {
             try
             {
