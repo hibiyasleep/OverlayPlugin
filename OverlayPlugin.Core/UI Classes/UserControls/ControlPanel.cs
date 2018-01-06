@@ -311,12 +311,12 @@ namespace RainbowMage.OverlayPlugin
             try
             {
                 selectedOverlay.TakeScreenShot(
-                    new ScreenshotConfig
+                    new ScreenShotConfig
                     {
                         SavePath            = config.ScreenShotSavePath,
                         AutoClipping        = config.ScreenShotAutoClipping,
                         BackgroundImagePath = config.ScreenShotBackgroundPath,
-                        BackgroundMode      = (ScreenshotBackgroundMode)config.ScreenShotBackgroundMode,
+                        BackgroundMode      = (ScreenShotBackgroundMode)config.ScreenShotBackgroundMode,
                         Margin              = config.ScreenShotMargin,
                     });
             }

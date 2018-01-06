@@ -63,6 +63,6 @@ namespace RainbowMage.OverlayPlugin
         /// Take Overlay Renderer PNG Image (Offscreen?)
         /// </summary>
         /// <param name="path"></param>
-        void TakeScreenShot(ScreenshotConfig config);
+        void TakeScreenShot(ScreenShotConfig config);
     }
 }

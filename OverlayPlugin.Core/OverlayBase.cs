@@ -363,16 +363,16 @@ namespace RainbowMage.OverlayPlugin
 
         public void TakeScreenShot()
         {
-            TakeScreenShot(new ScreenshotConfig
+            TakeScreenShot(new ScreenShotConfig
             {
                 SavePath            = PluginConfig.ScreenShotSavePath,
                 AutoClipping        = PluginConfig.ScreenShotAutoClipping,
                 BackgroundImagePath = PluginConfig.ScreenShotBackgroundPath,
-                BackgroundMode      = (ScreenshotBackgroundMode)PluginConfig.ScreenShotBackgroundMode,
+                BackgroundMode      = (ScreenShotBackgroundMode)PluginConfig.ScreenShotBackgroundMode,
                 Margin              = PluginConfig.ScreenShotMargin,
             });
         }
-        public void TakeScreenShot(ScreenshotConfig config)
+        public void TakeScreenShot(ScreenShotConfig config)
         {
             ScreenShot.SaveScreenShot(this.Overlay.SurfaceBuffer, config);
         }

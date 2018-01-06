@@ -139,12 +139,12 @@ namespace RainbowMage.OverlayPlugin
                     if (i.Name == e.Message)
                     {
                         i.TakeScreenShot(
-                            new ScreenshotConfig
+                            new ScreenShotConfig
                             {
                                 SavePath            = Config.ScreenShotSavePath,
                                 AutoClipping        = Config.ScreenShotAutoClipping,
                                 BackgroundImagePath = Config.ScreenShotBackgroundPath,
-                                BackgroundMode      = (ScreenshotBackgroundMode)Config.ScreenShotBackgroundMode,
+                                BackgroundMode      = (ScreenShotBackgroundMode)Config.ScreenShotBackgroundMode,
                                 Margin              = Config.ScreenShotMargin,
                             });
                         break;
