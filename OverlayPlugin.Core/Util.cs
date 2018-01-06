@@ -97,9 +97,7 @@ namespace RainbowMage.OverlayPlugin
             sbKeys.Append(Enum.ToObject(typeof(Keys), key).ToString());
             return sbKeys.ToString();
         }
-
-
-
+        
         /// <summary>
         /// Removes stray references to Left/Right shifts, etc and modifications of the actual 
         /// key value caused by bitwise operations.
