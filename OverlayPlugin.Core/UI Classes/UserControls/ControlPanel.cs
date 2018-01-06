@@ -23,11 +23,11 @@ namespace RainbowMage.OverlayPlugin
             this.checkBoxAutoHide.Checked = this.config.HideOverlaysWhenNotActive;
 
             this.menuFollowLatestLog.Checked = this.config.FollowLatestLog;
-            this.listViewLog.VirtualListSize = pluginMain.Logger.Logs.Count;
-            this.pluginMain.Logger.Logs.ListChanged += (o, e) =>
+            this.listViewLog.VirtualListSize = PluginMain.Logger.Logs.Count;
+            PluginMain.Logger.Logs.ListChanged += (o, e) =>
             {
                 this.listViewLog.BeginUpdate();
-                this.listViewLog.VirtualListSize = pluginMain.Logger.Logs.Count;
+                this.listViewLog.VirtualListSize = PluginMain.Logger.Logs.Count;
                 if (this.config.FollowLatestLog && this.listViewLog.VirtualListSize > 0)
                 {
                     this.listViewLog.EnsureVisible(this.listViewLog.VirtualListSize - 1);
@@ -90,9 +90,9 @@ namespace RainbowMage.OverlayPlugin
                 {
                     sb.AppendFormat(
                         "{0}: {1}: {2}",
-                        pluginMain.Logger.Logs[index].Time,
-                        pluginMain.Logger.Logs[index].Level,
-                        pluginMain.Logger.Logs[index].Message);
+                        PluginMain.Logger.Logs[index].Time,
+                        PluginMain.Logger.Logs[index].Level,
+                        PluginMain.Logger.Logs[index].Message);
                     sb.AppendLine();
                 }
                 Clipboard.SetText(sb.ToString());
@@ -101,13 +101,13 @@ namespace RainbowMage.OverlayPlugin
 
         private void listViewLog_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
         {
-            if (e.ItemIndex >= pluginMain.Logger.Logs.Count) 
+            if (e.ItemIndex >= PluginMain.Logger.Logs.Count) 
             {
                 e.Item = new ListViewItem();
                 return;
             };
 
-            var log = this.pluginMain.Logger.Logs[e.ItemIndex];
+            var log = PluginMain.Logger.Logs[e.ItemIndex];
             e.Item = new ListViewItem(log.Time.ToString());
             e.Item.UseItemStyleForSubItems = true;
             e.Item.SubItems.Add(log.Level.ToString());
@@ -135,13 +135,13 @@ namespace RainbowMage.OverlayPlugin
 
         private void menuClearLog_Click(object sender, EventArgs e)
         {
-            this.pluginMain.Logger.Logs.Clear();
+            PluginMain.Logger.Logs.Clear();
         }
 
         private void menuCopyLogAll_Click(object sender, EventArgs e)
         {
             var sb = new StringBuilder();
-            foreach (var log in this.pluginMain.Logger.Logs)
+            foreach (var log in PluginMain.Logger.Logs)
             {
                 sb.AppendFormat(
                     "{0}: {1}: {2}",

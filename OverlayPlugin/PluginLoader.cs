@@ -67,7 +67,7 @@ namespace RainbowMage.OverlayPlugin
         }
 
         /// <summary>
-        /// Get Primary User
+        /// ACT BeforeLogLineRead Event getting Change Primary Player Name
         /// </summary>
         /// <param name="isImport"></param>
         /// <param name="logInfo"></param>
