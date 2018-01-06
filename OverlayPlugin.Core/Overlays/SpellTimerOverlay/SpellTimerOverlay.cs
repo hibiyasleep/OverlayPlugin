@@ -42,6 +42,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
                     }
                 }
             };
+
             ActGlobals.oFormSpellTimers.OnSpellTimerRemoved += (t) =>
             {
                 //activatedTimers.Remove(t);
