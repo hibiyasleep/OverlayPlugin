@@ -271,12 +271,4 @@ namespace RainbowMage.OverlayPlugin
         [XmlIgnore]
         public abstract Type OverlayType { get; }
     }
-
-    public enum GlobalHotkeyType
-    {
-        ToggleVisible,
-        ToggleClickthru,
-        ToggleLock,
-        ScreenShot
-    }
 }

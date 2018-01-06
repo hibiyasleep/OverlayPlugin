@@ -55,7 +55,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoHide.cs" />
-    <Compile Include="ConfigEventArgs.cs" />
+    <Compile Include="Args\ConfigEventArgs.cs" />
+    <Compile Include="Args\KeyPressedEventArgs.cs" />
+    <Compile Include="Enums\ModifierKeys.cs" />
+    <Compile Include="UI Classes\UserControls\OverlayPageUI.cs" />
+    <Compile Include="Window.cs" />
+    <Compile Include="Enums\TextItem.cs" />
+    <Compile Include="Enums\GlobalHotkeyType.cs" />
+    <Compile Include="LocalizationDict.cs" />
+    <Compile Include="Overlays\SerializableSpellTimerEntry.cs" />
+    <Compile Include="Overlays\LabelOverlay\TextChangedEventArgs.cs" />
     <Compile Include="Overlays\LogParseOverlay\LogParseConfigPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -66,6 +75,7 @@
     <Compile Include="Overlays\LogParseOverlay\LogParseOverlay.cs" />
     <Compile Include="Overlays\LogParseOverlay\LogParseOverlayAddon.cs" />
     <Compile Include="Overlays\LogParseOverlay\LogParseOverlayConfig.cs" />
+    <Compile Include="Overlays\MiniParseOverlay\MiniParseSortType.cs" />
     <Compile Include="ScreenShot.cs" />
     <Compile Include="UI Classes\UserControls\OverlayTabUI.cs" />
     <Compile Include="UI Classes\Structures\GraphicsExt.cs" />
@@ -77,7 +87,7 @@
     <Compile Include="UI Classes\UserControls\ControlPanel.Designer.cs">
       <DependentUpon>ControlPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="DIBitmap.cs" />
+    <Compile Include="Interfaces\DIBitmap.cs" />
     <Compile Include="KeyboardHook.cs" />
     <Compile Include="Overlays\MiniParseOverlay\MiniParseLoglineReader.cs" />
     <Compile Include="Overlays\LabelOverlay\LabelOverlay.cs" />

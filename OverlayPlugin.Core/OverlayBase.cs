@@ -372,6 +372,7 @@ namespace RainbowMage.OverlayPlugin
                 Margin              = PluginConfig.ScreenShotMargin,
             });
         }
+
         public void TakeScreenShot(ScreenShotConfig config)
         {
             ScreenShot.SaveScreenShot(this.Overlay.SurfaceBuffer, config);
