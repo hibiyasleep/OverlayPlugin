@@ -133,7 +133,7 @@ namespace RainbowMage.OverlayPlugin
         }
 
         /// <summary>
-        /// Take Screenshot target overlay (API: window.overlayApi.takeScreenShot( window.overlayApi.takeScreenShot))
+        /// Take Screenshot target overlay (on HTML: window.overlayApi.takeScreenShot( window.overlayApi.overlayName ))
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -366,8 +366,6 @@ namespace RainbowMage.OverlayPlugin
                 "Config",
                 "RainbowMage.OverlayPlugin.config.xml");
 #endif
-
-
             return path;
         }
     }
