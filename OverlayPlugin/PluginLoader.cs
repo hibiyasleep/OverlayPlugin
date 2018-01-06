@@ -41,7 +41,7 @@ namespace RainbowMage.OverlayPlugin
             asmResolver.AssemblyLoaded += (o, e) => logger.Log(LogLevel.Debug, "AssemblyResolver: Loaded: {0}", e.LoadedAssembly.FullName);
             pluginMain = new PluginMain(pluginDirectory, logger);
             pluginMain.InitPlugin(pluginScreenSpace, pluginStatusText);
-            PluginMain.primaryUser = "YOU";
+            PluginMain.PrimaryUser = "YOU";
         }
 
         public void DeInitPlugin()
@@ -77,7 +77,7 @@ namespace RainbowMage.OverlayPlugin
             {
                 primaryUser = logInfo.logLine;
                 primaryUser = primaryUser.Replace("02:Changed primary player to ", "").Replace(".", "");
-                PluginMain.primaryUser = primaryUser = primaryUser.Substring(primaryUser.IndexOf("]") + 2);
+                PluginMain.PrimaryUser = primaryUser = primaryUser.Substring(primaryUser.IndexOf("]") + 2);
             }
         }
         

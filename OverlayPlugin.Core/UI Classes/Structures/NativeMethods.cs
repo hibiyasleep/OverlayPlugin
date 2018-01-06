@@ -53,7 +53,7 @@ namespace RainbowMage.OverlayPlugin
             int nMaxCount);
 
         [DllImport("user32.dll")]
-        public static extern bool SetWindowPos(
+        internal static extern bool SetWindowPos(
             IntPtr hWnd,
             IntPtr hWndInsertAfter,
             int X,
@@ -63,7 +63,7 @@ namespace RainbowMage.OverlayPlugin
             uint uFlags);
 
         [DllImport("user32.dll")]
-        public static extern IntPtr GetWindow(
+        internal static extern IntPtr GetWindow(
             IntPtr hWnd,
             uint uCmd);
 
@@ -234,14 +234,14 @@ namespace RainbowMage.OverlayPlugin
 
         public static IntPtr SetWindowLongA(IntPtr hWnd, int nIndex, IntPtr dwNewLong)
         {
-            int error = 0;
-            IntPtr result = IntPtr.Zero;
+            var error = 0;
+            var result = IntPtr.Zero;
 
             SetLastError(0);
 
             if (IntPtr.Size == 4)
             {
-                Int32 result32 = SetWindowLong(hWnd, nIndex, ToIntPtr32(dwNewLong));
+                var result32 = SetWindowLong(hWnd, nIndex, ToIntPtr32(dwNewLong));
                 error = Marshal.GetLastWin32Error();
                 result = new IntPtr(result32);
             }

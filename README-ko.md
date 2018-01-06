@@ -13,7 +13,7 @@ ACT에서 사용할 수 있는 커스터마이징 가능한 타임라인 및 오
 ## 빌드 방법
 
 * 4.5.1 버전 이상의 닷넷프레임워크를 설치합니다.
-* [Microsoft Build Tools 2013](http://www.microsoft.com/ja-jp/download/details.aspx?id=40760). 를 설치합니다. (단, Visual Studio 2013 이상이 이미 설치된 경우 필요하지 않습니다.)
+* [Microsoft Build Tools 2017](https://www.visualstudio.com/ko/thank-you-downloading-visual-studio/?sku=BuildTools&rel=15). 를 설치합니다. (단, Visual Studio 2017 이상이 이미 설치된 경우 필요하지 않습니다.)
 * 깃허브에서 내려받거나 소스 압축파일을 내려받아 압축을 해제합니다.
 * 실행 가능한 Advanced Combat Tracker 파일 (`Advanced Combat Tracker.exe`)을 `Thirdparty\ACT` 폴더에 복사합니다.
 * `build.bat`을 실행합니다.

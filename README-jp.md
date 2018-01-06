@@ -17,7 +17,7 @@ ACT に柔軟にカスタマイズ可能なミニパースやスペルタイマ�
 手順:
 
 * .NET Framework 4.5.1 をインストールします
-* Microsoft Build Tools 2013 (http://www.microsoft.com/ja-jp/download/details.aspx?id=40760) をインストールします（Visual Studio 2013 がインストールされている場合は不要）
+* Microsoft Build Tools 2017 (https://www.visualstudio.com/jp/thank-you-downloading-visual-studio/?sku=BuildTools&rel=15) をインストールします（Visual Studio 2017 がインストールされている場合は不要）
 * ソースコード一式をチェックアウト、または ZIP ファイルでダウンロードして解凍します
 * Thirdparty フォルダの中にある ACT フォルダに、ACT の実行ファイル（Advanced Combat Tracker.exe）をコピーします
 * build.bat を実行します

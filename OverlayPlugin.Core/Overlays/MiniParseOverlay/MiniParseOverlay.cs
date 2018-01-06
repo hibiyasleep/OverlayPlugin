@@ -149,7 +149,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
                                     else
                                         owner = oldName;
 
-                                    if (owner != "YOU" && owner != PluginMain.primaryUser)
+                                    if (owner != "YOU" && owner != PluginMain.PrimaryUser)
                                         owner = "P" + this.tempPlayerNameDictionary.Count.ToString("X");
 
                                     if (name == null)

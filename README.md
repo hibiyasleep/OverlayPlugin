@@ -13,7 +13,7 @@ You can download release and pre-release archives from [release page](https://gi
 ## How to build
 
 * Install .NET Framework 4.5.1 or later.
-* Install [Microsoft Build Tools 2013](http://www.microsoft.com/ja-jp/download/details.aspx?id=40760). (This is not required if you installed Visual Studio 2013 already.)
+* Install [Microsoft Build Tools 2017](https://www.visualstudio.com/en/thank-you-downloading-visual-studio/?sku=BuildTools&rel=15). (This is not required if you installed Visual Studio 2017 already.)
 * Checkout source codes with git, or download source code as ZIP and extract.
 * Copy the Advanced Combat Tracker executable file (`Advanced Combat Tracker.exe`) into `Thirdparty\ACT` folder.
 * Execute `build.bat`.

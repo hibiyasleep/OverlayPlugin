@@ -163,13 +163,13 @@ namespace RainbowMage.OverlayPlugin.Overlays
 
         private void buttonLogParseOpenDevTools_Click(object sender, EventArgs e)
         {
-            this.overlay.Overlay.Renderer.showDevTools();
+            this.overlay.Overlay.Renderer.ShowDevTools();
         }
 
         private void buttonLogParseOpenDevTools_RClick(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
-                this.overlay.Overlay.Renderer.showDevTools(false);
+                this.overlay.Overlay.Renderer.ShowDevTools(false);
         }
 
         private void buttonCopyActXiv_Click(object sender, EventArgs e)
