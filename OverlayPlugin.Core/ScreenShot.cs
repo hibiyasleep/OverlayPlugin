@@ -43,21 +43,21 @@ namespace RainbowMage.OverlayPlugin
             }
 
             using (bitmap)
-            using (var screenshot = new Bitmap(bitmap.Width + config.Margin * 2, bitmap.Height + config.Margin * 2, PixelFormat.Format32bppArgb))
+            using (var src = new Bitmap(bitmap.Width + config.Margin * 2, bitmap.Height + config.Margin * 2, PixelFormat.Format32bppArgb))
             {
                 if (!string.IsNullOrWhiteSpace(config.BackgroundImagePath) && File.Exists(config.BackgroundImagePath))
                 {
                     try
                     {
-                        DrawBackground(screenshot, config.BackgroundImagePath, config.BackgroundMode);
+                        DrawBackground(src, config.BackgroundImagePath, config.BackgroundMode);
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.ToString());
+                        PluginMain.Logger.Log(LogLevel.Error, "OverlayPlugin Can't Take ScreenShot: {0}", ex.ToString());
                     }
                 }
 
-                using (var g = Graphics.FromImage(screenshot))
+                using (var g = Graphics.FromImage(src))
                 {
                     g.CompositingMode = CompositingMode.SourceOver;
                     g.DrawImageUnscaled(bitmap, config.Margin, config.Margin);
@@ -65,7 +65,7 @@ namespace RainbowMage.OverlayPlugin
 
                 Directory.CreateDirectory(config.SavePath);
 
-                screenshot.Save(
+                src.Save(
                     Path.Combine(config.SavePath, DateTime.Now.ToString("'ScreenShot_'yyyy-MM-dd_HH-mm-ss.fff'.png'")),
                     ImageFormat.Png);
             }
