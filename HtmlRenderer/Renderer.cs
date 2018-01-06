@@ -347,9 +347,8 @@ namespace RainbowMage.HtmlRenderer
 
                 var cefSettings = new CefSettings
                 {
-                    RemoteDebuggingPort = 9901,
-                    Locale = System.Globalization.CultureInfo.CurrentCulture.Name,
                     CachePath = Cache,
+                    Locale = System.Globalization.CultureInfo.CurrentCulture.Name,
                     UserDataPath = Userdata,
                     SingleProcess = true,
                     MultiThreadedMessageLoop = true,
