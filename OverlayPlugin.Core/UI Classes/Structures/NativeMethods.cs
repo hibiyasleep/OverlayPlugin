@@ -4,11 +4,85 @@ using System.Text;
 
 namespace RainbowMage.OverlayPlugin
 {
-    /// <summary>
-    /// ネイティブ関数を提供します。
-    /// </summary>
-    static class NativeMethods
+    public static class NativeMethods
     {
+        public delegate void WinEventDelegate(
+            IntPtr hWinEventHook,
+            uint eventType,
+            IntPtr hwnd,
+            int idObject,
+            int idChild,
+            uint dwEventThread,
+            uint dwmsEventTime);
+
+        [DllImport("user32.dll")]
+        public static extern uint GetWindowThreadProcessId(
+            IntPtr hWnd,
+            out uint lpdwProcessId);
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr SetWinEventHook(
+            uint eventMin,
+            uint eventMax,
+            IntPtr hmodWinEventProc,
+            WinEventDelegate lpfnWinEventProc,
+            uint idProcess,
+            uint idThread,
+            uint dwFlags);
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool UnhookWinEvent(
+            IntPtr hWinEventHook);
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool IsWindow(
+            IntPtr hWnd);
+
+        [DllImport("user32.dll", EntryPoint = "GetClassNameW", CharSet = CharSet.Unicode, SetLastError = true)]
+        public static extern int GetClassName(
+            IntPtr hWnd,
+            StringBuilder lpClassName,
+            int nMaxCount);
+
+        [DllImport("user32.dll", EntryPoint = "GetWindowTextW", CharSet = CharSet.Unicode, SetLastError = true)]
+        public static extern int GetWindowText(
+            IntPtr hWnd,
+            StringBuilder lpClassName,
+            int nMaxCount);
+
+        [DllImport("user32.dll")]
+        public static extern bool SetWindowPos(
+            IntPtr hWnd,
+            IntPtr hWndInsertAfter,
+            int X,
+            int Y,
+            int cx,
+            int cy,
+            uint uFlags);
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr GetWindow(
+            IntPtr hWnd,
+            uint uCmd);
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr GetForegroundWindow();
+
+        public const int EVENT_SYSTEM_FOREGROUND = 0x3;
+        public const int EVENT_SYSTEM_MINIMIZESTART = 0x16;
+        public const int EVENT_SYSTEM_MINIMIZEEND = 0x17;
+        public const int WINEVENT_OUTOFCONTEXT = 0x0;
+
+        public const int HWND_TOPMOST = -1;
+
+        public const uint SWP_NOSIZE = 0x0001;
+        public const uint SWP_NOMOVE = 0x0002;
+        public const uint SWP_NOACTIVATE = 0x0010;
+
+        public const uint GW_HWNDPREV = 0x0003;
+
         public struct BlendFunction
         {
             public byte BlendOp;
@@ -184,38 +258,8 @@ namespace RainbowMage.OverlayPlugin
 
             return result;
         }
-
-        [DllImport("user32.dll")]
-        public static extern IntPtr GetWindow(
-            IntPtr hWnd,  // 元ウィンドウのハンドル
-            uint uCmd     // 関係
-        );
-
-        public const uint GW_HWNDPREV = 0x0003;
-
-        [DllImport("user32.dll")]
-        public static extern bool SetWindowPos(
-            IntPtr hWnd,             // ウィンドウのハンドル
-            IntPtr hWndInsertAfter,  // 配置順序のハンドル
-            int X,                   // 横方向の位置
-            int Y,                   // 縦方向の位置
-            int cx,                  // 幅
-            int cy,                  // 高さ
-            uint uFlags              // ウィンドウ位置のオプション
-        );
-
+        
         public static readonly IntPtr HWND_TOP = new IntPtr(0);
-        public static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
-
-        public const uint SWP_NOSIZE = 0x0001;
-        public const uint SWP_NOMOVE = 0x0002;
-        public const uint SWP_NOACTIVATE = 0x0010;
-
-        [DllImport("user32.dll", SetLastError = true)]
-        public static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId);
-
-        [DllImport("user32.dll")]
-        public static extern IntPtr GetForegroundWindow();
 
         [DllImport("user32.dll")]
         public static extern short GetKeyState(int nVirtKey);
