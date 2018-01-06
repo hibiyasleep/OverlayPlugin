@@ -87,30 +87,15 @@ namespace RainbowMage.OverlayPlugin
 
         protected void OnExceptionOccured(Exception exception)
         {
-            if (this.ExceptionOccured != null)
-            {
-                this.ExceptionOccured(this, new ExceptionOccuredEventArgs(exception));
-            }
+            this.ExceptionOccured?.Invoke(this, new ExceptionOccuredEventArgs(exception));
         }
 
         protected void OnAssemblyLoaded(Assembly assembly)
         {
-            if (this.AssemblyLoaded != null)
-            {
-                this.AssemblyLoaded(this, new AssemblyLoadEventArgs(assembly));
-            }
+            this.AssemblyLoaded?.Invoke(this, new AssemblyLoadEventArgs(assembly));
         }
 
         public event EventHandler<ExceptionOccuredEventArgs> ExceptionOccured;
         public event EventHandler<AssemblyLoadEventArgs> AssemblyLoaded;
-
-        public class ExceptionOccuredEventArgs : EventArgs
-        {
-            public Exception Exception {get; set;}
-            public ExceptionOccuredEventArgs(Exception exception)
-            {
-                this.Exception = exception;
-            }
-        }
     }
 }

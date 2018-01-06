@@ -102,13 +102,11 @@ namespace RainbowMage.OverlayPlugin.Overlays
 
         private void checkWindowVisible_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.config.Url == "" && this.config.Text == "") return;
             this.config.IsVisible = checkMiniParseVisible.Checked;
         }
 
         private void checkMouseClickthru_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.config.Url == "" && this.config.Text == "") return;
             this.config.IsClickThru = checkMiniParseClickthru.Checked;
         }
 
@@ -158,7 +156,6 @@ namespace RainbowMage.OverlayPlugin.Overlays
 
         private void checkLock_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.config.Url == "" || this.config.Text == "") return;
             this.config.IsLocked = this.checkLock.Checked;
         }
 
