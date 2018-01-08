@@ -113,13 +113,13 @@ namespace RainbowMage.OverlayPlugin
             // 
             this.menuCopyLogAll.Name = "menuCopyLogAll";
             resources.ApplyResources(this.menuCopyLogAll, "menuCopyLogAll");
-            this.menuCopyLogAll.Click += new System.EventHandler(this.menuCopyLogAll_Click);
+            this.menuCopyLogAll.Click += new System.EventHandler(this.MenuCopyLogAll_Click);
             // 
             // menuLogCopy
             // 
             this.menuLogCopy.Name = "menuLogCopy";
             resources.ApplyResources(this.menuLogCopy, "menuLogCopy");
-            this.menuLogCopy.Click += new System.EventHandler(this.menuLogCopy_Click);
+            this.menuLogCopy.Click += new System.EventHandler(this.MenuLogCopy_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -131,7 +131,7 @@ namespace RainbowMage.OverlayPlugin
             this.menuFollowLatestLog.CheckOnClick = true;
             this.menuFollowLatestLog.Name = "menuFollowLatestLog";
             resources.ApplyResources(this.menuFollowLatestLog, "menuFollowLatestLog");
-            this.menuFollowLatestLog.Click += new System.EventHandler(this.menuFollowLatestLog_Click);
+            this.menuFollowLatestLog.Click += new System.EventHandler(this.MenwFollowLatestLog_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -142,7 +142,7 @@ namespace RainbowMage.OverlayPlugin
             // 
             this.menuClearLog.Name = "menuClearLog";
             resources.ApplyResources(this.menuClearLog, "menuClearLog");
-            this.menuClearLog.Click += new System.EventHandler(this.menuClearLog_Click);
+            this.menuClearLog.Click += new System.EventHandler(this.MenuClearLog_Click);
             // 
             // tabPageMain
             // 
@@ -208,28 +208,28 @@ namespace RainbowMage.OverlayPlugin
             resources.ApplyResources(this.takeScreenShotBtn, "takeScreenShotBtn");
             this.takeScreenShotBtn.Name = "takeScreenShotBtn";
             this.takeScreenShotBtn.UseVisualStyleBackColor = true;
-            this.takeScreenShotBtn.Click += new System.EventHandler(this.takeScreenShotBtn_Click);
+            this.takeScreenShotBtn.Click += new System.EventHandler(this.TakeScreenShotBtn_Click);
             // 
             // checkBoxAutoHide
             // 
             resources.ApplyResources(this.checkBoxAutoHide, "checkBoxAutoHide");
             this.checkBoxAutoHide.Name = "checkBoxAutoHide";
             this.checkBoxAutoHide.UseVisualStyleBackColor = true;
-            this.checkBoxAutoHide.CheckedChanged += new System.EventHandler(this.checkBoxAutoHide_CheckedChanged);
+            this.checkBoxAutoHide.CheckedChanged += new System.EventHandler(this.CheckBoxAutoHide_CheckedChanged);
             // 
             // buttonNewOverlay
             // 
             resources.ApplyResources(this.buttonNewOverlay, "buttonNewOverlay");
             this.buttonNewOverlay.Name = "buttonNewOverlay";
             this.buttonNewOverlay.UseVisualStyleBackColor = true;
-            this.buttonNewOverlay.Click += new System.EventHandler(this.buttonNewOverlay_Click);
+            this.buttonNewOverlay.Click += new System.EventHandler(this.ButtonNewOverlay_Click);
             // 
             // buttonRemoveOverlay
             // 
             resources.ApplyResources(this.buttonRemoveOverlay, "buttonRemoveOverlay");
             this.buttonRemoveOverlay.Name = "buttonRemoveOverlay";
             this.buttonRemoveOverlay.UseVisualStyleBackColor = true;
-            this.buttonRemoveOverlay.Click += new System.EventHandler(this.buttonRemoveOverlay_Click);
+            this.buttonRemoveOverlay.Click += new System.EventHandler(this.ButtonRemoveOverlay_Click);
             // 
             // overlayLogsTabPage
             // 
@@ -256,7 +256,7 @@ namespace RainbowMage.OverlayPlugin
             this.listViewLog.UseCompatibleStateImageBehavior = false;
             this.listViewLog.View = System.Windows.Forms.View.Details;
             this.listViewLog.VirtualMode = true;
-            this.listViewLog.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewLog_RetrieveVirtualItem);
+            this.listViewLog.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.ListViewLog_RetrieveVirtualItem);
             // 
             // columnHeader1
             // 

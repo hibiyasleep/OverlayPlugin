@@ -4,7 +4,6 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
 
 namespace RainbowMage.OverlayPlugin
 {
@@ -108,11 +107,11 @@ namespace RainbowMage.OverlayPlugin
                                             Math.Min(scaleX, scaleY) :
                                             Math.Max(scaleX, scaleY);
                                 
-                                int bg_w = (int)Math.Floor(bg.Width  * scale);
-                                int bg_h = (int)Math.Floor(bg.Height * scale);
+                                var bg_w = (int)Math.Floor(bg.Width  * scale);
+                                var bg_h = (int)Math.Floor(bg.Height * scale);
 
-                                int ss_x = (int)Math.Ceiling((ss.Width  - bg_w) / 2d);
-                                int ss_y = (int)Math.Ceiling((ss.Height - bg_h) / 2d);
+                                var ss_x = (int)Math.Ceiling((ss.Width  - bg_w) / 2d);
+                                var ss_y = (int)Math.Ceiling((ss.Height - bg_h) / 2d);
 
                                 g.DrawImage(
                                     bg,
@@ -128,14 +127,14 @@ namespace RainbowMage.OverlayPlugin
 
         private static Bitmap AutoClipping(Bitmap bitmap)
         {
-            int newHeight = bitmap.Height;
+            var newHeight = bitmap.Height;
 
             BitmapData bmpData = null;
             try
             {
                 bmpData = bitmap.LockBits(new Rectangle(Point.Empty, bitmap.Size), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
 
-                byte[] strideBuffer = new byte[bmpData.Stride];
+                var strideBuffer = new byte[bmpData.Stride];
 
                 int x;
                 bool skip;

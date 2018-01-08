@@ -289,7 +289,7 @@ namespace RainbowMage.OverlayPlugin
 
             using (var stream = new FileStream(path, FileMode.Create, FileAccess.Write))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(PluginConfig));
+                var serializer = new XmlSerializer(typeof(PluginConfig));
                 serializer.Serialize(stream, this);
             }
         }
@@ -309,7 +309,7 @@ namespace RainbowMage.OverlayPlugin
 
             using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(PluginConfig));
+                var serializer = new XmlSerializer(typeof(PluginConfig));
                 var result = (PluginConfig)serializer.Deserialize(stream);
 
                 result.IsFirstLaunch = false;
