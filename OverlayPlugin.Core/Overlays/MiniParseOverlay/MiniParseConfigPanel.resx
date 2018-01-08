@@ -565,7 +565,7 @@
     <value>3, 3</value>
   </data>
   <data name="buttonMiniParseCopyActXiv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 45</value>
+    <value>229, 52</value>
   </data>
   <data name="buttonMiniParseCopyActXiv.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -589,10 +589,10 @@
     <value>Fill</value>
   </data>
   <data name="buttonMiniParseOpenDevTools.Location" type="System.Drawing.Point, System.Drawing">
-    <value>236, 3</value>
+    <value>238, 3</value>
   </data>
   <data name="buttonMiniParseOpenDevTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 45</value>
+    <value>229, 52</value>
   </data>
   <data name="buttonMiniParseOpenDevTools.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -619,10 +619,10 @@
     <value>NoControl</value>
   </data>
   <data name="buttonMiniParseReloadBrowser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>469, 3</value>
+    <value>473, 3</value>
   </data>
   <data name="buttonMiniParseReloadBrowser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 45</value>
+    <value>229, 52</value>
   </data>
   <data name="buttonMiniParseReloadBrowser.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -648,11 +648,14 @@
   <data name="tableLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="tableLayoutPanel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
   <data name="tableLayoutPanel3.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>699, 51</value>
+    <value>705, 58</value>
   </data>
   <data name="tableLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -676,10 +679,13 @@
     <value>Fill</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 304</value>
+    <value>0, 300</value>
+  </data>
+  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>699, 51</value>
+    <value>705, 58</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -862,7 +868,7 @@
     <value>214, 260</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>488, 41</value>
+    <value>488, 40</value>
   </data>
   <data name="label13.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -1137,6 +1143,9 @@
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
@@ -1159,13 +1168,16 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="nudUpdateInterval" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkEnablePlayerName" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label11" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label6" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="textMiniParseSortKey" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkMiniParseVisible" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="checkMiniParseClickthru" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="panel1" Row="13" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="tableLayoutPanel2" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="comboMiniParseSortType" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="nudMaxFrameRate" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label13" Row="12" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label7" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkEnableGlobalHotkey" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textGlobalHotkey" Row="10" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label9" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkLock" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label10" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboHotkeyType" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,211,Percent,100" /&gt;&lt;Rows Styles="Absolute,22,Absolute,22,Absolute,22,Absolute,22,Absolute,22,Absolute,21,Absolute,23,Absolute,20,Absolute,22,Absolute,22,Absolute,22,Absolute,20,Percent,100,Absolute,57,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="nudUpdateInterval" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkEnablePlayerName" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label11" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label6" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="textMiniParseSortKey" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkMiniParseVisible" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="checkMiniParseClickthru" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="panel1" Row="13" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="tableLayoutPanel2" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="comboMiniParseSortType" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="nudMaxFrameRate" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label13" Row="12" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label7" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkEnableGlobalHotkey" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textGlobalHotkey" Row="10" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label9" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkLock" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label10" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboHotkeyType" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,211,Percent,100" /&gt;&lt;Rows Styles="Absolute,22,Absolute,22,Absolute,22,Absolute,22,Absolute,22,Absolute,21,Absolute,23,Absolute,20,Absolute,22,Absolute,22,Absolute,22,Absolute,20,Percent,100,Absolute,58,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>7, 12</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>705, 358</value>
