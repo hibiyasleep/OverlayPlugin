@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogParseConfigPanel));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
-            //this.label5 = new System.Windows.Forms.Label();
-            //this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,8 +65,6 @@
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 4);
-            //this.tableLayoutPanel1.Controls.Add(this.label5, 0, 5);
-            //this.tableLayoutPanel1.Controls.Add(this.label4, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 3);
@@ -93,16 +89,6 @@
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
             // 
-            // label5
-            // 
-            //resources.ApplyResources(this.label5, "label5");
-            //this.label5.Name = "label5";
-            // 
-            // label4
-            // 
-            //resources.ApplyResources(this.label4, "label4");
-            //this.label4.Name = "label4";
-            // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
@@ -120,8 +106,8 @@
             // 
             // checkMiniParseVisible
             // 
-            resources.ApplyResources(this.checkMiniParseVisible, "checkLogParseVisible");
-            this.checkMiniParseVisible.Name = "checkLogParseVisible";
+            resources.ApplyResources(this.checkMiniParseVisible, "checkMiniParseVisible");
+            this.checkMiniParseVisible.Name = "checkMiniParseVisible";
             this.checkMiniParseVisible.UseVisualStyleBackColor = true;
             this.checkMiniParseVisible.CheckedChanged += new System.EventHandler(this.checkWindowVisible_CheckedChanged);
             // 
