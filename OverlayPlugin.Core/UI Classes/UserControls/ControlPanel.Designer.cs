@@ -57,6 +57,7 @@ namespace RainbowMage.OverlayPlugin
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panel2 = new System.Windows.Forms.Panel();
             this.overlaySettingsTabPage = new RainbowMage.OverlayPlugin.OverlayPageUI();
             this.screenShotPathGroupbox = new System.Windows.Forms.GroupBox();
             this.screenShotTable = new System.Windows.Forms.TableLayoutPanel();
@@ -80,13 +81,14 @@ namespace RainbowMage.OverlayPlugin
             this.special_thanks = new System.Windows.Forms.Label();
             this.repo_dev_info = new System.Windows.Forms.Label();
             this.developers = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.contextMenuLogList.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.overlayTabUI1.SuspendLayout();
             this.overlaysTabPage.SuspendLayout();
             this.panel1.SuspendLayout();
             this.overlayLogsTabPage.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.overlaySettingsTabPage.SuspendLayout();
             this.screenShotPathGroupbox.SuspendLayout();
             this.screenShotTable.SuspendLayout();
@@ -270,6 +272,12 @@ namespace RainbowMage.OverlayPlugin
             // 
             resources.ApplyResources(this.columnHeader3, "columnHeader3");
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button1);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
+            // 
             // overlaySettingsTabPage
             // 
             this.overlaySettingsTabPage.Controls.Add(this.screenShotPathGroupbox);
@@ -429,10 +437,12 @@ namespace RainbowMage.OverlayPlugin
             resources.ApplyResources(this.developers, "developers");
             this.developers.Name = "developers";
             // 
-            // panel2
+            // button1
             // 
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.MenuClearLog_Click);
             // 
             // ControlPanel
             // 
@@ -448,6 +458,7 @@ namespace RainbowMage.OverlayPlugin
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.overlayLogsTabPage.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.overlaySettingsTabPage.ResumeLayout(false);
             this.overlaySettingsTabPage.PerformLayout();
             this.screenShotPathGroupbox.ResumeLayout(false);
@@ -514,5 +525,6 @@ namespace RainbowMage.OverlayPlugin
         private Label repo_dev_info;
         private Label developers;
         private Panel panel2;
+        private Button button1;
     }
 }
