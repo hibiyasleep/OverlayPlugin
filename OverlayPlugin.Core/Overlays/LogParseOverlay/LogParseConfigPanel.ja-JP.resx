@@ -153,9 +153,6 @@
   <data name="checkMiniParseVisible.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="checkMiniParseVisible.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
   <data name="checkMiniParseVisible.Location" type="System.Drawing.Point, System.Drawing">
     <value>184, 3</value>
   </data>
