@@ -117,40 +117,186 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="nudUpdateInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 157</value>
+  </data>
+  <data name="nudUpdateInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>488, 21</value>
+  </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 156</value>
+  </data>
+  <data name="checkEnablePlayerName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 179</value>
+  </data>
+  <data name="checkEnablePlayerName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>484, 16</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 176</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 133</value>
+  </data>
   <data name="label6.Text" xml:space="preserve">
     <value>최대 프레임 레이트</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 112</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>정렬 방식</value>
   </data>
+  <data name="textMiniParseSortKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 91</value>
+  </data>
+  <data name="textMiniParseSortKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>488, 21</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 90</value>
+  </data>
   <data name="label4.Text" xml:space="preserve">
     <value>정렬할 값</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 24</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>클릭 무시</value>
   </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 2</value>
+  </data>
   <data name="label3.Text" xml:space="preserve">
     <value>오버레이 표시</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 68</value>
+  </data>
+  <data name="checkMiniParseVisible.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 5</value>
+  </data>
+  <data name="checkMiniParseVisible.Size" type="System.Drawing.Size, System.Drawing">
+    <value>484, 16</value>
+  </data>
+  <data name="checkMiniParseClickthru.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 27</value>
+  </data>
+  <data name="checkMiniParseClickthru.Size" type="System.Drawing.Size, System.Drawing">
+    <value>484, 16</value>
+  </data>
+  <data name="buttonMiniParseCopyActXiv.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 52</value>
   </data>
   <data name="buttonMiniParseCopyActXiv.Text" xml:space="preserve">
     <value>업데이트 값 복사</value>
   </data>
+  <data name="buttonMiniParseOpenDevTools.Location" type="System.Drawing.Point, System.Drawing">
+    <value>236, 3</value>
+  </data>
+  <data name="buttonMiniParseOpenDevTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 52</value>
+  </data>
   <data name="buttonMiniParseOpenDevTools.Text" xml:space="preserve">
     <value>개발자 도구 열기</value>
+  </data>
+  <data name="buttonMiniParseReloadBrowser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>469, 3</value>
   </data>
   <data name="buttonMiniParseReloadBrowser.Text" xml:space="preserve">
     <value>새로고침</value>
   </data>
+  <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>701, 58</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 298</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>701, 58</value>
+  </data>
+  <data name="textMiniParseUrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>438, 21</value>
+  </data>
+  <data name="buttonMiniParseSelectFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>438, 0</value>
+  </data>
+  <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 69</value>
+  </data>
+  <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>488, 20</value>
+  </data>
+  <data name="comboMiniParseSortType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 113</value>
+  </data>
+  <data name="comboMiniParseSortType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>488, 20</value>
+  </data>
+  <data name="nudMaxFrameRate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 134</value>
+  </data>
+  <data name="nudMaxFrameRate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>488, 21</value>
+  </data>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 262</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>484, 36</value>
+  </data>
   <data name="label13.Text" xml:space="preserve">
     <value>※ 프레임 레이트나 핫 키 설정을 적용하려면 플러그인을 다시 시작해야 합니다.</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 198</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>글로벌 핫 키 사용</value>
   </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 220</value>
+  </data>
   <data name="label8.Text" xml:space="preserve">
     <value>글로벌 핫 키</value>
   </data>
+  <data name="checkEnableGlobalHotkey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 201</value>
+  </data>
+  <data name="checkEnableGlobalHotkey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>484, 16</value>
+  </data>
+  <data name="textGlobalHotkey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 221</value>
+  </data>
+  <data name="textGlobalHotkey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>488, 21</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 46</value>
+  </data>
   <data name="label9.Text" xml:space="preserve">
     <value>위치 잠금</value>
+  </data>
+  <data name="checkLock.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 49</value>
+  </data>
+  <data name="checkLock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>484, 16</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 242</value>
+  </data>
+  <data name="comboHotkeyType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 243</value>
+  </data>
+  <data name="comboHotkeyType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>488, 20</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tableLayoutPanel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
 </root>

@@ -196,9 +196,9 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.tableLayoutPanel1.SetColumnSpan(this.panel1, 2);
             this.panel1.Controls.Add(this.tableLayoutPanel3);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // tableLayoutPanel3
@@ -247,8 +247,8 @@
             // 
             // buttonMiniParseSelectFile
             // 
-            this.buttonMiniParseSelectFile.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.buttonMiniParseSelectFile, "buttonMiniParseSelectFile");
+            this.buttonMiniParseSelectFile.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonMiniParseSelectFile.Name = "buttonMiniParseSelectFile";
             this.buttonMiniParseSelectFile.UseVisualStyleBackColor = true;
             this.buttonMiniParseSelectFile.Click += new System.EventHandler(this.buttonSelectFile_Click);
