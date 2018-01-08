@@ -1,6 +1,5 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -9,11 +8,6 @@ namespace RainbowMage.OverlayPlugin
     [System.ComponentModel.DesignerCategory("CODE")]
     public class OverlayTabUI : TabControl
     {
-        /*
-         * Part of SRT4: https://github.com/laiglinne-ff/SRT4/blob/master/Client/SRinnLib/Design/MaterialColorTab.cs
-         * Copyright (c) 2014 Laighlinne; Licensed GNU General Public License 3.0.
-         */
-
         private System.ComponentModel.IContainer components = null;
         private const int TCM_FIRST = 0x1300;
         private const uint TCM_ADJUSTRECT = (TCM_FIRST + 40);
@@ -102,7 +96,6 @@ namespace RainbowMage.OverlayPlugin
             if ((m.Msg == TCM_ADJUSTRECT))
             {
                 RECT rc = (RECT)m.GetLParam(typeof(RECT));
-                //Adjust these values to suit, dependant upon Appearance
                 rc.left -= 5;
                 rc.right += 5;
                 rc.top -= 5;
