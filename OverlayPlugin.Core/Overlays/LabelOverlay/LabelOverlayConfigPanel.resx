@@ -748,10 +748,10 @@
     <value>432, 0</value>
   </data>
   <data name="buttonSelectFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 1</value>
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="buttonSelectFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 17</value>
+    <value>43, 20</value>
   </data>
   <data name="buttonSelectFile.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -779,9 +779,6 @@
   </data>
   <data name="tableLayoutPanel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
-  </data>
-  <data name="tableLayoutPanel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 2</value>
   </data>
   <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
