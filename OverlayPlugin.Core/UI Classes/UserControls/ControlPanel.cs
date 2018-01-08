@@ -81,7 +81,7 @@ namespace RainbowMage.OverlayPlugin
             }
         }
 
-        private void menuLogCopy_Click(object sender, EventArgs e)
+        private void MenuLogCopy_Click(object sender, EventArgs e)
         {
             if (listViewLog.SelectedIndices.Count > 0)
             {
@@ -99,7 +99,7 @@ namespace RainbowMage.OverlayPlugin
             }
         }
 
-        private void listViewLog_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
+        private void ListViewLog_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
         {
             if (e.ItemIndex >= PluginMain.Logger.Logs.Count) 
             {
@@ -128,17 +128,17 @@ namespace RainbowMage.OverlayPlugin
             }
         }
 
-        private void menuFollowLatestLog_Click(object sender, EventArgs e)
+        private void MenwFollowLatestLog_Click(object sender, EventArgs e)
         {
             this.config.FollowLatestLog = menuFollowLatestLog.Checked;
         }
 
-        private void menuClearLog_Click(object sender, EventArgs e)
+        private void MenuClearLog_Click(object sender, EventArgs e)
         {
             PluginMain.Logger.Logs.Clear();
         }
 
-        private void menuCopyLogAll_Click(object sender, EventArgs e)
+        private void MenuCopyLogAll_Click(object sender, EventArgs e)
         {
             var sb = new StringBuilder();
             foreach (var log in PluginMain.Logger.Logs)
@@ -153,7 +153,7 @@ namespace RainbowMage.OverlayPlugin
             Clipboard.SetText(sb.ToString());
         }
 
-        private void buttonNewOverlay_Click(object sender, EventArgs e)
+        private void ButtonNewOverlay_Click(object sender, EventArgs e)
         {
             var newOverlayDialog = new NewOverlayDialog(pluginMain);
             newOverlayDialog.NameValidator = (name) =>
@@ -201,7 +201,7 @@ namespace RainbowMage.OverlayPlugin
             return overlay;
         }
 
-        private void buttonRemoveOverlay_Click(object sender, EventArgs e)
+        private void ButtonRemoveOverlay_Click(object sender, EventArgs e)
         {
             if (this.tabControl.SelectedTab.Equals(this.tabPageMain))
                 return;
@@ -209,8 +209,8 @@ namespace RainbowMage.OverlayPlugin
             if (tabControl.SelectedTab == null)
                 return;
             
-            string selectedOverlayName = tabControl.SelectedTab.Name;
-            int selectedOverlayIndex = tabControl.TabPages.IndexOf(tabControl.SelectedTab);
+            var selectedOverlayName = tabControl.SelectedTab.Name;
+            var selectedOverlayIndex = tabControl.TabPages.IndexOf(tabControl.SelectedTab);
 
             // コンフィグ削除
             var configs = this.config.Overlays.Where(x => x.Name == selectedOverlayName);
@@ -248,17 +248,17 @@ namespace RainbowMage.OverlayPlugin
             this.tabControl.Update();
         }
 
-        private void checkBoxAutoHide_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxAutoHide_CheckedChanged(object sender, EventArgs e)
         {
             config.HideOverlaysWhenNotActive = checkBoxAutoHide.Checked;
         }
 
-        private void screenShotPath_Leave(object sender, EventArgs e)
+        private void ScreenShotPath_Leave(object sender, EventArgs e)
         {
             config.ScreenShotSavePath = screenShotPath.Text;
         }
 
-        private void screenShotPathSelectButton_Click(object sender, EventArgs e)
+        private void ScreenShotPathSelectButton_Click(object sender, EventArgs e)
         {
             this.fbdScreenShotPath.SelectedPath = this.screenShotPath.Text;
             
@@ -269,12 +269,12 @@ namespace RainbowMage.OverlayPlugin
             }
         }
 
-        private void screenShotBackgroundPath_Leave(object sender, EventArgs e)
+        private void ScreenShotBackgroundPath_Leave(object sender, EventArgs e)
         {
             config.ScreenShotBackgroundPath = screenShotBackgroundPath.Text;
         }
 
-        private void screenShotBackgroundPathSelect_Click(object sender, EventArgs e)
+        private void ScreenShotBackgroundPathSelect_Click(object sender, EventArgs e)
         {
             this.ofdImage.FileName = this.screenShotBackgroundPath.Text;
 
@@ -285,28 +285,28 @@ namespace RainbowMage.OverlayPlugin
             }
         }
 
-        private void screenShotBackgroundFillType_SelectedIndexChanged(object sender, EventArgs e)
+        private void ScreenShotBackgroundFillType_SelectedIndexChanged(object sender, EventArgs e)
         {
             config.ScreenShotBackgroundMode = screenShotBackgroundMode.SelectedIndex;
         }
 
-        private void screenShotAutoClipping_CheckedChanged(object sender, EventArgs e)
+        private void ScreenShotAutoClipping_CheckedChanged(object sender, EventArgs e)
         {
             config.ScreenShotAutoClipping = screenShotAutoClipping.Checked;
         }
 
-        private void screenShotMargin_ValueChanged(object sender, EventArgs e)
+        private void ScreenShotMargin_ValueChanged(object sender, EventArgs e)
         {
             config.ScreenShotMargin = (int)screenShotMargin.Value;
         }
 
-        private void takeScreenShotBtn_Click(object sender, EventArgs e)
+        private void TakeScreenShotBtn_Click(object sender, EventArgs e)
         {
             if (tabControl.SelectedIndex < 0) return;
             var selTab = tabControl.SelectedIndex;
 
             if (pluginMain.Overlays.Count < 1) return;
-            IOverlay selectedOverlay = pluginMain.Overlays[selTab];
+            var selectedOverlay = pluginMain.Overlays[selTab];
 
             try
             {

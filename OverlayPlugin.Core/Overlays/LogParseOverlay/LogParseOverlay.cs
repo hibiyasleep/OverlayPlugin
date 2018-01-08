@@ -11,9 +11,9 @@ namespace RainbowMage.OverlayPlugin.Overlays
 {
     public partial class LogParseOverlay : OverlayBase<LogParseOverlayConfig>
     {
-        private string prevEncounterId { get; set; }
-        private DateTime prevEndDateTime { get; set; }
-        private bool prevEncounterActive { get; set; }
+        private string PrevEncounterId { get; set; }
+        private DateTime PrevEndDateTime { get; set; }
+        private bool PrevEncounterActive { get; set; }
 
         private static string updateStringCache = "";
         private static DateTime updateStringCacheLastUpdate;
@@ -34,9 +34,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
                     BindingFlags.Public |
                     BindingFlags.Static);
 
-                var beforeLogLineReadDelegate =
-                    fi.GetValue(ActGlobals.oFormActMain)
-                    as Delegate;
+                var beforeLogLineReadDelegate = (Delegate)fi.GetValue(ActGlobals.oFormActMain);
 
                 if (beforeLogLineReadDelegate != null)
                 {
@@ -68,8 +66,8 @@ namespace RainbowMage.OverlayPlugin.Overlays
         {
             base.Navigate(url);
 
-            this.prevEncounterId = null;
-            this.prevEndDateTime = DateTime.MinValue;
+            this.PrevEncounterId = null;
+            this.PrevEndDateTime = DateTime.MinValue;
         }
 
         protected override void Update()
@@ -77,16 +75,16 @@ namespace RainbowMage.OverlayPlugin.Overlays
             if (CheckIsActReady())
             {
                 // 最終更新時刻に変化がないなら更新を行わない
-                if (this.prevEncounterId == ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.EncId &&
-                    this.prevEndDateTime == ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.EndTime &&
-                    this.prevEncounterActive == ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.Active)
+                if (this.PrevEncounterId == ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.EncId &&
+                    this.PrevEndDateTime == ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.EndTime &&
+                    this.PrevEncounterActive == ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.Active)
                 {
                     return;
                 }
 
-                this.prevEncounterId = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.EncId;
-                this.prevEndDateTime = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.EndTime;
-                this.prevEncounterActive = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.Active;
+                this.PrevEncounterId = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.EncId;
+                this.PrevEndDateTime = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.EndTime;
+                this.PrevEncounterActive = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.Active;
 
                 var updateScript = CreateEventDispatcherScript();
 
@@ -135,14 +133,14 @@ namespace RainbowMage.OverlayPlugin.Overlays
                 });
             Task.WaitAll(encounterTask, combatantTask);
 
-            JObject obj = new JObject();
+            var obj = new JObject();
 
             obj["Encounter"] = JObject.FromObject(encounter);
             obj["Combatant"] = new JObject();
             
             foreach (var pair in combatant)
             {
-                JObject value = new JObject();
+                var value = new JObject();
                 foreach (var pair2 in pair.Value)
                 {
                     value.Add(pair2.Key, Util.ReplaceNaNString(pair2.Value, "---"));

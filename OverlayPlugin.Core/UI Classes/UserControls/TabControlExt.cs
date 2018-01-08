@@ -36,16 +36,16 @@ namespace RainbowMage.OverlayPlugin
             e.Graphics.Clear(SystemColors.ControlLightLight);
             e.Graphics.FillRectangle(SystemBrushes.ControlLight, 4, 4, ItemSize.Height - 4, Height - 8);
 
-            int inc = 0;
+            var inc = 0;
 
             foreach (TabPage tp in TabPages)
             {
-                Brush fore = Brushes.Black;
-                Font fontF = this.Font;
-                Rectangle tabrect = GetTabRect(inc);
-                Rectangle rect = new Rectangle(tabrect.X + 4, tabrect.Y + 4, tabrect.Width - 8, tabrect.Height - 2);
-                Rectangle textrect1 = new Rectangle(tabrect.X + 4, tabrect.Y + 4, tabrect.Width - 8, tabrect.Height - 20);
-                Rectangle textrect2 = new Rectangle(tabrect.X + 4, tabrect.Y + 20, tabrect.Width - 8, tabrect.Height - 20);
+                var fore = Brushes.Black;
+                var fontF = this.Font;
+                var tabrect = GetTabRect(inc);
+                var rect = new Rectangle(tabrect.X + 4, tabrect.Y + 4, tabrect.Width - 8, tabrect.Height - 2);
+                var textrect1 = new Rectangle(tabrect.X + 4, tabrect.Y + 4, tabrect.Width - 8, tabrect.Height - 20);
+                var textrect2 = new Rectangle(tabrect.X + 4, tabrect.Y + 20, tabrect.Width - 8, tabrect.Height - 20);
                 
                 if (inc == SelectedIndex)
                 {

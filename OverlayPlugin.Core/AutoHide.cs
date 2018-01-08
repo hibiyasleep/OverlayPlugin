@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
@@ -82,8 +81,8 @@ namespace RainbowMage.OverlayPlugin
                 eventType != NativeMethods.EVENT_SYSTEM_MINIMIZESTART)
                 return;
 
-            bool newVisible = false;
-            bool isGameWindow = false;
+            var newVisible = false;
+            var isGameWindow = false;
 
             var foregroundHwnd = NativeMethods.GetForegroundWindow();
             if (!NativeMethods.IsWindow(foregroundHwnd))

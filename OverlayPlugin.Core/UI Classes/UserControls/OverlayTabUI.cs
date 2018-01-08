@@ -95,7 +95,7 @@ namespace RainbowMage.OverlayPlugin
         {
             if ((m.Msg == TCM_ADJUSTRECT))
             {
-                RECT rc = (RECT)m.GetLParam(typeof(RECT));
+                var rc = (RECT)m.GetLParam(typeof(RECT));
                 rc.left -= 5;
                 rc.right += 5;
                 rc.top -= 5;

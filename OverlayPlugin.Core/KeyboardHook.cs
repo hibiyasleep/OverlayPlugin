@@ -21,8 +21,7 @@ namespace RainbowMage.OverlayPlugin
             // register the event of the inner native window.
             _window.KeyPressed += delegate(object sender, KeyPressedEventArgs args)
             {
-                if (KeyPressed != null)
-                    KeyPressed(this, args);
+                KeyPressed?.Invoke(this, args);
             };
         }
 
@@ -51,7 +50,7 @@ namespace RainbowMage.OverlayPlugin
         public void Dispose()
         {
             // unregister all the registered hot keys.
-            for (int i = _currentId; i > 0; i--)
+            for (var i = _currentId; i > 0; i--)
             {
                 UnregisterHotKey(_window.Handle, i);
             }
