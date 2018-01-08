@@ -41,14 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IOverlay.cs" />
-    <Compile Include="IOverlayAddon.cs" />
-    <Compile Include="IOverlayConfig.cs" />
-    <Compile Include="IPluginConfig.cs" />
+    <Compile Include="Args\LogEventArgs.cs" />
+    <Compile Include="Enums\LogLevel.cs" />
+    <Compile Include="Enums\ScreenShotBackgroundMode.cs" />
+    <Compile Include="Interfaces\IOverlay.cs" />
+    <Compile Include="Interfaces\IOverlayAddon.cs" />
+    <Compile Include="Interfaces\IOverlayConfig.cs" />
+    <Compile Include="Interfaces\IPluginConfig.cs" />
+    <Compile Include="LogEntry.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="OverlayConfigList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScreenShotConfig.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

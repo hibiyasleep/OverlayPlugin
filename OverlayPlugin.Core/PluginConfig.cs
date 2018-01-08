@@ -1,12 +1,8 @@
 ﻿using RainbowMage.OverlayPlugin.Overlays;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace RainbowMage.OverlayPlugin
@@ -177,8 +173,20 @@ namespace RainbowMage.OverlayPlugin
         [XmlElement("FollowLatestLog")]
         public bool FollowLatestLog { get; set; }
 
+        private bool m_hideOverlaysWhenNotActive;
         [XmlElement("HideOverlaysWhenNotActive")]
-        public bool HideOverlaysWhenNotActive { get; set; }
+        public bool HideOverlaysWhenNotActive
+        {
+            get
+            {
+                return this.m_hideOverlaysWhenNotActive;
+            }
+            set
+            {
+                this.m_hideOverlaysWhenNotActive = value;
+                AutoHide.Enabled = value;
+            }
+        }
 
         /// <summary>
         /// 設定ファイルを生成したプラグインのバージョンを取得または設定します。
@@ -210,6 +218,31 @@ namespace RainbowMage.OverlayPlugin
                 }
             }
         }
+
+        [XmlElement("ScreenShotSavePath")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [Browsable(false)]
+        public string ScreenShotSavePath { get; set; }
+
+        [XmlElement("ScreenShotBackgroundPath")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [Browsable(false)]
+        public string ScreenShotBackgroundPath { get; set; }
+
+        [XmlElement("ScreenShotBackgroundMode")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [Browsable(false)]
+        public int ScreenShotBackgroundMode { get; set; }
+
+        [XmlElement("ScreenShotAutoClipping")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [Browsable(false)]
+        public bool ScreenShotAutoClipping { get; set; }
+
+        [XmlElement("ScreenShotMargin")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [Browsable(false)]
+        public int ScreenShotMargin { get; set; }
 
         [XmlElement("Version")]
         [EditorBrowsable(EditorBrowsableState.Never)]
@@ -256,7 +289,7 @@ namespace RainbowMage.OverlayPlugin
 
             using (var stream = new FileStream(path, FileMode.Create, FileAccess.Write))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(PluginConfig));
+                var serializer = new XmlSerializer(typeof(PluginConfig));
                 serializer.Serialize(stream, this);
             }
         }
@@ -276,7 +309,7 @@ namespace RainbowMage.OverlayPlugin
 
             using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(PluginConfig));
+                var serializer = new XmlSerializer(typeof(PluginConfig));
                 var result = (PluginConfig)serializer.Deserialize(stream);
 
                 result.IsFirstLaunch = false;
@@ -298,21 +331,30 @@ namespace RainbowMage.OverlayPlugin
         /// <param name="pluginDirectory"></param>
         public void SetDefaultOverlayConfigs(string pluginDirectory)
         {
-            var miniparseOverlayConfig = new MiniParseOverlayConfig(DefaultMiniParseOverlayName);
-            miniparseOverlayConfig.Position = new Point(20, 20);
-            miniparseOverlayConfig.Size = new Size(500, 300);
-            miniparseOverlayConfig.Url = new Uri(Path.Combine(pluginDirectory, "resources", "miniparse.html")).ToString(); 
+            var KagerouDefaultOverlay = new MiniParseOverlayConfig("Kagerou Overlay");
+            KagerouDefaultOverlay.Position = new Point(20, 20);
+            KagerouDefaultOverlay.Size = new Size(480, 300);
+            KagerouDefaultOverlay.Url = new Uri("http://kagerou.hibiya.moe/overlay/").ToString();
 
+            var CatsEyeDefaultOverlay = new MiniParseOverlayConfig("Cat's Eye Overlay");
+            CatsEyeDefaultOverlay.Position = new Point(20, 20);
+            CatsEyeDefaultOverlay.Size = new Size(480, 300);
+            CatsEyeDefaultOverlay.Url = new Uri("http://ffxiv.work/chrysoberyl/Demo/stable.html").ToString();
+
+            /*
             var spellTimerOverlayConfig = new SpellTimerOverlayConfig(DefaultSpellTimerOverlayName);
             spellTimerOverlayConfig.Position = new Point(20, 520);
             spellTimerOverlayConfig.Size = new Size(200, 300);
             spellTimerOverlayConfig.IsVisible = true;
             spellTimerOverlayConfig.MaxFrameRate = 5;
             spellTimerOverlayConfig.Url = new Uri(Path.Combine(pluginDirectory, "resources", "spelltimer.html")).ToString(); 
+            */
 
             this.Overlays = new OverlayConfigList();
-            this.Overlays.Add(miniparseOverlayConfig);
-            this.Overlays.Add(spellTimerOverlayConfig);
+            this.Overlays.Add(KagerouDefaultOverlay);
+            this.Overlays.Add(CatsEyeDefaultOverlay);
+            //this.Overlays.Add(spellTimerOverlayConfig);
+            this.ScreenShotSavePath = PluginMain.DefaultScreenShotPath;
         }
 
         /// <summary>

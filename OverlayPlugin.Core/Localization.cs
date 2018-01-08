@@ -1,28 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace RainbowMage.OverlayPlugin
 {
-    public enum TextItem
-    {
-        ErrorTitle,
-        RequiredAssemblyFileNotFound,
-        RequiredAssemblyFileCannotRead,
-        RequiredAssemblyFileBlocked,
-        RequiredAssemblyFileException,
-        DoNotSort,
-        SortStringAscending,
-        SortStringDescending,
-        SortNumberAscending,
-        SortNumberDescending,
-        ToggleVisible,
-        ToggleClickthru,
-        ToggleLock
-    }
-
     public static class Localization
     {
         private static LocalizationDict dict;
@@ -65,13 +44,16 @@ namespace RainbowMage.OverlayPlugin
 
             dict[TextItem.ToggleVisible, ""] = "Toggle visible/hide";
             dict[TextItem.ToggleVisible, "ja"] = "表示/非表示の切り替え";
-            dict[TextItem.ToggleVisible, "ko"] = "표시 / 숨기기 토글";
+            dict[TextItem.ToggleVisible, "ko"] = "표시 / 숨기기";
             dict[TextItem.ToggleClickthru, ""] = "Toggle clickthru";
             dict[TextItem.ToggleClickthru, "ja"] = "クリック透過の切り替え";
-            dict[TextItem.ToggleClickthru, "ko"] = "Toggle clickthru";
+            dict[TextItem.ToggleClickthru, "ko"] = "마우스 통과 끄기 / 켜기";
             dict[TextItem.ToggleLock, ""] = "Toggle lock";
             dict[TextItem.ToggleLock, "ja"] = "移動/リサイズ制限の切り替え";
-            dict[TextItem.ToggleLock, "ko"] = "Toggle lock";
+            dict[TextItem.ToggleLock, "ko"] = "위치 잠금 끄기 / 켜기";
+            dict[TextItem.ScreenShot, ""] = "ScreenShot";
+            dict[TextItem.ScreenShot, "ja"] = "ScreenShot";
+            dict[TextItem.ScreenShot, "ko"] = "오버레이 스크린샷 촬영";
         }
 
         public static string GetText(TextItem item)
@@ -83,54 +65,6 @@ namespace RainbowMage.OverlayPlugin
         {
             var culture = System.Globalization.CultureInfo.CurrentUICulture;
             return culture.TwoLetterISOLanguageName.ToLower();
-        }
-    }
-
-    class LocalizationDict
-    {
-        IDictionary<TextItem, IDictionary<string, string>> dict;
-
-        public LocalizationDict()
-        {
-            this.dict = new Dictionary<TextItem, IDictionary<string, string>>();
-        }
-
-        public string this[TextItem item, string locale]
-        {
-            get
-            {
-                if (dict.ContainsKey(item))
-                {
-                    if (dict[item].ContainsKey(locale))
-                    {
-                        return dict[item][locale];
-                    }
-                    else if (dict[item].ContainsKey(""))
-                    {
-                        return dict[item][""];
-                    }
-                    else
-                    {
-                        throw new KeyNotFoundException();
-                    }
-                }
-                throw new KeyNotFoundException();
-            }
-            set
-            {
-                if (!dict.ContainsKey(item))
-                {
-                    dict.Add(item, new Dictionary<string, string>());
-                }
-                if (!dict[item].ContainsKey(locale))
-                {
-                    dict[item].Add(locale, value);
-                }
-                else
-                {
-                    dict[item][locale] = value;
-                }
-            }
         }
     }
 }

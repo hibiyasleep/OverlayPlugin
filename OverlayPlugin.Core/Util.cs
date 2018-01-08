@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
 
 namespace RainbowMage.OverlayPlugin
 {
@@ -46,7 +42,7 @@ namespace RainbowMage.OverlayPlugin
         public static bool IsOnScreen(Form form)
         {
             var screens = Screen.AllScreens;
-            foreach (Screen screen in screens)
+            foreach (var screen in screens)
             {
                 var formRectangle = new Rectangle(form.Left, form.Top, form.Width, form.Height);
 
@@ -66,7 +62,7 @@ namespace RainbowMage.OverlayPlugin
         /// <param name="form"></param>
         public static void HidePreview(System.Windows.Forms.Form form)
         {
-            int ex = NativeMethods.GetWindowLong(form.Handle, NativeMethods.GWL_EXSTYLE);
+            var ex = NativeMethods.GetWindowLong(form.Handle, NativeMethods.GWL_EXSTYLE);
             ex |= NativeMethods.WS_EX_TOOLWINDOW;
             NativeMethods.SetWindowLongA(form.Handle, NativeMethods.GWL_EXSTYLE, (IntPtr)ex);
         }
@@ -81,7 +77,7 @@ namespace RainbowMage.OverlayPlugin
         /// <returns></returns>
         public static string GetHotkeyString(Keys modifier, Keys key, String defaultText = "")
         {
-            StringBuilder sbKeys = new StringBuilder();
+            var sbKeys = new StringBuilder();
             if ((modifier & Keys.Shift) == Keys.Shift)
             {
                 sbKeys.Append("Shift + ");
@@ -101,9 +97,7 @@ namespace RainbowMage.OverlayPlugin
             sbKeys.Append(Enum.ToObject(typeof(Keys), key).ToString());
             return sbKeys.ToString();
         }
-
-
-
+        
         /// <summary>
         /// Removes stray references to Left/Right shifts, etc and modifications of the actual 
         /// key value caused by bitwise operations.

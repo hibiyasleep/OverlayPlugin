@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xilium.CefGlue;
 
 namespace RainbowMage.HtmlRenderer
@@ -18,6 +17,7 @@ namespace RainbowMage.HtmlRenderer
         public static event EventHandler<SendMessageEventArgs> SendMessage;
         public static event EventHandler<SendMessageEventArgs> OverlayMessage;
         public static event EventHandler<RendererFeatureRequestEventArgs> RendererFeatureRequest;
+        public static event EventHandler<TakeScreenShotEventArgs> TakeScreenShotHandler;
 
         // Guards access to |allBrowsers| across threads.
         private System.Threading.SemaphoreSlim allBrowsersSemaphore = new System.Threading.SemaphoreSlim(1);
@@ -38,18 +38,20 @@ namespace RainbowMage.HtmlRenderer
             get
             {
                 allBrowsersSemaphore.Wait();
-                CefBrowser b = this.allBrowsers.FirstOrDefault();
+                var b = this.allBrowsers.FirstOrDefault();
                 allBrowsersSemaphore.Release();
                 return b;
             }
         }
 
-        public string OverlayVersion {
+        public string OverlayVersion
+        {
             get { return overlayVersion; }
         }
 
-        public string OverlayName {
-          get { return overlayName; }
+        public string OverlayName
+        {
+            get { return overlayName; }
         }
 
         private Client Client { get; set; }
@@ -215,13 +217,13 @@ namespace RainbowMage.HtmlRenderer
             }
         }
 
-        public void showDevTools(bool firstwindow = true)
+        public void ShowDevTools(bool firstwindow = true)
         {
             this.allBrowsersSemaphore.Wait();
             if (this.allBrowsers.Count > 0)
             {
-                CefBrowser b = firstwindow ? this.allBrowsers.First() : this.allBrowsers.Last();
-                CefWindowInfo wi = CefWindowInfo.Create();
+                var b = firstwindow ? this.allBrowsers.First() : this.allBrowsers.Last();
+                var wi = CefWindowInfo.Create();
                 wi.SetAsPopup(b.GetHost().GetWindowHandle(), "DevTools");
                 b.GetHost().ShowDevTools(wi, this.Client, new CefBrowserSettings(), new CefPoint());
             }
@@ -241,7 +243,7 @@ namespace RainbowMage.HtmlRenderer
         internal void OnBeforeClose(CefBrowser browser)
         {
           this.allBrowsersSemaphore.Wait();
-          int index = this.allBrowsers.FindIndex((b) => b.Identifier == browser.Identifier);
+          var index = this.allBrowsers.FindIndex((b) => b.Identifier == browser.Identifier);
           if (index > 0) {
             // The first browser window is only removed from the list on the main thread.
             System.Diagnostics.Debug.Assert(index > 0);
@@ -252,64 +254,46 @@ namespace RainbowMage.HtmlRenderer
 
         internal void OnPaint(CefBrowser browser, IntPtr buffer, int width, int height, CefRectangle[] dirtyRects)
         {
-            if (Render != null)
-            {
-                Render(this, new RenderEventArgs(buffer, width, height, dirtyRects));
-            }
+            Render?.Invoke(this, new RenderEventArgs(buffer, width, height, dirtyRects));
         }
 
         internal void OnError(CefErrorCode errorCode, string errorText, string failedUrl)
         {
-            if (BrowserError != null)
-            {
-                BrowserError(this, new BrowserErrorEventArgs(errorCode, errorText, failedUrl));
-            }
+            BrowserError?.Invoke(this, new BrowserErrorEventArgs(errorCode, errorText, failedUrl));
         }
 
         internal void OnLoad(CefBrowser browser, CefFrame frame, int httpStatusCode)
         {
-            if (BrowserLoad != null)
-            {
-                BrowserLoad(this, new BrowserLoadEventArgs(httpStatusCode, frame.Url));
-            }
+            BrowserLoad?.Invoke(this, new BrowserLoadEventArgs(httpStatusCode, frame.Url));
         }
 
         internal void OnConsoleLog(CefBrowser browser, string message, string source, int line)
         {
-            if (BrowserConsoleLog != null)
-            {
-                BrowserConsoleLog(this, new BrowserConsoleLogEventArgs(message, source, line));
-            }
+            BrowserConsoleLog?.Invoke(this, new BrowserConsoleLogEventArgs(message, source, line));
         }
 
         internal static void OnBroadcastMessage(object sender, BroadcastMessageEventArgs e)
         {
-            if (BroadcastMessage != null)
-            {
-                BroadcastMessage(sender, e);
-            }
+            BroadcastMessage?.Invoke(sender, e);
         }
 
         internal static void OnSendMessage(object sender, SendMessageEventArgs e)
         {
-            if (SendMessage != null)
-            {
-                SendMessage(sender, e);
-            }
+            SendMessage?.Invoke(sender, e);
         }
 
         internal static void OnOverlayMessage(object sender, SendMessageEventArgs e) {
-            if (OverlayMessage != null) {
-                OverlayMessage(sender, e);
-            }
+            OverlayMessage?.Invoke(sender, e);
         }
 
         internal static void OnRendererFeatureRequest(object sender, RendererFeatureRequestEventArgs e)
         {
-            if (RendererFeatureRequest != null)
-            {
-                RendererFeatureRequest(sender, e);
-            }
+            RendererFeatureRequest?.Invoke(sender, e);
+        }
+
+        internal static void OnTakeScreenShot(object sender, TakeScreenShotEventArgs e)
+        {
+            TakeScreenShotHandler?.Invoke(sender, e);
         }
 
         public void Dispose()
@@ -321,12 +305,41 @@ namespace RainbowMage.HtmlRenderer
 
         public static void Initialize()
         {
+            Initialize("");
+        }
+
+        public static void Initialize(string MainApplicationPath)
+        {
             if (!initialized)
             {
                 CefRuntime.Load();
 
+                var Cache = "Cache";
+                var Userdata = "UserData";
+
+                if(MainApplicationPath != "")
+                {
+                    Cache = System.IO.Path.Combine(MainApplicationPath, "Cache");
+                    Userdata = System.IO.Path.Combine(MainApplicationPath, "UserData");
+                }
+
+                // for under 0.3.4.0 users
+                if (System.IO.Directory.Exists("cache"))
+                {
+                    try
+                    {
+                        var di = new System.IO.DirectoryInfo("cache");
+                        di.MoveTo(Cache);
+                    }
+                    catch
+                    {
+                        Cache = "cache";
+                    }
+                }
+
                 var cefMainArgs = new CefMainArgs(new string[0]);
                 var cefApp = new App();
+
                 if (CefRuntime.ExecuteProcess(cefMainArgs, cefApp, IntPtr.Zero) != -1)
                 {
                     Console.Error.WriteLine("Couldn't execute secondary process.");
@@ -334,15 +347,15 @@ namespace RainbowMage.HtmlRenderer
 
                 var cefSettings = new CefSettings
                 {
+                    CachePath = Cache,
                     Locale = System.Globalization.CultureInfo.CurrentCulture.Name,
-                    CachePath = "cache",
+                    UserDataPath = Userdata,
                     SingleProcess = true,
                     MultiThreadedMessageLoop = true,
                     LogSeverity = CefLogSeverity.Disable
                 };
 
                 CefRuntime.Initialize(cefMainArgs, cefSettings, cefApp, IntPtr.Zero);
-
                 initialized = true;
             }
         }
