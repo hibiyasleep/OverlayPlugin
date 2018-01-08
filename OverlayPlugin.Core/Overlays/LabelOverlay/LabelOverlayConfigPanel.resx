@@ -552,24 +552,6 @@
   <data name="tableLayoutPanel3.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="buttonCopyUpdateScript.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="buttonCopyUpdateScript.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonCopyUpdateScript.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="buttonCopyUpdateScript.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 43</value>
-  </data>
-  <data name="buttonCopyUpdateScript.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="buttonCopyUpdateScript.Text" xml:space="preserve">
-    <value>Copy the update variable to clipboard</value>
-  </data>
   <data name="&gt;&gt;buttonCopyUpdateScript.Name" xml:space="preserve">
     <value>buttonCopyUpdateScript</value>
   </data>
@@ -582,21 +564,6 @@
   <data name="&gt;&gt;buttonCopyUpdateScript.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="buttonOpenDevTools.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="buttonOpenDevTools.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 3</value>
-  </data>
-  <data name="buttonOpenDevTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 43</value>
-  </data>
-  <data name="buttonOpenDevTools.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="buttonOpenDevTools.Text" xml:space="preserve">
-    <value>Open DevTools</value>
-  </data>
   <data name="&gt;&gt;buttonOpenDevTools.Name" xml:space="preserve">
     <value>buttonOpenDevTools</value>
   </data>
@@ -608,24 +575,6 @@
   </data>
   <data name="&gt;&gt;buttonOpenDevTools.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="buttonReloadBrowser.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="buttonReloadBrowser.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonReloadBrowser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>437, 3</value>
-  </data>
-  <data name="buttonReloadBrowser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 43</value>
-  </data>
-  <data name="buttonReloadBrowser.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="buttonReloadBrowser.Text" xml:space="preserve">
-    <value>Reload overlay</value>
   </data>
   <data name="&gt;&gt;buttonReloadBrowser.Name" xml:space="preserve">
     <value>buttonReloadBrowser</value>
@@ -708,21 +657,6 @@
   <data name="tableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="textUrl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="textUrl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="textUrl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="textUrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 21</value>
-  </data>
-  <data name="textUrl.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
   <data name="&gt;&gt;textUrl.Name" xml:space="preserve">
     <value>textUrl</value>
   </data>
@@ -734,30 +668,6 @@
   </data>
   <data name="&gt;&gt;textUrl.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="buttonSelectFile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="buttonSelectFile.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="buttonSelectFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonSelectFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>432, 0</value>
-  </data>
-  <data name="buttonSelectFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="buttonSelectFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 20</value>
-  </data>
-  <data name="buttonSelectFile.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="buttonSelectFile.Text" xml:space="preserve">
-    <value>...</value>
   </data>
   <data name="&gt;&gt;buttonSelectFile.Name" xml:space="preserve">
     <value>buttonSelectFile</value>
@@ -896,6 +806,156 @@
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label1" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkMiniParseVisible" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="checkMiniParseClickthru" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label7" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkEnableGlobalHotkey" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textGlobalHotkey" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label9" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkLock" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label13" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel3" Row="9" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label4" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel2" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkHTML" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,181,Percent,100" /&gt;&lt;Rows Styles="Absolute,22,Absolute,22,Absolute,22,Absolute,22,Absolute,22,Absolute,22,AutoSize,0,Percent,100,Absolute,22,Absolute,55" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="buttonCopyUpdateScript.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonCopyUpdateScript.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonCopyUpdateScript.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="buttonCopyUpdateScript.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 43</value>
+  </data>
+  <data name="buttonCopyUpdateScript.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonCopyUpdateScript.Text" xml:space="preserve">
+    <value>Copy the update variable to clipboard</value>
+  </data>
+  <data name="&gt;&gt;buttonCopyUpdateScript.Name" xml:space="preserve">
+    <value>buttonCopyUpdateScript</value>
+  </data>
+  <data name="&gt;&gt;buttonCopyUpdateScript.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonCopyUpdateScript.Parent" xml:space="preserve">
+    <value>tableLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;buttonCopyUpdateScript.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonOpenDevTools.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonOpenDevTools.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 3</value>
+  </data>
+  <data name="buttonOpenDevTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 43</value>
+  </data>
+  <data name="buttonOpenDevTools.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="buttonOpenDevTools.Text" xml:space="preserve">
+    <value>Open DevTools</value>
+  </data>
+  <data name="&gt;&gt;buttonOpenDevTools.Name" xml:space="preserve">
+    <value>buttonOpenDevTools</value>
+  </data>
+  <data name="&gt;&gt;buttonOpenDevTools.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonOpenDevTools.Parent" xml:space="preserve">
+    <value>tableLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;buttonOpenDevTools.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonReloadBrowser.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonReloadBrowser.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonReloadBrowser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>437, 3</value>
+  </data>
+  <data name="buttonReloadBrowser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 43</value>
+  </data>
+  <data name="buttonReloadBrowser.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonReloadBrowser.Text" xml:space="preserve">
+    <value>Reload overlay</value>
+  </data>
+  <data name="&gt;&gt;buttonReloadBrowser.Name" xml:space="preserve">
+    <value>buttonReloadBrowser</value>
+  </data>
+  <data name="&gt;&gt;buttonReloadBrowser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonReloadBrowser.Parent" xml:space="preserve">
+    <value>tableLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;buttonReloadBrowser.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="textUrl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="textUrl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="textUrl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="textUrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>432, 21</value>
+  </data>
+  <data name="textUrl.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;textUrl.Name" xml:space="preserve">
+    <value>textUrl</value>
+  </data>
+  <data name="&gt;&gt;textUrl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textUrl.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;textUrl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonSelectFile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonSelectFile.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="buttonSelectFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonSelectFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>432, 0</value>
+  </data>
+  <data name="buttonSelectFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="buttonSelectFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 20</value>
+  </data>
+  <data name="buttonSelectFile.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="buttonSelectFile.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;buttonSelectFile.Name" xml:space="preserve">
+    <value>buttonSelectFile</value>
+  </data>
+  <data name="&gt;&gt;buttonSelectFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonSelectFile.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;buttonSelectFile.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

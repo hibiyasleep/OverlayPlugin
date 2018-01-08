@@ -227,6 +227,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "LabelOverlayConfigPanel";
             this.tableLayoutPanel1.ResumeLayout(false);

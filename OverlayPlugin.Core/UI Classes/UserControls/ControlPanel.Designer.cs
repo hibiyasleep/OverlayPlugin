@@ -80,6 +80,7 @@ namespace RainbowMage.OverlayPlugin
             this.special_thanks = new System.Windows.Forms.Label();
             this.repo_dev_info = new System.Windows.Forms.Label();
             this.developers = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.contextMenuLogList.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.overlayTabUI1.SuspendLayout();
@@ -233,6 +234,7 @@ namespace RainbowMage.OverlayPlugin
             // overlayLogsTabPage
             // 
             this.overlayLogsTabPage.Controls.Add(this.listViewLog);
+            this.overlayLogsTabPage.Controls.Add(this.panel2);
             resources.ApplyResources(this.overlayLogsTabPage, "overlayLogsTabPage");
             this.overlayLogsTabPage.Name = "overlayLogsTabPage";
             this.overlayLogsTabPage.TabImage = ((System.Drawing.Image)(resources.GetObject("overlayLogsTabPage.TabImage")));
@@ -273,7 +275,7 @@ namespace RainbowMage.OverlayPlugin
             this.overlaySettingsTabPage.Controls.Add(this.screenShotPathGroupbox);
             resources.ApplyResources(this.overlaySettingsTabPage, "overlaySettingsTabPage");
             this.overlaySettingsTabPage.Name = "overlaySettingsTabPage";
-            this.overlaySettingsTabPage.TabImage = null;
+            this.overlaySettingsTabPage.TabImage = ((System.Drawing.Image)(resources.GetObject("overlaySettingsTabPage.TabImage")));
             this.overlaySettingsTabPage.UseVisualStyleBackColor = true;
             // 
             // screenShotPathGroupbox
@@ -427,6 +429,11 @@ namespace RainbowMage.OverlayPlugin
             resources.ApplyResources(this.developers, "developers");
             this.developers.Name = "developers";
             // 
+            // panel2
+            // 
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
+            // 
             // ControlPanel
             // 
             resources.ApplyResources(this, "$this");
@@ -506,5 +513,6 @@ namespace RainbowMage.OverlayPlugin
         private Label special_thanks;
         private Label repo_dev_info;
         private Label developers;
+        private Panel panel2;
     }
 }
