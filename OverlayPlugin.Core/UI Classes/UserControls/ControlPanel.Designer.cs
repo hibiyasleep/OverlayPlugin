@@ -74,8 +74,10 @@ namespace RainbowMage.OverlayPlugin
             this.screenShotBackgroundPathSelect = new System.Windows.Forms.Button();
             this.screenShotAutoClipping = new System.Windows.Forms.CheckBox();
             this.screenShotBackgroundMode = new System.Windows.Forms.ComboBox();
-            this.screenShotMargin = new System.Windows.Forms.NumericUpDown();
             this.screenShotPathLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.screenShotMargin = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             this.overlayInformationTabPage = new RainbowMage.OverlayPlugin.OverlayPageUI();
             this.overlayPluginInformationGroupBox = new System.Windows.Forms.GroupBox();
             this.repo_dev_info_special = new System.Windows.Forms.Label();
@@ -94,6 +96,7 @@ namespace RainbowMage.OverlayPlugin
             this.screenShotTable.SuspendLayout();
             this.screenShotPathPanel.SuspendLayout();
             this.screenShotBackgroundPathPanel.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.screenShotMargin)).BeginInit();
             this.overlayInformationTabPage.SuspendLayout();
             this.overlayPluginInformationGroupBox.SuspendLayout();
@@ -315,8 +318,8 @@ namespace RainbowMage.OverlayPlugin
             this.screenShotTable.Controls.Add(this.screenShotBackgroundPathPanel, 1, 1);
             this.screenShotTable.Controls.Add(this.screenShotAutoClipping, 1, 3);
             this.screenShotTable.Controls.Add(this.screenShotBackgroundMode, 1, 2);
-            this.screenShotTable.Controls.Add(this.screenShotMargin, 1, 4);
             this.screenShotTable.Controls.Add(this.screenShotPathLabel, 0, 0);
+            this.screenShotTable.Controls.Add(this.tableLayoutPanel1, 1, 4);
             this.screenShotTable.Name = "screenShotTable";
             // 
             // screenShotMarginlabel
@@ -395,6 +398,18 @@ namespace RainbowMage.OverlayPlugin
             resources.GetString("screenShotBackgroundMode.Items5")});
             this.screenShotBackgroundMode.Name = "screenShotBackgroundMode";
             // 
+            // screenShotPathLabel
+            // 
+            resources.ApplyResources(this.screenShotPathLabel, "screenShotPathLabel");
+            this.screenShotPathLabel.Name = "screenShotPathLabel";
+            // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.screenShotMargin, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
             // screenShotMargin
             // 
             resources.ApplyResources(this.screenShotMargin, "screenShotMargin");
@@ -405,10 +420,10 @@ namespace RainbowMage.OverlayPlugin
             0});
             this.screenShotMargin.Name = "screenShotMargin";
             // 
-            // screenShotPathLabel
+            // label1
             // 
-            resources.ApplyResources(this.screenShotPathLabel, "screenShotPathLabel");
-            this.screenShotPathLabel.Name = "screenShotPathLabel";
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
             // overlayInformationTabPage
             // 
@@ -472,6 +487,7 @@ namespace RainbowMage.OverlayPlugin
             this.screenShotPathPanel.PerformLayout();
             this.screenShotBackgroundPathPanel.ResumeLayout(false);
             this.screenShotBackgroundPathPanel.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.screenShotMargin)).EndInit();
             this.overlayInformationTabPage.ResumeLayout(false);
             this.overlayPluginInformationGroupBox.ResumeLayout(false);
@@ -530,5 +546,7 @@ namespace RainbowMage.OverlayPlugin
         private Label developers;
         private Panel panel2;
         private Button button1;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Label label1;
     }
 }
