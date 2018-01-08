@@ -134,8 +134,12 @@
   <data name="screenShotBackgroundPathLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="screenShotBackgroundPathPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>531, 25</value>
+  </data>
   <data name="&gt;&gt;screenShotPathLabel.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;screenShotPath.Parent" xml:space="preserve">
     <value>screenShotPathPanel</value>
@@ -143,7 +147,6 @@
   <data name="buttonNewOverlay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="menuFollowLatestLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 22</value>
   </data>
@@ -152,9 +155,6 @@
   </data>
   <data name="&gt;&gt;screenShotBackgroundMode.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="&gt;&gt;screenShotMarginlabel.Name" xml:space="preserve">
-    <value>screenShotMarginlabel</value>
   </data>
   <data name="&gt;&gt;buttonNewOverlay.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -168,11 +168,11 @@
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
+  <data name="label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
   <data name="&gt;&gt;buttonRemoveOverlay.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="overlayLogsTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-1, 39</value>
   </data>
   <data name="screenShotBackgroundPath.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -185,6 +185,9 @@
   </data>
   <data name="&gt;&gt;screenShotPathPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 101</value>
   </data>
   <data name="&gt;&gt;screenShotPath.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -207,9 +210,6 @@
   <data name="&gt;&gt;screenShotBackgroundPath.Name" xml:space="preserve">
     <value>screenShotBackgroundPath</value>
   </data>
-  <data name="&gt;&gt;ofdImage.Name" xml:space="preserve">
-    <value>ofdImage</value>
-  </data>
   <data name="&gt;&gt;screenShotPathSelectButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -218,6 +218,9 @@
   </data>
   <data name="&gt;&gt;overlayTabUI1.Name" xml:space="preserve">
     <value>overlayTabUI1</value>
+  </data>
+  <data name="&gt;&gt;developers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;screenShotMarginlabel.Parent" xml:space="preserve">
     <value>screenShotTable</value>
@@ -276,6 +279,9 @@
   <data name="&gt;&gt;takeScreenShotBtn.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
+  <data name="&gt;&gt;repo_dev_info_special.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="groupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -298,10 +304,10 @@
     <value>Copy all logs</value>
   </data>
   <data name="screenShotMargin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 102</value>
+    <value>0, 1</value>
   </data>
-  <data name="label_ListEmpty.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>655, 38</value>
   </data>
   <data name="screenShotBackgroundPathSelect.Text" xml:space="preserve">
     <value>...</value>
@@ -336,8 +342,8 @@
   <data name="&gt;&gt;label_ListEmpty.Name" xml:space="preserve">
     <value>label_ListEmpty</value>
   </data>
-  <data name="&gt;&gt;developers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tabPageMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
   <data name="&gt;&gt;menuClearLog.Name" xml:space="preserve">
     <value>menuClearLog</value>
@@ -363,8 +369,11 @@
   <data name="menuLogCopy.Text" xml:space="preserve">
     <value>Copy selected logs</value>
   </data>
-  <data name="&gt;&gt;special_thanks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="screenShotMargin" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,23.61905,Percent,76.38095,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20" /&gt;&lt;Rows Styles="Percent,50,Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -384,23 +393,32 @@
   <data name="screenShotPathGroupbox.Text" xml:space="preserve">
     <value>ScreenShot</value>
   </data>
+  <data name="&gt;&gt;overlaySettingsTabPage.Name" xml:space="preserve">
+    <value>overlaySettingsTabPage</value>
+  </data>
   <data name="&gt;&gt;label_ListEmpty.Parent" xml:space="preserve">
     <value>tabPageMain</value>
   </data>
-  <data name="&gt;&gt;special_thanks.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;overlayLogsTabPage.Type" xml:space="preserve">
+    <value>RainbowMage.OverlayPlugin.OverlayPageUI, OverlayPlugin.Core, Version=0.3.4.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="screenShotBackgroundMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 52</value>
+  <data name="&gt;&gt;ofdImage.Name" xml:space="preserve">
+    <value>ofdImage</value>
   </data>
   <data name="menuClearLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 22</value>
+  </data>
+  <data name="&gt;&gt;special_thanks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;screenShotPathLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="contextMenuLogList.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 104</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>7, 15</value>
@@ -465,9 +483,6 @@
   <data name="screenShotBackgroundPathSelect.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 25</value>
   </data>
-  <data name="screenShotMarginlabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="&gt;&gt;screenShotPathSelectButton.Name" xml:space="preserve">
     <value>screenShotPathSelectButton</value>
   </data>
@@ -486,8 +501,8 @@
   <data name="screenShotPathLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 1</value>
   </data>
-  <data name="listViewLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 32</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
@@ -498,8 +513,11 @@
   <data name="&gt;&gt;screenShotTable.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label_ListEmpty.Size" type="System.Drawing.Size, System.Drawing">
-    <value>566, 242</value>
+  <data name="&gt;&gt;screenShotBackgroundMode.Name" xml:space="preserve">
+    <value>screenShotBackgroundMode</value>
+  </data>
+  <data name="&gt;&gt;menuFollowLatestLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="screenShotPathPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -540,6 +558,9 @@
   <data name="repo_dev_info_special.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 94</value>
   </data>
+  <data name="overlayPluginInformationGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
   <data name="repo_dev_info.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -561,6 +582,9 @@
   <data name="checkBoxAutoHide.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
+  <data name="overlayTabUI1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>657, 453</value>
+  </data>
   <data name="screenShotPathSelectButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 1</value>
   </data>
@@ -570,11 +594,14 @@
   <data name="overlayPluginInformationGroupBox.Text" xml:space="preserve">
     <value>OverlayPlugin Information</value>
   </data>
-  <data name="screenShotBackgroundPathPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 26</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 25</value>
   </data>
-  <data name="tabPageMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="screenShotMarginlabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 101</value>
+  </data>
+  <data name="listViewLog.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="takeScreenShotBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>525, 4</value>
@@ -588,8 +615,8 @@
   <data name="overlaySettingsTabPage.Size" type="System.Drawing.Size, System.Drawing">
     <value>659, 415</value>
   </data>
-  <data name="screenShotBackgroundPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;overlaySettingsTabPage.Parent" xml:space="preserve">
+    <value>overlayTabUI1</value>
   </data>
   <data name="&gt;&gt;screenShotMargin.Name" xml:space="preserve">
     <value>screenShotMargin</value>
@@ -599,9 +626,6 @@
   </data>
   <data name="&gt;&gt;label_ListEmpty.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="screenShotAutoClippingLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
   </data>
   <data name="checkBoxAutoHide.Location" type="System.Drawing.Point, System.Drawing">
     <value>189, 10</value>
@@ -623,6 +647,9 @@
   </data>
   <data name="screenShotTable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
   </data>
   <data name="screenShotBackgroundMode.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -654,8 +681,8 @@
   <data name="&gt;&gt;screenShotMargin.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="buttonRemoveOverlay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 29</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>px</value>
   </data>
   <data name="overlaysTabPage.TabImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -666,8 +693,11 @@
         spyD5wNYwwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="listViewLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>655, 376</value>
+  <data name="screenShotBackgroundPathPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 26</value>
+  </data>
+  <data name="screenShotMarginlabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;overlaysTabPage.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -681,8 +711,8 @@
   <data name="overlaySettingsTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="screenShotAutoClippingLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="screenShotBackgroundPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="screenShotBackgroundModeLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -717,6 +747,9 @@
   <data name="developers.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="checkBoxAutoHide.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="&gt;&gt;screenShotBackgroundPath.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
@@ -729,8 +762,8 @@
   <data name="ofdImage.Filter" xml:space="preserve">
     <value>*.png;*.jpg;*.jpeg|*.png;*.jpg;*.jpeg</value>
   </data>
-  <data name="overlayPluginInformationGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
   <data name="screenShotBackgroundPathLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 25</value>
@@ -744,8 +777,8 @@
   <data name="overlayTabUI1.Padding" type="System.Drawing.Point, System.Drawing">
     <value>28, 3</value>
   </data>
-  <data name="&gt;&gt;buttonNewOverlay.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="listViewLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
   </data>
   <data name="&gt;&gt;checkBoxAutoHide.Name" xml:space="preserve">
     <value>checkBoxAutoHide</value>
@@ -756,6 +789,9 @@
   <data name="&gt;&gt;takeScreenShotBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Add/Remove overlays</value>
+  </data>
   <data name="&gt;&gt;developers.Name" xml:space="preserve">
     <value>developers</value>
   </data>
@@ -765,17 +801,17 @@
   <data name="&gt;&gt;repo_dev_info.Parent" xml:space="preserve">
     <value>overlayPluginInformationGroupBox</value>
   </data>
-  <data name="overlayTabUI1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>657, 453</value>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
   </data>
   <data name="screenShotTable.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="screenShotMarginlabel" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="screenShotAutoClippingLabel" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="screenShotBackgroundModeLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="screenShotBackgroundPathLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="screenShotPathPanel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="screenShotBackgroundPathPanel" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="screenShotAutoClipping" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="screenShotBackgroundMode" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="screenShotMargin" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="screenShotPathLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,100,Percent,100" /&gt;&lt;Rows Styles="Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="screenShotMarginlabel" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="screenShotAutoClippingLabel" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="screenShotBackgroundModeLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="screenShotBackgroundPathLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="screenShotPathPanel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="screenShotBackgroundPathPanel" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="screenShotAutoClipping" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="screenShotBackgroundMode" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="screenShotPathLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel1" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,100,Percent,100" /&gt;&lt;Rows Styles="Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="&gt;&gt;ofdImage.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;screenShotPathGroupbox.Name" xml:space="preserve">
-    <value>screenShotPathGroupbox</value>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>535, 3</value>
   </data>
   <data name="screenShotPathPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>101, 1</value>
@@ -796,7 +832,7 @@
     <value>Fill</value>
   </data>
   <data name="&gt;&gt;screenShotMargin.Parent" xml:space="preserve">
-    <value>screenShotTable</value>
+    <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;repo_dev_info.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -806,6 +842,9 @@
   </data>
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>
+  </data>
+  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;special_thanks.Name" xml:space="preserve">
     <value>special_thanks</value>
@@ -817,10 +856,13 @@
     <value>RainbowMage.OverlayPlugin.OverlayTabUI, OverlayPlugin.Core, Version=0.3.4.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;screenShotMargin.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;screenShotTable.Parent" xml:space="preserve">
     <value>screenShotPathGroupbox</value>
+  </data>
+  <data name="label_ListEmpty.Size" type="System.Drawing.Size, System.Drawing">
+    <value>566, 242</value>
   </data>
   <data name="&gt;&gt;screenShotTable.Name" xml:space="preserve">
     <value>screenShotTable</value>
@@ -843,26 +885,26 @@
   <data name="screenShotBackgroundPathLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 26</value>
   </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="menuCopyLogAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 22</value>
   </data>
   <data name="&gt;&gt;screenShotPathPanel.Parent" xml:space="preserve">
     <value>screenShotTable</value>
   </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>screenShotTable</value>
+  </data>
   <data name="&gt;&gt;overlayPluginInformationGroupBox.Name" xml:space="preserve">
     <value>overlayPluginInformationGroupBox</value>
   </data>
-  <data name="menuLogCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
+  <data name="screenShotBackgroundMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 52</value>
   </data>
   <data name="&gt;&gt;screenShotBackgroundPathSelect.Name" xml:space="preserve">
     <value>screenShotBackgroundPathSelect</value>
   </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+  <data name="listViewLog.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="tabPageMain.Text" xml:space="preserve">
     <value>General</value>
@@ -879,8 +921,8 @@
   <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>655, 38</value>
+  <data name="screenShotAutoClippingLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;developers.Parent" xml:space="preserve">
     <value>overlayPluginInformationGroupBox</value>
@@ -907,11 +949,8 @@
   <data name="tabPageMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;overlayLogsTabPage.Type" xml:space="preserve">
-    <value>RainbowMage.OverlayPlugin.OverlayPageUI, OverlayPlugin.Core, Version=0.3.4.1, Culture=neutral, PublicKeyToken=null</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 0</value>
   </data>
   <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
     <value>tabControl</value>
@@ -921,6 +960,9 @@
   </data>
   <data name="tabControl.Font" type="System.Drawing.Font, System.Drawing">
     <value>굴림, 9pt</value>
+  </data>
+  <data name="menuLogCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 22</value>
   </data>
   <data name="screenShotPath.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -938,7 +980,7 @@
     <value>Remove</value>
   </data>
   <data name="screenShotMargin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
+    <value>125, 23</value>
   </data>
   <data name="screenShotBackgroundPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 1, 0, 0</value>
@@ -948,6 +990,9 @@
   </data>
   <data name="overlaysTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, 39</value>
+  </data>
+  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="developers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -967,20 +1012,14 @@
   <data name="developers.Size" type="System.Drawing.Size, System.Drawing">
     <value>635, 17</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>535, 3</value>
-  </data>
   <data name="screenShotPathSelectButton.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="screenShotAutoClippingLabel.Text" xml:space="preserve">
-    <value>Auto Clipping</value>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="menuClearLog.Text" xml:space="preserve">
     <value>Clear logs</value>
-  </data>
-  <data name="&gt;&gt;menuFollowLatestLog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="screenShotPathPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -994,17 +1033,8 @@
   <data name="&gt;&gt;overlayInformationTabPage.Name" xml:space="preserve">
     <value>overlayInformationTabPage</value>
   </data>
-  <data name="overlayInformationTabPage.TabImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xNkRpr/UAAAE5SURBVDhPrZQx
-        TgMxEEWNBH0OkCJdcogUEcoB0nAVLpAiBeIECOUQOUBKjkBBB2VERUG5+c/MGC/reCVkS0+a+TMe2Tvj
-        DV3XNaUogtZaPIk38WW8mrYu7YGhEMJE7AVODXImg/09J4Sl+BA4nGgnNmJqYKMRI4fcZa9GVoyTebGj
-        mGWxW7HI/JkgB4c96aR5Qb/m0bUs9ime/2jX4kXg7JNuQRqAwVXSyVJSCHNxU9AX4lvgrKJmATqHscs3
-        OFr34u5C7EFgbKNvIqOBscmTHa138XghRqMwDtE30bs2zZMdrVpBuo9xir6JzQs2v/JYU2oFGXSMXlPG
-        xqZYkFzhn+t3bCxYG+xBQS0G219Lf7Atofb0rtw2f/zpWWK7n0MSfk7a5veVo7USW3EQJwMbLTagRFH8
-        P104A3CtC1ZCZNpjAAAAAElFTkSuQmCC
-</value>
+  <data name="overlayLogsTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, 39</value>
   </data>
   <data name="checkBoxAutoHide.Text" xml:space="preserve">
     <value>Automatically hide overlays</value>
@@ -1039,8 +1069,14 @@
   <data name="&gt;&gt;screenShotAutoClipping.Parent" xml:space="preserve">
     <value>screenShotTable</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Add/Remove overlays</value>
+  <data name="&gt;&gt;screenShotMarginlabel.Name" xml:space="preserve">
+    <value>screenShotMarginlabel</value>
+  </data>
+  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="screenShotAutoClippingLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;menuFollowLatestLog.Name" xml:space="preserve">
     <value>menuFollowLatestLog</value>
@@ -1059,6 +1095,18 @@
   </data>
   <data name="&gt;&gt;screenShotBackgroundMode.Parent" xml:space="preserve">
     <value>screenShotTable</value>
+  </data>
+  <data name="overlayInformationTabPage.TabImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xNkRpr/UAAAE5SURBVDhPrZQx
+        TgMxEEWNBH0OkCJdcogUEcoB0nAVLpAiBeIECOUQOUBKjkBBB2VERUG5+c/MGC/reCVkS0+a+TMe2Tvj
+        DV3XNaUogtZaPIk38WW8mrYu7YGhEMJE7AVODXImg/09J4Sl+BA4nGgnNmJqYKMRI4fcZa9GVoyTebGj
+        mGWxW7HI/JkgB4c96aR5Qb/m0bUs9ime/2jX4kXg7JNuQRqAwVXSyVJSCHNxU9AX4lvgrKJmATqHscs3
+        OFr34u5C7EFgbKNvIqOBscmTHa138XghRqMwDtE30bs2zZMdrVpBuo9xir6JzQs2v/JYU2oFGXSMXlPG
+        xqZYkFzhn+t3bCxYG+xBQS0G219Lf7Atofb0rtw2f/zpWWK7n0MSfk7a5veVo7USW3EQJwMbLTagRFH8
+        P104A3CtC1ZCZNpjAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="screenShotAutoClipping.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1102,6 +1150,12 @@
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 6</value>
   </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabControl.ItemSize" type="System.Drawing.Size, System.Drawing">
+    <value>46, 140</value>
+  </data>
   <data name="repo_dev_info_special.Size" type="System.Drawing.Size, System.Drawing">
     <value>635, 38</value>
   </data>
@@ -1114,11 +1168,14 @@
   <data name="repo_dev_info_special.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBoxAutoHide.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label_ListEmpty.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 32</value>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="button1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="&gt;&gt;screenShotAutoClippingLabel.Parent" xml:space="preserve">
     <value>screenShotTable</value>
@@ -1150,14 +1207,11 @@
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>overlaysTabPage</value>
   </data>
-  <data name="&gt;&gt;overlaySettingsTabPage.Parent" xml:space="preserve">
-    <value>overlayTabUI1</value>
-  </data>
   <data name="label_ListEmpty.Text" xml:space="preserve">
     <value>Click [Add] button to configure overlays.</value>
   </data>
-  <data name="screenShotBackgroundPathPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>531, 25</value>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="screenShotPathSelectButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -1165,11 +1219,11 @@
   <data name="checkBoxAutoHide.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;overlaySettingsTabPage.Name" xml:space="preserve">
-    <value>overlaySettingsTabPage</value>
+  <data name="&gt;&gt;special_thanks.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="tabControl.ItemSize" type="System.Drawing.Size, System.Drawing">
-    <value>46, 140</value>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1222,8 +1276,14 @@
   <data name="&gt;&gt;label_ListEmpty.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="listViewLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>655, 376</value>
+  </data>
   <data name="&gt;&gt;overlayInformationTabPage.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
   </data>
   <data name="screenShotTable.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 20</value>
@@ -1252,17 +1312,17 @@
   <data name="label_ListEmpty.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="listViewLog.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;buttonNewOverlay.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
-  <data name="button1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="screenShotBackgroundModeLabel.Text" xml:space="preserve">
     <value>Fill Mode</value>
+  </data>
+  <data name="screenShotAutoClippingLabel.Text" xml:space="preserve">
+    <value>Auto Clipping</value>
   </data>
   <data name="&gt;&gt;panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1279,8 +1339,8 @@
   <data name="screenShotTable.RowCount" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="screenShotMarginlabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 101</value>
+  <data name="screenShotAutoClippingLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 76</value>
   </data>
   <data name="&gt;&gt;buttonNewOverlay.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -1330,11 +1390,11 @@
   <data name="overlayInformationTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, 39</value>
   </data>
-  <data name="screenShotAutoClippingLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 76</value>
-  </data>
   <data name="&gt;&gt;fbdScreenShotPath.Name" xml:space="preserve">
     <value>fbdScreenShotPath</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="screenShotTable.Size" type="System.Drawing.Size, System.Drawing">
     <value>633, 127</value>
@@ -1342,8 +1402,11 @@
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 0</value>
   </data>
-  <data name="listViewLog.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>531, 25</value>
+  </data>
+  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ControlPanel</value>
@@ -1369,11 +1432,14 @@
   <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
     <value>toolStripMenuItem1</value>
   </data>
-  <data name="&gt;&gt;screenShotBackgroundMode.Name" xml:space="preserve">
-    <value>screenShotBackgroundMode</value>
+  <data name="&gt;&gt;screenShotPathGroupbox.Name" xml:space="preserve">
+    <value>screenShotPathGroupbox</value>
   </data>
   <data name="&gt;&gt;overlayTabUI1.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="buttonRemoveOverlay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 29</value>
   </data>
   <data name="takeScreenShotBtn.Text" xml:space="preserve">
     <value>Take ScreenShot</value>
@@ -1391,7 +1457,7 @@
     <value>4, 51</value>
   </data>
   <data name="screenShotMargin.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
+    <value>Fill</value>
   </data>
   <data name="screenShotBackgroundMode.Items" xml:space="preserve">
     <value>Hide</value>
@@ -1426,8 +1492,8 @@
   <data name="buttonNewOverlay.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 4</value>
   </data>
-  <data name="&gt;&gt;repo_dev_info_special.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="screenShotBackgroundPathPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1436,7 +1502,7 @@
     <value>423, 17</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ko-KR</value>
+    <value>ja-JP</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
