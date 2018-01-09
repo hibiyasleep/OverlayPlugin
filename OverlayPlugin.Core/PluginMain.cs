@@ -22,8 +22,13 @@ namespace RainbowMage.OverlayPlugin
         internal List<IOverlay> Overlays { get; private set; }
         internal List<IOverlayAddon> Addons { get; set; }
         internal string PluginDirectory { get; private set; }
-        
-        public static string PrimaryUser { get; set; }
+
+        private static string PrimaryUserInternal = "YOU";
+        public static string PrimaryUser
+        {
+            get { return PrimaryUserInternal; }
+            set { PrimaryUserInternal = value; }
+        }
         public static Logger Logger { get; set; }
 
         public PluginMain(string pluginDirectory, Logger logger)
