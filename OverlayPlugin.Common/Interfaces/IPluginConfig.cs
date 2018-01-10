@@ -9,10 +9,10 @@ namespace RainbowMage.OverlayPlugin
         bool HideOverlaysWhenNotActive { get; set; }
         Version Version { get; set; }
         bool IsFirstLaunch { get; set; }
-        string ScreenShotSavePath { get; }
-        string ScreenShotBackgroundPath { get; }
-        int ScreenShotBackgroundMode { get; }
-        bool ScreenShotAutoClipping { get; }
-        int ScreenShotMargin { get; }
+        string ScreenshotSavePath { get; }
+        string ScreenshotBackgroundPath { get; }
+        int ScreenshotBackgroundMode { get; }
+        bool ScreenshotAutoClipping { get; }
+        int ScreenshotMargin { get; }
     }
 }

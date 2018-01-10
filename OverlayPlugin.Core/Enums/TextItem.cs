@@ -15,6 +15,6 @@
         ToggleVisible,
         ToggleClickthru,
         ToggleLock,
-        ScreenShot
+        Screenshot
     }
 }

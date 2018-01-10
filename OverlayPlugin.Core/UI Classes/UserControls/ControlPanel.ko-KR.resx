@@ -172,7 +172,7 @@
   <data name="overlaysTabPage.Text" xml:space="preserve">
     <value>오버레이</value>
   </data>
-  <data name="takeScreenShotBtn.Text" xml:space="preserve">
+  <data name="takeScreenshotBtn.Text" xml:space="preserve">
     <value>스크린샷 촬영</value>
   </data>
   <data name="checkBoxAutoHide.Size" type="System.Drawing.Size, System.Drawing">

@@ -177,10 +177,10 @@
   <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>777, 484</value>
   </data>
-  <data name="takeScreenShotBtn.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="takeScreenshotBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>647, 4</value>
   </data>
-  <data name="takeScreenShotBtn.Text" xml:space="preserve">
+  <data name="takeScreenshotBtn.Text" xml:space="preserve">
     <value>画面キャプチャ</value>
   </data>
   <data name="checkBoxAutoHide.Location" type="System.Drawing.Point, System.Drawing">

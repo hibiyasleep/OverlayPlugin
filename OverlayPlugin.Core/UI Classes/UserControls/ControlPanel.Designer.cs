@@ -42,13 +42,13 @@ namespace RainbowMage.OverlayPlugin
             this.tabPageMain = new RainbowMage.OverlayPlugin.OverlayPageUI();
             this.label_ListEmpty = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.fbdScreenShotPath = new System.Windows.Forms.FolderBrowserDialog();
+            this.fbdScreenshotPath = new System.Windows.Forms.FolderBrowserDialog();
             this.ofdImage = new System.Windows.Forms.OpenFileDialog();
             this.overlayTabUI1 = new RainbowMage.OverlayPlugin.OverlayTabUI();
             this.overlaysTabPage = new RainbowMage.OverlayPlugin.OverlayPageUI();
             this.tabControl = new RainbowMage.OverlayPlugin.TabControlExt();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.takeScreenShotBtn = new System.Windows.Forms.Button();
+            this.takeScreenshotBtn = new System.Windows.Forms.Button();
             this.checkBoxAutoHide = new System.Windows.Forms.CheckBox();
             this.buttonNewOverlay = new System.Windows.Forms.Button();
             this.buttonRemoveOverlay = new System.Windows.Forms.Button();
@@ -168,9 +168,9 @@ namespace RainbowMage.OverlayPlugin
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
-            // fbdScreenShotPath
+            // fbdScreenshotPath
             // 
-            resources.ApplyResources(this.fbdScreenShotPath, "fbdScreenShotPath");
+            resources.ApplyResources(this.fbdScreenshotPath, "fbdScreenshotPath");
             // 
             // ofdImage
             // 
@@ -206,18 +206,18 @@ namespace RainbowMage.OverlayPlugin
             // panel1
             // 
             resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Controls.Add(this.takeScreenShotBtn);
+            this.panel1.Controls.Add(this.takeScreenshotBtn);
             this.panel1.Controls.Add(this.checkBoxAutoHide);
             this.panel1.Controls.Add(this.buttonNewOverlay);
             this.panel1.Controls.Add(this.buttonRemoveOverlay);
             this.panel1.Name = "panel1";
             // 
-            // takeScreenShotBtn
+            // takeScreenshotBtn
             // 
-            resources.ApplyResources(this.takeScreenShotBtn, "takeScreenShotBtn");
-            this.takeScreenShotBtn.Name = "takeScreenShotBtn";
-            this.takeScreenShotBtn.UseVisualStyleBackColor = true;
-            this.takeScreenShotBtn.Click += new System.EventHandler(this.TakeScreenShotBtn_Click);
+            resources.ApplyResources(this.takeScreenshotBtn, "takeScreenshotBtn");
+            this.takeScreenshotBtn.Name = "takeScreenshotBtn";
+            this.takeScreenshotBtn.UseVisualStyleBackColor = true;
+            this.takeScreenshotBtn.Click += new System.EventHandler(this.TakeScreenshotBtn_Click);
             // 
             // checkBoxAutoHide
             // 
@@ -519,8 +519,8 @@ namespace RainbowMage.OverlayPlugin
         private OverlayPageUI overlayLogsTabPage;
         private OverlayPageUI overlayInformationTabPage;
         private Panel panel1;
-        private Button takeScreenShotBtn;
-        private FolderBrowserDialog fbdScreenShotPath;
+        private Button takeScreenshotBtn;
+        private FolderBrowserDialog fbdScreenshotPath;
         private OpenFileDialog ofdImage;
         private OverlayPageUI overlaySettingsTabPage;
         private GroupBox screenShotPathGroupbox;

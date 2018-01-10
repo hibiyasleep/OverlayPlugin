@@ -219,30 +219,30 @@ namespace RainbowMage.OverlayPlugin
             }
         }
 
-        [XmlElement("ScreenShotSavePath")]
+        [XmlElement("ScreenshotSavePath")]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [Browsable(false)]
-        public string ScreenShotSavePath { get; set; }
+        public string ScreenshotSavePath { get; set; }
 
-        [XmlElement("ScreenShotBackgroundPath")]
+        [XmlElement("ScreenshotBackgroundPath")]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [Browsable(false)]
-        public string ScreenShotBackgroundPath { get; set; }
+        public string ScreenshotBackgroundPath { get; set; }
 
-        [XmlElement("ScreenShotBackgroundMode")]
+        [XmlElement("ScreenshotBackgroundMode")]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [Browsable(false)]
-        public int ScreenShotBackgroundMode { get; set; }
+        public int ScreenshotBackgroundMode { get; set; }
 
-        [XmlElement("ScreenShotAutoClipping")]
+        [XmlElement("ScreenshotAutoClipping")]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [Browsable(false)]
-        public bool ScreenShotAutoClipping { get; set; }
+        public bool ScreenshotAutoClipping { get; set; }
 
-        [XmlElement("ScreenShotMargin")]
+        [XmlElement("ScreenshotMargin")]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [Browsable(false)]
-        public int ScreenShotMargin { get; set; }
+        public int ScreenshotMargin { get; set; }
 
         [XmlElement("Version")]
         [EditorBrowsable(EditorBrowsableState.Never)]
@@ -354,7 +354,7 @@ namespace RainbowMage.OverlayPlugin
             this.Overlays.Add(KagerouDefaultOverlay);
             this.Overlays.Add(CatsEyeDefaultOverlay);
             //this.Overlays.Add(spellTimerOverlayConfig);
-            this.ScreenShotSavePath = PluginMain.DefaultScreenShotPath;
+            this.ScreenshotSavePath = PluginMain.DefaultScreenshotPath;
         }
 
         /// <summary>

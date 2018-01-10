@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace RainbowMage.OverlayPlugin
 {
-    internal static class ScreenShot
+    internal static class Screenshot
     {
-        public static void SaveScreenShot(DIBitmap buffer, ScreenShotConfig config)
+        public static void SaveScreenshot(DIBitmap buffer, ScreenshotConfig config)
         {
             Bitmap bitmap = null;
 
@@ -37,7 +37,7 @@ namespace RainbowMage.OverlayPlugin
             catch (Exception ex)
             {
                 bitmap?.Dispose();
-                PluginMain.Logger.Log(LogLevel.Error, "OverlayPlugin Can't Take ScreenShot: {0}", ex.ToString());
+                PluginMain.Logger.Log(LogLevel.Error, "OverlayPlugin Can't Take Screenshot: {0}", ex.ToString());
                 return;
             }
 
@@ -52,7 +52,7 @@ namespace RainbowMage.OverlayPlugin
                     }
                     catch (Exception ex)
                     {
-                        PluginMain.Logger.Log(LogLevel.Error, "OverlayPlugin Can't Take ScreenShot: {0}", ex.ToString());
+                        PluginMain.Logger.Log(LogLevel.Error, "OverlayPlugin Can't Take Screenshot: {0}", ex.ToString());
                     }
                 }
 
@@ -65,14 +65,14 @@ namespace RainbowMage.OverlayPlugin
                 Directory.CreateDirectory(config.SavePath);
 
                 src.Save(
-                    Path.Combine(config.SavePath, DateTime.Now.ToString("'ScreenShot_'yyyy-MM-dd_HH-mm-ss.fff'.png'")),
+                    Path.Combine(config.SavePath, DateTime.Now.ToString("'Screenshot_'yyyy-MM-dd_HH-mm-ss.fff'.png'")),
                     ImageFormat.Png);
             }
         }
 
-        private static void DrawBackground(Bitmap ss, string path, ScreenShotBackgroundMode mode)
+        private static void DrawBackground(Bitmap ss, string path, ScreenshotBackgroundMode mode)
         {
-            if (mode == ScreenShotBackgroundMode.Hide)
+            if (mode == ScreenshotBackgroundMode.Hide)
                 return;
 
             using (var bg = Image.FromFile(path))
@@ -83,27 +83,27 @@ namespace RainbowMage.OverlayPlugin
 
                     switch (mode)
                     {
-                        case ScreenShotBackgroundMode.Normal:
+                        case ScreenshotBackgroundMode.Normal:
                             g.DrawImageUnscaled(bg, 0, 0);
                             return;
 
-                        case ScreenShotBackgroundMode.Center:
+                        case ScreenshotBackgroundMode.Center:
                             g.DrawImageUnscaled(bg, (ss.Width - bg.Width) / 2 , (ss.Height - bg.Height) / 2);
                             return;
 
-                        case ScreenShotBackgroundMode.Fill:
+                        case ScreenshotBackgroundMode.Fill:
                             g.DrawImage(bg,
                                 new Rectangle(Point.Empty, ss.Size),
                                 new Rectangle(Point.Empty, bg.Size),
                                 GraphicsUnit.Pixel);
                             return;
 
-                        case ScreenShotBackgroundMode.Uniform:
-                        case ScreenShotBackgroundMode.UniformToFill:
+                        case ScreenshotBackgroundMode.Uniform:
+                        case ScreenshotBackgroundMode.UniformToFill:
                             {
                                 var scaleX = (double)ss.Width  / bg.Width;
                                 var scaleY = (double)ss.Height / bg.Height;
-                                var scale = mode == ScreenShotBackgroundMode.Uniform ?
+                                var scale = mode == ScreenshotBackgroundMode.Uniform ?
                                             Math.Min(scaleX, scaleY) :
                                             Math.Max(scaleX, scaleY);
                                 

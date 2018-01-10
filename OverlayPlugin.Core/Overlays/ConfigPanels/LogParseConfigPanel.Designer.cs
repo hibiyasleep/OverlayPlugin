@@ -29,35 +29,43 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogParseConfigPanel));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.checkMiniParseVisible = new System.Windows.Forms.CheckBox();
-            this.checkMiniParseClickthru = new System.Windows.Forms.CheckBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+
+            this.buttonLogParseSelectFile = new System.Windows.Forms.Button();
             this.buttonLogParseCopyActXiv = new System.Windows.Forms.Button();
             this.buttonLogParseOpenDevTools = new System.Windows.Forms.Button();
             this.buttonLogParseReloadBrowser = new System.Windows.Forms.Button();
+
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.textLogParseUrl = new System.Windows.Forms.TextBox();
-            this.buttonLogParseSelectFile = new System.Windows.Forms.Button();
-            this.nudMaxFrameRate = new System.Windows.Forms.NumericUpDown();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+
+            this.checkMiniParseVisible = new System.Windows.Forms.CheckBox();
+            this.checkMiniParseClickthru = new System.Windows.Forms.CheckBox();
             this.checkEnableGlobalHotkey = new System.Windows.Forms.CheckBox();
-            this.textGlobalHotkey = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.checkLock = new System.Windows.Forms.CheckBox();
-            this.label10 = new System.Windows.Forms.Label();
+
             this.comboHotkeyType = new System.Windows.Forms.ComboBox();
+
+            this.panel1 = new System.Windows.Forms.Panel();
+
+            this.textGlobalHotkey = new System.Windows.Forms.TextBox();
+            this.textLogParseUrl = new System.Windows.Forms.TextBox();
+
+            this.nudMaxFrameRate = new System.Windows.Forms.NumericUpDown();
+
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaxFrameRate)).BeginInit();
             this.SuspendLayout();
             // 
@@ -252,7 +260,7 @@
             // LogParseConfigPanel
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "LogParseConfigPanel";
@@ -270,31 +278,36 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label6;
-        //private System.Windows.Forms.Label label5;
-        //private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+
+        private System.Windows.Forms.Panel panel1;
+
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkMiniParseVisible;
-        private System.Windows.Forms.CheckBox checkMiniParseClickthru;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label13;
+        
         private System.Windows.Forms.Button buttonLogParseReloadBrowser;
         private System.Windows.Forms.Button buttonLogParseOpenDevTools;
         private System.Windows.Forms.Button buttonLogParseCopyActXiv;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox textLogParseUrl;
         private System.Windows.Forms.Button buttonLogParseSelectFile;
-        private System.Windows.Forms.NumericUpDown nudMaxFrameRate;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+
         private System.Windows.Forms.CheckBox checkEnableGlobalHotkey;
-        private System.Windows.Forms.TextBox textGlobalHotkey;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox checkLock;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox checkMiniParseVisible;
+        private System.Windows.Forms.CheckBox checkMiniParseClickthru;
+
         private System.Windows.Forms.ComboBox comboHotkeyType;
+
+        private System.Windows.Forms.TextBox textGlobalHotkey;
+        private System.Windows.Forms.TextBox textLogParseUrl;
+        
+        private System.Windows.Forms.NumericUpDown nudMaxFrameRate;
     }
 }

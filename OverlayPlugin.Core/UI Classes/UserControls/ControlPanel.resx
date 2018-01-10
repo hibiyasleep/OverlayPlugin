@@ -150,7 +150,7 @@
   <data name="menuFollowLatestLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 22</value>
   </data>
-  <data name="takeScreenShotBtn.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="takeScreenshotBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 29</value>
   </data>
   <data name="&gt;&gt;screenShotBackgroundMode.ZOrder" xml:space="preserve">
@@ -276,7 +276,7 @@
   <data name="&gt;&gt;overlayLogsTabPage.Parent" xml:space="preserve">
     <value>overlayTabUI1</value>
   </data>
-  <data name="&gt;&gt;takeScreenShotBtn.Parent" xml:space="preserve">
+  <data name="&gt;&gt;takeScreenshotBtn.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;repo_dev_info_special.Type" xml:space="preserve">
@@ -348,7 +348,7 @@
   <data name="&gt;&gt;menuClearLog.Name" xml:space="preserve">
     <value>menuClearLog</value>
   </data>
-  <data name="takeScreenShotBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="takeScreenshotBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="tabPageMain.TabIndex" type="System.Int32, mscorlib">
@@ -357,7 +357,7 @@
   <data name="&gt;&gt;screenShotPathLabel.Parent" xml:space="preserve">
     <value>screenShotTable</value>
   </data>
-  <data name="&gt;&gt;takeScreenShotBtn.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;takeScreenshotBtn.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="repo_dev_info_special.Text" xml:space="preserve">
@@ -391,7 +391,7 @@
     <value>2</value>
   </data>
   <data name="screenShotPathGroupbox.Text" xml:space="preserve">
-    <value>ScreenShot</value>
+    <value>Screenshot</value>
   </data>
   <data name="&gt;&gt;overlaySettingsTabPage.Name" xml:space="preserve">
     <value>overlaySettingsTabPage</value>
@@ -546,7 +546,7 @@
   <data name="repo_dev_info.Size" type="System.Drawing.Size, System.Drawing">
     <value>635, 38</value>
   </data>
-  <data name="takeScreenShotBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="takeScreenshotBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="screenShotPathSelectButton.Size" type="System.Drawing.Size, System.Drawing">
@@ -603,7 +603,7 @@
   <data name="listViewLog.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="takeScreenShotBtn.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="takeScreenshotBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>525, 4</value>
   </data>
   <data name="screenShotPath.Location" type="System.Drawing.Point, System.Drawing">
@@ -786,7 +786,7 @@
   <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="&gt;&gt;takeScreenShotBtn.Type" xml:space="preserve">
+  <data name="&gt;&gt;takeScreenshotBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
@@ -1234,7 +1234,7 @@
   <data name="buttonRemoveOverlay.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;fbdScreenShotPath.Type" xml:space="preserve">
+  <data name="&gt;&gt;fbdScreenshotPath.Type" xml:space="preserve">
     <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="screenShotMargin.TabIndex" type="System.Int32, mscorlib">
@@ -1390,8 +1390,8 @@
   <data name="overlayInformationTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, 39</value>
   </data>
-  <data name="&gt;&gt;fbdScreenShotPath.Name" xml:space="preserve">
-    <value>fbdScreenShotPath</value>
+  <data name="&gt;&gt;fbdScreenshotPath.Name" xml:space="preserve">
+    <value>fbdScreenshotPath</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -1414,8 +1414,8 @@
   <data name="&gt;&gt;screenShotAutoClipping.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;takeScreenShotBtn.Name" xml:space="preserve">
-    <value>takeScreenShotBtn</value>
+  <data name="&gt;&gt;takeScreenshotBtn.Name" xml:space="preserve">
+    <value>takeScreenshotBtn</value>
   </data>
   <data name="&gt;&gt;developers.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -1441,8 +1441,8 @@
   <data name="buttonRemoveOverlay.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 29</value>
   </data>
-  <data name="takeScreenShotBtn.Text" xml:space="preserve">
-    <value>Take ScreenShot</value>
+  <data name="takeScreenshotBtn.Text" xml:space="preserve">
+    <value>Take Screenshot</value>
   </data>
   <data name="&gt;&gt;columnHeader3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1486,7 +1486,7 @@
   <data name="&gt;&gt;screenShotPath.Name" xml:space="preserve">
     <value>screenShotPath</value>
   </data>
-  <data name="takeScreenShotBtn.TabIndex" type="System.Int32, mscorlib">
+  <data name="takeScreenshotBtn.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="buttonNewOverlay.Location" type="System.Drawing.Point, System.Drawing">
@@ -1498,7 +1498,7 @@
   <data name="screenShotBackgroundPathPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <metadata name="fbdScreenShotPath.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="fbdScreenshotPath.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>423, 17</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

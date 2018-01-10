@@ -5,13 +5,13 @@ namespace RainbowMage.HtmlRenderer
 {
     class BuiltinFunctionHandler : CefV8Handler
     {
-        public event EventHandler<TakeScreenShotEventArgs> TakeScreenShot;
+        public event EventHandler<TakeScreenshotEventArgs> TakeScreenshot;
         public event EventHandler<BroadcastMessageEventArgs> BroadcastMessage;
         public event EventHandler<SendMessageEventArgs> SendMessage;
         public event EventHandler<SendMessageEventArgs> OverlayMessage;
         public event EventHandler<EndEncounterEventArgs> EndEncounter;
 
-        public const string TakeScreenShotFunctionName = "takeScreenShot";
+        public const string TakeScreenshotFunctionName = "takeScreenshot";
         public const string BroadcastMessageFunctionName = "broadcastMessage";
         public const string SendMessageFunctionName = "sendMessage";
         public const string OverlayMessageFunctionName = "overlayMessage";
@@ -26,11 +26,11 @@ namespace RainbowMage.HtmlRenderer
             {
                 EndEncounter?.Invoke(obj, new EndEncounterEventArgs());
             }
-            else if (name == TakeScreenShotFunctionName)
+            else if (name == TakeScreenshotFunctionName)
             {
                 if (arguments.Length > 0)
                 {
-                    TakeScreenShot?.Invoke(obj, new TakeScreenShotEventArgs(arguments[0].GetStringValue()));
+                    TakeScreenshot?.Invoke(obj, new TakeScreenshotEventArgs(arguments[0].GetStringValue()));
                 }
                 else
                 {
