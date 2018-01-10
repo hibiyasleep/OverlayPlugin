@@ -153,4 +153,10 @@
   <data name="label9.Text" xml:space="preserve">
     <value>위치 잠금</value>
   </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>플레이어 이름 숨기기</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>데이터 갱신 주기</value>
+  </data>
 </root>

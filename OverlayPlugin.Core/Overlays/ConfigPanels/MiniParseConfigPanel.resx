@@ -157,7 +157,7 @@
     <value>29</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
-    <value>Refresh interval</value>
+    <value>Data update rate</value>
   </data>
   <data name="label12.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
