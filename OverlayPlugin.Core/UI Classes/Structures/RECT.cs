@@ -6,6 +6,7 @@ namespace RainbowMage.OverlayPlugin
     /*
      * Part of SRT4: https://github.com/laiglinne-ff/SRT4/blob/master/Client/SRinnLib/Design/MaterialColorTab.cs
      * Copyright (c) 2014 Laighlinne; Licensed GNU General Public License 3.0.
+     * + + OverlayPageUI, OverlayTabUI + +
      */
     [StructLayout(LayoutKind.Sequential)]
     public struct RECT
