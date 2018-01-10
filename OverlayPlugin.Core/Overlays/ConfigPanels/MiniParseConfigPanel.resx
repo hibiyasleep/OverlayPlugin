@@ -126,14 +126,8 @@
     <value>Fill</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="nudUpdateInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 155</value>
-  </data>
   <data name="nudUpdateInterval.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
-  </data>
-  <data name="nudUpdateInterval.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 21</value>
   </data>
   <data name="nudUpdateInterval.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -158,12 +152,6 @@
   </data>
   <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 154</value>
-  </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 20</value>
   </data>
   <data name="label12.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -192,12 +180,6 @@
   <data name="checkEnablePlayerName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkEnablePlayerName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 177</value>
-  </data>
-  <data name="checkEnablePlayerName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>488, 16</value>
-  </data>
   <data name="checkEnablePlayerName.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
   </data>
@@ -221,12 +203,6 @@
   </data>
   <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 174</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 22</value>
   </data>
   <data name="label11.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -258,12 +234,6 @@
   <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 131</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 23</value>
-  </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
@@ -294,12 +264,6 @@
   <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 110</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 21</value>
-  </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
@@ -324,14 +288,8 @@
   <data name="textMiniParseSortKey.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="textMiniParseSortKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 89</value>
-  </data>
   <data name="textMiniParseSortKey.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
-  </data>
-  <data name="textMiniParseSortKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 21</value>
   </data>
   <data name="textMiniParseSortKey.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -356,12 +314,6 @@
   </data>
   <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 88</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 22</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -393,12 +345,6 @@
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 22</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 22</value>
-  </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -428,12 +374,6 @@
   </data>
   <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 22</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -465,12 +405,6 @@
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 66</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 22</value>
-  </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -501,12 +435,6 @@
   <data name="checkMiniParseVisible.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkMiniParseVisible.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 3</value>
-  </data>
-  <data name="checkMiniParseVisible.Size" type="System.Drawing.Size, System.Drawing">
-    <value>488, 16</value>
-  </data>
   <data name="checkMiniParseVisible.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -530,12 +458,6 @@
   </data>
   <data name="checkMiniParseClickthru.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="checkMiniParseClickthru.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 25</value>
-  </data>
-  <data name="checkMiniParseClickthru.Size" type="System.Drawing.Size, System.Drawing">
-    <value>488, 16</value>
   </data>
   <data name="checkMiniParseClickthru.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -561,12 +483,6 @@
   <data name="buttonMiniParseCopyActXiv.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="buttonMiniParseCopyActXiv.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="buttonMiniParseCopyActXiv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 52</value>
-  </data>
   <data name="buttonMiniParseCopyActXiv.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -587,12 +503,6 @@
   </data>
   <data name="buttonMiniParseOpenDevTools.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
-  </data>
-  <data name="buttonMiniParseOpenDevTools.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 3</value>
-  </data>
-  <data name="buttonMiniParseOpenDevTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 52</value>
   </data>
   <data name="buttonMiniParseOpenDevTools.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -618,12 +528,6 @@
   <data name="buttonMiniParseReloadBrowser.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="buttonMiniParseReloadBrowser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>473, 3</value>
-  </data>
-  <data name="buttonMiniParseReloadBrowser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 52</value>
-  </data>
   <data name="buttonMiniParseReloadBrowser.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -645,17 +549,11 @@
   <data name="tableLayoutPanel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="tableLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
   <data name="tableLayoutPanel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tableLayoutPanel3.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>705, 58</value>
   </data>
   <data name="tableLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -678,14 +576,8 @@
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 300</value>
-  </data>
   <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>705, 58</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -708,14 +600,8 @@
   <data name="textMiniParseUrl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="textMiniParseUrl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
   <data name="textMiniParseUrl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
-  </data>
-  <data name="textMiniParseUrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>442, 21</value>
   </data>
   <data name="textMiniParseUrl.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -741,14 +627,8 @@
   <data name="buttonMiniParseSelectFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="buttonMiniParseSelectFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>442, 0</value>
-  </data>
   <data name="buttonMiniParseSelectFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
-  </data>
-  <data name="buttonMiniParseSelectFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
   </data>
   <data name="buttonMiniParseSelectFile.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -771,17 +651,11 @@
   <data name="tableLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 67</value>
-  </data>
   <data name="tableLayoutPanel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
   </data>
   <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 20</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -804,14 +678,8 @@
   <data name="comboMiniParseSortType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="comboMiniParseSortType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 111</value>
-  </data>
   <data name="comboMiniParseSortType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
-  </data>
-  <data name="comboMiniParseSortType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 20</value>
   </data>
   <data name="comboMiniParseSortType.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -831,14 +699,8 @@
   <data name="nudMaxFrameRate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="nudMaxFrameRate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 132</value>
-  </data>
   <data name="nudMaxFrameRate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
-  </data>
-  <data name="nudMaxFrameRate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 21</value>
   </data>
   <data name="nudMaxFrameRate.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -863,12 +725,6 @@
   </data>
   <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 260</value>
-  </data>
-  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>488, 40</value>
   </data>
   <data name="label13.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -896,12 +752,6 @@
   </data>
   <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 196</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 22</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -933,12 +783,6 @@
   <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 218</value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 22</value>
-  </data>
   <data name="label8.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
@@ -963,12 +807,6 @@
   <data name="checkEnableGlobalHotkey.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="checkEnableGlobalHotkey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 199</value>
-  </data>
-  <data name="checkEnableGlobalHotkey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>488, 16</value>
-  </data>
   <data name="checkEnableGlobalHotkey.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
@@ -987,14 +825,8 @@
   <data name="textGlobalHotkey.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="textGlobalHotkey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 219</value>
-  </data>
   <data name="textGlobalHotkey.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
-  </data>
-  <data name="textGlobalHotkey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 21</value>
   </data>
   <data name="textGlobalHotkey.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -1019,12 +851,6 @@
   </data>
   <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 44</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 22</value>
   </data>
   <data name="label9.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -1056,12 +882,6 @@
   <data name="checkLock.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkLock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 47</value>
-  </data>
-  <data name="checkLock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>488, 16</value>
-  </data>
   <data name="checkLock.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
@@ -1082,12 +902,6 @@
   </data>
   <data name="label10.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 240</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 20</value>
   </data>
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -1113,14 +927,8 @@
   <data name="comboHotkeyType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="comboHotkeyType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 241</value>
-  </data>
   <data name="comboHotkeyType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
-  </data>
-  <data name="comboHotkeyType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 20</value>
   </data>
   <data name="comboHotkeyType.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -1140,17 +948,11 @@
   <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
   <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>14</value>
-  </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>705, 358</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1178,9 +980,6 @@
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
-  </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>705, 358</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MiniParseConfigPanel</value>
