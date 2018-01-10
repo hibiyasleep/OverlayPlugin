@@ -1,6 +1,6 @@
 ﻿namespace RainbowMage.OverlayPlugin
 {
-    public enum ScreenShotBackgroundMode
+    public enum ScreenshotBackgroundMode
     {
         Hide = 0,
         Normal = 1,

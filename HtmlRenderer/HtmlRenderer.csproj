@@ -55,7 +55,7 @@
     <Compile Include="Handlers\LifeSpanHandler.cs" />
     <Compile Include="Handlers\LoadHandler.cs" />
     <Compile Include="Handlers\MenuHandler.cs" />
-    <Compile Include="Args\TakeScreenShotEventArgs.cs" />
+    <Compile Include="Args\TakeScreenshotEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderer.cs" />
     <Compile Include="Handlers\RenderHandler.cs" />

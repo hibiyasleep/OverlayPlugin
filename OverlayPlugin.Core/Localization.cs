@@ -51,9 +51,9 @@ namespace RainbowMage.OverlayPlugin
             dict[TextItem.ToggleLock, ""] = "Toggle lock";
             dict[TextItem.ToggleLock, "ja"] = "移動/リサイズ制限の切り替え";
             dict[TextItem.ToggleLock, "ko"] = "위치 잠금 끄기 / 켜기";
-            dict[TextItem.ScreenShot, ""] = "ScreenShot";
-            dict[TextItem.ScreenShot, "ja"] = "ScreenShot";
-            dict[TextItem.ScreenShot, "ko"] = "오버레이 스크린샷 촬영";
+            dict[TextItem.Screenshot, ""] = "Screenshot";
+            dict[TextItem.Screenshot, "ja"] = "Screenshot";
+            dict[TextItem.Screenshot, "ko"] = "오버레이 스크린샷 촬영";
         }
 
         public static string GetText(TextItem item)

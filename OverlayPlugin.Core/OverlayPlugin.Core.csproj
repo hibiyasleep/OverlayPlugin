@@ -77,7 +77,7 @@
     <Compile Include="Overlays\LogParseOverlay\LogParseOverlayAddon.cs" />
     <Compile Include="Overlays\LogParseOverlay\LogParseOverlayConfig.cs" />
     <Compile Include="Overlays\MiniParseOverlay\MiniParseSortType.cs" />
-    <Compile Include="ScreenShot.cs" />
+    <Compile Include="Screenshot.cs" />
     <Compile Include="UI Classes\UserControls\OverlayTabUI.cs" />
     <Compile Include="UI Classes\Structures\GraphicsExt.cs" />
     <Compile Include="UI Classes\Structures\RECT.cs" />

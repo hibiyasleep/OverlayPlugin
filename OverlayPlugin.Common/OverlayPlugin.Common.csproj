@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="Args\LogEventArgs.cs" />
     <Compile Include="Enums\LogLevel.cs" />
-    <Compile Include="Enums\ScreenShotBackgroundMode.cs" />
+    <Compile Include="Enums\ScreenshotBackgroundMode.cs" />
     <Compile Include="Interfaces\IOverlay.cs" />
     <Compile Include="Interfaces\IOverlayAddon.cs" />
     <Compile Include="Interfaces\IOverlayConfig.cs" />

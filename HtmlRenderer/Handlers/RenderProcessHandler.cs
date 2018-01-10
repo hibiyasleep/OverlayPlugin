@@ -23,7 +23,7 @@ namespace RainbowMage.HtmlRenderer
             };
 
             this.builtinFunctionHandler.EndEncounter += EndEncounterEvent;
-            this.builtinFunctionHandler.TakeScreenShot += TakeScreenShotEvent;
+            this.builtinFunctionHandler.TakeScreenshot += TakeScreenshotEvent;
         }
 
         private void EndEncounterEvent(object sender, EndEncounterEventArgs e)
@@ -31,9 +31,9 @@ namespace RainbowMage.HtmlRenderer
             Renderer.OnRendererFeatureRequest(sender, new RendererFeatureRequestEventArgs("EndEncounter"));
         }
 
-        private void TakeScreenShotEvent(object sender, TakeScreenShotEventArgs e)
+        private void TakeScreenshotEvent(object sender, TakeScreenshotEventArgs e)
         {
-            Renderer.OnTakeScreenShot(sender, e);
+            Renderer.OnTakeScreenshot(sender, e);
         }
 
         protected override bool OnProcessMessageReceived(CefBrowser browser, CefProcessId sourceProcess, CefProcessMessage message)
@@ -51,8 +51,8 @@ namespace RainbowMage.HtmlRenderer
                 {
                     var apiObject = CefV8Value.CreateObject(null);
 
-                    var takeScreenShotFunction = CefV8Value.CreateFunction(
-                         BuiltinFunctionHandler.TakeScreenShotFunctionName,
+                    var takeScreenshotFunction = CefV8Value.CreateFunction(
+                         BuiltinFunctionHandler.TakeScreenshotFunctionName,
                          builtinFunctionHandler);
 
                     var broadcastMessageFunction = CefV8Value.CreateFunction(
@@ -72,8 +72,8 @@ namespace RainbowMage.HtmlRenderer
                     apiObject.SetValue("overlayName", CefV8Value.CreateString(overlayName), CefV8PropertyAttribute.ReadOnly);
 
                     apiObject.SetValue(
-                        BuiltinFunctionHandler.TakeScreenShotFunctionName,
-                        takeScreenShotFunction,
+                        BuiltinFunctionHandler.TakeScreenshotFunctionName,
+                        takeScreenshotFunction,
                         CefV8PropertyAttribute.ReadOnly);
 
                     apiObject.SetValue(

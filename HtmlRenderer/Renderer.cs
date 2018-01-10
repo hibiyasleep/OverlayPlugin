@@ -17,7 +17,7 @@ namespace RainbowMage.HtmlRenderer
         public static event EventHandler<SendMessageEventArgs> SendMessage;
         public static event EventHandler<SendMessageEventArgs> OverlayMessage;
         public static event EventHandler<RendererFeatureRequestEventArgs> RendererFeatureRequest;
-        public static event EventHandler<TakeScreenShotEventArgs> TakeScreenShotHandler;
+        public static event EventHandler<TakeScreenshotEventArgs> TakeScreenshotHandler;
 
         // Guards access to |allBrowsers| across threads.
         private System.Threading.SemaphoreSlim allBrowsersSemaphore = new System.Threading.SemaphoreSlim(1);
@@ -291,9 +291,9 @@ namespace RainbowMage.HtmlRenderer
             RendererFeatureRequest?.Invoke(sender, e);
         }
 
-        internal static void OnTakeScreenShot(object sender, TakeScreenShotEventArgs e)
+        internal static void OnTakeScreenshot(object sender, TakeScreenshotEventArgs e)
         {
-            TakeScreenShotHandler?.Invoke(sender, e);
+            TakeScreenshotHandler?.Invoke(sender, e);
         }
 
         public void Dispose()

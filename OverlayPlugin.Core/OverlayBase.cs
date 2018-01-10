@@ -96,8 +96,8 @@ namespace RainbowMage.OverlayPlugin
                             case GlobalHotkeyType.ToggleLock:
                                 hook.KeyPressed += (o, e) => this.Config.IsLocked = !this.Config.IsLocked;
                                 break;
-                            case GlobalHotkeyType.ScreenShot:
-                                hook.KeyPressed += (o, e) => this.TakeScreenShot();
+                            case GlobalHotkeyType.Screenshot:
+                                hook.KeyPressed += (o, e) => this.TakeScreenshot();
                                 break;
                             default:
                                 hook.KeyPressed += (o, e) => this.Config.IsVisible = !this.Config.IsVisible;
@@ -356,21 +356,21 @@ namespace RainbowMage.OverlayPlugin
 
         }
 
-        public void TakeScreenShot()
+        public void TakeScreenshot()
         {
-            TakeScreenShot(new ScreenShotConfig
+            TakeScreenshot(new ScreenshotConfig
             {
-                SavePath            = PluginConfig.ScreenShotSavePath,
-                AutoClipping        = PluginConfig.ScreenShotAutoClipping,
-                BackgroundImagePath = PluginConfig.ScreenShotBackgroundPath,
-                BackgroundMode      = (ScreenShotBackgroundMode)PluginConfig.ScreenShotBackgroundMode,
-                Margin              = PluginConfig.ScreenShotMargin,
+                SavePath            = PluginConfig.ScreenshotSavePath,
+                AutoClipping        = PluginConfig.ScreenshotAutoClipping,
+                BackgroundImagePath = PluginConfig.ScreenshotBackgroundPath,
+                BackgroundMode      = (ScreenshotBackgroundMode)PluginConfig.ScreenshotBackgroundMode,
+                Margin              = PluginConfig.ScreenshotMargin,
             });
         }
 
-        public void TakeScreenShot(ScreenShotConfig config)
+        public void TakeScreenshot(ScreenshotConfig config)
         {
-            ScreenShot.SaveScreenShot(this.Overlay.SurfaceBuffer, config);
+            Screenshot.SaveScreenshot(this.Overlay.SurfaceBuffer, config);
         }
     }
 }

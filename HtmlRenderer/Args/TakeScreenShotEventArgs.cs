@@ -2,11 +2,11 @@
 
 namespace RainbowMage.HtmlRenderer
 {
-    public class TakeScreenShotEventArgs : EventArgs
+    public class TakeScreenshotEventArgs : EventArgs
     {
         public string Message { get; private set; }
 
-        public TakeScreenShotEventArgs(string message)
+        public TakeScreenshotEventArgs(string message)
         {
             this.Message = message;
         }

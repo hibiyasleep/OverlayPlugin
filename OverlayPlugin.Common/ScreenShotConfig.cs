@@ -1,11 +1,11 @@
 ﻿namespace RainbowMage.OverlayPlugin
 {
-    public class ScreenShotConfig
+    public class ScreenshotConfig
     {
         public string SavePath { get; set; }
         public bool AutoClipping { get; set; }
         public string BackgroundImagePath { get; set; }
-        public ScreenShotBackgroundMode BackgroundMode { get; set; }
+        public ScreenshotBackgroundMode BackgroundMode { get; set; }
         public int Margin { get; set; }
     }
 }

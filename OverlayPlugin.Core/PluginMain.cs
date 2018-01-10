@@ -17,7 +17,7 @@ namespace RainbowMage.OverlayPlugin
         Label label;
         ControlPanel controlPanel;
 
-        internal static readonly string DefaultScreenShotPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "ScreenShot");
+        internal static readonly string DefaultScreenshotPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "Screenshot");
         internal PluginConfig Config { get; private set; }
         internal List<IOverlay> Overlays { get; private set; }
         internal List<IOverlayAddon> Addons { get; set; }
@@ -66,7 +66,7 @@ namespace RainbowMage.OverlayPlugin
                 Renderer.BroadcastMessage += BroadcaseMessageEvent;
                 Renderer.SendMessage += SendMessageEvent;
                 Renderer.OverlayMessage += OverlayMessageEvent;
-                Renderer.TakeScreenShotHandler += RendererTakeScreenShotEvent;
+                Renderer.TakeScreenshotHandler += RendererTakeScreenshotEvent;
                 Renderer.RendererFeatureRequest += RendererFeatureRequestEvent;
                 
                 // ACT 終了時に CEF をシャットダウン（ゾンビ化防止）
@@ -131,11 +131,11 @@ namespace RainbowMage.OverlayPlugin
         }
 
         /// <summary>
-        /// Take Screenshot target overlay (on HTML: window.overlayApi.takeScreenShot( window.overlayApi.overlayName ))
+        /// Take Screenshot target overlay (on HTML: window.overlayApi.takeScreenshot( window.overlayApi.overlayName ))
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void RendererTakeScreenShotEvent(object sender, TakeScreenShotEventArgs e)
+        private void RendererTakeScreenshotEvent(object sender, TakeScreenshotEventArgs e)
         {
             Task.Run(() =>
             {
@@ -143,14 +143,14 @@ namespace RainbowMage.OverlayPlugin
                 {
                     if (i.Name == e.Message)
                     {
-                        i.TakeScreenShot(
-                            new ScreenShotConfig
+                        i.TakeScreenshot(
+                            new ScreenshotConfig
                             {
-                                SavePath            = Config.ScreenShotSavePath,
-                                AutoClipping        = Config.ScreenShotAutoClipping,
-                                BackgroundImagePath = Config.ScreenShotBackgroundPath,
-                                BackgroundMode      = (ScreenShotBackgroundMode)Config.ScreenShotBackgroundMode,
-                                Margin              = Config.ScreenShotMargin,
+                                SavePath            = Config.ScreenshotSavePath,
+                                AutoClipping        = Config.ScreenshotAutoClipping,
+                                BackgroundImagePath = Config.ScreenshotBackgroundPath,
+                                BackgroundMode      = (ScreenshotBackgroundMode)Config.ScreenshotBackgroundMode,
+                                Margin              = Config.ScreenshotMargin,
                             });
                         break;
                     }
@@ -306,9 +306,9 @@ namespace RainbowMage.OverlayPlugin
             try
             {
                 Config = PluginConfig.LoadXml(this.PluginDirectory, GetConfigPath());
-                if(Config.ScreenShotSavePath == "" || Config.ScreenShotSavePath == null)
+                if(Config.ScreenshotSavePath == "" || Config.ScreenshotSavePath == null)
                 {
-                    Config.ScreenShotSavePath = DefaultScreenShotPath;
+                    Config.ScreenshotSavePath = DefaultScreenshotPath;
                 }
             }
             catch (Exception e)
@@ -318,13 +318,13 @@ namespace RainbowMage.OverlayPlugin
                 Logger.Log(LogLevel.Info, "LoadConfig: Creating new configuration.");
                 Config = new PluginConfig();
                 Config.SetDefaultOverlayConfigs(this.PluginDirectory);
-                if (Config.ScreenShotSavePath == "" || Config.ScreenShotSavePath == null)
+                if (Config.ScreenshotSavePath == "" || Config.ScreenshotSavePath == null)
                 {
-                    Config.ScreenShotSavePath = DefaultScreenShotPath;
+                    Config.ScreenshotSavePath = DefaultScreenshotPath;
                 }
             }
 
-            Directory.CreateDirectory(Config.ScreenShotSavePath);
+            Directory.CreateDirectory(Config.ScreenshotSavePath);
         }
 
         /// <summary>

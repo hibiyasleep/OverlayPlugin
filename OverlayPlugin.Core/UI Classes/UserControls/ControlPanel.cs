@@ -37,15 +37,15 @@ namespace RainbowMage.OverlayPlugin
 
             InitializeOverlayConfigTabs();
 
-            screenShotPath.Text                    = config.ScreenShotSavePath;
-            screenShotBackgroundPath.Text          = config.ScreenShotBackgroundPath;
-            screenShotBackgroundMode.SelectedIndex = config.ScreenShotBackgroundMode;
-            screenShotAutoClipping.Checked         = config.ScreenShotAutoClipping;
-            screenShotMargin.Value                 = config.ScreenShotMargin;
+            screenShotPath.Text                    = config.ScreenshotSavePath;
+            screenShotBackgroundPath.Text          = config.ScreenshotBackgroundPath;
+            screenShotBackgroundMode.SelectedIndex = config.ScreenshotBackgroundMode;
+            screenShotAutoClipping.Checked         = config.ScreenshotAutoClipping;
+            screenShotMargin.Value                 = config.ScreenshotMargin;
 
             if (string.IsNullOrWhiteSpace(screenShotPath.Text))
             {
-                screenShotPath.Text = PluginMain.DefaultScreenShotPath;
+                screenShotPath.Text = PluginMain.DefaultScreenshotPath;
             }
         }
 
@@ -253,54 +253,54 @@ namespace RainbowMage.OverlayPlugin
             config.HideOverlaysWhenNotActive = checkBoxAutoHide.Checked;
         }
 
-        private void ScreenShotPath_Leave(object sender, EventArgs e)
+        private void ScreenshotPath_Leave(object sender, EventArgs e)
         {
-            config.ScreenShotSavePath = screenShotPath.Text;
+            config.ScreenshotSavePath = screenShotPath.Text;
         }
 
-        private void ScreenShotPathSelectButton_Click(object sender, EventArgs e)
+        private void ScreenshotPathSelectButton_Click(object sender, EventArgs e)
         {
-            this.fbdScreenShotPath.SelectedPath = this.screenShotPath.Text;
+            this.fbdScreenshotPath.SelectedPath = this.screenShotPath.Text;
             
-            if (this.fbdScreenShotPath.ShowDialog() == DialogResult.OK)
+            if (this.fbdScreenshotPath.ShowDialog() == DialogResult.OK)
             {
-                screenShotPath.Text = this.fbdScreenShotPath.SelectedPath;
-                config.ScreenShotSavePath = this.fbdScreenShotPath.SelectedPath;
+                screenShotPath.Text = this.fbdScreenshotPath.SelectedPath;
+                config.ScreenshotSavePath = this.fbdScreenshotPath.SelectedPath;
             }
         }
 
-        private void ScreenShotBackgroundPath_Leave(object sender, EventArgs e)
+        private void ScreenshotBackgroundPath_Leave(object sender, EventArgs e)
         {
-            config.ScreenShotBackgroundPath = screenShotBackgroundPath.Text;
+            config.ScreenshotBackgroundPath = screenShotBackgroundPath.Text;
         }
 
-        private void ScreenShotBackgroundPathSelect_Click(object sender, EventArgs e)
+        private void ScreenshotBackgroundPathSelect_Click(object sender, EventArgs e)
         {
             this.ofdImage.FileName = this.screenShotBackgroundPath.Text;
 
             if (this.ofdImage.ShowDialog() == DialogResult.OK)
             {
                 screenShotBackgroundPath.Text = this.ofdImage.FileName;
-                config.ScreenShotBackgroundPath = this.ofdImage.FileName;
+                config.ScreenshotBackgroundPath = this.ofdImage.FileName;
             }
         }
 
-        private void ScreenShotBackgroundFillType_SelectedIndexChanged(object sender, EventArgs e)
+        private void ScreenshotBackgroundFillType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            config.ScreenShotBackgroundMode = screenShotBackgroundMode.SelectedIndex;
+            config.ScreenshotBackgroundMode = screenShotBackgroundMode.SelectedIndex;
         }
 
-        private void ScreenShotAutoClipping_CheckedChanged(object sender, EventArgs e)
+        private void ScreenshotAutoClipping_CheckedChanged(object sender, EventArgs e)
         {
-            config.ScreenShotAutoClipping = screenShotAutoClipping.Checked;
+            config.ScreenshotAutoClipping = screenShotAutoClipping.Checked;
         }
 
-        private void ScreenShotMargin_ValueChanged(object sender, EventArgs e)
+        private void ScreenshotMargin_ValueChanged(object sender, EventArgs e)
         {
-            config.ScreenShotMargin = (int)screenShotMargin.Value;
+            config.ScreenshotMargin = (int)screenShotMargin.Value;
         }
 
-        private void TakeScreenShotBtn_Click(object sender, EventArgs e)
+        private void TakeScreenshotBtn_Click(object sender, EventArgs e)
         {
             if (tabControl.SelectedIndex < 0) return;
             var selTab = tabControl.SelectedIndex;
@@ -310,14 +310,14 @@ namespace RainbowMage.OverlayPlugin
 
             try
             {
-                selectedOverlay.TakeScreenShot(
-                    new ScreenShotConfig
+                selectedOverlay.TakeScreenshot(
+                    new ScreenshotConfig
                     {
-                        SavePath            = config.ScreenShotSavePath,
-                        AutoClipping        = config.ScreenShotAutoClipping,
-                        BackgroundImagePath = config.ScreenShotBackgroundPath,
-                        BackgroundMode      = (ScreenShotBackgroundMode)config.ScreenShotBackgroundMode,
-                        Margin              = config.ScreenShotMargin,
+                        SavePath            = config.ScreenshotSavePath,
+                        AutoClipping        = config.ScreenshotAutoClipping,
+                        BackgroundImagePath = config.ScreenshotBackgroundPath,
+                        BackgroundMode      = (ScreenshotBackgroundMode)config.ScreenshotBackgroundMode,
+                        Margin              = config.ScreenshotMargin,
                     });
             }
             catch (Exception ex)
