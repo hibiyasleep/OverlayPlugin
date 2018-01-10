@@ -118,8 +118,6 @@ namespace RainbowMage.OverlayPlugin.Overlays
             Dictionary<string, string> encounter = null;
             List<KeyValuePair<CombatantData, Dictionary<string, string>>> combatant = null;
 
-            var hidePlayerName = Config.HidePlayerName;
-
             var encounterTask = Task.Run(() =>
                 {
                     encounter = GetEncounterDictionary(allies);
@@ -127,42 +125,6 @@ namespace RainbowMage.OverlayPlugin.Overlays
             var combatantTask = Task.Run(() =>
                 {
                     combatant = GetCombatantList(allies);
-                    
-                    if (hidePlayerName)
-                    {
-                        lock (this.tempPlayerNameDictionary)
-                        {
-                            for (int i = 0; i < combatant.Count; ++i)
-                            {
-                                var oldName = combatant[i].Key.Name;
-                                if (!this.tempPlayerNameDictionary.ContainsKey(oldName))
-                                {
-                                    string name = null;
-                                    string owner;
-
-                                    var mv = Regex.Match(oldName, @"^(.+)\((.+)\)");
-                                    if (mv.Success)
-                                    {
-                                        name = mv.Groups[1].Value;
-                                        owner = mv.Groups[2].Value;
-                                    }
-                                    else
-                                        owner = oldName;
-
-                                    if (owner != "YOU" && owner != PluginMain.PrimaryUser)
-                                        owner = "P" + this.tempPlayerNameDictionary.Count.ToString("X");
-
-                                    if (name == null)
-                                        name = owner;
-                                    else
-                                        name = string.Format("{0} ({1})", name, owner);
-
-                                    this.tempPlayerNameDictionary.Add(oldName, name);
-                                }
-                            }
-                        }
-                    }
-
                     SortCombatantList(combatant);
                 });
             Task.WaitAll(encounterTask, combatantTask);
@@ -175,25 +137,12 @@ namespace RainbowMage.OverlayPlugin.Overlays
             foreach (var pair in combatant)
             {
                 var combatantName = pair.Key.Name;
-                if (hidePlayerName)
-                    combatantName = this.tempPlayerNameDictionary[pair.Key.Name];
 
                 JObject value = new JObject();
                 foreach (var pair2 in pair.Value)
                 {
                     var k = pair2.Key;
                     var v = pair2.Value;
-
-                    if (hidePlayerName)
-                    {
-                        if (k.StartsWith("name", StringComparison.CurrentCultureIgnoreCase))
-                        {
-                            v = combatantName;
-
-                            if (int.TryParse(k.Substring(4), out int len))
-                                v = v.Substring(0, Math.Min(v.Length, len));
-                        }
-                    }
 
                     value.Add(k, Util.ReplaceNaNString(v, "---"));
                 }

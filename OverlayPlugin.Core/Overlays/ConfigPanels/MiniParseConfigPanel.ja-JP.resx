@@ -163,9 +163,6 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>7, 12</value>
   </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>プレイヤー名非表示</value>
-  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>データ更新周期</value>
   </data>

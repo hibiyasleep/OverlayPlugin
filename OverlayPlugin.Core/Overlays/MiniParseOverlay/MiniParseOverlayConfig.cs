@@ -47,24 +47,6 @@ namespace RainbowMage.OverlayPlugin.Overlays
             }
         }
 
-        private bool hidePlayerName;
-        [XmlElement("HidePlayerName")]
-        public bool HidePlayerName
-        {
-            get
-            {
-                return this.hidePlayerName;
-            }
-            set
-            {
-                if (this.hidePlayerName != value)
-                {
-                    this.hidePlayerName = value;
-                    HidePlayerNameChanged?.Invoke(this, new HidePlayerNameChangedEventArgs(value));
-                }
-            }
-        }
-
         private int overlayUpdateInterval = 1000;
         [XmlElement("OverlayUpdateInterval")]
         public int OverlayUpdateInterval
