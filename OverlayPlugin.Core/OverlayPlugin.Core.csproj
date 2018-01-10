@@ -57,6 +57,7 @@
     <Compile Include="AutoHide.cs" />
     <Compile Include="Args\ConfigEventArgs.cs" />
     <Compile Include="Args\KeyPressedEventArgs.cs" />
+    <Compile Include="Enums\MessageType.cs" />
     <Compile Include="Enums\ModifierKeys.cs" />
     <Compile Include="UI Classes\UserControls\OverlayPageUI.cs" />
     <Compile Include="Window.cs" />
@@ -87,7 +88,7 @@
     <Compile Include="UI Classes\UserControls\ControlPanel.Designer.cs">
       <DependentUpon>ControlPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\DIBitmap.cs" />
+    <Compile Include="UI Classes\DIBitmap.cs" />
     <Compile Include="KeyboardHook.cs" />
     <Compile Include="Overlays\MiniParseOverlay\MiniParseLoglineReader.cs" />
     <Compile Include="Overlays\LabelOverlay\LabelOverlay.cs" />

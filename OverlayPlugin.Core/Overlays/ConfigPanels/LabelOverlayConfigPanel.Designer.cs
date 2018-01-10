@@ -29,30 +29,36 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LabelOverlayConfigPanel));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkMiniParseVisible = new System.Windows.Forms.CheckBox();
-            this.checkMiniParseClickthru = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.checkEnableGlobalHotkey = new System.Windows.Forms.CheckBox();
-            this.textGlobalHotkey = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.checkLock = new System.Windows.Forms.CheckBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox = new System.Windows.Forms.TextBox();
+
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+
+            this.checkMiniParseVisible = new System.Windows.Forms.CheckBox();
+            this.checkMiniParseClickthru = new System.Windows.Forms.CheckBox();
+            this.checkEnableGlobalHotkey = new System.Windows.Forms.CheckBox();
+            this.checkLock = new System.Windows.Forms.CheckBox();
+            this.checkHTML = new System.Windows.Forms.CheckBox();
+
+            this.textGlobalHotkey = new System.Windows.Forms.TextBox();
+            this.textBox = new System.Windows.Forms.TextBox();
+            this.textUrl = new System.Windows.Forms.TextBox();
+
             this.buttonCopyUpdateScript = new System.Windows.Forms.Button();
             this.buttonOpenDevTools = new System.Windows.Forms.Button();
             this.buttonReloadBrowser = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.textUrl = new System.Windows.Forms.TextBox();
             this.buttonSelectFile = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.checkHTML = new System.Windows.Forms.CheckBox();
+
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -64,20 +70,21 @@
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.checkMiniParseVisible, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.checkMiniParseClickthru, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label13, 1, 6);
+
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.checkMiniParseVisible, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.checkMiniParseClickthru, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.checkEnableGlobalHotkey, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.textGlobalHotkey, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.checkLock, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label13, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.textBox, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.checkHTML, 1, 8);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
@@ -242,28 +249,32 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox checkMiniParseVisible;
-        private System.Windows.Forms.CheckBox checkMiniParseClickthru;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckBox checkEnableGlobalHotkey;
-        private System.Windows.Forms.TextBox textGlobalHotkey;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.CheckBox checkLock;
         private System.Windows.Forms.Label label13;
+        
+        private System.Windows.Forms.TextBox textGlobalHotkey;
         private System.Windows.Forms.TextBox textBox;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TextBox textUrl;
+        
         private System.Windows.Forms.Button buttonReloadBrowser;
         private System.Windows.Forms.Button buttonOpenDevTools;
         private System.Windows.Forms.Button buttonCopyUpdateScript;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox textUrl;
         private System.Windows.Forms.Button buttonSelectFile;
-        private System.Windows.Forms.Label label5;
+
         private System.Windows.Forms.CheckBox checkHTML;
+        private System.Windows.Forms.CheckBox checkMiniParseVisible;
+        private System.Windows.Forms.CheckBox checkMiniParseClickthru;
+        private System.Windows.Forms.CheckBox checkEnableGlobalHotkey;
+        private System.Windows.Forms.CheckBox checkLock;
     }
 }

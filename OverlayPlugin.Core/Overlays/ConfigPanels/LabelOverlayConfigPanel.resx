@@ -567,9 +567,6 @@
   <data name="&gt;&gt;tableLayoutPanel3.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="tableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="buttonCopyUpdateScript" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonOpenDevTools" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonReloadBrowser" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33.33,Percent,33.33,Percent,33.33" /&gt;&lt;Rows Styles="Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -758,9 +755,6 @@
   </data>
   <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label1" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkMiniParseVisible" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="checkMiniParseClickthru" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label7" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkEnableGlobalHotkey" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textGlobalHotkey" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label9" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkLock" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label13" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel3" Row="9" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label4" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel2" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkHTML" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,181,Percent,100" /&gt;&lt;Rows Styles="Absolute,28,Absolute,22,Absolute,22,Absolute,22,Absolute,22,Absolute,22,AutoSize,0,Percent,100,Absolute,22,Absolute,55" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

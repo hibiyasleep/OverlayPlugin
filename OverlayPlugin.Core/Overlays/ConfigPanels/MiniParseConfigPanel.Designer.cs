@@ -29,38 +29,41 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MiniParseConfigPanel));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.nudUpdateInterval = new System.Windows.Forms.NumericUpDown();
-            this.label12 = new System.Windows.Forms.Label();
-            this.checkEnablePlayerName = new System.Windows.Forms.CheckBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textMiniParseSortKey = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+
+            this.checkEnablePlayerName = new System.Windows.Forms.CheckBox();
             this.checkMiniParseVisible = new System.Windows.Forms.CheckBox();
             this.checkMiniParseClickthru = new System.Windows.Forms.CheckBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.checkEnableGlobalHotkey = new System.Windows.Forms.CheckBox();
+            this.checkLock = new System.Windows.Forms.CheckBox();
+
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+
+            this.nudUpdateInterval = new System.Windows.Forms.NumericUpDown();
+            this.textMiniParseSortKey = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.buttonMiniParseCopyActXiv = new System.Windows.Forms.Button();
             this.buttonMiniParseOpenDevTools = new System.Windows.Forms.Button();
             this.buttonMiniParseReloadBrowser = new System.Windows.Forms.Button();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.textMiniParseUrl = new System.Windows.Forms.TextBox();
             this.buttonMiniParseSelectFile = new System.Windows.Forms.Button();
             this.comboMiniParseSortType = new System.Windows.Forms.ComboBox();
             this.nudMaxFrameRate = new System.Windows.Forms.NumericUpDown();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.checkEnableGlobalHotkey = new System.Windows.Forms.CheckBox();
             this.textGlobalHotkey = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.checkLock = new System.Windows.Forms.CheckBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.comboHotkeyType = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudUpdateInterval)).BeginInit();
