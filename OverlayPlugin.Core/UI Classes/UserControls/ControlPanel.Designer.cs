@@ -104,7 +104,6 @@ namespace RainbowMage.OverlayPlugin
             // 
             // contextMenuLogList
             // 
-            resources.ApplyResources(this.contextMenuLogList, "contextMenuLogList");
             this.contextMenuLogList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuCopyLogAll,
             this.menuLogCopy,
@@ -113,46 +112,47 @@ namespace RainbowMage.OverlayPlugin
             this.toolStripMenuItem2,
             this.menuClearLog});
             this.contextMenuLogList.Name = "contextMenuLogList";
+            resources.ApplyResources(this.contextMenuLogList, "contextMenuLogList");
             // 
             // menuCopyLogAll
             // 
-            resources.ApplyResources(this.menuCopyLogAll, "menuCopyLogAll");
             this.menuCopyLogAll.Name = "menuCopyLogAll";
+            resources.ApplyResources(this.menuCopyLogAll, "menuCopyLogAll");
             this.menuCopyLogAll.Click += new System.EventHandler(this.MenuCopyLogAll_Click);
             // 
             // menuLogCopy
             // 
-            resources.ApplyResources(this.menuLogCopy, "menuLogCopy");
             this.menuLogCopy.Name = "menuLogCopy";
+            resources.ApplyResources(this.menuLogCopy, "menuLogCopy");
             this.menuLogCopy.Click += new System.EventHandler(this.MenuLogCopy_Click);
             // 
             // toolStripMenuItem1
             // 
-            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             // 
             // menuFollowLatestLog
             // 
-            resources.ApplyResources(this.menuFollowLatestLog, "menuFollowLatestLog");
             this.menuFollowLatestLog.CheckOnClick = true;
             this.menuFollowLatestLog.Name = "menuFollowLatestLog";
+            resources.ApplyResources(this.menuFollowLatestLog, "menuFollowLatestLog");
             this.menuFollowLatestLog.Click += new System.EventHandler(this.MenwFollowLatestLog_Click);
             // 
             // toolStripMenuItem2
             // 
-            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
             // 
             // menuClearLog
             // 
-            resources.ApplyResources(this.menuClearLog, "menuClearLog");
             this.menuClearLog.Name = "menuClearLog";
+            resources.ApplyResources(this.menuClearLog, "menuClearLog");
             this.menuClearLog.Click += new System.EventHandler(this.MenuClearLog_Click);
             // 
             // tabPageMain
             // 
-            resources.ApplyResources(this.tabPageMain, "tabPageMain");
             this.tabPageMain.Controls.Add(this.label_ListEmpty);
+            resources.ApplyResources(this.tabPageMain, "tabPageMain");
             this.tabPageMain.Name = "tabPageMain";
             this.tabPageMain.TabImage = null;
             this.tabPageMain.UseVisualStyleBackColor = true;
@@ -168,29 +168,25 @@ namespace RainbowMage.OverlayPlugin
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
-            // fbdScreenshotPath
-            // 
-            resources.ApplyResources(this.fbdScreenshotPath, "fbdScreenshotPath");
-            // 
             // ofdImage
             // 
             resources.ApplyResources(this.ofdImage, "ofdImage");
             // 
             // overlayTabUI1
             // 
-            resources.ApplyResources(this.overlayTabUI1, "overlayTabUI1");
             this.overlayTabUI1.Controls.Add(this.overlaysTabPage);
             this.overlayTabUI1.Controls.Add(this.overlayLogsTabPage);
             this.overlayTabUI1.Controls.Add(this.overlaySettingsTabPage);
             this.overlayTabUI1.Controls.Add(this.overlayInformationTabPage);
+            resources.ApplyResources(this.overlayTabUI1, "overlayTabUI1");
             this.overlayTabUI1.Name = "overlayTabUI1";
             this.overlayTabUI1.SelectedIndex = 0;
             // 
             // overlaysTabPage
             // 
-            resources.ApplyResources(this.overlaysTabPage, "overlaysTabPage");
             this.overlaysTabPage.Controls.Add(this.tabControl);
             this.overlaysTabPage.Controls.Add(this.panel1);
+            resources.ApplyResources(this.overlaysTabPage, "overlaysTabPage");
             this.overlaysTabPage.Name = "overlaysTabPage";
             this.overlaysTabPage.TabImage = ((System.Drawing.Image)(resources.GetObject("overlaysTabPage.TabImage")));
             this.overlaysTabPage.UseVisualStyleBackColor = true;
@@ -205,11 +201,11 @@ namespace RainbowMage.OverlayPlugin
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.takeScreenshotBtn);
             this.panel1.Controls.Add(this.checkBoxAutoHide);
             this.panel1.Controls.Add(this.buttonNewOverlay);
             this.panel1.Controls.Add(this.buttonRemoveOverlay);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // takeScreenshotBtn
@@ -242,22 +238,22 @@ namespace RainbowMage.OverlayPlugin
             // 
             // overlayLogsTabPage
             // 
-            resources.ApplyResources(this.overlayLogsTabPage, "overlayLogsTabPage");
             this.overlayLogsTabPage.Controls.Add(this.listViewLog);
             this.overlayLogsTabPage.Controls.Add(this.panel2);
+            resources.ApplyResources(this.overlayLogsTabPage, "overlayLogsTabPage");
             this.overlayLogsTabPage.Name = "overlayLogsTabPage";
             this.overlayLogsTabPage.TabImage = ((System.Drawing.Image)(resources.GetObject("overlayLogsTabPage.TabImage")));
             this.overlayLogsTabPage.UseVisualStyleBackColor = true;
             // 
             // listViewLog
             // 
-            resources.ApplyResources(this.listViewLog, "listViewLog");
             this.listViewLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listViewLog.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
             this.listViewLog.ContextMenuStrip = this.contextMenuLogList;
+            resources.ApplyResources(this.listViewLog, "listViewLog");
             this.listViewLog.FullRowSelect = true;
             this.listViewLog.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewLog.HideSelection = false;
@@ -281,8 +277,8 @@ namespace RainbowMage.OverlayPlugin
             // 
             // panel2
             // 
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Controls.Add(this.button1);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
             // button1
@@ -294,8 +290,8 @@ namespace RainbowMage.OverlayPlugin
             // 
             // overlaySettingsTabPage
             // 
-            resources.ApplyResources(this.overlaySettingsTabPage, "overlaySettingsTabPage");
             this.overlaySettingsTabPage.Controls.Add(this.screenShotPathGroupbox);
+            resources.ApplyResources(this.overlaySettingsTabPage, "overlaySettingsTabPage");
             this.overlaySettingsTabPage.Name = "overlaySettingsTabPage";
             this.overlaySettingsTabPage.TabImage = ((System.Drawing.Image)(resources.GetObject("overlaySettingsTabPage.TabImage")));
             this.overlaySettingsTabPage.UseVisualStyleBackColor = true;
@@ -344,9 +340,9 @@ namespace RainbowMage.OverlayPlugin
             // 
             // screenShotPathPanel
             // 
-            resources.ApplyResources(this.screenShotPathPanel, "screenShotPathPanel");
             this.screenShotPathPanel.Controls.Add(this.screenShotPath);
             this.screenShotPathPanel.Controls.Add(this.screenShotPathSelectButton);
+            resources.ApplyResources(this.screenShotPathPanel, "screenShotPathPanel");
             this.screenShotPathPanel.Name = "screenShotPathPanel";
             // 
             // screenShotPath
@@ -359,12 +355,13 @@ namespace RainbowMage.OverlayPlugin
             resources.ApplyResources(this.screenShotPathSelectButton, "screenShotPathSelectButton");
             this.screenShotPathSelectButton.Name = "screenShotPathSelectButton";
             this.screenShotPathSelectButton.UseVisualStyleBackColor = true;
+            this.screenShotPathSelectButton.Click += new System.EventHandler(this.ScreenshotPathSelectButton_Click);
             // 
             // screenShotBackgroundPathPanel
             // 
-            resources.ApplyResources(this.screenShotBackgroundPathPanel, "screenShotBackgroundPathPanel");
             this.screenShotBackgroundPathPanel.Controls.Add(this.screenShotBackgroundPath);
             this.screenShotBackgroundPathPanel.Controls.Add(this.screenShotBackgroundPathSelect);
+            resources.ApplyResources(this.screenShotBackgroundPathPanel, "screenShotBackgroundPathPanel");
             this.screenShotBackgroundPathPanel.Name = "screenShotBackgroundPathPanel";
             // 
             // screenShotBackgroundPath
@@ -377,12 +374,14 @@ namespace RainbowMage.OverlayPlugin
             resources.ApplyResources(this.screenShotBackgroundPathSelect, "screenShotBackgroundPathSelect");
             this.screenShotBackgroundPathSelect.Name = "screenShotBackgroundPathSelect";
             this.screenShotBackgroundPathSelect.UseVisualStyleBackColor = true;
+            this.screenShotBackgroundPathSelect.Click += new System.EventHandler(this.ScreenshotBackgroundPathSelect_Click);
             // 
             // screenShotAutoClipping
             // 
             resources.ApplyResources(this.screenShotAutoClipping, "screenShotAutoClipping");
             this.screenShotAutoClipping.Name = "screenShotAutoClipping";
             this.screenShotAutoClipping.UseVisualStyleBackColor = true;
+            this.screenShotAutoClipping.CheckedChanged += new System.EventHandler(this.ScreenshotAutoClipping_CheckedChanged);
             // 
             // screenShotBackgroundMode
             // 
@@ -397,6 +396,7 @@ namespace RainbowMage.OverlayPlugin
             resources.GetString("screenShotBackgroundMode.Items4"),
             resources.GetString("screenShotBackgroundMode.Items5")});
             this.screenShotBackgroundMode.Name = "screenShotBackgroundMode";
+            this.screenShotBackgroundMode.SelectedIndexChanged += new System.EventHandler(this.ScreenshotBackgroundFillType_SelectedIndexChanged);
             // 
             // screenShotPathLabel
             // 
@@ -419,6 +419,7 @@ namespace RainbowMage.OverlayPlugin
             0,
             0});
             this.screenShotMargin.Name = "screenShotMargin";
+            this.screenShotMargin.ValueChanged += new System.EventHandler(this.ScreenshotMargin_ValueChanged);
             // 
             // label1
             // 
@@ -427,19 +428,19 @@ namespace RainbowMage.OverlayPlugin
             // 
             // overlayInformationTabPage
             // 
-            resources.ApplyResources(this.overlayInformationTabPage, "overlayInformationTabPage");
             this.overlayInformationTabPage.Controls.Add(this.overlayPluginInformationGroupBox);
+            resources.ApplyResources(this.overlayInformationTabPage, "overlayInformationTabPage");
             this.overlayInformationTabPage.Name = "overlayInformationTabPage";
             this.overlayInformationTabPage.TabImage = ((System.Drawing.Image)(resources.GetObject("overlayInformationTabPage.TabImage")));
             this.overlayInformationTabPage.UseVisualStyleBackColor = true;
             // 
             // overlayPluginInformationGroupBox
             // 
-            resources.ApplyResources(this.overlayPluginInformationGroupBox, "overlayPluginInformationGroupBox");
             this.overlayPluginInformationGroupBox.Controls.Add(this.repo_dev_info_special);
             this.overlayPluginInformationGroupBox.Controls.Add(this.special_thanks);
             this.overlayPluginInformationGroupBox.Controls.Add(this.repo_dev_info);
             this.overlayPluginInformationGroupBox.Controls.Add(this.developers);
+            resources.ApplyResources(this.overlayPluginInformationGroupBox, "overlayPluginInformationGroupBox");
             this.overlayPluginInformationGroupBox.Name = "overlayPluginInformationGroupBox";
             this.overlayPluginInformationGroupBox.TabStop = false;
             // 
