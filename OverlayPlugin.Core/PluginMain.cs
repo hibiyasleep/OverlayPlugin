@@ -1,19 +1,13 @@
 ﻿using Advanced_Combat_Tracker;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using System.Windows.Forms;
-using System.Reflection;
 using RainbowMage.HtmlRenderer;
-using System;
-using System.Drawing;
-using System.IO;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Threading;
-using System.Text.RegularExpressions;
 using RainbowMage.OverlayPlugin.Overlays;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace RainbowMage.OverlayPlugin
 {
@@ -23,16 +17,24 @@ namespace RainbowMage.OverlayPlugin
         Label label;
         ControlPanel controlPanel;
 
+        internal static readonly string DefaultScreenshotPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "Screenshot");
         internal PluginConfig Config { get; private set; }
         internal List<IOverlay> Overlays { get; private set; }
         internal List<IOverlayAddon> Addons { get; set; }
-        internal Logger Logger { get; set; }
         internal string PluginDirectory { get; private set; }
+
+        private static string PrimaryUserInternal = "YOU";
+        public static string PrimaryUser
+        {
+            get { return PrimaryUserInternal; }
+            set { PrimaryUserInternal = value; }
+        }
+        public static Logger Logger { get; set; }
 
         public PluginMain(string pluginDirectory, Logger logger)
         {
-            this.PluginDirectory = pluginDirectory;
-            this.Logger = logger;
+            PluginDirectory = pluginDirectory;
+            Logger = logger;
         }
 
         /// <summary>
@@ -44,9 +46,8 @@ namespace RainbowMage.OverlayPlugin
         {
             try
             {
-                this.tabPage = pluginScreenSpace;
-                this.label = pluginStatusText;
-
+                tabPage = pluginScreenSpace;
+                label = pluginStatusText;
 #if DEBUG
                 Logger.Log(LogLevel.Warning, "##################################");
                 Logger.Log(LogLevel.Warning, "    THIS IS THE DEBUG BUILD");
@@ -58,54 +59,16 @@ namespace RainbowMage.OverlayPlugin
 
                 // プラグイン読み込み
                 LoadAddons();
-
                 // コンフィグ系読み込み
                 LoadConfig();
 
                 // プラグイン間のメッセージ関連
-                RainbowMage.HtmlRenderer.Renderer.BroadcastMessage += (o, e) =>
-                {
-                    Task.Run(() =>
-                    {
-                        foreach (var overlay in this.Overlays)
-                        {
-                            overlay.SendMessage(e.Message);
-                        }
-                    });
-                };
-                RainbowMage.HtmlRenderer.Renderer.SendMessage += (o, e) =>
-                {
-                    Task.Run(() =>
-                    {
-                        var targetOverlay = this.Overlays.FirstOrDefault(x => x.Name == e.Target);
-                        if (targetOverlay != null)
-                        {
-                            targetOverlay.SendMessage(e.Message);
-                        }
-                    });
-                };
-                RainbowMage.HtmlRenderer.Renderer.OverlayMessage += (o, e) =>
-                {
-                    Task.Run(() =>
-                    {
-                        var targetOverlay = this.Overlays.FirstOrDefault(x => x.Name == e.Target);
-                        if (targetOverlay != null) {
-                            targetOverlay.OverlayMessage(e.Message);
-                        }
-                    });
-                };
-                RainbowMage.HtmlRenderer.Renderer.RendererFeatureRequest += (o, e) =>
-                {
-                    Task.Run(() =>
-                    {
-                        if (e.Request == "EndEncounter")
-                        {
-                            ActGlobals.oFormActMain.EndCombat(true);
-                        }
-                    });
-                };
-
-
+                Renderer.BroadcastMessage += BroadcaseMessageEvent;
+                Renderer.SendMessage += SendMessageEvent;
+                Renderer.OverlayMessage += OverlayMessageEvent;
+                Renderer.TakeScreenshotHandler += RendererTakeScreenshotEvent;
+                Renderer.RendererFeatureRequest += RendererFeatureRequestEvent;
+                
                 // ACT 終了時に CEF をシャットダウン（ゾンビ化防止）
                 Application.ApplicationExit += (o, e) =>
                 {
@@ -116,12 +79,12 @@ namespace RainbowMage.OverlayPlugin
                 InitializeOverlays();
 
                 // コンフィグUI系初期化
-                this.controlPanel = new ControlPanel(this, this.Config);
-                this.controlPanel.Dock = DockStyle.Fill;
-                this.tabPage.Controls.Add(this.controlPanel);
+                controlPanel = new ControlPanel(this, Config);
+                controlPanel.Dock = DockStyle.Fill;
+                tabPage.Controls.Add(controlPanel);
 
                 Logger.Log(LogLevel.Info, "InitPlugin: Initialized.");
-                this.label.Text = "Initialized.";
+                label.Text = "Initialized.";
             }
             catch (Exception e)
             {
@@ -130,6 +93,80 @@ namespace RainbowMage.OverlayPlugin
 
                 throw;
             }
+        }
+
+        private void BroadcaseMessageEvent(object sender, BroadcastMessageEventArgs e)
+        {
+            Task.Run(() =>
+            {
+                foreach (var overlay in Overlays)
+                {
+                    overlay.SendMessage(e.Message);
+                }
+            });
+        }
+
+        private void SendMessageEvent(object sender, SendMessageEventArgs e)
+        {
+            Task.Run(() =>
+            {
+                var targetOverlay = Overlays.FirstOrDefault(x => x.Name == e.Target);
+                if (targetOverlay != null)
+                {
+                    targetOverlay.SendMessage(e.Message);
+                }
+            });
+        }
+
+        private void OverlayMessageEvent(object sender, SendMessageEventArgs e)
+        {
+            Task.Run(() =>
+            {
+                var targetOverlay = Overlays.FirstOrDefault(x => x.Name == e.Target);
+                if (targetOverlay != null)
+                {
+                    targetOverlay.OverlayMessage(e.Message);
+                }
+            });
+        }
+
+        /// <summary>
+        /// Take Screenshot target overlay (on HTML: window.overlayApi.takeScreenshot( window.overlayApi.overlayName ))
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RendererTakeScreenshotEvent(object sender, TakeScreenshotEventArgs e)
+        {
+            Task.Run(() =>
+            {
+                foreach(var i in Overlays)
+                {
+                    if (i.Name == e.Message)
+                    {
+                        i.TakeScreenshot(
+                            new ScreenshotConfig
+                            {
+                                SavePath            = Config.ScreenshotSavePath,
+                                AutoClipping        = Config.ScreenshotAutoClipping,
+                                BackgroundImagePath = Config.ScreenshotBackgroundPath,
+                                BackgroundMode      = (ScreenshotBackgroundMode)Config.ScreenshotBackgroundMode,
+                                Margin              = Config.ScreenshotMargin,
+                            });
+                        break;
+                    }
+                }
+            });
+        }
+
+        private void RendererFeatureRequestEvent(object sender, RendererFeatureRequestEventArgs e)
+        {
+            Task.Run(() =>
+            {
+                if (e.Request == "EndEncounter")
+                {
+                    ActGlobals.oFormActMain.EndCombat(true);
+                }
+            });
         }
 
         /// <summary>
@@ -269,6 +306,10 @@ namespace RainbowMage.OverlayPlugin
             try
             {
                 Config = PluginConfig.LoadXml(this.PluginDirectory, GetConfigPath());
+                if(Config.ScreenshotSavePath == "" || Config.ScreenshotSavePath == null)
+                {
+                    Config.ScreenshotSavePath = DefaultScreenshotPath;
+                }
             }
             catch (Exception e)
             {
@@ -277,7 +318,13 @@ namespace RainbowMage.OverlayPlugin
                 Logger.Log(LogLevel.Info, "LoadConfig: Creating new configuration.");
                 Config = new PluginConfig();
                 Config.SetDefaultOverlayConfigs(this.PluginDirectory);
+                if (Config.ScreenshotSavePath == "" || Config.ScreenshotSavePath == null)
+                {
+                    Config.ScreenshotSavePath = DefaultScreenshotPath;
+                }
             }
+
+            Directory.CreateDirectory(Config.ScreenshotSavePath);
         }
 
         /// <summary>
@@ -306,11 +353,17 @@ namespace RainbowMage.OverlayPlugin
         /// <returns></returns>
         private static string GetConfigPath()
         {
-            var path = System.IO.Path.Combine(
+#if DEBUG
+            var path = Path.Combine(
+                ActGlobals.oFormActMain.AppDataFolder.FullName,
+                "Config",
+                "RainbowMage.OverlayPlugin.config.debug.xml");
+#else
+            var path = Path.Combine(
                 ActGlobals.oFormActMain.AppDataFolder.FullName,
                 "Config",
                 "RainbowMage.OverlayPlugin.config.xml");
-
+#endif
             return path;
         }
     }

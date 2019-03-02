@@ -3,17 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RainbowMage.OverlayPlugin
 {
     public class PluginLoader : IActPluginV1
     {
+        public static string primaryUser = "YOU";
         PluginMain pluginMain;
         Logger logger;
         AssemblyResolver asmResolver;
@@ -28,7 +25,10 @@ namespace RainbowMage.OverlayPlugin
             directories.Add(Path.Combine(pluginDirectory, "addon"));
             asmResolver = new AssemblyResolver(directories);
 
+            ActGlobals.oFormActMain.BeforeLogLineRead += BeforeLogLineRead;
+
             Initialize(pluginScreenSpace, pluginStatusText);
+            AddExportVariable();
         }
 
         // AssemblyResolver でカスタムリゾルバを追加する前に PluginMain が解決されることを防ぐために、
@@ -41,27 +41,58 @@ namespace RainbowMage.OverlayPlugin
             asmResolver.AssemblyLoaded += (o, e) => logger.Log(LogLevel.Debug, "AssemblyResolver: Loaded: {0}", e.LoadedAssembly.FullName);
             pluginMain = new PluginMain(pluginDirectory, logger);
             pluginMain.InitPlugin(pluginScreenSpace, pluginStatusText);
+            PluginMain.PrimaryUser = "YOU";
         }
 
         public void DeInitPlugin()
         {
+            ActGlobals.oFormActMain.BeforeLogLineRead -= BeforeLogLineRead;
             pluginMain.DeInitPlugin();
             asmResolver.Dispose();
         }
 
-        private string GetPluginDirectory()
+        public string GetPluginDirectory()
         {
             // ACT のプラグインリストからパスを取得する
             // Assembly.CodeBase からはパスを取得できない
             var plugin = ActGlobals.oFormActMain.ActPlugins.Where(x => x.pluginObj == this).FirstOrDefault();
             if (plugin != null)
             {
-                return System.IO.Path.GetDirectoryName(plugin.pluginFile.FullName);
+                return Path.GetDirectoryName(plugin.pluginFile.FullName);
             }
             else
             {
                 throw new Exception();
             }
+        }
+
+        /// <summary>
+        /// ACT BeforeLogLineRead Event getting Change Primary Player Name
+        /// </summary>
+        /// <param name="isImport"></param>
+        /// <param name="logInfo"></param>
+        private void BeforeLogLineRead(bool isImport, LogLineEventArgs logInfo)
+        {
+            if (logInfo.logLine.IndexOf("02:Changed") > -1)
+            {
+                primaryUser = logInfo.logLine;
+                primaryUser = primaryUser.Replace("02:Changed primary player to ", "").Replace(".", "");
+                PluginMain.PrimaryUser = primaryUser = primaryUser.Substring(primaryUser.IndexOf("]") + 2);
+            }
+        }
+        
+        public void AddExportVariable()
+        {
+            if (!EncounterData.ExportVariables.ContainsKey("PrimaryUser"))
+            {
+                EncounterData.ExportVariables.Add("PrimaryUser",
+                new EncounterData.TextExportFormatter("PrimaryUser", "Primary Current Username", "Using ACT Current Charname 'YOU' almost get Current Username from User Input, but this Force Attach Current Username.", (Data, Extra, Format) => { return getPrimaryUserName(); }));
+            }
+        }
+
+        public string getPrimaryUserName()
+        {
+            return primaryUser;
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
@@ -7,12 +6,8 @@ using System.Runtime.InteropServices;
 // これらの属性値を変更してください。
 [assembly: AssemblyTitle("OverlayPlugin.Common")]
 [assembly: AssemblyDescription("Common types of the OverlayPlugin")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("OverlayAddon")]
 [assembly: AssemblyCopyright("Copyright © RainbowMage 2015, Kuriyama hibiya 2016")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
 
 // ComVisible を false に設定すると、その型はこのアセンブリ内で COM コンポーネントから 
 // 参照不可能になります。COM からこのアセンブリ内の型にアクセスする場合は、

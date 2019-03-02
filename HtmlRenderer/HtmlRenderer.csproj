@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,16 +47,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="BuiltinFunctionHandler.cs" />
+    <Compile Include="Args\BroadcastMessageEventArgs.cs" />
+    <Compile Include="Args\EndEncounterEventArgs.cs" />
+    <Compile Include="Handlers\BuiltinFunctionHandler.cs" />
     <Compile Include="Client.cs" />
-    <Compile Include="DisplayHandler.cs" />
-    <Compile Include="LifeSpanHandler.cs" />
-    <Compile Include="LoadHandler.cs" />
-    <Compile Include="MenuHandler.cs" />
+    <Compile Include="Handlers\DisplayHandler.cs" />
+    <Compile Include="Handlers\LifeSpanHandler.cs" />
+    <Compile Include="Handlers\LoadHandler.cs" />
+    <Compile Include="Handlers\MenuHandler.cs" />
+    <Compile Include="Args\TakeScreenshotEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderer.cs" />
-    <Compile Include="RenderHandler.cs" />
-    <Compile Include="RenderProcessHandler.cs" />
+    <Compile Include="Handlers\RenderHandler.cs" />
+    <Compile Include="Handlers\RenderProcessHandler.cs" />
+    <Compile Include="Args\SendMessageEventArgs.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

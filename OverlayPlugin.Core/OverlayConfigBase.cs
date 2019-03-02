@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
@@ -274,12 +270,5 @@ namespace RainbowMage.OverlayPlugin
 
         [XmlIgnore]
         public abstract Type OverlayType { get; }
-    }
-
-    public enum GlobalHotkeyType
-    {
-        ToggleVisible,
-        ToggleClickthru,
-        ToggleLock
     }
 }

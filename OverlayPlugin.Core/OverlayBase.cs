@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Xilium.CefGlue;
 
 namespace RainbowMage.OverlayPlugin
 {
@@ -16,7 +9,9 @@ namespace RainbowMage.OverlayPlugin
     {
         private KeyboardHook hook = new KeyboardHook();
         protected System.Timers.Timer timer;
-        protected System.Timers.Timer xivWindowTimer;
+
+        public System.Timers.Timer UpdateTimer { get { return timer; } }
+
         /// <summary>
         /// オーバーレイがログを出力したときに発生します。
         /// </summary>
@@ -50,6 +45,8 @@ namespace RainbowMage.OverlayPlugin
             InitializeOverlay();
             InitializeTimer();
             InitializeConfigHandlers();
+
+            Update();
         }
 
         /// <summary>
@@ -58,7 +55,7 @@ namespace RainbowMage.OverlayPlugin
         public void Start()
         {
             timer.Start();
-            xivWindowTimer.Start();
+            AutoHide.AddOverlay(this.Config, this.Overlay);
         }
 
         /// <summary>
@@ -67,7 +64,7 @@ namespace RainbowMage.OverlayPlugin
         public void Stop()
         {
             timer.Stop();
-            xivWindowTimer.Stop();
+            AutoHide.RemoveOverlay(this.Config);
         }
 
         /// <summary>
@@ -98,6 +95,9 @@ namespace RainbowMage.OverlayPlugin
                                 break;
                             case GlobalHotkeyType.ToggleLock:
                                 hook.KeyPressed += (o, e) => this.Config.IsLocked = !this.Config.IsLocked;
+                                break;
+                            case GlobalHotkeyType.Screenshot:
+                                hook.KeyPressed += (o, e) => this.TakeScreenshot();
                                 break;
                             default:
                                 hook.KeyPressed += (o, e) => this.Config.IsVisible = !this.Config.IsVisible;
@@ -164,7 +164,7 @@ namespace RainbowMage.OverlayPlugin
 
         private ModifierKeys GetModifierKey(Keys modifier)
         {
-            ModifierKeys modifiers = new ModifierKeys();
+            var modifiers = new ModifierKeys();
             if ((modifier & Keys.Shift) == Keys.Shift)
             {
                 modifiers |= ModifierKeys.Shift;
@@ -238,41 +238,6 @@ namespace RainbowMage.OverlayPlugin
                     Log(LogLevel.Error, "Update: {0}", ex.ToString());
                 }
             };
-
-            xivWindowTimer = new System.Timers.Timer();
-            xivWindowTimer.Interval = 1000;
-            xivWindowTimer.Elapsed += (o, e) =>
-            {
-                try
-                {
-                    if (Config.IsVisible && PluginConfig.HideOverlaysWhenNotActive)
-                    {
-                        uint pid;
-                        var hWndFg = NativeMethods.GetForegroundWindow();
-                        if (hWndFg == IntPtr.Zero)
-                        {
-                            return;
-                        }
-                        NativeMethods.GetWindowThreadProcessId(hWndFg, out pid);
-                        var exePath = Process.GetProcessById((int)pid).MainModule.FileName;
-
-                        if (Path.GetFileName(exePath.ToString()) == "ffxiv.exe" ||
-                            Path.GetFileName(exePath.ToString()) == "ffxiv_dx11.exe" ||
-                            exePath.ToString() == Process.GetCurrentProcess().MainModule.FileName)
-                        {
-                            this.Overlay.Visible = true;
-                        }
-                        else
-                        {
-                            this.Overlay.Visible = false;
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Log(LogLevel.Error, "XivWindowWatcher: {0}", ex.ToString());
-                }
-            };
         }
 
         /// <summary>
@@ -312,10 +277,6 @@ namespace RainbowMage.OverlayPlugin
                 {
                     this.timer.Stop();
                 }
-                if (this.xivWindowTimer != null)
-                {
-                    this.xivWindowTimer.Stop();
-                }
                 if (this.Overlay != null)
                 {
                     this.Overlay.Close();
@@ -325,6 +286,7 @@ namespace RainbowMage.OverlayPlugin
                 {
                     this.hook.Dispose();
                 }
+                AutoHide.RemoveOverlay(this.Config);
             }
             catch (Exception ex)
             {
@@ -334,15 +296,18 @@ namespace RainbowMage.OverlayPlugin
 
         public virtual void Navigate(string url)
         {
-                this.Overlay.Url = url;
+            this.Overlay.Url = url;
+            try
+            {
+                this.Update();
+            }
+            catch
+            { }
         }
 
         protected void Log(LogLevel level, string message)
         {
-            if (OnLog != null)
-            {
-                OnLog(this, new LogEventArgs(level, string.Format("{0}: {1}", this.Name, message)));
-            }
+            OnLog?.Invoke(this, new LogEventArgs(level, string.Format("{0}: {1}", this.Name, message)));
         }
 
         protected void Log(LogLevel level, string format, params object[] args)
@@ -363,9 +328,7 @@ namespace RainbowMage.OverlayPlugin
                 "document.dispatchEvent(new CustomEvent('onOverlayStateUpdate', {{ detail: {{ isLocked: {0} }} }}));",
                 this.Config.IsLocked ? "true" : "false");
 
-            if (this.Overlay != null &&
-                this.Overlay.Renderer != null &&
-                this.Overlay.Renderer.Browser != null)
+            if (BrowserVerifiedCheck())
             {
                 this.Overlay.Renderer.ExecuteScript(updateScript);
             }
@@ -377,16 +340,37 @@ namespace RainbowMage.OverlayPlugin
                 "document.dispatchEvent(new CustomEvent('onBroadcastMessageReceive', {{ detail: {{ message: \"{0}\" }} }}));",
                 Util.CreateJsonSafeString(message));
 
-            if (this.Overlay != null &&
-                this.Overlay.Renderer != null &&
-                this.Overlay.Renderer.Browser != null)
+            if (BrowserVerifiedCheck())
             {
                 this.Overlay.Renderer.ExecuteScript(script);
             }
         }
 
+        private bool BrowserVerifiedCheck()
+        {
+            return Overlay != null && Overlay.Renderer != null && Overlay.Renderer.Browser != null;
+        }
+
         public virtual void OverlayMessage(string message)
         {
+
+        }
+
+        public void TakeScreenshot()
+        {
+            TakeScreenshot(new ScreenshotConfig
+            {
+                SavePath            = PluginConfig.ScreenshotSavePath,
+                AutoClipping        = PluginConfig.ScreenshotAutoClipping,
+                BackgroundImagePath = PluginConfig.ScreenshotBackgroundPath,
+                BackgroundMode      = (ScreenshotBackgroundMode)PluginConfig.ScreenshotBackgroundMode,
+                Margin              = PluginConfig.ScreenshotMargin,
+            });
+        }
+
+        public void TakeScreenshot(ScreenshotConfig config)
+        {
+            Screenshot.SaveScreenshot(this.Overlay.SurfaceBuffer, config);
         }
     }
 }
