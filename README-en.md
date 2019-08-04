@@ -4,7 +4,7 @@ Plugin to show customizable mini parse and timeline overlay for Advanced Combat 
 
 ## Download
 
-You can download release and pre-release archives from [release page](https://github.com/RainbowMage/OverlayPlugin/releases).
+You can download release and pre-release archives from [release page](../../releases).
 
 ## System requirements
 
