@@ -16,7 +16,6 @@ namespace RainbowMage.OverlayPlugin
     {
         private KeyboardHook hook = new KeyboardHook();
         protected System.Timers.Timer timer;
-        protected System.Timers.Timer xivWindowTimer;
         /// <summary>
         /// オーバーレイがログを出力したときに発生します。
         /// </summary>
@@ -58,7 +57,6 @@ namespace RainbowMage.OverlayPlugin
         public void Start()
         {
             timer.Start();
-            xivWindowTimer.Start();
         }
 
         /// <summary>
@@ -67,7 +65,6 @@ namespace RainbowMage.OverlayPlugin
         public void Stop()
         {
             timer.Stop();
-            xivWindowTimer.Stop();
         }
 
         /// <summary>
@@ -239,25 +236,30 @@ namespace RainbowMage.OverlayPlugin
                 }
             };
 
-            xivWindowTimer = new System.Timers.Timer();
-            xivWindowTimer.Interval = 1000;
-            xivWindowTimer.Elapsed += (o, e) =>
+
+            NativeMethods.ActiveWindowChanged += (sender, hWndFg) =>
             {
+
                 try
                 {
                     if (Config.IsVisible && PluginConfig.HideOverlaysWhenNotActive)
                     {
                         uint pid;
-                        var hWndFg = NativeMethods.GetForegroundWindow();
                         if (hWndFg == IntPtr.Zero)
                         {
                             return;
                         }
+
                         NativeMethods.GetWindowThreadProcessId(hWndFg, out pid);
+
+                        if (pid == 0)
+                            return;
+
                         var exePath = Process.GetProcessById((int)pid).MainModule.FileName;
 
-                        if (Path.GetFileName(exePath.ToString()) == "ffxiv.exe" ||
-                            Path.GetFileName(exePath.ToString()) == "ffxiv_dx11.exe" ||
+                        var fileName = Path.GetFileName(exePath.ToString());
+                        if (fileName == "ffxiv.exe" ||
+                            fileName == "ffxiv_dx11.exe" ||
                             exePath.ToString() == Process.GetCurrentProcess().MainModule.FileName)
                         {
                             this.Overlay.Visible = true;
@@ -273,6 +275,7 @@ namespace RainbowMage.OverlayPlugin
                     Log(LogLevel.Error, "XivWindowWatcher: {0}", ex.ToString());
                 }
             };
+
         }
 
         /// <summary>
@@ -312,10 +315,7 @@ namespace RainbowMage.OverlayPlugin
                 {
                     this.timer.Stop();
                 }
-                if (this.xivWindowTimer != null)
-                {
-                    this.xivWindowTimer.Stop();
-                }
+
                 if (this.Overlay != null)
                 {
                     this.Overlay.Close();

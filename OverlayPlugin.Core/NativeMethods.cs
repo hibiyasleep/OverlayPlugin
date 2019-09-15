@@ -12,6 +12,32 @@ namespace RainbowMage.OverlayPlugin
     /// </summary>
     static class NativeMethods
     {
+
+        static WinEventDelegate dele = null;
+
+        static NativeMethods()
+        {
+            dele = new WinEventDelegate(WinEventProc);
+            ActiveWindowHandle = GetForegroundWindow();
+            IntPtr m_hhook = SetWinEventHook(EVENT_SYSTEM_FOREGROUND, EVENT_SYSTEM_FOREGROUND, IntPtr.Zero, dele, 0, 0, WINEVENT_OUTOFCONTEXT);
+        }
+
+        delegate void WinEventDelegate(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime);
+
+        [DllImport("user32.dll")]
+        static extern IntPtr SetWinEventHook(uint eventMin, uint eventMax, IntPtr hmodWinEventProc, WinEventDelegate lpfnWinEventProc, uint idProcess, uint idThread, uint dwFlags);
+
+        private const uint WINEVENT_OUTOFCONTEXT = 0;
+        private const uint EVENT_SYSTEM_FOREGROUND = 3;
+
+        public static event EventHandler<IntPtr> ActiveWindowChanged;
+        public static IntPtr ActiveWindowHandle;
+        private static void WinEventProc(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime)
+        {
+            ActiveWindowHandle = hwnd;
+            ActiveWindowChanged?.Invoke(null, hwnd);
+        }
+
         public struct BlendFunction
         {
             public byte BlendOp;
