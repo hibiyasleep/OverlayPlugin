@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("OverlayPlugin")]
-[assembly: AssemblyCopyright("Copyright © RainbowMage 2015, Kuriyama hibiya 2016")]
+[assembly: AssemblyCopyright("Copyright © RainbowMage 2015, Kuriyama hibiya 2016, ngld 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,4 +32,4 @@ using System.Runtime.InteropServices;
 // すべての値を指定するか、下のように '*' を使ってビルドおよびリビジョン番号を 
 // 既定値にすることができます:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.3.4.0")]
+[assembly: AssemblyVersion("0.11.5.0")]

@@ -45,7 +45,6 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxUrl = new System.Windows.Forms.TextBox();
             this.buttonSpellTimerSelectFile = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textGlobalHotkey = new System.Windows.Forms.TextBox();
@@ -73,7 +72,6 @@
             this.tableLayoutPanel4.Controls.Add(this.checkBoxClickThru, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.panel2, 0, 9);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 1, 3);
-            this.tableLayoutPanel4.Controls.Add(this.label12, 1, 8);
             this.tableLayoutPanel4.Controls.Add(this.label1, 0, 5);
             this.tableLayoutPanel4.Controls.Add(this.label2, 0, 6);
             this.tableLayoutPanel4.Controls.Add(this.textGlobalHotkey, 1, 6);
@@ -196,11 +194,6 @@
             this.buttonSpellTimerSelectFile.UseVisualStyleBackColor = true;
             this.buttonSpellTimerSelectFile.Click += new System.EventHandler(this.buttonSelectFile_Click);
             // 
-            // label12
-            // 
-            resources.ApplyResources(this.label12, "label12");
-            this.label12.Name = "label12";
-            // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
@@ -268,7 +261,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown nudMaxFrameRate;
         private System.Windows.Forms.Label label8;

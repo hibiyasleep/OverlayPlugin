@@ -135,9 +135,6 @@
   <data name="label9.Text" xml:space="preserve">
     <value>移動とリサイズを制限する</value>
   </data>
-  <data name="label13.Text" xml:space="preserve">
-    <value>※ホットキーの変更を有効にするためにはプラグインの再起動が必要です</value>
-  </data>
   <data name="buttonReloadBrowser.Text" xml:space="preserve">
     <value>オーバーレイの表示をリロード</value>
   </data>

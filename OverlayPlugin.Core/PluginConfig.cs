@@ -8,169 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json.Linq;
 
 namespace RainbowMage.OverlayPlugin
 {
     [Serializable]
     public class PluginConfig : IPluginConfig
     {
-        #region Config for version 0.1.2.0 or below
-#pragma warning disable 612, 618
-        [Obsolete] public event EventHandler<VisibleStateChangedEventArgs> VisibleChanged;
-        [Obsolete] public event EventHandler<ThruStateChangedEventArgs> ClickThruChanged;
-        [Obsolete] public event EventHandler<UrlChangedEventArgs> UrlChanged;
-        [Obsolete] public event EventHandler<SortKeyChangedEventArgs> SortKeyChanged;
-        [Obsolete] public event EventHandler<SortTypeChangedEventArgs> SortTypeChanged;
-
-        private bool isVisible;
-        [XmlElement("IsVisible")]
-        public bool IsVisibleObsolete
-        { 
-            get
-            {
-                return this.isVisible;
-            }
-            set
-            {
-                if (this.isVisible != value)
-                {
-                    this.isVisible = value;
-                    if (VisibleChanged != null)
-                    {
-                        VisibleChanged(this, new VisibleStateChangedEventArgs(this.isVisible));
-                    }
-                }
-            }
-        }
-
-        private bool isClickThru;
-        [XmlElement("IsClickThru")]
-        public bool IsClickThruObsolete
-        {
-            get
-            {
-                return this.isClickThru;
-            }
-            set
-            {
-                if (this.isClickThru != value)
-                {
-                    this.isClickThru = value;
-                    if (ClickThruChanged != null)
-                    {
-                        ClickThruChanged(this, new ThruStateChangedEventArgs(this.isClickThru));
-                    }
-                }
-            }
-        }
-
-        private Point overlayPosition;
-        [XmlElement("OverlayPosition")]
-        public Point OverlayPositionObsolete
-        { 
-            get
-            {
-                return this.overlayPosition;
-            }
-            set
-            {
-                this.overlayPosition = value;
-            }
-        }
-
-        private Size overlaySize;
-        [XmlElement("OverlaySize")]
-        public Size OverlaySizeObsolete
-        {
-            get
-            {
-                return this.overlaySize;
-            }
-            set
-            {
-                this.overlaySize = value;
-            }
-        }
-
-        private string url;
-        [XmlElement("Url")]
-        public string UrlObsolete
-        {
-            get
-            {
-                return this.url;
-            }
-            set
-            {
-                if (this.url != value)
-                {
-                    this.url = value;
-                    if (UrlChanged != null)
-                    {
-                        UrlChanged(this, new UrlChangedEventArgs(this.url));
-                    }
-                }
-            }
-        }
-
-        private string sortKey;
-        [XmlElement("SortKey")]
-        public string SortKeyObsolete
-        {
-            get
-            {
-                return this.sortKey;
-            }
-            set
-            {
-                if (this.sortKey != value)
-                {
-                    this.sortKey = value;
-                    if (SortKeyChanged != null)
-                    {
-                        SortKeyChanged(this, new SortKeyChangedEventArgs(this.sortKey));
-                    }
-                }
-            }
-        }
-
-        private MiniParseSortType sortType;
-        [XmlElement("SortType")]
-        public MiniParseSortType SortTypeObsolete
-        {
-            get
-            {
-                return this.sortType;
-            }
-            set
-            {
-                if (this.sortType != value)
-                {
-                    this.sortType = value;
-                    if (SortTypeChanged != null)
-                    {
-                        SortTypeChanged(this, new SortTypeChangedEventArgs(this.sortType));
-                    }
-                }
-            }
-        }
-#pragma warning restore 612, 618
-        #endregion
-
-        #region Config for version 0.2.5.0 or below
-        [XmlElement("MiniParseOverlay")]
-        public MiniParseOverlayConfig MiniParseOverlayObsolete { get; set; }
-
-        [XmlElement("SpellTimerOverlay")]
-        public SpellTimerOverlayConfig SpellTimerOverlayObsolete { get; set; }
-        #endregion
-
-        /// <summary>
-        /// オーバーレイ設定のリスト。
-        /// </summary>
-        [XmlElement("Overlays")]
-        public OverlayConfigList Overlays { get; set; }
-
         /// <summary>
         /// 設定タブのログにおいて、常に最新のログ行を表示するかどうかを取得または設定します。
         /// </summary>
@@ -180,11 +26,25 @@ namespace RainbowMage.OverlayPlugin
         [XmlElement("HideOverlaysWhenNotActive")]
         public bool HideOverlaysWhenNotActive { get; set; }
 
+        public bool HideOverlayDuringCutscene { get; set; }
+
+        public bool ErrorReports { get; set; }
+        public bool UpdateCheck { get; set; }
+
+        public string WSServerIP { get; set; }
+
+        public int WSServerPort { get; set; }
+
+        public bool WSServerSSL { get; set; }
+
+        public bool WSServerRunning { get; set; }
+
         /// <summary>
         /// 設定ファイルを生成したプラグインのバージョンを取得または設定します。
         /// 設定が新規に作成された場合、またはバージョン0.3未満では null が設定されます。
         /// </summary>
         [XmlIgnore]
+        [JsonIgnore]
         public Version Version 
         {
             get
@@ -212,37 +72,45 @@ namespace RainbowMage.OverlayPlugin
         }
 
         [XmlElement("Version")]
+        [JsonProperty("Version")]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [Browsable(false)]
         public string VersionString { get; set; }
+
+        public DateTime LastUpdateCheck { get; set; }
 
         /// <summary>
         /// 設定が新規に作成されたことを示すフラグを取得または設定します。
         /// </summary>
         [XmlIgnore]
+        [JsonIgnore]
         public bool IsFirstLaunch { get; set; }
 
+        /// <summary>
+        /// オーバーレイ設定のリスト。
+        /// </summary>
+        [XmlElement("Overlays")]
+        [JsonIgnore]
+        public OverlayConfigList<IOverlayConfig> Overlays { get; set; }
+
+        [JsonProperty("Overlays")]
+        public List<JObject> OverlayObjects;
+
+        [XmlIgnore]
+        public Dictionary<string, JObject> EventSourceConfigs { get; set; }
+
         internal const string DefaultMiniParseOverlayName = "Mini Parse";
-        internal const string DefaultSpellTimerOverlayName = "Spell Timer";
 
         public PluginConfig()
         {
-            #region Config for version 0.1.2.0 or below
-#pragma warning disable 612, 618
-            this.IsVisibleObsolete = true;
-            this.IsClickThruObsolete = false;
-            this.OverlayPositionObsolete = new Point(20, 20);
-            this.OverlaySizeObsolete = new Size(300, 300);
-            this.UrlObsolete = null;
-            this.SortKeyObsolete = "encdps";
-            this.SortTypeObsolete = MiniParseSortType.NumericDescending;
-#pragma warning restore 612, 618
-            #endregion
-
-            this.Overlays = new OverlayConfigList();
+            this.Overlays = new OverlayConfigList<IOverlayConfig>();
+            this.EventSourceConfigs = new Dictionary<string, JObject>();
 
             this.FollowLatestLog = false;
-            this.HideOverlaysWhenNotActive = false;
+            this.HideOverlaysWhenNotActive = true;
+            this.HideOverlayDuringCutscene = false;
+            this.ErrorReports = false;
+            this.UpdateCheck = true;
             this.IsFirstLaunch = true;
         }
 
@@ -261,6 +129,83 @@ namespace RainbowMage.OverlayPlugin
             }
         }
 
+        public void SaveJson(string path)
+        {
+            var oldOverlayObjects = OverlayObjects;
+
+            // Convert Overlays
+            if (OverlayObjects == null)
+            {
+                OverlayObjects = new List<JObject>();
+            }
+            
+            foreach (var item in this.Overlays)
+            {
+                var obj = JObject.FromObject(item);
+                obj["$type"] = item.GetType().FullName + ", " + item.GetType().Assembly.GetName();
+                OverlayObjects.Add(obj);
+            }
+
+            using (var stream = new StreamWriter(path))
+            {
+                var serializer = new JsonSerializer();
+                serializer.Formatting = Formatting.Indented;
+                serializer.TypeNameHandling = TypeNameHandling.Auto;
+                serializer.Serialize(stream, this);
+            }
+
+            OverlayObjects = oldOverlayObjects;
+        }
+
+        public static PluginConfig LoadJson(string path)
+        {
+            if (!File.Exists(path))
+            {
+                return null;
+            }
+
+            PluginConfig result;
+            var Logger = Registry.Resolve<ILogger>();
+
+            using (var stream = new StreamReader(path))
+            {
+                var serializer = new JsonSerializer();
+                var reader = new JsonTextReader(stream);
+                serializer.TypeNameHandling = TypeNameHandling.Auto;
+
+                result = serializer.Deserialize<PluginConfig>(reader);
+            }
+
+            result.IsFirstLaunch = false;
+
+            // Convert Overlays
+            var overlayLeftOvers = new List<JObject>();
+            result.Overlays = new OverlayConfigList<IOverlayConfig>();
+
+            foreach (var item in result.OverlayObjects)
+            {
+                try
+                {
+                    var typeName = item["$type"].ToString();
+                    var type = GetType(typeName.Split(',')[0]);
+                    if (type == null)
+                    {
+                        throw new Exception($"Type {typeName} not found!");
+                    }
+
+                    result.Overlays.Add((IOverlayConfig)JsonConvert.DeserializeObject(item.ToString(Formatting.None), type));
+                } catch (Exception e)
+                {
+                    Logger.Log(LogLevel.Error, $"Failed to load an overlay config: ${e}");
+                    overlayLeftOvers.Add(item);
+                }
+            }
+
+            result.OverlayObjects = overlayLeftOvers;
+
+            return result;
+        }
+
         /// <summary>
         /// 指定したファイルパスから設定を読み込みます。
         /// </summary>
@@ -277,17 +222,9 @@ namespace RainbowMage.OverlayPlugin
             using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(PluginConfig));
+
                 var result = (PluginConfig)serializer.Deserialize(stream);
-
                 result.IsFirstLaunch = false;
-
-                if (result.Version == null)
-                {
-                    result.UpdateFromVersion0_1_2_0OrBelow(pluginDirectory);
-                    result.UpdateFromVersion0_2_5_0OrBelow();
-                }
-
-
                 return result;
             }
         }
@@ -301,91 +238,33 @@ namespace RainbowMage.OverlayPlugin
             var miniparseOverlayConfig = new MiniParseOverlayConfig(DefaultMiniParseOverlayName);
             miniparseOverlayConfig.Position = new Point(20, 20);
             miniparseOverlayConfig.Size = new Size(500, 300);
-            miniparseOverlayConfig.Url = new Uri(Path.Combine(pluginDirectory, "resources", "miniparse.html")).ToString(); 
+            miniparseOverlayConfig.Url = new Uri(Path.Combine(pluginDirectory, "resources", "miniparse.html")).ToString();
 
-            var spellTimerOverlayConfig = new SpellTimerOverlayConfig(DefaultSpellTimerOverlayName);
-            spellTimerOverlayConfig.Position = new Point(20, 520);
-            spellTimerOverlayConfig.Size = new Size(200, 300);
-            spellTimerOverlayConfig.IsVisible = true;
-            spellTimerOverlayConfig.MaxFrameRate = 5;
-            spellTimerOverlayConfig.Url = new Uri(Path.Combine(pluginDirectory, "resources", "spelltimer.html")).ToString(); 
-
-            this.Overlays = new OverlayConfigList();
+            this.Overlays = new OverlayConfigList<IOverlayConfig>();
             this.Overlays.Add(miniparseOverlayConfig);
-            this.Overlays.Add(spellTimerOverlayConfig);
+
+            this.WSServerIP = "127.0.0.1";
+            this.WSServerPort = 10501;
+            this.WSServerRunning = false;
+            this.WSServerSSL = false;
         }
 
-        /// <summary>
-        /// バージョン0.1.2.0以下からのアップデート用の処理を行います。
-        /// </summary>
-        /// <param name="pluginDirectory"></param>
-        private void UpdateFromVersion0_1_2_0OrBelow(string pluginDirectory)
+        private void UpdateFromVersion0_3_4_0OrBelow()
         {
-#pragma warning disable 612, 618
-            if (this.MiniParseOverlayObsolete == null)
-            {
-                this.MiniParseOverlayObsolete = new MiniParseOverlayConfig(DefaultMiniParseOverlayName);
-                this.MiniParseOverlayObsolete.IsVisible = this.IsVisibleObsolete;
-                this.MiniParseOverlayObsolete.IsClickThru = this.IsClickThruObsolete;
-                this.MiniParseOverlayObsolete.Position = this.OverlayPositionObsolete;
-                this.MiniParseOverlayObsolete.Size = this.OverlaySizeObsolete;
-                this.MiniParseOverlayObsolete.Url = this.UrlObsolete;
-            }
-            if (this.SpellTimerOverlayObsolete == null)
-            {
-                this.SpellTimerOverlayObsolete = new SpellTimerOverlayConfig(DefaultSpellTimerOverlayName);
-                this.SpellTimerOverlayObsolete.Position = new Point(20, 520);
-                this.SpellTimerOverlayObsolete.Size = new Size(200, 300);
-                this.SpellTimerOverlayObsolete.IsVisible = false;
-                this.SpellTimerOverlayObsolete.MaxFrameRate = 5;
-                this.SpellTimerOverlayObsolete.Url = new Uri(Path.Combine(pluginDirectory, "resources", "spelltimer.html")).ToString(); ;
-            }
-#pragma warning restore 612, 618
+            // TODO: Convert SortKey and SortType from OverlayConfig to EventSourceConfig
         }
 
-        /// <summary>
-        /// バージョン 0.2.5.0 以下からのアップデート処理を行います。
-        /// </summary>
-        private void UpdateFromVersion0_2_5_0OrBelow()
+        private static Type GetType(string fullName)
         {
-#pragma warning disable 612, 618
-            if (this.MiniParseOverlayObsolete != null)
+            foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
             {
-                var miniParseOverlayConfig = new MiniParseOverlayConfig(DefaultMiniParseOverlayName);
-                miniParseOverlayConfig.IsVisible = this.MiniParseOverlayObsolete.IsVisible;
-                miniParseOverlayConfig.IsClickThru = this.MiniParseOverlayObsolete.IsClickThru;
-                miniParseOverlayConfig.Position = this.MiniParseOverlayObsolete.Position;
-                miniParseOverlayConfig.Size = this.MiniParseOverlayObsolete.Size;
-                miniParseOverlayConfig.Url = this.MiniParseOverlayObsolete.Url;
-                miniParseOverlayConfig.SortKey = this.MiniParseOverlayObsolete.SortKey;
-                miniParseOverlayConfig.SortType = this.MiniParseOverlayObsolete.SortType;
-                miniParseOverlayConfig.MaxFrameRate = this.MiniParseOverlayObsolete.MaxFrameRate;
-                miniParseOverlayConfig.GlobalHotkey = this.MiniParseOverlayObsolete.GlobalHotkey;
-                miniParseOverlayConfig.GlobalHotkeyEnabled = this.MiniParseOverlayObsolete.GlobalHotkeyEnabled;
-                miniParseOverlayConfig.GlobalHotkeyModifiers = this.MiniParseOverlayObsolete.GlobalHotkeyModifiers;
-
-                this.Overlays.Add(miniParseOverlayConfig);
-
-                this.MiniParseOverlayObsolete = null;
+                var type = asm.GetType(fullName, false);
+                if (type != null)
+                {
+                    return type;
+                }
             }
-            if (this.SpellTimerOverlayObsolete != null)
-            {
-                var spellTimerOverlayConfig = new SpellTimerOverlayConfig(DefaultSpellTimerOverlayName);
-                spellTimerOverlayConfig.IsVisible = this.SpellTimerOverlayObsolete.IsVisible;
-                spellTimerOverlayConfig.IsClickThru = this.SpellTimerOverlayObsolete.IsClickThru;
-                spellTimerOverlayConfig.Position = this.SpellTimerOverlayObsolete.Position;
-                spellTimerOverlayConfig.Size = this.SpellTimerOverlayObsolete.Size;
-                spellTimerOverlayConfig.Url = this.SpellTimerOverlayObsolete.Url;
-                spellTimerOverlayConfig.MaxFrameRate = this.SpellTimerOverlayObsolete.MaxFrameRate;
-                spellTimerOverlayConfig.GlobalHotkey = this.SpellTimerOverlayObsolete.GlobalHotkey;
-                spellTimerOverlayConfig.GlobalHotkeyEnabled = this.SpellTimerOverlayObsolete.GlobalHotkeyEnabled;
-                spellTimerOverlayConfig.GlobalHotkeyModifiers = this.SpellTimerOverlayObsolete.GlobalHotkeyModifiers;
-
-                this.Overlays.Add(spellTimerOverlayConfig);
-
-                this.SpellTimerOverlayObsolete = null;
-            }
-#pragma warning restore 612, 618
+            return null;
         }
     }
 }

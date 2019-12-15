@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+
 namespace RainbowMage.OverlayPlugin
 {
-    public sealed class KeyboardHook : IDisposable
+    public sealed class KeyboardHook : NativeWindow, IDisposable
     {
         // Registers a hot key with Windows.
         [DllImport("user32.dll")]
@@ -12,63 +14,32 @@ namespace RainbowMage.OverlayPlugin
         [DllImport("user32.dll")]
         private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
 
+        private static int WM_HOTKEY = 0x0312;
+
+        private Dictionary<int, HotKeyInfo> _hotkeys = new Dictionary<int, HotKeyInfo>();
+
         /// <summary>
-        /// Represents the window that is used internally to get the messages.
+        /// Overridden to get the notifications.
         /// </summary>
-        private class Window : NativeWindow, IDisposable
+        /// <param name="m"></param>
+        protected override void WndProc(ref Message m)
         {
-            private static int WM_HOTKEY = 0x0312;
+            base.WndProc(ref m);
 
-            public Window()
+            // check if we got a hot key pressed.
+            if (m.Msg == WM_HOTKEY && _hotkeys.TryGetValue((int)m.LParam, out HotKeyInfo info))
             {
-                // create the handle for the window.
-                this.CreateHandle(new CreateParams());
-            }
-
-            /// <summary>
-            /// Overridden to get the notifications.
-            /// </summary>
-            /// <param name="m"></param>
-            protected override void WndProc(ref Message m)
-            {
-                base.WndProc(ref m);
-
-                // check if we got a hot key pressed.
-                if (m.Msg == WM_HOTKEY)
+                foreach (var cb in info.Callbacks)
                 {
-                    // get the keys.
-                    Keys key = (Keys)(((int)m.LParam >> 16) & 0xFFFF);
-                    ModifierKeys modifier = (ModifierKeys)((int)m.LParam & 0xFFFF);
-
-                    // invoke the event to notify the parent.
-                    if (KeyPressed != null)
-                        KeyPressed(this, new KeyPressedEventArgs(modifier, key));
+                    cb();
                 }
             }
-
-            public event EventHandler<KeyPressedEventArgs> KeyPressed;
-
-            #region IDisposable Members
-
-            public void Dispose()
-            {
-                this.DestroyHandle();
-            }
-
-            #endregion
         }
-
-        private Window _window = new Window();
-        private int _currentId;
 
         public KeyboardHook()
         {
-            // register the event of the inner native window.
-            _window.KeyPressed += delegate(object sender, KeyPressedEventArgs args)
-            {
-                if (KeyPressed != null)
-                    KeyPressed(this, args);
-            };
+            // create the handle for the window.
+            this.CreateHandle(new CreateParams());
         }
 
         /// <summary>
@@ -76,60 +47,119 @@ namespace RainbowMage.OverlayPlugin
         /// </summary>
         /// <param name="modifier">The modifiers that are associated with the hot key.</param>
         /// <param name="key">The key itself that is associated with the hot key.</param>
-        public void RegisterHotKey(ModifierKeys modifier, Keys key)
+        public void RegisterHotKey(ModifierKeys modifier, Keys key, Action callback)
         {
-            // increment the counter.
-            _currentId = _currentId + 1;
+            var lookupKey = (int)modifier | ((int)key << 16);
+            if (!_hotkeys.ContainsKey(lookupKey))
+            {
+                _hotkeys[lookupKey] = new HotKeyInfo();
 
-            // register the hot key.
-            if (!RegisterHotKey(_window.Handle, _currentId, (uint)modifier, (uint)key))
-                throw new InvalidOperationException("Couldn’t register the hot key.");
+                // register the hot key.
+                if (!RegisterHotKey(Handle, _hotkeys[lookupKey].Id, (uint)modifier, (uint)key))
+                {
+                    _hotkeys.Remove(lookupKey);
+                    throw new InvalidOperationException("Couldn’t register the hot key.");
+                }
+            }
+
+            _hotkeys[lookupKey].Callbacks.Add(callback);
         }
 
-        /// <summary>
-        /// A hot key has been pressed.
-        /// </summary>
-        public event EventHandler<KeyPressedEventArgs> KeyPressed;
+        public void UnregisterHotKey(ModifierKeys modifier, Keys key, Action callback)
+        {
+            var lookupKey = (int)modifier | ((int)key << 16);
+            if (_hotkeys.TryGetValue(lookupKey, out HotKeyInfo info))
+            {
+                info.Callbacks.Remove(callback);
+
+                if (info.Callbacks.Count < 1)
+                {
+                    if (UnregisterHotKey(Handle, info.Id))
+                    {
+                        _hotkeys.Remove(lookupKey);
+                    }
+                }
+            }
+        }
+
+        public void UnregisterHotKey(Action callback)
+        {
+            var toRemove = new List<int>();
+
+            foreach (var pair in _hotkeys)
+            {
+                if (pair.Value.Callbacks.Contains(callback))
+                {
+                    pair.Value.Callbacks.Remove(callback);
+                    if (pair.Value.Callbacks.Count < 1)
+                    {
+                        if (UnregisterHotKey(Handle, pair.Value.Id))
+                        {
+                            toRemove.Add(pair.Key);
+                        }
+                    }
+                }
+            }
+
+            foreach (var key in toRemove)
+            {
+                _hotkeys.Remove(key);
+            }
+        }
+
+        public void DisableHotKeys()
+        {
+            foreach (var pair in _hotkeys)
+            {
+                if (!UnregisterHotKey(Handle, pair.Value.Id))
+                {
+                    Registry.Resolve<ILogger>().Log(LogLevel.Error, Resources.UnregisterHotkeyError, pair.Key);
+                }
+            }
+        }
+
+        public void EnableHotKeys()
+        {
+            foreach (var pair in _hotkeys)
+            {
+                uint modifier = (uint)pair.Key & 0xFFFF;
+                uint key = (uint)(pair.Key >> 16) & 0xFFFF;
+
+                if (!RegisterHotKey(Handle, pair.Value.Id, modifier, key))
+                {
+                    Registry.Resolve<ILogger>().Log(LogLevel.Error, Resources.RegisterHotkeyError, modifier, key);
+                }
+            }
+        }
 
         #region IDisposable Members
 
         public void Dispose()
         {
             // unregister all the registered hot keys.
-            for (int i = _currentId; i > 0; i--)
+            foreach (var info in _hotkeys)
             {
-                UnregisterHotKey(_window.Handle, i);
+                UnregisterHotKey(Handle, info.Value.Id);
             }
 
-            // dispose the inner native window.
-            _window.Dispose();
+            // dispose the native window.
+            this.DestroyHandle();
         }
 
         #endregion
-    }
 
-    /// <summary>
-    /// Event Args for the event that is fired after the hot key has been pressed.
-    /// </summary>
-    public class KeyPressedEventArgs : EventArgs
-    {
-        private ModifierKeys _modifier;
-        private Keys _key;
-
-        internal KeyPressedEventArgs(ModifierKeys modifier, Keys key)
+        private class HotKeyInfo
         {
-            _modifier = modifier;
-            _key = key;
-        }
+            public List<Action> Callbacks { get; private set; }
+            public int Id { get; private set; }
 
-        public ModifierKeys Modifier
-        {
-            get { return _modifier; }
-        }
+            private static int _idCounter = 0;
 
-        public Keys Key
-        {
-            get { return _key; }
+            public HotKeyInfo()
+            {
+                Callbacks = new List<Action>();
+                Id = _idCounter++;
+            }
         }
     }
 

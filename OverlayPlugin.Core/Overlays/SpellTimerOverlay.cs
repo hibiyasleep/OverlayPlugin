@@ -17,8 +17,8 @@ namespace RainbowMage.OverlayPlugin.Overlays
 
         IList<SerializableTimerFrameEntry> activatedTimers;
 
-        public SpellTimerOverlay(SpellTimerOverlayConfig config)
-            : base(config, config.Name)
+        public SpellTimerOverlay(SpellTimerOverlayConfig config, string name)
+            : base(config, name)
         {
             this.activatedTimers = new List<SerializableTimerFrameEntry>();
 
@@ -53,18 +53,16 @@ namespace RainbowMage.OverlayPlugin.Overlays
             };
         }
 
+        public override System.Windows.Forms.Control CreateConfigControl()
+        {
+            return new SpellTimerConfigPanel(this);
+        }
+
         protected override void Update()
         {
             try
             {
-                var updateScript = CreateEventDispatcherScript();
-
-                if (this.Overlay != null &&
-                    this.Overlay.Renderer != null &&
-                    this.Overlay.Renderer.Browser != null)
-                {
-                    this.Overlay.Renderer.ExecuteScript(updateScript);
-                }
+                ExecuteScript(CreateEventDispatcherScript());
 
             }
             catch (Exception ex)

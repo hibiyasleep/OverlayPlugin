@@ -68,6 +68,11 @@ namespace RainbowMage.OverlayPlugin.Overlays
             }
         }
 
+        public override Control CreateConfigControl()
+        {
+            return new LogParseConfigPanel(this);
+        }
+
         public override void Navigate(string url)
         {
             base.Navigate(url);
@@ -95,8 +100,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
                 var updateScript = CreateEventDispatcherScript();
 
                 if (this.Overlay != null &&
-                    this.Overlay.Renderer != null &&
-                    this.Overlay.Renderer.Browser != null)
+                    this.Overlay.Renderer != null)
                 {
                     this.Overlay.Renderer.ExecuteScript(updateScript);
                 }

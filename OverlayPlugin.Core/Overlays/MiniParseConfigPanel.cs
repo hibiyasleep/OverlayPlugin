@@ -15,20 +15,11 @@ namespace RainbowMage.OverlayPlugin.Overlays
         private MiniParseOverlayConfig config;
         private MiniParseOverlay overlay;
 
-        static readonly List<KeyValuePair<string, MiniParseSortType>> sortTypeDict = new List<KeyValuePair<string, MiniParseSortType>>()
-        {
-            new KeyValuePair<string, MiniParseSortType>(Localization.GetText(TextItem.DoNotSort), MiniParseSortType.None),
-            new KeyValuePair<string, MiniParseSortType>(Localization.GetText(TextItem.SortStringAscending), MiniParseSortType.StringAscending),
-            new KeyValuePair<string, MiniParseSortType>(Localization.GetText(TextItem.SortStringDescending), MiniParseSortType.StringDescending),
-            new KeyValuePair<string, MiniParseSortType>(Localization.GetText(TextItem.SortNumberAscending), MiniParseSortType.NumericAscending),
-            new KeyValuePair<string, MiniParseSortType>(Localization.GetText(TextItem.SortNumberDescending), MiniParseSortType.NumericDescending)
-        };
-
         static readonly List<KeyValuePair<string, GlobalHotkeyType>> hotkeyTypeDict = new List<KeyValuePair<string, GlobalHotkeyType>>()
         {
-            new KeyValuePair<string, GlobalHotkeyType>(Localization.GetText(TextItem.ToggleVisible), GlobalHotkeyType.ToggleVisible),
-            new KeyValuePair<string, GlobalHotkeyType>(Localization.GetText(TextItem.ToggleClickthru), GlobalHotkeyType.ToggleClickthru),
-            new KeyValuePair<string, GlobalHotkeyType>(Localization.GetText(TextItem.ToggleLock), GlobalHotkeyType.ToggleLock)
+            new KeyValuePair<string, GlobalHotkeyType>(Resources.HotkeyActionToggleVisible, GlobalHotkeyType.ToggleVisible),
+            new KeyValuePair<string, GlobalHotkeyType>(Resources.HotkeyActionToggleClickthrough, GlobalHotkeyType.ToggleClickthru),
+            new KeyValuePair<string, GlobalHotkeyType>(Resources.HotkeyActionToggleLock, GlobalHotkeyType.ToggleLock)
         };
 
         public MiniParseConfigPanel(MiniParseOverlay overlay)
@@ -48,12 +39,10 @@ namespace RainbowMage.OverlayPlugin.Overlays
             this.checkMiniParseClickthru.Checked = config.IsClickThru;
             this.checkLock.Checked = config.IsLocked;
             this.textMiniParseUrl.Text = config.Url;
-            this.textMiniParseSortKey.Text = config.SortKey;
-            this.comboMiniParseSortType.DisplayMember = "Key";
-            this.comboMiniParseSortType.ValueMember = "Value";
-            this.comboMiniParseSortType.DataSource = sortTypeDict;
-            this.comboMiniParseSortType.SelectedValue = config.SortType;
-            this.comboMiniParseSortType.SelectedIndexChanged += comboSortType_SelectedIndexChanged;
+            this.checkActwsCompatbility.Checked = config.ActwsCompatibility;
+            this.lblNoFocus.Visible = config.ActwsCompatibility;
+            this.checkNoFocus.Visible = config.ActwsCompatibility;
+            this.checkNoFocus.Checked = config.NoFocus;
             this.nudMaxFrameRate.Value = config.MaxFrameRate;
             this.checkEnableGlobalHotkey.Checked = config.GlobalHotkeyEnabled;
             this.textGlobalHotkey.Enabled = this.checkEnableGlobalHotkey.Checked;
@@ -63,6 +52,8 @@ namespace RainbowMage.OverlayPlugin.Overlays
             this.comboHotkeyType.DataSource = hotkeyTypeDict;
             this.comboHotkeyType.SelectedValue = config.GlobalHotkeyType;
             this.comboHotkeyType.SelectedIndexChanged += ComboHotkeyMode_SelectedIndexChanged;
+            this.checkLogConsoleMessages.Checked = config.LogConsoleMessages;
+            this.tbZoom.Value = config.Zoom;
         }
 
         private void SetupConfigEventHandlers()
@@ -88,18 +79,26 @@ namespace RainbowMage.OverlayPlugin.Overlays
                     this.textMiniParseUrl.Text = e.NewUrl;
                 });
             };
-            this.config.SortKeyChanged += (o, e) =>
+            this.config.ActwsCompatibilityChanged += (o, e) =>
             {
                 this.InvokeIfRequired(() =>
                 {
-                    this.textMiniParseSortKey.Text = e.NewSortKey;
+                    this.checkActwsCompatbility.Checked = config.ActwsCompatibility;
+
+                    this.lblNoFocus.Visible = config.ActwsCompatibility;
+                    this.checkNoFocus.Visible = config.ActwsCompatibility;
+
+                    if (!config.ActwsCompatibility)
+                    {
+                        config.NoFocus = true;
+                    }
                 });
             };
-            this.config.SortTypeChanged += (o, e) =>
+            this.config.NoFocusChanged += (o, e) =>
             {
                 this.InvokeIfRequired(() =>
                 {
-                    this.comboMiniParseSortType.SelectedValue = e.NewSortType;
+                    this.checkNoFocus.Checked = config.NoFocus;
                 });
             };
             this.config.MaxFrameRateChanged += (o, e) =>
@@ -145,6 +144,27 @@ namespace RainbowMage.OverlayPlugin.Overlays
                     this.comboHotkeyType.SelectedValue = e.NewHotkeyType;
                 });
             };
+            this.config.ActwsCompatibilityChanged += (o, e) =>
+            {
+                this.InvokeIfRequired(() =>
+                {
+                    this.checkActwsCompatbility.Checked = this.config.ActwsCompatibility;
+                });
+            };
+            this.config.LogConsoleMessagesChanged += (o, e) =>
+            {
+                this.InvokeIfRequired(() =>
+                {
+                    this.checkLogConsoleMessages.Checked = this.config.LogConsoleMessages;
+                });
+            };
+            this.config.ZoomChanged += (o, e) =>
+            {
+                this.InvokeIfRequired(() =>
+                {
+                    this.tbZoom.Value = this.config.Zoom;
+                });
+            };
         }
 
         private void InvokeIfRequired(Action action)
@@ -179,17 +199,6 @@ namespace RainbowMage.OverlayPlugin.Overlays
             this.config.Url = textMiniParseUrl.Text;
         }
 
-        private void textSortKey_TextChanged(object sender, EventArgs e)
-        {
-            this.config.SortKey = this.textMiniParseSortKey.Text;
-        }
-
-        private void comboSortType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var value = (MiniParseSortType)this.comboMiniParseSortType.SelectedValue;
-            this.config.SortType = value;
-        }
-
         private void ComboHotkeyMode_SelectedIndexChanged(object sender, EventArgs e)
         {
             var value = (GlobalHotkeyType)this.comboHotkeyType.SelectedValue;
@@ -203,7 +212,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
 
         private void buttonReloadBrowser_Click(object sender, EventArgs e)
         {
-            this.overlay.Navigate(this.config.Url);
+            this.overlay.Reload();
         }
 
         private void buttonSelectFile_Click(object sender, EventArgs e)
@@ -227,15 +236,6 @@ namespace RainbowMage.OverlayPlugin.Overlays
                 this.overlay.Overlay.Renderer.showDevTools(false);
         }
 
-        private void buttonCopyActXiv_Click(object sender, EventArgs e)
-        {
-            var json = overlay.CreateJsonData();
-            if (!string.IsNullOrWhiteSpace(json))
-            {
-                Clipboard.SetText(json);
-            }
-        }
-
         private void checkBoxEnableGlobalHotkey_CheckedChanged(object sender, EventArgs e)
         {
             this.config.GlobalHotkeyEnabled = this.checkEnableGlobalHotkey.Checked;
@@ -253,6 +253,52 @@ namespace RainbowMage.OverlayPlugin.Overlays
         private void checkLock_CheckedChanged(object sender, EventArgs e)
         {
             this.config.IsLocked = this.checkLock.Checked;
+        }
+
+        private void buttonResetOverlayPosition_Click(object sender, EventArgs e)
+        {
+            this.overlay.Overlay.Location = new Point(10, 10);
+        }
+
+        private void CheckActwsCompatbility_CheckedChanged(object sender, EventArgs e)
+        {
+            this.config.ActwsCompatibility = checkActwsCompatbility.Checked;
+        }
+
+        private void textGlobalHotkey_Enter(object sender, EventArgs e)
+        {
+            Registry.Resolve<KeyboardHook>().DisableHotKeys();
+        }
+
+        private void textGlobalHotkey_Leave(object sender, EventArgs e)
+        {
+            Registry.Resolve<KeyboardHook>().EnableHotKeys();
+        }
+
+        private void cbWhiteBg_CheckedChanged(object sender, EventArgs e)
+        {
+            var color = this.cbWhiteBg.Checked ? "white" : "transparent";
+            this.overlay.ExecuteScript($"document.body.style.backgroundColor = \"{color}\";");
+        }
+
+        private void checkNoFocus_CheckedChanged(object sender, EventArgs e)
+        {
+            this.config.NoFocus = this.checkNoFocus.Checked;
+        }
+
+        private void checkLogConsoleMessages_CheckedChanged(object sender, EventArgs e)
+        {
+            this.config.LogConsoleMessages = this.checkLogConsoleMessages.Checked;
+        }
+
+        private void tbZoom_ValueChanged(object sender, EventArgs e)
+        {
+            this.config.Zoom = this.tbZoom.Value;
+        }
+
+        private void btnResetZoom_Click(object sender, EventArgs e)
+        {
+            this.config.Zoom = 1;
         }
     }
 }

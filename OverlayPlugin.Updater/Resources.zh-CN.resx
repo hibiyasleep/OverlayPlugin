@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <data name="UpdateCheckException" xml:space="preserve">
+    <value>检查更新失败：
+{0}</value>
+  </data>
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>OverlayPlugin错误</value>
+  </data>
+  <data name="LogRetry" xml:space="preserve">
+    <value>正在重试...</value>
+  </data>
+  <data name="UpdateFailedError" xml:space="preserve">
+    <value>插件更新失败。下次运行ACT时将不会加载本插件。重试？</value>
+  </data>
+  <data name="LogDownloadFailed" xml:space="preserve">
+    <value>下载失败：{0}</value>
+  </data>
+  <data name="MsvcrtFailed" xml:space="preserve">
+    <value>MSVCRT安装失败。</value>
+  </data>
+  <data name="StatusError" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="LogResumingDownload" xml:space="preserve">
+    <value>正在恢复下载...</value>
+  </data>
+  <data name="OverlayPluginTitle" xml:space="preserve">
+    <value>OverlayPlugin</value>
+  </data>
+  <data name="LaunchingInstallerFailed" xml:space="preserve">
+    <value>打开安装程序失败：{0}</value>
+  </data>
+  <data name="LogOpeningArchive" xml:space="preserve">
+    <value>正在打开压缩包...</value>
+  </data>
+  <data name="StatusPreparingExtraction" xml:space="preserve">
+    <value>[{0}/{1}]:正在准备解压缩...</value>
+  </data>
+  <data name="DownloadFailedContentLengthMissing" xml:space="preserve">
+    <value>下载失败！没有下载文件大小（Content-Length标头缺失）。</value>
+  </data>
+  <data name="UpdateParseVersionError" xml:space="preserve">
+    <value>解析版本失败:
+{0}</value>
+  </data>
+  <data name="LogInstallerFailed" xml:space="preserve">
+    <value>错误：安装程序没有正确完成。</value>
+  </data>
+  <data name="LogAbortedByUser" xml:space="preserve">
+    <value>用户已终止。</value>
+  </data>
+  <data name="StatusDownloadStarted" xml:space="preserve">
+    <value>[{0}/{1}]:正在开始下载...</value>
+  </data>
+  <data name="LogRetryAfter1s" xml:space="preserve">
+    <value>1秒后重试。</value>
+  </data>
+  <data name="StatusDone" xml:space="preserve">
+    <value>[{0}/{1}]:已完成。</value>
+  </data>
+  <data name="LogExtractionAbortedByUser" xml:space="preserve">
+    <value>解压缩被用户终止。</value>
+  </data>
+  <data name="UpdateCheckTitle" xml:space="preserve">
+    <value>OverlayPlugin检查更新</value>
+  </data>
+  <data name="UpdateCefDlFailed" xml:space="preserve">
+    <value>下载CEF失败！检查OverlayPlugin.dll选项卡以获取详细信息。</value>
+  </data>
+  <data name="Exception" xml:space="preserve">
+    <value>失败：{0}</value>
+  </data>
+  <data name="LogLaunchingInstaller" xml:space="preserve">
+    <value>正在运行安装程序...</value>
+  </data>
+  <data name="LogInstallerWaiting" xml:space="preserve">
+    <value>正在等待安装程序退出...</value>
+  </data>
+  <data name="OutOfRetries" xml:space="preserve">
+    <value>超出尝试次数。</value>
+  </data>
+  <data name="StatusLaunchingInstaller" xml:space="preserve">
+    <value>[{0}/{1}]:正在运行安装程序...。</value>
+  </data>
+  <data name="LogDownloading" xml:space="preserve">
+    <value>正在下载"{0}"至{1}...</value>
+  </data>
+  <data name="StatusCancelling" xml:space="preserve">
+    <value>正在取消...</value>
+  </data>
+  <data name="MsvcrtMissing" xml:space="preserve">
+    <value>你没有安装MS Visual C++ Redistributable for Visual Studio 2019。
+OverlayPlugin的运行需要它。现在安装？</value>
+  </data>
+  <data name="CreatingTempDirFailed" xml:space="preserve">
+    <value>创建或清空缓存目录"{0}": {1}失败</value>
+  </data>
+  <data name="UpdateTitle" xml:space="preserve">
+    <value>OverlayPlugin更新</value>
+  </data>
+  <data name="StatusCancelled" xml:space="preserve">
+    <value>已取消！</value>
+  </data>
+  <data name="LogExtractingFiles" xml:space="preserve">
+    <value>正在解压文件...</value>
+  </data>
+  <data name="UpdateAlreadyLatest" xml:space="preserve">
+    <value>您正在使用最新版本。</value>
+  </data>
+  <data name="LogDownloadInterrupted" xml:space="preserve">
+    <value>下载被中断：{0}</value>
+  </data>
+  <data name="UpdateSuccess" xml:space="preserve">
+    <value>更新成功。请重新运行ACT来加载新版插件。</value>
+  </data>
+  <data name="LogBackingUpOldFiles" xml:space="preserve">
+    <value>正在备份旧文件...</value>
+  </data>
+  <data name="LogRemovingOldBackup" xml:space="preserve">
+    <value>正在删除旧备份目录...</value>
+  </data>
+  <data name="LogOverwritingOldFiles" xml:space="preserve">
+    <value>正在覆写旧文件...</value>
+  </data>
+  <data name="LogRestoringBackup" xml:space="preserve">
+    <value>正在恢复备份...</value>
+  </data>
+  <data name="LogDone" xml:space="preserve">
+    <value>完成。</value>
+  </data>
+  <data name="LogFailedReplaceDirectory" xml:space="preserve">
+    <value>无法替换旧目录：{0}</value>
+  </data>
+  <data name="LogMovingDirectory" xml:space="preserve">
+    <value>正在移动目录...</value>
+  </data>
+  <data name="LogDeletingTempFiles" xml:space="preserve">
+    <value>正在删除临时文件...</value>
+  </data>
+  <data name="LogFailedToDelete" xml:space="preserve">
+    <value>无法删除{0}：{1}</value>
+  </data>
+  <data name="LogCleaningUp" xml:space="preserve">
+    <value>正在执行清理...</value>
+  </data>
+  <data name="LogOverwritingOldFilesFailed" xml:space="preserve">
+    <value>无法覆写旧文件：{0}
+警告：插件可能处于无法使用的状态！！
+再次运行更新检查或重新安装插件，否则它可能无法在下次ACT重新启动时正常工作。</value>
+  </data></root>

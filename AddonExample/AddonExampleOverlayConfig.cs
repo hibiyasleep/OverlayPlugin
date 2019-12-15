@@ -1,16 +1,11 @@
 ﻿using RainbowMage.OverlayPlugin;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AddonExample
 {
     public class AddonExampleOverlayConfig : OverlayConfigBase
     {
-        public AddonExampleOverlayConfig(string name)
-            : base(name)
+        public AddonExampleOverlayConfig(string name) : base(name)
         {
 
         }

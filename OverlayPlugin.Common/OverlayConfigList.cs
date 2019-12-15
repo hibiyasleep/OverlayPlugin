@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace RainbowMage.OverlayPlugin
 {
@@ -12,8 +13,10 @@ namespace RainbowMage.OverlayPlugin
     /// XmlSerializer でシリアライズ可能な IOverlayConfig のコレクション。
     /// </summary>
     [Serializable]
-    public class OverlayConfigList : Collection<IOverlayConfig>, IXmlSerializable
+    public class OverlayConfigList<T> : Collection<T>, IXmlSerializable
     {
+        public int MissingTypes { get; private set; }
+
         public System.Xml.Schema.XmlSchema GetSchema()
         {
             return null;
@@ -21,6 +24,8 @@ namespace RainbowMage.OverlayPlugin
 
         public void ReadXml(System.Xml.XmlReader reader)
         {
+            MissingTypes = 0;
+
             if (reader.IsEmptyElement)
             {
                 return;
@@ -37,9 +42,20 @@ namespace RainbowMage.OverlayPlugin
 
                 if (type != null)
                 {
-                    var serializer = new XmlSerializer(type);
-                    var config = (IOverlayConfig)serializer.Deserialize(reader);
-                    this.Add(config);
+                    try
+                    {
+                        var serializer = new XmlSerializer(type);
+                        var config = (T)serializer.Deserialize(reader);
+                        this.Add(config);
+                    } catch (Exception e)
+                    {
+                        System.Diagnostics.Trace.WriteLine(e);
+                        Registry.Resolve<ILogger>().Log(LogLevel.Error, e.ToString());
+                    }
+                } else
+                {
+                    reader.Skip();
+                    MissingTypes++;
                 }
 
             } while (reader.ReadToNextSibling("Overlay"));

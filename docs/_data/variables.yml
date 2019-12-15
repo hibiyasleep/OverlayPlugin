@@ -1,0 +1,40 @@
+default:
+  text_skin: default
+  highlight_theme: default
+  lang: en
+  paths:
+    root: /
+    home: /
+    archive:  /archive.html
+    rss:  /feed.xml
+  mathjax: false
+  mathjax_autoNumber: false
+  mermaid: false
+  chart: false
+  toc:
+    selectors: 'h1,h2,h3'
+  sources: unpkg
+
+  page:
+    mode: normal
+    type: webpage
+    article_header:
+      align: left
+      theme: light
+    articles:
+      show_cover: true
+      show_excerpt: false
+      show_readmore: false
+      show_info: false
+    show_title: false
+    show_edit_on_github: false
+    show_date: true
+    show_tags: true
+    show_author_profile: false
+    show_subscribe: false
+    full_width: false
+    sharing: false
+    comment: true
+    license: false
+    pageview: false
+    search: default

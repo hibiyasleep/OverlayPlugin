@@ -1,57 +1,45 @@
-﻿using RainbowMage.OverlayPlugin;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Advanced_Combat_Tracker;
+using RainbowMage.OverlayPlugin;
+using System.Windows.Forms;
 
 namespace AddonExample
 {
-    public class AddonExample : IOverlayAddon
+    public class AddonExample : IActPluginV1, IOverlayAddonV2
     {
-        public string Name
+        public static string pluginPath = "";
+
+        public void DeInitPlugin()
         {
-            get { return "Addon Example"; }
+
         }
 
-        public string Description
+        public void InitPlugin(TabPage pluginScreenSpace, Label pluginStatusText)
         {
-            get { return "Just displays www.yahoo.com."; }
+            pluginStatusText.Text = "Ready.";
+
+            // We don't need a tab here.
+            ((TabControl)pluginScreenSpace.Parent).TabPages.Remove(pluginScreenSpace);
+
+            foreach (var plugin in ActGlobals.oFormActMain.ActPlugins)
+            {
+                if (plugin.pluginObj == this)
+                {
+                    pluginPath = plugin.pluginFile.FullName;
+                    break;
+                }
+            }
         }
 
-        public Type OverlayType
+        public void Init()
         {
-            get { return typeof(AddonExampleOverlay); }
-        }
+            // Register EventSource
+            Registry.RegisterEventSource<AddonExampleEventSource>();
 
-        public Type OverlayConfigType
-        {
-            get { return typeof(AddonExampleOverlayConfig); }
-        }
-
-        public Type OverlayConfigControlType
-        {
-            get { return typeof(AddonExampleOverlayConfigPanel); }
-        }
-
-        public IOverlay CreateOverlayInstance(IOverlayConfig config)
-        {
-            return new AddonExampleOverlay((AddonExampleOverlayConfig)config);
-        }
-
-        public IOverlayConfig CreateOverlayConfigInstance(string name)
-        {
-            return new AddonExampleOverlayConfig(name);
-        }
-
-        public System.Windows.Forms.Control CreateOverlayConfigControlInstance(IOverlay overlay)
-        {
-            return new AddonExampleOverlayConfigPanel();
-        }
-
-        public void Dispose()
-        {
-            
+            // Register Overlay
+            // Important Tip:
+            //   ngld/OverlayPlugin can communicate between Javascript and EventSources.
+            //   In many cases, it is sufficient to use MiniParse, and it is rarely necessary to create original Overlay.
+            Registry.RegisterOverlay<AddonExampleOverlay>();
         }
     }
 }

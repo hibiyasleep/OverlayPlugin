@@ -62,8 +62,7 @@ namespace RainbowMage.OverlayPlugin.Overlays
                 }
 
                 if (this.Overlay != null &&
-                this.Overlay.Renderer != null &&
-                this.Overlay.Renderer.Browser != null)
+                this.Overlay.Renderer != null)
                 {
                     JObject message = new JObject();
                     message["opcode"] = Convert.ToInt32(chunk[0]);

@@ -12,14 +12,20 @@ namespace RainbowMage.OverlayPlugin
     /// </summary>
     static class NativeMethods
     {
-
         static WinEventDelegate dele = null;
 
-        static NativeMethods()
+        public static void Init()
         {
-            dele = new WinEventDelegate(WinEventProc);
             ActiveWindowHandle = GetForegroundWindow();
-            IntPtr m_hhook = SetWinEventHook(EVENT_SYSTEM_FOREGROUND, EVENT_SYSTEM_FOREGROUND, IntPtr.Zero, dele, 0, 0, WINEVENT_OUTOFCONTEXT);
+
+            dele = new WinEventDelegate(WinEventProc);
+            var result = SetWinEventHook(EVENT_SYSTEM_FOREGROUND, EVENT_SYSTEM_FOREGROUND, IntPtr.Zero, dele, 0, 0, WINEVENT_OUTOFCONTEXT);
+            if (result == IntPtr.Zero)
+                Registry.Resolve<ILogger>().Log(LogLevel.Error, "Failed to register window foreground hook!");
+
+            result = SetWinEventHook(EVENT_SYSTEM_MINIMIZEEND, EVENT_SYSTEM_MINIMIZEEND, IntPtr.Zero, dele, 0, 0, WINEVENT_OUTOFCONTEXT);
+            if (result == IntPtr.Zero)
+                Registry.Resolve<ILogger>().Log(LogLevel.Error, "Failed to register window minimized hook!");
         }
 
         delegate void WinEventDelegate(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime);
@@ -29,6 +35,7 @@ namespace RainbowMage.OverlayPlugin
 
         private const uint WINEVENT_OUTOFCONTEXT = 0;
         private const uint EVENT_SYSTEM_FOREGROUND = 3;
+        private const uint EVENT_SYSTEM_MINIMIZEEND = 0x0017;
 
         public static event EventHandler<IntPtr> ActiveWindowChanged;
         public static IntPtr ActiveWindowHandle;
@@ -37,6 +44,7 @@ namespace RainbowMage.OverlayPlugin
             ActiveWindowHandle = hwnd;
             ActiveWindowChanged?.Invoke(null, hwnd);
         }
+
 
         public struct BlendFunction
         {
@@ -258,5 +266,26 @@ namespace RainbowMage.OverlayPlugin
         public const int WM_SYSKEYDOWN = 0x0104;
         public const int WM_SYSKEYUP = 0x0105;
         public const int WM_SYSCHAR = 0x0106;
-    }
+
+        // Constants for extern calls to various scrollbar functions
+        public const int SB_HORZ = 0x0;
+        public const int SB_VERT = 0x1;
+        public const int WM_HSCROLL = 0x114;
+        public const int WM_VSCROLL = 0x115;
+        public const int SB_THUMBPOSITION = 4;
+        public const int SB_BOTTOM = 7;
+        public const int SB_OFFSET = 13;
+
+        [DllImport("user32.dll")]
+        public static extern int SetScrollPos(IntPtr hWnd, int nBar, int nPos, bool bRedraw);
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern int GetScrollPos(IntPtr hWnd, int nBar);
+        [DllImport("user32.dll")]
+        public static extern bool PostMessageA(IntPtr hWnd, int nBar, int wParam, int lParam);
+        [DllImport("user32.dll")]
+        public static extern bool GetScrollRange(IntPtr hWnd, int nBar, out int lpMinPos, out int lpMaxPos);
+
+        [DllImport("kernel32.dll")]
+        public static extern bool ReadProcessMemory(IntPtr hProcess, IntPtr lpBaseAddress, byte[] lpBuffer, IntPtr nSize, ref IntPtr lpNumberOfBytesRead);
+  }
 }

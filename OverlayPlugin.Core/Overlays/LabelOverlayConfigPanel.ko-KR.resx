@@ -127,16 +127,13 @@
     <value>오버레이 표시</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>글로벌 핫 키 사용</value>
+    <value>단축키 사용</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>글로벌 핫 키</value>
+    <value>단축키</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>위치 잠금</value>
-  </data>
-  <data name="label13.Text" xml:space="preserve">
-    <value>※ 프레임 레이트나 핫 키 설정을 적용하려면 플러그인을 다시 시작해야 합니다.</value>
   </data>
   <data name="buttonReloadBrowser.Text" xml:space="preserve">
     <value>새로고침</value>

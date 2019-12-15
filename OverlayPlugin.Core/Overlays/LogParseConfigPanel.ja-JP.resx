@@ -117,55 +117,181 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 96</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 24</value>
+  </data>
   <data name="label6.Text" xml:space="preserve">
     <value>最大フレームレート</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>ソートタイプ</value>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 24</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>含めるログ</value>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 24</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>クリックを透過させる</value>
   </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 24</value>
+  </data>
   <data name="label3.Text" xml:space="preserve">
     <value>オーバーレイを表示する</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 72</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 24</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>表示するURL</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="checkMiniParseVisible.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="checkMiniParseVisible.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="checkMiniParseVisible.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="checkMiniParseVisible.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 17</value>
+  </data>
+  <data name="checkMiniParseVisible.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="checkMiniParseClickthru.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 27</value>
+  </data>
+  <data name="checkMiniParseClickthru.Size" type="System.Drawing.Size, System.Drawing">
+    <value>443, 18</value>
+  </data>
+  <data name="buttonLogParseCopyActXiv.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 50</value>
+  </data>
   <data name="buttonLogParseCopyActXiv.Text" xml:space="preserve">
     <value>変数をクリップボードにコピー</value>
+  </data>
+  <data name="buttonLogParseOpenDevTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 50</value>
   </data>
   <data name="buttonLogParseOpenDevTools.Text" xml:space="preserve">
     <value>DevToolsを開く</value>
   </data>
+  <data name="buttonLogParseReloadBrowser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 50</value>
+  </data>
   <data name="buttonLogParseReloadBrowser.Text" xml:space="preserve">
     <value>オーバーレイの表示をリロード</value>
   </data>
-  <data name="label13.Text" xml:space="preserve">
-    <value>※最大フレームレート、およびホットキーの変更を有効にするためにはプラグインの再起動が必要です</value>
+  <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>598, 56</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 329</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>598, 56</value>
+  </data>
+  <data name="textLogParseUrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>410, 20</value>
+  </data>
+  <data name="buttonLogParseSelectFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 21</value>
+  </data>
+  <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>156, 73</value>
+  </data>
+  <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>447, 22</value>
+  </data>
+  <data name="nudMaxFrameRate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>156, 97</value>
+  </data>
+  <data name="nudMaxFrameRate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>447, 20</value>
+  </data>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 192</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>443, 24</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 120</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 24</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>グローバルホットキーを使用</value>
   </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 144</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 24</value>
+  </data>
   <data name="label8.Text" xml:space="preserve">
     <value>グローバルホットキー</value>
+  </data>
+  <data name="checkEnableGlobalHotkey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 123</value>
+  </data>
+  <data name="checkEnableGlobalHotkey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>443, 18</value>
+  </data>
+  <data name="textGlobalHotkey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>156, 145</value>
+  </data>
+  <data name="textGlobalHotkey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>447, 20</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 48</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 24</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>移動とリサイズを制限する</value>
   </data>
+  <data name="checkLock.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 51</value>
+  </data>
+  <data name="checkLock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>443, 18</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 168</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 24</value>
+  </data>
   <data name="label10.Text" xml:space="preserve">
     <value>ホットキータイプ</value>
   </data>
-  <data name="checkIncludeEchoes.Text" xml:space="preserve">
-    <value>/echo</value>
+  <data name="comboHotkeyType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>156, 169</value>
   </data>
-  <data name="checkIncludeChat.Text" xml:space="preserve">
-    <value>残りの会話</value>
+  <data name="comboHotkeyType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>447, 21</value>
   </data>
-  <data name="checkIncludeCombatLog.Text" xml:space="preserve">
-    <value>残りのログ</value>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>604, 388</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>604, 388</value>
   </data>
 </root>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label7.Text" xml:space="preserve">
-    <value>최대 프레임 레이트</value>
+    <value>최대 프레임 레이트 (FPS)</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>클릭 무시</value>
@@ -135,16 +135,21 @@
   <data name="buttonReloadBrowser.Text" xml:space="preserve">
     <value>새로고침</value>
   </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>※ 프레임 레이트나 핫 키 설정을 적용하려면 플러그인을 다시 시작해야 합니다.</value>
-  </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>글로벌 핫 키 사용</value>
+    <value>단축키 사용</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>글로벌 핫 키</value>
+    <value>단축키</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>위치 잠금</value>
+  </data>
+
+  <data name="label4.Text" xml:space="preserve">
+    <value>단축키 기능</value>
+  </data>
+
+  <data name="label10.Text" xml:space="preserve">
+    <value>URL</value>
   </data>
 </root>

@@ -1,84 +1,81 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace RainbowMage.OverlayPlugin.Overlays
 {
-    [Serializable]
     public class MiniParseOverlayConfig : OverlayConfigBase
     {
-        public event EventHandler<SortKeyChangedEventArgs> SortKeyChanged;
-        public event EventHandler<SortTypeChangedEventArgs> SortTypeChanged;
+        public override Type OverlayType => typeof(MiniParseOverlay);
 
-        private string sortKey;
-        [XmlElement("SortKey")]
-        public string SortKey
+        public event EventHandler<CompatbilityChangedArgs> ActwsCompatibilityChanged;
+        public event EventHandler NoFocusChanged;
+        public event EventHandler ZoomChanged;
+
+        private bool actwsCompatibility;
+        public bool ActwsCompatibility
         {
             get
             {
-                return this.sortKey;
+                return this.actwsCompatibility;
             }
             set
             {
-                if (this.sortKey != value)
+                this.actwsCompatibility = value;
+                ActwsCompatibilityChanged?.Invoke(this, new CompatbilityChangedArgs(value));
+            }
+        }
+
+        private bool noFocus;
+        public bool NoFocus
+        {
+            get
+            {
+                return this.noFocus;
+            }
+            set
+            {
+                if (this.noFocus != value)
                 {
-                    this.sortKey = value;
-                    if (SortKeyChanged != null)
-                    {
-                        SortKeyChanged(this, new SortKeyChangedEventArgs(this.sortKey));
-                    }
+                    this.noFocus = value;
+                    NoFocusChanged?.Invoke(this, new EventArgs());
                 }
             }
         }
 
-        private MiniParseSortType sortType;
-        [XmlElement("SortType")]
-        public MiniParseSortType SortType
+        private int zoom = 1;
+        public int Zoom
         {
             get
             {
-                return this.sortType;
+                return this.zoom;
             }
             set
             {
-                if (this.sortType != value)
+                if (this.zoom != value)
                 {
-                    this.sortType = value;
-                    if (SortTypeChanged != null)
-                    {
-                        SortTypeChanged(this, new SortTypeChangedEventArgs(this.sortType));
-                    }
+                    this.zoom = value;
+                    ZoomChanged?.Invoke(this, new EventArgs());
                 }
             }
         }
 
         public MiniParseOverlayConfig(string name) : base(name)
         {
-            this.sortKey = "encdps";
-            this.sortType = MiniParseSortType.NumericDescending;
+            this.noFocus = true;
+            this.zoom = 1;
         }
 
-        // XmlSerializer用
-        private MiniParseOverlayConfig() : base(null)
+        public MiniParseOverlayConfig() : base(null) { }
+
+        public class CompatbilityChangedArgs : EventArgs
         {
+            public bool Compatibility { get; private set; }
 
+            public CompatbilityChangedArgs(bool c)
+            {
+                Compatibility = c;
+            }
         }
-
-        public override Type OverlayType
-        {
-            get { return typeof(MiniParseOverlay); }
-        }
-    }
-
-    public enum MiniParseSortType
-    {
-        None,
-        StringAscending,
-        StringDescending,
-        NumericAscending,
-        NumericDescending
     }
 }

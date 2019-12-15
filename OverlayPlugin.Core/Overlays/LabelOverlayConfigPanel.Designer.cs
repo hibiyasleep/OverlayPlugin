@@ -41,7 +41,6 @@
             this.textGlobalHotkey = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.checkLock = new System.Windows.Forms.CheckBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.textBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonCopyUpdateScript = new System.Windows.Forms.Button();
@@ -72,7 +71,6 @@
             this.tableLayoutPanel1.Controls.Add(this.textGlobalHotkey, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.checkLock, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label13, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.textBox, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
@@ -131,6 +129,9 @@
             // 
             resources.ApplyResources(this.textGlobalHotkey, "textGlobalHotkey");
             this.textGlobalHotkey.Name = "textGlobalHotkey";
+            this.textGlobalHotkey.Enter += new System.EventHandler(this.textGlobalHotkey_Enter);
+            this.textGlobalHotkey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textGlobalHotkey_KeyDown);
+            this.textGlobalHotkey.Leave += new System.EventHandler(this.textGlobalHotkey_Leave);
             // 
             // label9
             // 
@@ -143,11 +144,6 @@
             this.checkLock.Name = "checkLock";
             this.checkLock.UseVisualStyleBackColor = true;
             this.checkLock.CheckedChanged += new System.EventHandler(this.checkLock_CheckedChanged);
-            // 
-            // label13
-            // 
-            resources.ApplyResources(this.label13, "label13");
-            this.label13.Name = "label13";
             // 
             // textBox
             // 
@@ -252,7 +248,6 @@
         private System.Windows.Forms.TextBox textGlobalHotkey;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox checkLock;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button buttonReloadBrowser;

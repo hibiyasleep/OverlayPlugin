@@ -165,14 +165,6 @@ namespace RainbowMage.OverlayPlugin.Overlays
             this.textGlobalHotkey.Enabled = this.config.GlobalHotkeyEnabled;
         }
 
-        private void textBoxGlobalHotkey_KeyDown(object sender, KeyEventArgs e)
-        {
-            e.SuppressKeyPress = true;
-            var key = Util.RemoveModifiers(e.KeyCode, e.Modifiers);
-            this.config.GlobalHotkey = key;
-            this.config.GlobalHotkeyModifiers = e.Modifiers;
-        }
-
         private void checkLock_CheckedChanged(object sender, EventArgs e)
         {
             this.config.IsLocked = this.checkLock.Checked;
@@ -201,6 +193,24 @@ namespace RainbowMage.OverlayPlugin.Overlays
         private void textBox_TextChanged(object sender, EventArgs e)
         {
             this.config.Text = textBox.Text;
+        }
+
+        private void textGlobalHotkey_Enter(object sender, EventArgs e)
+        {
+            Registry.Resolve<KeyboardHook>().DisableHotKeys();
+        }
+
+        private void textGlobalHotkey_Leave(object sender, EventArgs e)
+        {
+            Registry.Resolve<KeyboardHook>().EnableHotKeys();
+        }
+
+        private void textGlobalHotkey_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+            var key = Util.RemoveModifiers(e.KeyCode, e.Modifiers);
+            this.config.GlobalHotkey = key;
+            this.config.GlobalHotkeyModifiers = e.Modifiers;
         }
     }
 }

@@ -1,23 +1,37 @@
 ﻿using RainbowMage.OverlayPlugin;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AddonExample
 {
     public class AddonExampleOverlay : OverlayBase<AddonExampleOverlayConfig>
     {
-        public AddonExampleOverlay(AddonExampleOverlayConfig config)
-            : base(config, config.Name)
+        public AddonExampleOverlay(AddonExampleOverlayConfig config, string name) : base(config, name)
         {
-            Navigate("http://www.yahoo.com/");
+
+        }
+
+        public override Control CreateConfigControl()
+        {
+            return new AddonExampleOverlayConfigPanel();
+        }
+
+        public override void Start()
+        {
+            // Start the embedded timer when using it.
+            // Call base.Start() or timer.Start() to start the embedded timer manually.
+            base.Start();
+        }
+
+        public override void Stop()
+        {
+            // Stop the embedded timer when using it.
+            // Call base.Stop() or timer.Stop() to stop the embedded timer manually.
+            base.Stop();
         }
 
         protected override void Update()
         {
-            
+
         }
     }
 }

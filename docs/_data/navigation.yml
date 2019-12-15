@@ -1,0 +1,21 @@
+header:
+  - title: Home
+    url:   /
+
+  - title: Streamer Info
+    url:   /streamers
+
+  - title: Streamer Info (CN)
+    url:   /streamers_cn
+
+  - title: Developer Info
+    url:   /devs
+
+devs:
+  - title: Content
+    children:
+      - title: Start
+        url:   /devs
+
+      - title: Event Types
+        url:   /devs/event_types

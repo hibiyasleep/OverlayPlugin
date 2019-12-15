@@ -138,9 +138,6 @@
   <data name="buttonReloadBrowser.Text" xml:space="preserve">
     <value>オーバーレイの表示をリロード</value>
   </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>※最大フレームレート、およびホットキーの変更を有効にするためにはプラグインの再起動が必要です</value>
-  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>グローバルホットキーを使用</value>
   </data>

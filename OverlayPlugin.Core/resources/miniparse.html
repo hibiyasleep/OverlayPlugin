@@ -75,6 +75,7 @@
         }
 
     </style>
+    <script src="https://ngld.github.io/OverlayPlugin/assets/shared/common.min.js"></script>
     <script>
 
         //
@@ -181,10 +182,9 @@
             document.documentElement.classList.remove("resizeHandle");
         }
 
-        // onOverlayDataUpdate イベントを購読
-        document.addEventListener("onOverlayDataUpdate", function (e) {
-            update(e.detail);
-        });
+        // CombatData イベントを購読
+        addOverlayListener("CombatData", (e) => update(e));
+        startOverlayEvents();
 
         // 表示要素の更新
         function update(data) {

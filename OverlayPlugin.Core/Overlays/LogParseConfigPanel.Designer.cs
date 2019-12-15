@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogParseConfigPanel));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
-            //this.label5 = new System.Windows.Forms.Label();
-            //this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,7 +45,6 @@
             this.textLogParseUrl = new System.Windows.Forms.TextBox();
             this.buttonLogParseSelectFile = new System.Windows.Forms.Button();
             this.nudMaxFrameRate = new System.Windows.Forms.NumericUpDown();
-            this.label13 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.checkEnableGlobalHotkey = new System.Windows.Forms.CheckBox();
@@ -67,8 +64,6 @@
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 4);
-            //this.tableLayoutPanel1.Controls.Add(this.label5, 0, 5);
-            //this.tableLayoutPanel1.Controls.Add(this.label4, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 3);
@@ -77,7 +72,6 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 11);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.nudMaxFrameRate, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label13, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.checkEnableGlobalHotkey, 1, 5);
@@ -92,16 +86,6 @@
             // 
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            // 
-            // label5
-            // 
-            //resources.ApplyResources(this.label5, "label5");
-            //this.label5.Name = "label5";
-            // 
-            // label4
-            // 
-            //resources.ApplyResources(this.label4, "label4");
-            //this.label4.Name = "label4";
             // 
             // label2
             // 
@@ -120,8 +104,8 @@
             // 
             // checkMiniParseVisible
             // 
-            resources.ApplyResources(this.checkMiniParseVisible, "checkLogParseVisible");
-            this.checkMiniParseVisible.Name = "checkLogParseVisible";
+            resources.ApplyResources(this.checkMiniParseVisible, "checkMiniParseVisible");
+            this.checkMiniParseVisible.Name = "checkMiniParseVisible";
             this.checkMiniParseVisible.UseVisualStyleBackColor = true;
             this.checkMiniParseVisible.CheckedChanged += new System.EventHandler(this.checkWindowVisible_CheckedChanged);
             // 
@@ -134,9 +118,9 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.tableLayoutPanel1.SetColumnSpan(this.panel1, 2);
             this.panel1.Controls.Add(this.tableLayoutPanel3);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // tableLayoutPanel3
@@ -211,11 +195,6 @@
             0});
             this.nudMaxFrameRate.ValueChanged += new System.EventHandler(this.nudMaxFrameRate_ValueChanged);
             // 
-            // label13
-            // 
-            resources.ApplyResources(this.label13, "label13");
-            this.label13.Name = "label13";
-            // 
             // label7
             // 
             resources.ApplyResources(this.label7, "label7");
@@ -283,7 +262,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label6;
         //private System.Windows.Forms.Label label5;
         //private System.Windows.Forms.Label label4;

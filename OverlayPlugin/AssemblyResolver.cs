@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace RainbowMage.OverlayPlugin
 {
@@ -14,6 +15,9 @@ namespace RainbowMage.OverlayPlugin
         static readonly Regex assemblyNameParser = new Regex(
             @"(?<name>.+?), Version=(?<version>.+?), Culture=(?<culture>.+?), PublicKeyToken=(?<pubkey>.+)",
             RegexOptions.Compiled);
+        static readonly List<string> OverlayPluginFiles = new List<string> {
+            "OverlayPlugin.Common", "OverlayPlugin.Core", "OverlayPlugin.Updater", "HtmlRenderer"
+        };
 
         public List<string> Directories { get; set; }
 
@@ -24,6 +28,7 @@ namespace RainbowMage.OverlayPlugin
             {
                 this.Directories.AddRange(directories);
             }
+
             AppDomain.CurrentDomain.AssemblyResolve += CustomAssemblyResolve;
         }
 
@@ -40,11 +45,13 @@ namespace RainbowMage.OverlayPlugin
 
         private Assembly CustomAssemblyResolve(object sender, ResolveEventArgs e)
         {
+            var match = assemblyNameParser.Match(e.Name);
+
             // Directories プロパティで指定されたディレクトリを基準にアセンブリを検索する
             foreach (var directory in this.Directories)
             {
                 var asmPath = "";
-                var match = assemblyNameParser.Match(e.Name);
+                
                 if (match.Success)
                 {
                     var asmFileName = match.Groups["name"].Value + ".dll";
@@ -64,25 +71,21 @@ namespace RainbowMage.OverlayPlugin
 
                 if (File.Exists(asmPath))
                 {
-                    var asm = Assembly.LoadFile(asmPath);
+                    Assembly asm;
+#if !DEBUG
+                    if (e.Name.Contains("CefSharp"))
+                    {
+#endif
+                        asm = Assembly.LoadFile(asmPath);
+#if !DEBUG
+                    } else
+                    {
+                        asm = Assembly.Load(File.ReadAllBytes(asmPath));
+                    }
+#endif
                     OnAssemblyLoaded(asm);
                     return asm;
                 }
-            }
-
-            return null;
-        }
-
-        private Assembly GetAssembly(string path)
-        {
-            try
-            {
-                var result = Assembly.LoadFrom(path);
-                return result;
-            }
-            catch (Exception e)
-            {
-                OnExceptionOccured(e);
             }
 
             return null;
