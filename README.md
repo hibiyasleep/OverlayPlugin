@@ -2,6 +2,22 @@
 
 Plugin to show customizable overlays for Advanced Combat Tracker.
 
+## DEPRECATED
+
+DON'T use this version of OverlayPlugin. it's obsolote, not maintained and old of ancients.
+
+Please use [ngld/overlayplugin](https://github.com/ngld/overlayplugin) instead.
+
+---
+
+---
+
+---
+
+---
+
+---
+
 ## Download
 
 You can download release and pre-release archives from the [release page][releases].
